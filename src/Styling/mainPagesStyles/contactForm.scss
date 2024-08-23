@@ -1,0 +1,217 @@
+$descrLengthMobile: calc(100% - 3rem);
+$formSpacingMobile: 4rem;
+$labelSpacingMobile: 1.2rem;
+
+$formWidthPC: 500px; 
+$formHeightPC: 650px;
+$descrLengthPC: calc($formWidthPC + 30px);
+$formSpacingPC: 4rem;
+$labelSpacingPC: 1.2rem;
+
+
+
+$formContainerColor: rgba(245, 245, 245, 1);
+$formColor: rgba(252, 252, 252, 1);
+$formShadow: 0 0 0.1rem black;
+
+
+// DESIGN FOR MOBILE PHONES
+@media screen and (max-width: 480px) {
+    
+    #formContainer {
+        display: flex;
+        flex-direction: column;
+        background-color: $formContainerColor;
+    
+        #spacer1, #spacer3 {
+            height: $formSpacingMobile;
+        }
+
+        #spacer2 {
+            height: 1.5rem;
+        }
+
+        #contactDescr {
+            width: $descrLengthMobile;
+            margin: 0;
+            align-self: center;
+            text-align: center;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 3.5rem;
+            box-sizing: border-box;
+            background-color: $formColor;
+        
+            .contactDetails, #messageContainer {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin-bottom: $labelSpacingMobile; 
+            }
+                 
+            .contactDetails {
+                #fnameLabel, #contactMailLabel {
+                    margin-bottom: 1rem;
+                }
+
+                .contactLabel {
+                    .inputField {
+                        height: 2.4rem;
+                    }
+                }
+            }
+            
+            #messageContainer {
+                #messageLabel {
+                    #messageInput {
+                        height: 35vh;
+                        resize: none;
+                    }
+                }    
+            }
+            
+            #fnameInput, #lnameInput, #messageInput, #mailInput, #phoneInput {
+                border: 1px solid rgba(225, 225, 225, 1);
+            }
+           
+            input:focus, textarea:focus {
+                outline: 1px solid rgba(36, 195, 219, 1);
+            }
+            
+            .inputField, #messageInput {
+                width: 100%;
+                padding: 0;
+                margin-top: 0.3rem;
+                border-radius: 5px;
+                background-color: rgba(209, 250, 249, 0.6);
+            }
+
+            #submitButton:active {
+                background-color: rgba(235, 235, 235, 1);
+            }
+
+            #submitButton {
+                display: block;
+                width: 60%;
+                height: 2rem;
+                margin: 0 20% 0 20%;
+                border: 0.15rem solid rgba(210, 210, 210, 1);
+                border-radius: 0.8rem;
+                background-color: rgba(240, 240, 240, 1);
+                font-size: 1rem;
+            }
+
+        }
+    }
+}
+
+
+// DESIGN FOR DESKTOPS 
+
+@media screen and (min-width: 480px) {
+
+    #formContainer {
+        display: flex;
+        flex-direction: column;
+        background-color: $formContainerColor;
+
+        #spacer1, #spacer3 {
+            height: $formSpacingPC;
+        }
+
+        #spacer2 {
+            height: 1.5rem;
+        }
+
+        #contactDescr {
+            width: $descrLengthPC;
+            margin: 0;
+            align-self: center;
+            text-align: center;
+        }
+         
+        form {
+            align-self: center;
+            width: $formWidthPC;
+            height: $formHeightPC;
+            padding: 2rem 4rem;
+            border-radius: 0.3rem;
+            box-shadow: $formShadow;
+            box-sizing: border-box;
+            background-color: $formColor;
+        
+            .contactDetails, #messageContainer {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+                margin-bottom: $labelSpacingPC;
+            }
+            
+            .contactDetails {
+                .contactLabel {
+                    width: 50%;
+                }
+
+                #fnameLabel, #contactMailLabel {
+                    margin-right: 2rem;
+                } 
+            }
+    
+            #messageContainer {
+                #messageLabel {
+                    width: 100%;
+                    flex-shrink: 4;
+
+                    #messageInput {
+                        height: 35vh;
+                        resize: none;
+                    }
+                }
+                
+            }
+            
+            #fnameInput, #lnameInput, #messageInput, #mailInput, #phoneInput {
+                border: 1px solid rgba(225, 225, 225, 1);
+            }
+
+            .inputField:focus, textarea:focus {
+                outline: 1px solid rgba(36, 195, 219, 1);
+            }
+
+            .inputField, #messageInput {
+                width: 100%;
+                padding: 0;
+                margin-top: 0.5rem;
+                border-radius: 5px;
+                background-color: rgba(209, 250, 249, 0.6);
+            }
+            
+            .inputField {
+                height: 1.8rem;
+            }
+
+            #submitButton:hover {
+                background-color: rgba(235, 235, 235, 1);
+            }
+
+            #submitButton:active {
+                background-color: rgba(230, 230, 230, 1);
+            }
+            
+            #submitButton {
+                display: block;
+                width: 40%;
+                height: 2rem;
+                margin: 0 30% 0 30%;
+                border: 0.15rem solid rgba(210, 210, 210, 1);
+                border-radius: 0.8rem;
+                background-color: rgba(240, 240, 240, 1);
+            }
+        }
+    }  
+}

@@ -1,0 +1,74 @@
+// Main Footer Color Variables
+$footerColor: rgba(155, 155, 155, 1);
+$findMeColor: rgba(245, 245, 245, 1);
+
+// Icon Variables
+$iconWidth: 1.8rem;
+$githubIconHeight: 1.75rem;
+$linkedinIconHeight: 1.90rem;
+$tryHackMeIconHeight: calc($linkedinIconHeight - 0.2rem);
+$iconShadow: 0 0 0.2rem black;
+$linkHoverColor: rgba(125, 125, 125);
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 8rem;
+    background-color: $footerColor;
+    
+    #findMeText {
+        display: flex;
+        align-items: center;
+        height: 50%;
+        margin: 0;
+        font-size: 1.2rem;
+        color: $findMeColor; 
+    }
+    
+    .followInfo {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 8rem;
+        height: 50%;
+    
+        .contactLink {
+            display: flex;
+            text-decoration: none;
+    
+            #gitHubLogo {
+                width: $iconWidth;
+                height: $githubIconHeight;
+                padding: 0.1rem;
+                color: black;
+            }
+    
+            #linkedInLogo {
+                width: $iconWidth;
+                height: $githubIconHeight;
+                padding: 1px;
+                color: black; 
+            }
+    
+            #tryHackMeLogo {
+                width: $iconWidth;
+                height: $tryHackMeIconHeight;
+                padding: 2px;
+                color: black; 
+            }
+        }
+
+
+        .contactLink:hover {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+            background-color: $linkHoverColor;
+        }
+
+        .contactLink:active {
+            transform: scale(1.1);
+            background-color: $linkHoverColor;
+        }   
+    }
+}
