@@ -27,7 +27,6 @@ $contactIconsTextGapPC: 0.6rem;
 $puzzleIconHeightPC: calc($approachHeaderFontPC - 0.3rem); 
 $gearIconHeightPC: calc($skillHeadersFontPC + 0.7rem);
 $speechIconHeightPC: $skillHeadersFontPC;
-$warningSignIconHeightPC: $skillNameFontPC;
 
 
 // PADDING VARIABLES
@@ -41,19 +40,13 @@ $listItemVerticalMarginPC: 2rem;
 
     #homepageLayout {
         display: flex;
+    }
+
+    #experienceSection {
+        display: flex;
         flex-direction: column;
-        width: 100%;
-
-        #mainSection {
-            display: flex;
-
-            #experienceSection {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                width: 58%;
-            }
-        }
+        justify-content: flex-start;
+        width: 58%;
     }
 
     #aboutMeSection:hover {
@@ -76,6 +69,7 @@ $listItemVerticalMarginPC: 2rem;
            
             #myPhotoContainer {
                 width: $profilePicWidthPC;
+                
 
                 #myPhoto {
                     width: 100%;
@@ -247,12 +241,12 @@ $listItemVerticalMarginPC: 2rem;
             padding-left: 0;
             margin: 0;
 
-            .approachItem:hover, .warningListItem:hover, .regularListItem:hover {
+            .approachItem:hover, .regularListItem:hover {
                 background-color: $listItemColorHover;
                 cursor: pointer;
             }
         
-            .approachItem, .warningListItem, .regularListItem {
+            .approachItem, .regularListItem {
                 width: 100%;
                 padding: $listItemPadding;
                 box-shadow: $listItemShadow;
@@ -363,24 +357,10 @@ $listItemVerticalMarginPC: 2rem;
             box-sizing: border-box;
     
             
-            .warningListItem, .regularListItem {
+            .regularListItem {
                 margin-top: $listItemVerticalMarginPC;
                 border-radius: 1rem;
                 font-size: $skillNameFontPC;
-
-                .dropdownDescr {
-                    font-size: $skillDropdownFontPC;
-                }
-            }
-
-            .warningListItem {
-                .warningSignIcon {
-                    height: $warningSignIconHeightPC;
-                    padding-right: 0.5rem; 
-                    @include iconSelectPrevent();
-                    position: relative;
-                    top: 0.1rem;
-                }
             }
         }   
     }   

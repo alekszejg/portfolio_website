@@ -1,12 +1,8 @@
-import NavMenu from '../Layout/navMenu';
-import Footer from '../Layout/footerContent';
+import NavMenu from '../Layout/nav';
+import Footer from '../Layout/footer';
 import ProjectFeaturePanel from '../Layout/panelMaker';
-import '../../Styling/portfolioStyles/botProjectPage.scss';
-import botMusicPlayer from '../../Images/botMusicPlayer.png';
-import botResponses from '../../Images/botResponses.png';
-import botReaction from '../../Images/botReactionRoles.png';
-import botRandomGames from '../../Images/randomGames.png';
-import botFiles from '../../Images/botFiles.png';
+import 'Styling/portfolioStyles/botProjectPage.scss';
+
 
 function BotProjectPage() {
     
@@ -20,7 +16,7 @@ function BotProjectPage() {
         imgContainerID: "musicPlayerImgContainer",
         imgID: "musicPlayerImg",
         imgSide: "left",
-        imgSrc: botMusicPlayer,
+        imgSrc: "/Images/botMusicPlayer.png",
         imgAlt: "an image showing discord bot's music player",
         headerContent: "Look up the songs and play them!",
         paragraphContent: `Find and play songs from Youtube, Spotify and Soundcloud with simple <b>/search_youtube</b>,
@@ -32,7 +28,7 @@ function BotProjectPage() {
         imgContainerID: "responsesImgContainer",
         imgID: "responsesImg",
         imgSide: "right",
-        imgSrc: botResponses,
+        imgSrc: "/Images/botResponses.png",
         imgAlt: "an image demonstrating the discord bot telling jokes, quotes and daily facts",
         headerContent: "Would you like to hear a joke, a quote or a daily fact?",
         paragraphContent: `The bot obtains various jokes and quotes from Ninja API and sends them 
@@ -44,7 +40,7 @@ function BotProjectPage() {
         imgContainerID: "reactionImgContainer",       
         imgID: "reactionImg",
         imgSide: "left",
-        imgSrc: botReaction,
+        imgSrc: "/Images/botReactionRoles.png",
         imgAlt: "an image demonstrating discord bot's reaction roles feature",
         headerContent: "Stop with manual role assignment",
         paragraphContent: `Add, remove, customize and view various available roles and let the bot handle the 
@@ -57,7 +53,7 @@ function BotProjectPage() {
         imgContainerID: "randomGamesImgContainer",
         imgID: "randomGamesImg",
         imgSide: "right",
-        imgSrc: botRandomGames,
+        imgSrc: "/Images/randomGames.png",
         imgAlt: "an image demonstrating discord bot's random-based games and features",
         headerContent: "Whose turn is next?",
         paragraphContent: `Wonder no more, just launch one of bot's random-based games with <b>/diceroll</b>, 
@@ -69,7 +65,7 @@ function BotProjectPage() {
         imgContainerID: "fileShareImgContainer",
         imgID: "fileShareImg",
         imgSide: "left",
-        imgSrc: botFiles,
+        imgSrc: "/Images/botFiles.png",
         imgAlt: "an image demonstrating discord bot's ability to send files",
         headerContent: "Share up to 10 cute photos or documents with your community",
         paragraphContent: `The times of manual file uploads have passed, instead select files and choose where

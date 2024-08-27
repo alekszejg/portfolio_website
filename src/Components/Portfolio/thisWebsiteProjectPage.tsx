@@ -1,11 +1,8 @@
-import NavMenu from '../Layout/navMenu';
-import Footer from '../Layout/footerContent';
+import NavMenu from '../Layout/nav';
+import Footer from '../Layout/footer';
 import ProjectFeaturePanel from '../Layout/panelMaker';
-import '../../Styling/portfolioStyles/thisWebsiteProjectPage.scss';
-import sassLogo from '../../Images/sassLogo.svg';
-import reactLogo from '../../Images/reactLogo.svg';
-import typescriptLogo from '../../Images/typescriptLogo.svg';
-import iconGroup from '../../Images/iconGroup.svg';
+import 'Styling/portfolioStyles/thisWebsiteProjectPage.scss';
+
 
 function ThisWebsiteProjectPage() {
     
@@ -16,7 +13,7 @@ function ThisWebsiteProjectPage() {
         imgContainerID: "sassLogoImgContainer",
         imgID: "sassLogoImg",
         imgSide: "left",
-        imgSrc: sassLogo,
+        imgSrc: "/Images/sassLogo.svg",
         imgAlt: "a SASS logo",
         headerContent: "Styled with SCSS. No CSS libraries were used",
         paragraphContent: `While CSS libraries and website constructors offer easier
@@ -36,7 +33,7 @@ function ThisWebsiteProjectPage() {
         imgContainerID: "reactLogoImgContainer",
         imgID: "reactLogoImg",
         imgSide: "right",
-        imgSrc: reactLogo,
+        imgSrc: "/Images/reactLogo.svg",
         imgAlt: "a React logo",
         headerContent: "Front-end built with React library",
         paragraphContent: `React is the most popular tool that promotes code reuse 
@@ -56,7 +53,7 @@ function ThisWebsiteProjectPage() {
         imgContainerID: "typescriptLogoImgContainer",
         imgID: "typescriptLogoImg",
         imgSide: "left",
-        imgSrc: typescriptLogo,
+        imgSrc: "/Images/typescriptLogo.svg",
         imgAlt: "a TypeScript logo",
         headerContent: "TypeScript over plain JavaScript",
         paragraphContent: `Development of this website gave me some practical experience 
@@ -75,7 +72,7 @@ function ThisWebsiteProjectPage() {
         imgContainerID: "iconGroupImgContainer",
         imgID: "iconGroupImg",
         imgSide: "right",
-        imgSrc: iconGroup,
+        imgSrc: "/Images/iconGroup.svg",
         imgAlt: "a collection of icons",
         headerContent: "Using Font Awesome icons and making custom ones with Figma",
         paragraphContent: `Icons are essential when it comes to visually highlighting 

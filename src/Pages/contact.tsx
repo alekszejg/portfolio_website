@@ -1,5 +1,5 @@
-import NavMenu from 'Components/Layout/navMenu';
-import Footer from 'Components/Layout/footerContent';
+import NavMenu from 'Components/Layout/nav';
+import Footer from 'Components/Layout/footer';
 import 'Styling/mainPagesStyles/contactForm.scss';
 import { useState, useEffect, ChangeEvent } from 'react';
 

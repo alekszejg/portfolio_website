@@ -27,14 +27,8 @@ $listItemGapMobile: 2.5rem;
     #homepageLayout {
         display: flex;
         flex-direction: column;
-        width: 100%;
-
-        #mainSection {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-        }
+        justify-content: flex-start;
+        align-items: center;
     }
     
     #aboutMeSection {
@@ -209,12 +203,12 @@ $listItemGapMobile: 2.5rem;
                 box-sizing: border-box;
                 word-wrap: break-word;
     
-                .approachItem:hover, .warningListItem:hover, .regularListItem:hover {
+                .approachItem:hover, .regularListItem:hover {
                     background-color: $listItemColorHover;
                     cursor: pointer;
                 }
     
-                .approachItem, .regularListItem, .warningListItem {
+                .approachItem, .regularListItem {
                     padding: $listItemPadding;
                     box-sizing: border-box;
                     border-radius: 1rem;
@@ -234,15 +228,9 @@ $listItemGapMobile: 2.5rem;
                     }
                 }
 
-                .warningListItem, .regularListItem {
+                .regularListItem {
                     margin-top: $listItemGapMobile;
                     font-size: $skillNameFontMobile;
-
-                    .warningSignIcon {
-                        height: 1rem;
-                        padding-right: 0.5rem; 
-                        vertical-align: middle;
-                    }
                 }
             } 
 

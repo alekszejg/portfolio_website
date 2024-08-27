@@ -13,23 +13,20 @@ $linkHoverColor: rgba(125, 125, 125);
 footer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     height: 8rem;
     background-color: $footerColor;
     
     #findMeText {
-        display: flex;
-        align-items: center;
-        height: 50%;
         margin: 0;
         font-size: 1.2rem;
         color: $findMeColor; 
     }
     
-    .followInfo {
+    #urlSection {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
         width: 8rem;
         height: 50%;
     

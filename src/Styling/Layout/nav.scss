@@ -21,6 +21,87 @@ $dropdownLinkGap: 1rem;
 $dropdownMainLinkGap: 0.6rem;
 
 
+// Rewriting navbar
+@mixin burgerMenu($display) {
+    #burgerMenu {
+        display: $display;
+        width: 60%;
+        height: 100vh;
+        position: absolute;
+        top: 100%;
+        background-color: rgba(190, 190, 190, 0.95);
+        z-index: 999;
+    
+        #navContentList {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            margin-top: 2.5rem;
+            list-style-type: none;
+    
+            #linkContainer1:hover, #linkContainer2:hover, #linkContainer3:hover {
+                background-color: rgba(150, 150, 150, 0.7);
+            }
+            
+            #linkContainer1, #linkContainer2, #linkContainer3 {
+                width: 100%;
+    
+                .navlink {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    padding: 0.7rem 0 0.7rem 0;
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+    
+            #linkContainer2 {
+                #link2 {
+                    padding-bottom: 0;
+                }
+                
+                #projectDropdown {
+                    display: none;
+                    
+                    .projectLink {
+                        display: block;
+                        text-align: center;
+                        padding-top: 1rem;
+                        text-decoration: none;
+                        color: white;
+                    }
+    
+                    #projectLink2 {
+                        padding-bottom: 0.8rem;
+                    }
+                } 
+            }
+            
+            #linkContainer2:hover #projectDropdown { // ADD ACCORDION INSTEAD 
+                display: block
+            }
+            
+        }
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    @include burgerMenu($display: block)
+}
+
+@media screen and (min-width: 480px) {
+    @include burgerMenu($display: none)
+}
+
+
+
+
+
 // Dropdown Menu PC 
 @mixin dropdownMenuPC {
     #linkContainer2:hover #projectDropdown {
@@ -99,74 +180,6 @@ $dropdownMainLinkGap: 0.6rem;
         #navFillerArea {
             width: $fillerWidth;
         }
-        
-        #burgerMenuClosed {
-            display: none;
-        }
-
-        #burgerMenuOpened {
-            width: 60%;
-            height: 100vh;
-            position: absolute;
-            top: 100%;
-            background-color: rgba(190, 190, 190, 0.95);
-            z-index: 999;
-
-            #navContentList {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                padding: 0;
-                margin-top: 2.5rem;
-                list-style-type: none;
-
-                #linkContainer1:hover, #linkContainer2:hover, #linkContainer3:hover {
-                    background-color: rgba(150, 150, 150, 0.7);
-                }
-                
-                #linkContainer1, #linkContainer2, #linkContainer3 {
-                    width: 100%;
-
-                    .navlink {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        width: 100%;
-                        height: 100%;
-                        padding: 0.7rem 0 0.7rem 0;
-                        text-decoration: none;
-                        color: white;
-                    }
-                }
-
-                #linkContainer2 {
-                    #link2 {
-                        padding-bottom: 0;
-                    }
-                    
-                    #projectDropdown {
-                        display: none;
-                        
-                        .projectLink {
-                            display: block;
-                            text-align: center;
-                            padding-top: 1rem;
-                            text-decoration: none;
-                            color: white;
-                        }
-
-                        #projectLink2 {
-                            padding-bottom: 0.8rem;
-                        }
-                    } 
-                }
-                
-                #linkContainer2:hover #projectDropdown { // ADD ACCORDION INSTEAD 
-                    display: block
-                }
-                
-            }
-        }
     } 
 }
 
@@ -242,7 +255,7 @@ $dropdownMainLinkGap: 0.6rem;
         height: $navHeight;
         background-color: $navColor; 
 
-        #burgerMenuIcon, #burgerMenuClosed {
+        #burgerMenuIcon, #burgerMenu {
             display: none;
         }
 

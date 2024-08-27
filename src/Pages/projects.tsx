@@ -1,12 +1,7 @@
-import NavMenu from 'Components/Layout/navMenu';
+import NavMenu from 'Components/Layout/nav';
 import 'Styling/mainPagesStyles/projectsPage.scss';
-import thisWebsiteImage from 'Images/thisWebsite.png';
-import botLogoSVG from 'Images/discordLogo.svg';
-import visitPageIcon from 'Icons/visitPageIcon.svg';
-import hourglassIcon from 'Icons/hourglass.svg';
-import lampIcon from 'Icons/lampIcon.svg';
 import { useState, useRef, useEffect} from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 interface ProjectTemplateProps {
@@ -27,7 +22,7 @@ function ProjectTemplate(props: ProjectTemplateProps) {
             </div>
             <div className="projectReference">
                 <h3 className="projectHeader">{props.projectTitle}</h3>
-                <img className="visitPageIcon" src={visitPageIcon} alt="visit this webpage icon"/>
+                <img className="visitPageIcon" src="/Icons/visitPageIcon.svg" alt="visit this webpage icon"/>
             </div>
         </Link>
     );
@@ -46,7 +41,7 @@ function MyProjects() {
         linkTo: "/projects/discord-bot",
         imgType: "vector",
         imgID: "botProfileImage",
-        imgSrc: botLogoSVG,
+        imgSrc: "/Images/discordLogo.svg",
         imgAlt: "a discord bot image",
         projectTitle: "Discord Bot"
     }
@@ -55,7 +50,7 @@ function MyProjects() {
         linkTo: "/projects/this-website",
         imgType: "raster",
         imgID: "thisWebsiteProfileImage",
-        imgSrc: thisWebsiteImage,
+        imgSrc: "/Images/thisWebsite.png",
         imgAlt: "folder structure image of this website",
         projectTitle: "This Website"
     }
@@ -64,7 +59,7 @@ function MyProjects() {
         linkTo: "/projects",
         imgType: "vector",
         imgID: "hourglassIcon",
-        imgSrc: hourglassIcon,
+        imgSrc: "/Icons/hourglass.svg",
         imgAlt: "an hourglass image",
         projectTitle: "A lot more to come...",
         finalLink: true
@@ -74,7 +69,7 @@ function MyProjects() {
         <>
         <NavMenu />
         <div id="mainHeaderContainer">
-            <img id="lampIcon" src={lampIcon} alt="a lamp icon" />
+            <img id="lampIcon" src="/Icons/lampIcon.svg" alt="a lamp icon" />
             <h1 id="mainProjectHeader">My Projects ({totalProjects})</h1>
         </div>
     
