@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 import SectionHeader from "./sectionHeader";
 
 interface InfoSectionProps {
-    headerWrapperClass: string;
+    headerWrapperClass?: string;
     headerIconID: string;
     headerIconSrc: string;
     headerClass: string;
@@ -17,7 +17,7 @@ export default function InfoSection(props: InfoSectionProps) {
     
     return (
         <>
-        <SectionHeader headerWrapperClass={headerWrapperClass} iconID={headerIconID} icon={headerIconSrc} headerClass={headerClass} header={header} />
+        <SectionHeader headerWrapperClass={headerWrapperClass !== undefined ? `headerContainer ${headerWrapperClass}` : "headerContainer"} iconID={headerIconID} icon={headerIconSrc} headerClass={headerClass} header={header} />
         <ul id={infoListID}>{infoLoop}</ul>
         </>
     );

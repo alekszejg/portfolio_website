@@ -7,11 +7,11 @@ $profilePicMaxWidthMobile: 55%;
 // FONT VARIABLES
 $myNameFontMobile: 1.8rem;
 
-$approachHeaderFontMobile: 1.3rem;
+
 $approachItemFontMobile: 1.1rem;
 $approachDropdownFontMobile: 0.95rem;
 
-$skillNameFontMobile: 1.3rem;
+
 
 // PADDING VARIABLES
 $descrInfoLeftPadMobile: 0.4rem;
@@ -20,7 +20,50 @@ $listItemGapMobile: 2.5rem;
 
 
 
+// Redoing styles 
+@media screen and (max-width: 480px) {
+    
+    // header wrappers 
 
+    .headerContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 0.5rem;
+        border-bottom: 3px solid black;
+    }
+
+    .approachHeaderContainer, .skillHeaderContainer {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+
+    .approachHeaderContainer {
+        width: 70%;
+        background-color: $approachHeaderColor;
+    }
+
+    .skillHeaderContainer {
+        width: 100%;
+        background-color: $skillHeaderColor;
+    }
+
+    // actual headers 
+    
+    .generalHeader {
+        padding-left: 0.7rem;
+        margin: 0;  
+        text-align: center;
+    }
+
+    .expertiseHeader {
+        padding-left: 0.5rem;
+        margin: 0;
+        font-size: 1.3rem;
+        text-align: center;
+    }
+}
 
 @media screen and (max-width: 480px) {
 
@@ -31,7 +74,7 @@ $listItemGapMobile: 2.5rem;
         align-items: center;
     }
     
-    #aboutMeSection {
+    #generalSection {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -58,7 +101,7 @@ $listItemGapMobile: 2.5rem;
                 }
             }
 
-            #myNameHeader {
+            #myName {
                 padding-top: $myNameGapTop;
                 margin: 0;
                 text-align: center;
@@ -84,17 +127,11 @@ $listItemGapMobile: 2.5rem;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                padding-bottom: $headerPadBottom;
+                padding-bottom: 0.5rem;
                 border-bottom: 3px solid black;
 
                 #contactIcon, #contactBookIcon, #educationHatIcon{
                     width: 2rem;
-                }
-
-                #aboutMeHeader, #contactInfoHeader, #educationHeader {
-                    padding-left: 0.7rem;
-                    margin: 0;  
-                    text-align: center;
                 }
             }
 
@@ -128,7 +165,7 @@ $listItemGapMobile: 2.5rem;
         }
     }
 
-    #experienceSection {
+    #expertiseSection {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -137,11 +174,11 @@ $listItemGapMobile: 2.5rem;
             background-color: $approachSectionColor;
         }
     
-        #allSkillsContainer {
+        #skillsWrapper {
             background-color: $skillsSectionColor;
         }
         
-        #approachContainer, #allSkillsContainer {
+        #approachContainer, #skillsWrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -175,13 +212,6 @@ $listItemGapMobile: 2.5rem;
     
                 #gearIcon {
                     width: 2.5rem;
-                }
-
-                #approachHeader, .skillHeader {
-                    padding-left: 0.5rem;
-                    margin: 0;
-                    font-size: $approachHeaderFontMobile;
-                    text-align: center;
                 }
             }
 
@@ -228,9 +258,9 @@ $listItemGapMobile: 2.5rem;
                     }
                 }
 
-                .regularListItem {
+                .eachSkill {
                     margin-top: $listItemGapMobile;
-                    font-size: $skillNameFontMobile;
+                    font-size: 1.3rem;
                 }
             } 
 

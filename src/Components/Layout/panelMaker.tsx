@@ -1,46 +1,30 @@
-import {useState, useEffect} from 'react';
-
+export type ImageWrapper = "imgWrapper" | "svgImgWrapper";
 
 interface ProjectFeatureProps {
-    extraPanelWrapperClass?: string,
-    extraImgContainerClass?: string,
-    extraPanelTextContainerClass?: string,
-    imgContainerID: string,
-    imgID: string,
+    imgWrapperClass: ImageWrapper,
     imgSide: string,
     imgSrc: string,
     imgAlt: string,
-    paragraphContent: string,
-    headerContent: string,
+    header: string,
+    text: string,
+    imgWrapperID?: string,
+    imgID?: string,
 }
 
-function ProjectFeaturePanel(props: ProjectFeatureProps) {
-    
-    let panelWrapperClasses = `panelWrapper ${props.imgSide === "left" ? "panelWrapperImgLeft" : "panelWrapperImgRight"}`;
+export default function ProjectFeaturePanel(props: ProjectFeatureProps) {
 
-    if (props.extraPanelWrapperClass !== undefined) {
-        panelWrapperClasses += " " + props.extraPanelWrapperClass;
-    }
-
-    let imgContainerClasses = `imgContainer ${props.imgSide === "left" ? "imgContainerLeft" : "imgContainerRight"}`;
-    
-    if (props.extraImgContainerClass !== undefined) {
-        imgContainerClasses += " " + props.extraImgContainerClass;
-    } 
+    const {imgWrapperClass, imgSide, imgSrc, imgAlt, header, text, imgWrapperID, imgID } = props;
 
     return (
-        <div className={`featurePanel ${props.imgSide === "left" ? "bluePanel" : "yellowPanel"}`}>
-            <div className={panelWrapperClasses}>
-                <div className={imgContainerClasses} id={props.imgContainerID}>
-                    <img className="panelImage" id={props.imgID} src={props.imgSrc} alt={props.imgAlt} />
-                </div>
-                <div className={`panelTextContainer ${props.extraPanelTextContainerClass !== undefined && props.extraPanelTextContainerClass}`}>
-                    <h2 className="featureHeader">{props.headerContent}</h2>
-                    <p className="featureText" dangerouslySetInnerHTML={{ __html: props.paragraphContent}} />
-                </div>
+        <div className={`panelWrapper ${imgSide === "left" ? "bluePanel" : "yellowPanel"}`}>
+            <div className={imgSide === "right" ? `${imgWrapperClass} imgWrapperRight` : imgWrapperClass} id={imgWrapperID}>
+                <img className="panelImage" id={imgID} src={imgSrc} alt={imgAlt} />
+            </div>
+            <div className="panelTextContainer">
+                <h2 className="featureHeader">{header}</h2>
+                <p className="featureText" dangerouslySetInnerHTML={{ __html: text}} />
             </div>
         </div>
-    )
+    );
 }
 
-export default ProjectFeaturePanel;

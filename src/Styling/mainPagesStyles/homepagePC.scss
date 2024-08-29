@@ -6,27 +6,26 @@ $profilePicWidthPC: 200px;
 // FONT VARIABLES
 $myNameFontPC: 2.3rem;
 
-$basicInfoHeaderFontPC: 1.5rem;
 $basicInfoTextFontPC: 1rem;
 
-$approachHeaderFontPC: 2rem;
+
 $approachItemFontPC: 1.2rem;
 $approachDropdownFontPC: 1.05rem;
 
-$skillHeadersFontPC: 2rem;
+
 $skillNameFontPC: 1.3rem;
 $skillDropdownFontPC: 1.05rem;
 
 // ICON HEIGHT VARIABLES (BASED ON FONT SIZES)
-$basicInfoIconsHeightPC: $basicInfoHeaderFontPC;
-$basicInfoHeaderFromIconGap: 0.7rem; 
+$basicInfoIconsHeightPC: 1.5rem;
+
 
 $contactIconsHeightPC: $basicInfoTextFontPC;
 $contactIconsTextGapPC: 0.6rem; 
 
-$puzzleIconHeightPC: calc($approachHeaderFontPC - 0.3rem); 
-$gearIconHeightPC: calc($skillHeadersFontPC + 0.7rem);
-$speechIconHeightPC: $skillHeadersFontPC;
+$puzzleIconHeightPC: 1.7rem; 
+$gearIconHeightPC: 2.7rem;
+$speechIconHeightPC: 2rem;
 
 
 // PADDING VARIABLES
@@ -36,24 +35,58 @@ $basicInfoGapPC: 5rem;
 $listItemVerticalMarginPC: 2rem;
 
 
+
+
+// Redoing styles 
+@media screen and (min-width: 480px) {
+
+    .headerContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 0.5rem;
+        border-bottom: 3px solid black;
+    }
+
+    // actual headers
+
+    .generalHeader {
+        padding-left: 0.7rem; 
+        margin: 0;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .experiseHeader {
+        padding-left: 0.4rem;
+        margin: 0;
+        font-size: 2rem;
+        text-align: center;
+    }
+}
+
+
+
+// OLD STYLING
+
 @media screen and (min-width: 480px) {
 
     #homepageLayout {
         display: flex;
     }
 
-    #experienceSection {
+    #expertiseSection {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         width: 58%;
     }
 
-    #aboutMeSection:hover {
+    #generalSection:hover {
         background-color: $aboutMeSectionColorHover;
     }
 
-    #aboutMeSection {
+    #generalSection {
         display: flex;
         flex-direction: column;
         width: 42%;
@@ -80,7 +113,7 @@ $listItemVerticalMarginPC: 2rem;
                 }
             }
         
-            #myNameHeader {
+            #myName {
                 padding-top: $myNameGapTop;
                 margin: 0;
                 text-align: center;
@@ -119,46 +152,17 @@ $listItemVerticalMarginPC: 2rem;
         }
 
         #aboutMeInfoContainer {
-            #aboutMeHeaderContainer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: $headerPadBottom;
-            border-bottom: 3px solid black;
-            
-                #contactIcon {
-                    height: calc($basicInfoIconsHeightPC + 0.1rem);
-                    @include iconSelectPrevent();
-                }
-
-                #aboutMeHeader {
-                    padding-left: $basicInfoHeaderFromIconGap; 
-                    margin: 0;
-                    text-align: center;
-                    font-size: $basicInfoHeaderFontPC;
-                }
+            #contactIcon {
+                height: calc($basicInfoIconsHeightPC + 0.1rem);
+                @include iconSelectPrevent();
             }
         }
 
         #contactInfoContainer {
-            #contactInfoHeaderContainer {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding-bottom: $headerPadBottom;
-                border-bottom: 3px solid black;
-    
-                #contactBookIcon {
-                    height: $basicInfoIconsHeightPC;
-                    @include iconSelectPrevent();
-                }
-
-                #contactInfoHeader {
-                    padding-left: $basicInfoHeaderFromIconGap; 
-                    margin: 0;
-                    text-align: center;
-                    font-size: $basicInfoHeaderFontPC;
-                }
+        
+            #contactBookIcon {
+                height: $basicInfoIconsHeightPC;
+                @include iconSelectPrevent();
             }
 
             #contactInfoList {
@@ -201,24 +205,9 @@ $listItemVerticalMarginPC: 2rem;
         }
         
         #educationContainer {
-            #educationHeaderContainer {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding-bottom: $headerPadBottom;
-                border-bottom: 3px solid black;
-    
-                #educationHatIcon {
-                    height: $basicInfoIconsHeightPC;
-                    @include iconSelectPrevent();
-                }
-    
-                #educationHeader {
-                    padding-left: $basicInfoHeaderFromIconGap; 
-                    margin: 0;
-                    text-align: center;
-                    font-size: $basicInfoHeaderFontPC;
-                }
+            #educationHatIcon {
+                height: $basicInfoIconsHeightPC;
+                @include iconSelectPrevent();
             }
 
             #educationList {
@@ -236,7 +225,7 @@ $listItemVerticalMarginPC: 2rem;
     }
 
 
-    #contactInfoContainer, #educationContainer, #approachContainer, #allSkillsContainer {
+    #contactInfoContainer, #educationContainer, #approachContainer, #skillsWrapper {
         #educationList, #approachList, #techSkillListFull, #softSkillListFull {
             padding-left: 0;
             margin: 0;
@@ -271,25 +260,12 @@ $listItemVerticalMarginPC: 2rem;
         box-sizing: border-box;
         background-color: $approachSectionColor;
         
-        #approachHeaderContainer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: $headerPadBottom;
-            border-bottom: 3px solid black;
-            
-            #puzzleIcon {
-                height: $puzzleIconHeightPC;
-                @include iconSelectPrevent();
-            }
-
-            #approachHeader {
-                padding-left: 0.9rem;
-                margin: 0;
-                font-size: $approachHeaderFontPC;
-                text-align: center;
-            }
+    
+        #puzzleIcon {
+            height: $puzzleIconHeightPC;
+            @include iconSelectPrevent();
         }
+
         
         #approachList {
             .approachItem {
@@ -305,14 +281,15 @@ $listItemVerticalMarginPC: 2rem;
         } 
     }
     
-    #allSkillsContainer:hover {
+    #skillsWrapper:hover {
         background-color: $skillSectionColorHover;
     }
 
-    #allSkillsContainer {
+    #skillsWrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
+        row-gap: 4rem;
         padding: 3.5rem 8% 3.5rem 8%;
         box-sizing: border-box;
         background-color: $skillsSectionColor;
@@ -321,34 +298,16 @@ $listItemVerticalMarginPC: 2rem;
             width: 84%;
         }
     
-        #techSkillsContainer {
-            padding-bottom: 4rem;
+
+        #gearIcon {
+            height: $gearIconHeightPC;
+            @include iconSelectPrevent();
         }
-            
-        .skillHeaderContainer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: $headerPadBottom;
-            border-bottom: 3px solid black;
 
-            #gearIcon {
-                height: $gearIconHeightPC;
-                @include iconSelectPrevent();
-            }
-
-            #speechIcon {
-                height: $speechIconHeightPC;
-                padding-top: 0.4rem;
-                @include iconSelectPrevent();
-            }
-
-            .skillHeader {
-                padding-left: 0.4rem;
-                margin: 0;
-                font-size: $skillHeadersFontPC;
-                text-align: center;
-            }
+        #speechIcon {
+            height: $speechIconHeightPC;
+            padding-top: 0.4rem;
+            @include iconSelectPrevent();
         }
 
 
@@ -357,7 +316,7 @@ $listItemVerticalMarginPC: 2rem;
             box-sizing: border-box;
     
             
-            .regularListItem {
+            .eachSkill {
                 margin-top: $listItemVerticalMarginPC;
                 border-radius: 1rem;
                 font-size: $skillNameFontPC;
@@ -369,7 +328,7 @@ $listItemVerticalMarginPC: 2rem;
 
 @media screen and (min-width: 1335px) {
     
-    #allSkillsContainer {
+    #skillsWrapper {
         display: flex;
         flex-direction: row;
         justify-content: space-between;

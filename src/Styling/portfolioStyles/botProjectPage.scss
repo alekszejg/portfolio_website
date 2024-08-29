@@ -1,17 +1,10 @@
 @import "panelStylePartial";
 
-
 // DESIGN FOR MOBILE PHONES 
-
-@media screen and (max-width: 480px) {
-    
-    @include generalPanelStyleMobile();
-}
-
+@include generalPanelStyleMobile();
 
 
 // DESKTOP DESIGN 
-
 @media screen and (min-width: 480px) {
     @include generalPanelStylePC();
 }

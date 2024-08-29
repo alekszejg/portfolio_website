@@ -16,10 +16,9 @@ import {faLinkedin} from '@fortawesome/free-brands-svg-icons'
 export default function MyCV() {
 
     const aboutMeProps = {
-        headerWrapperClass: "aboutMeHeaderContainer",
         headerIconID: "contactIcon",
         headerIconSrc: "/Icons/contactIcon.svg",
-        headerClass: "aboutMeHeader",
+        headerClass: "generalHeader",
         header: "About me",
         descriptionClass: "aboutMeInfo",
         description: `A self-taught programmer with a diploma in BSc Economics, who is currently building his portfolio 
@@ -40,8 +39,7 @@ export default function MyCV() {
     ));
 
     const contactSectionProps = {
-        headerWrapperClass: "contactInfoHeaderContainer",
-        headerClass: "contactInfoHeader",
+        headerClass: "generalHeader",
         header: "Contact details",
         headerIconID: "contactBookIcon",
         headerIconSrc: "/Icons/contactBookIcon.svg",
@@ -61,8 +59,7 @@ export default function MyCV() {
     });
 
     const educationSectionProps = {
-        headerWrapperClass: "educationHeaderContainer",
-        headerClass: "educationHeader",
+        headerClass: "generalHeader",
         header: "Education",
         headerIconID: "educationHatIcon",
         headerIconSrc: "/Icons/educationHat.svg",
@@ -126,7 +123,7 @@ export default function MyCV() {
         headerWrapperClass: "approachHeaderContainer",
         headerIconID: "puzzleIcon",
         headerIconSrc: "/Icons/puzzle.svg",
-        headerClass: "approachHeader",
+        headerClass: "expertiseHeader",
         header: "Programming approach",
         infoListID: "approachList",
         infoLoop: approachLoop
@@ -137,7 +134,7 @@ export default function MyCV() {
 
     const skillsLoop = (list: string[]) => {
         return list.map((skill, index) => (
-            <li key={`${skill}${index + 1}`} className="skillItem">{skill}</li>
+            <li key={`${skill}${index + 1}`} className="eachSkill">{skill}</li>
         ));
     };
 
@@ -145,7 +142,7 @@ export default function MyCV() {
         headerWrapperClass: "skillHeaderContainer",
         headerIconID: "gearIcon",
         headerIconSrc: "/Icons/gearIcon.svg",
-        headerClass: "skillHeader",
+        headerClass: "expertiseHeader",
         header: "Technical Skills",
         infoListID: "techSkillListFull",
         infoLoop: skillsLoop(technicalSkills)
@@ -155,7 +152,7 @@ export default function MyCV() {
         headerWrapperClass: "skillHeaderContainer",
         headerIconID: "speechIcon",
         headerIconSrc: "/Icons/speechIcon.svg",
-        headerClass: "skillHeader",
+        headerClass: "expertiseHeader",
         header: "Soft Skills",
         infoListID: "softSkillListFull",
         infoLoop: skillsLoop(softSkills)
@@ -164,13 +161,13 @@ export default function MyCV() {
     
     return (
         <PageLayout layoutID="homepageLayout">
-            <div id="aboutMeSection">
+            <div id="generalSection">
                 
                 <div id="profileContainer">
                     <div id="myPhotoContainer">
                         <img id="myPhoto" src="/Images/myPhoto.png" alt="My Photo" />
                     </div>
-                    <h1 id="myNameHeader">Alekszej Guljajev</h1>
+                    <h1 id="myName">Alekszej Guljajev</h1>
                 </div>
                 
                 <div id="aboutMeContainer">
@@ -189,13 +186,13 @@ export default function MyCV() {
 
             </div>
             
-            <div id="experienceSection">
+            <div id="expertiseSection">
                 
                 <div id="approachContainer">
                     <InfoSection {...approachSectionProps} />
                 </div>
                 
-                <div id="allSkillsContainer">
+                <div id="skillsWrapper">
                     <div id="techSkillsContainer">
                         <InfoSection {...technicalSkillsProps} />
                     </div>

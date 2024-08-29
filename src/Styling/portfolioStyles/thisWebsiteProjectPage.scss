@@ -1,35 +1,17 @@
 @import "panelStylePartial";
 
-$vectorImgMinWidthMobile: 170px;
-$vectorImgWidthMobile: 55%;
+ 
 
+// MOBILE DESIGN
+@include generalPanelStyleMobile();
 
-$vectorImgMinWidthPC: 200px;
-$vectorImgMaxWidthPC: 300px;
-$vectorImgGapFromEdge: 10rem;
-$informativePanelTextGapFromEdge: 8rem;
-
-// DESIGN FOR MOBILE PHONES 
-
-@media screen and (max-width: 480px) {
-    
-    @include generalPanelStyleMobile();
-
-    #projectPageLayout .featurePanel .panelWrapper .vectorImgContainer  {
-        min-width: $vectorImgMinWidthMobile;
-        width: $vectorImgWidthMobile;
-        aspect-ratio: 1/1;
-
-        #sassLogoImg {
-            border-radius: 50%;
-        }
-
-        #typescriptLogoImg {
-            border-radius: 2rem;
-        }
-    }
+#sassLogoImg {
+    border-radius: 50%;
 }
 
+#typescriptLogoImg {
+    border-radius: 2rem;
+}
 
 
 // DESKTOP DESIGN 
@@ -37,33 +19,8 @@ $informativePanelTextGapFromEdge: 8rem;
     
     @include generalPanelStylePC();  
     
-    #projectPageLayout .featurePanel .informativePanelWrapper.panelWrapperImgLeft {
-        padding-left: $vectorImgGapFromEdge;
-        padding-right: $informativePanelTextGapFromEdge;
-    }
-
-    #projectPageLayout .featurePanel .informativePanelWrapper.panelWrapperImgRight {
-        padding-left: $informativePanelTextGapFromEdge;
-        padding-right: $vectorImgGapFromEdge;
-    }
-    
-    #projectPageLayout .featurePanel .panelWrapper .vectorImgContainer {
-        min-width: $vectorImgMinWidthPC;
-        max-width: $vectorImgMaxWidthPC;
-        aspect-ratio: 1/1;
-
-        #sassLogoImg {
-            border-radius: 50%;
-        }
-
-        #typescriptLogoImg {
-            border-radius: 2.9rem;
-        }
-    }
-
-    #projectPageLayout .featurePanel .panelWrapper .informativePanelTextContainer {
-        width: 50%;
-        flex-shrink: 0;
+    #typescriptLogoImg {
+        border-radius: 2.9rem;
     }
 }
 

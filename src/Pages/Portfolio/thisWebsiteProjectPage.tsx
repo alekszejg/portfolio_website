@@ -1,22 +1,19 @@
-import NavMenu from '../Layout/nav';
-import Footer from '../Layout/footer';
-import ProjectFeaturePanel from '../Layout/panelMaker';
+import PageLayout from 'Components/Layout/pageLayout';
+import ProjectFeaturePanel from 'Components/Layout/panelMaker';
+import { ImageWrapper } from 'Components/Layout/panelMaker';
 import 'Styling/portfolioStyles/thisWebsiteProjectPage.scss';
 
 
 function ThisWebsiteProjectPage() {
     
     const sassToolProps = {
-        extraPanelWrapperClass: "informativePanelWrapper",
-        extraImgContainerClass: "vectorImgContainer",
-        extraPanelTextContainerClass: "informativePanelTextContainer",
-        imgContainerID: "sassLogoImgContainer",
+        imgWrapperClass: "svgImgWrapper" as ImageWrapper,
         imgID: "sassLogoImg",
         imgSide: "left",
         imgSrc: "/Images/sassLogo.svg",
         imgAlt: "a SASS logo",
-        headerContent: "Styled with SCSS. No CSS libraries were used",
-        paragraphContent: `While CSS libraries and website constructors offer easier
+        header: "Styled with SCSS. No CSS libraries were used",
+        text: `While CSS libraries and website constructors offer easier
         and more efficient front-end processes, using plain CSS along with its 
         SCSS preprocessor is beneficial for a 1st website and in long-term perspective.
         Understanding most common CSS properties, SCSS features and their lesser 
@@ -27,16 +24,12 @@ function ThisWebsiteProjectPage() {
     }
 
     const reactLibraryProps = {
-        extraPanelWrapperClass: "informativePanelWrapper",
-        extraImgContainerClass: "vectorImgContainer",
-        extraPanelTextContainerClass: "informativePanelTextContainer",
-        imgContainerID: "reactLogoImgContainer",
-        imgID: "reactLogoImg",
+        imgWrapperClass: "svgImgWrapper" as ImageWrapper,
         imgSide: "right",
         imgSrc: "/Images/reactLogo.svg",
         imgAlt: "a React logo",
-        headerContent: "Front-end built with React library",
-        paragraphContent: `React is the most popular tool that promotes code reuse 
+        header: "Front-end built with React library",
+        text: `React is the most popular tool that promotes code reuse 
         and simplifies JavaScript programming, which then allows me to work with 
         wider range of developers and easily find external packages and tools that
         work with it. React's code and JSX syntax are easy to read and proper 
@@ -47,16 +40,13 @@ function ThisWebsiteProjectPage() {
     }
 
     const typeScriptProps = {
-        extraPanelWrapperClass: "informativePanelWrapper",
-        extraImgContainerClass: "vectorImgContainer",
-        extraPanelTextContainerClass: "informativePanelTextContainer",
-        imgContainerID: "typescriptLogoImgContainer",
+        imgWrapperClass: "svgImgWrapper" as ImageWrapper,
         imgID: "typescriptLogoImg",
         imgSide: "left",
         imgSrc: "/Images/typescriptLogo.svg",
         imgAlt: "a TypeScript logo",
-        headerContent: "TypeScript over plain JavaScript",
-        paragraphContent: `Development of this website gave me some practical experience 
+        header: "TypeScript over plain JavaScript",
+        text: `Development of this website gave me some practical experience 
         with TypeScript which I haven't had before. While some time is spent defining
         and locating the necessary types, it pays off after several found type errors.
         Other important benefits of TypeScript that I didn't expect involve quicker 
@@ -66,16 +56,12 @@ function ThisWebsiteProjectPage() {
     }
 
     const iconCollectionProps = {
-        extraPanelWrapperClass: "informativePanelWrapper",
-        extraImgContainerClass: "vectorImgContainer",
-        extraPanelTextContainerClass: "informativePanelTextContainer",
-        imgContainerID: "iconGroupImgContainer",
-        imgID: "iconGroupImg",
+        imgWrapperClass: "svgImgWrapper" as ImageWrapper,
         imgSide: "right",
         imgSrc: "/Images/iconGroup.svg",
         imgAlt: "a collection of icons",
-        headerContent: "Using Font Awesome icons and making custom ones with Figma",
-        paragraphContent: `Icons are essential when it comes to visually highlighting 
+        header: "Using Font Awesome icons and making custom ones with Figma",
+        text: `Icons are essential when it comes to visually highlighting 
         important information or to indicate specific features and functionality of 
         some UI elements. I used Font Awesome to access some universally recognizable 
         icons, while learning and using Figma to make specific and more unique icons,
@@ -84,8 +70,7 @@ function ThisWebsiteProjectPage() {
     }
 
     return (
-        <div id="projectPageLayout">
-            <NavMenu />
+        <PageLayout layoutID="projectPageLayout">
             <div id="aboutProjectPanel">
                 <h2 id="aboutProjectHeader">About the project</h2>
                 <p id="aboutProjectText">This is a 1st website that I have 
@@ -99,8 +84,7 @@ function ThisWebsiteProjectPage() {
             <ProjectFeaturePanel {...reactLibraryProps} />
             <ProjectFeaturePanel {...typeScriptProps} />
             <ProjectFeaturePanel {...iconCollectionProps} />
-            <Footer />
-        </div> 
+        </PageLayout> 
     );
 }
 

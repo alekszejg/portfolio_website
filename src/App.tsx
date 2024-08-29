@@ -1,8 +1,8 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import MyCV from "./Pages/myCV";
 import MyProjects from "./Pages/projects";
-import BotProjectPage from './Components/Portfolio/botProjectPage';
-import ThisWebsiteProjectPage from './Components/Portfolio/thisWebsiteProjectPage';
+import BotProjectPage from './Pages/Portfolio/botProjectPage';
+import ThisWebsiteProjectPage from './Pages/Portfolio/thisWebsiteProjectPage';
 import ContactForm from "./Pages/contact";
 import './Styling/index.scss';
 

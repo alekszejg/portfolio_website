@@ -2,19 +2,8 @@
 $yellowColor: rgba(251, 247, 218, 1);
 $blueColor: rgba(199, 255, 254, 1);
 
-/*adjust and use instead:
-$approachSectionColor: hsla(178, 75%, 93%, 1);
-$approachSectionColorHover: hsla(178, 85%, 90%, 1);
-$approachHeaderColor: hsla(178, 75%, 93%, 1);
-
-$skillsSectionColor: hsla(52, 85%, 93.5%, 1);
-$skillSectionColorHover: hsla(52, 85%, 92%, 1);
-$skillHeaderColor: hsla(52, 85%, 93.5%, 1);
-*/
-
-
 // Gaps and Padding
-$panelTextGapFromEdgeMobile: 2rem;
+
 
 $sectionGap: 3.5rem;
 $panelPadVertical: calc($sectionGap * 2);
@@ -25,28 +14,21 @@ $aboutProjectPadBottomPC: 0.6rem;
 $featureHeaderPadMobile: 1.5rem 0 0.5rem 0;
 $featureHeaderPadBottomPC: 1rem;
 
-$imgGapFromEdge: 4rem;
-$panelTextGapFromEdge: 5rem;
-$panelImgTextGap: 4.5rem;
-
 
 // Panel and Img Container 
 $imgContainerMinWidth: 375px;
 $imgContainerMaxWidth: 437.50px; 
 $imgContainerShadow: 0 0 0.55rem black;
 
+// Vector img container 
+
+$vectorImgWidthMobile: min(170px, 55%);
+$vectorImgWidthPC: clamp(200px, 40%, 300px);
 
 
 // Font Variables
-$aboutProjectHeaderFontMobile: 1.1rem;
-$aboutProjectTextFontMobile: 0.9rem;
-$aboutProjectHeaderFontPC: 1.7rem;
-$aboutProjectTextFontPC: 1.3rem;
-
-$featureHeaderFontMobile: 1.1rem;
-$featureTextFontMobile: 0.9rem;
-$featureHeaderFontPC: 1.5rem;
-$featureTextFontPC: 1.2rem;
+$headerFont: clamp(1.1rem, 3vw, 1.5rem);
+$textFont: clamp(0.9rem, 2vw, 1.2rem);
 
 
 .yellowPanel {
@@ -59,165 +41,140 @@ $featureTextFontPC: 1.2rem;
 
 
 @mixin generalPanelStyleMobile {
-    #projectPageLayout {
-        #aboutProjectPanel {
-            display: block;
-            padding: $sectionGap $panelTextGapFromEdgeMobile;
-            box-sizing: border-box;
-            word-wrap: break-word;
-            background-color: $yellowColor;
+    #aboutProjectPanel {
+        padding: $sectionGap 2rem;
+        box-sizing: border-box;
+        background-color: $yellowColor;
 
-            #aboutProjectHeader {
-                padding-bottom: $aboutProjectPadBottomMobile;
-                margin: 0;
-                font-size: $aboutProjectHeaderFontMobile;
-            }
-
-            #aboutProjectText {
-                margin: 0;
-                font-size: $aboutProjectTextFontMobile;
-            }
+        #aboutProjectHeader {
+            padding-bottom: $aboutProjectPadBottomMobile;
+            margin: 0;
+            font-size: $headerFont;
         }
-        
-        .featurePanel {    
-            padding: $sectionGap $panelTextGapFromEdgeMobile;
-        
-        
-            .panelWrapper {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
 
-            .imgContainer {
-                width: 100%;  
-                
-                .panelImage {
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 1.2rem;
-                    box-shadow: $imgContainerShadow;
-                    aspect-ratio: 5/4;
-                    object-fit: cover;
-                }
-            }
-
-            .panelTextContainer {
-                display: flex;
-                flex-direction: column;
-                box-sizing: border-box;
-
-                .featureHeader, .featureText {
-                    margin: 0;
-                    padding: 0;
-                    word-wrap: break-word;
-                }
-                
-                .featureHeader {
-                    padding: $featureHeaderPadMobile;
-                    font-size: $featureHeaderFontMobile;
-                }
-
-                .featureText {
-                    font-size: $featureTextFontMobile;
-                }
-            }
+        #aboutProjectText {
+            margin: 0;
+            font-size: $textFont;
         }
     }
+    
+    .panelWrapper {    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: $sectionGap 2rem;
+    
+        .imgWrapper {
+            width: 100%;  
+            
+            .panelImage {
+                width: 100%;
+                height: 100%;
+                border-radius: 1.2rem;
+                box-shadow: $imgContainerShadow;
+                aspect-ratio: 5/4;
+                object-fit: cover;
+            }
+        }
+
+        .svgImgWrapper  {
+            width: $vectorImgWidthMobile;
+            aspect-ratio: 1/1;
+
+            .panelImage {
+                width: 100%;
+                height: 100%;
+                border-radius: 1.2rem;
+                box-shadow: $imgContainerShadow;
+            }
+        }
+
+        .panelTextContainer {
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+
+
+            .featureHeader {
+                padding: $featureHeaderPadMobile;
+                margin: 0;
+                font-size: $headerFont;
+            }
+
+            .featureText {
+                padding: 0;
+                margin: 0;
+                font-size: $textFont;
+            }
+        }
+    } 
 }
 
 @mixin generalPanelStylePC() {
-    #projectPageLayout {
-        #aboutProjectPanel {
-            display: block;
-            padding: $sectionGap 20%;
-            box-sizing: border-box;
-            text-align: center;
-            word-wrap: break-word;
-            background-color: $yellowColor;
+    #aboutProjectPanel {
+        padding: $sectionGap 20%;
+        text-align: center;
 
-            #aboutProjectHeader {
-                padding-bottom: $aboutProjectPadBottomPC;
-                margin: 0;
-                font-size: $aboutProjectHeaderFontPC;
-            }
-
-            #aboutProjectText {
-                margin: 0;
-                font-size: $aboutProjectTextFontPC;
-            }
-        }
-
-        .featurePanel {
-            display: flex;
-            align-items: center;
-            padding: $panelPadVertical 0;
-        
-            .panelWrapperImgLeft {
-                padding-left: $imgGapFromEdge;
-                padding-right: $panelTextGapFromEdge;
-                box-sizing: border-box;
-
-                .imgContainerLeft {
-                    padding-right: $panelImgTextGap;
-                }
-            }
-
-            .panelWrapperImgRight{
-                padding-left: $panelTextGapFromEdge;
-                padding-right: $imgGapFromEdge;
-                box-sizing: border-box;
-
-                .imgContainerRight {
-                    padding-left: $panelImgTextGap;
-                    order: 2;
-                }
-            }
-            
-            .panelWrapper {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-
-                .imgContainer {
-                    min-width: $imgContainerMinWidth;
-                    max-width: $imgContainerMaxWidth;
-                    aspect-ratio: 5/4;
-
-                    .panelImage {
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 1.2rem;
-                        box-shadow: $imgContainerShadow;
-                        object-fit: cover;
-                    }
-                }
-
-                .panelTextContainer {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    width: 40%;
-                    flex-shrink: 0;
-        
-                    .featureHeader {
-                        padding-bottom: $featureHeaderPadBottomPC;
-                        margin: 0;
-                        font-size: $featureHeaderFontPC;
-                        word-wrap: break-word;
-                    }
-    
-                    .featureText {
-                        padding: 0;
-                        margin: 0;
-                        font-size: $featureTextFontPC;
-                        word-wrap: break-word;
-                    }
-                }
-            }
+        #aboutProjectHeader {
+            padding-bottom: $aboutProjectPadBottomPC;
+            margin: 0;
         }
     }
+
+    .panelWrapper {
+        flex-direction: row;
+        justify-content: center;
+        column-gap: 4.5rem;
+        padding: $panelPadVertical 0;
+    
+       
+        
+        .imgWrapperRight {
+            order: 2;
+        }
+        
+        
+        .imgWrapper {
+            min-width: $imgContainerMinWidth;
+            max-width: $imgContainerMaxWidth;
+            aspect-ratio: 5/4;
+
+            .panelImage {
+                width: 100%;
+                height: 100%;
+                border-radius: 1.2rem;
+                box-shadow: $imgContainerShadow;
+                object-fit: cover;
+            }
+        }
+
+        .svgImgWrapper {
+            width: $vectorImgWidthPC;
+
+            .panelImage {
+                width: 100%;
+                height: 100%;
+                box-shadow: $imgContainerShadow;
+            }
+        }
+
+        .panelTextContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 40%;
+            flex-shrink: 0;
+
+            .featureHeader {
+                padding-bottom: $featureHeaderPadBottomPC;
+                margin: 0;
+            }
+
+            .featureText {
+                padding: 0;
+                margin: 0;
+            }
+        } 
+    }  
 }
 
