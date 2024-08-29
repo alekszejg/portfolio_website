@@ -1,0 +1,176 @@
+// Colors and Fonts 
+$mainHeaderColor: hsla(67, 27%, 94%, 1);
+$projectMainColor: rgba(245, 245, 245, 1);
+$projectHeaderColor: rgba(240, 240, 240, 1);
+
+$projectTitleFont: clamp(1.2rem, 2vw, 1.5rem);
+
+// Each Project Dimensions
+$minImgWidthPC: 250px;
+$maxImgWidthPC: 350px;
+$projectRefHeight: 4rem;
+
+// Item Grid 
+$gridItemWidthPC: minmax($minImgWidthPC, $maxImgWidthPC); 
+$gridColumnGap: 4rem; // 64px
+$gridRowGap: 4rem;
+$gridPaddingHorizontal: 3rem; // 48px
+
+// Growth, Shrinking and Automation
+$totalImgShrink: calc(3 * ($maxImgWidthPC - $minImgWidthPC));
+$gridItemWidthMaxed: minmax($minImgWidthPC, auto);
+
+// Screen Sizes 
+$mediumScreenWidth: calc($minImgWidthPC * 2 + $gridColumnGap + 2 * $gridPaddingHorizontal); // fit 2 grid items
+$largeScreenWidth: calc($maxImgWidthPC * 3 + 2 * $gridColumnGap + 2 * $gridPaddingHorizontal); // fit 3 grid items
+
+
+#mainHeaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    background-color: $mainHeaderColor;
+
+    #lampIcon {
+        width: 3.2rem;
+    }
+
+    #mainProjectHeader {
+        padding-left: 1rem;
+        margin: 0;
+    }
+}
+
+#projectContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 5rem;
+    box-sizing: border-box;
+    
+    
+    #finalLink {
+        margin: 0;
+    }
+   
+    .projectLink:hover {
+        .projectImgContainer, .projectReference {
+            opacity: 0.25;
+        }
+
+        .descriptionWrapper {
+            display: block;
+            position: absolute;
+        }
+    }
+    
+    .projectLink:active {
+        outline: 1px solid grey;
+    }
+
+    .projectLink {
+        display: flex;
+        flex-direction: column;
+        min-width: $minImgWidthPC;
+        width: 100%;
+        margin-bottom: 4rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 0.1rem black;
+        position: relative;
+        overflow: hidden;
+        background-color: $projectMainColor;
+        text-decoration: none;
+        
+        .projectImgContainer {
+            width: 100%;
+
+            .projectImg {
+                width: 100%;
+                height: 100%;
+                aspect-ratio: 5/4;
+            }
+
+            .standardImg {
+                object-fit: cover;
+            }
+
+            .svgImg {
+                padding: 2rem 0 2rem 0;
+                box-sizing: border-box;
+            }
+        }
+
+        .projectReference {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: $projectRefHeight;
+            padding: 1rem 0;
+            box-sizing: border-box;
+            background-color: $projectHeaderColor;
+
+            .projectHeader {
+                padding-left: 1.5rem;
+                margin: 0;
+                font-size: $projectTitleFont;
+                color: black;
+            }
+
+            .visitPageIcon {
+                height: 20px;
+                padding-right: 1.5rem;
+            }
+        }
+
+        .descriptionWrapper {
+            display: none;
+        }
+    }
+}
+
+
+
+@media screen and (min-width: $mediumScreenWidth) {
+    
+    #mainHeaderContainer {
+        display: flex;
+        justify-content: start;
+
+        #lampIcon {
+            padding-left: 3.8rem;
+        }
+    }
+
+    #projectContainer {
+        display: grid;
+        grid-template-columns: $gridItemWidthMaxed $gridItemWidthMaxed; 
+        grid-template-rows: auto auto;
+        column-gap: $gridColumnGap;
+        row-gap: $gridRowGap;
+        padding: 4rem $gridPaddingHorizontal;
+        
+        .projectLink {
+            margin: 0;
+        }
+
+        .visitPageIcon {
+            height: 1.5rem;
+        }
+    }
+}
+
+@media screen and (min-width: calc($largeScreenWidth - $totalImgShrink)) {
+    #projectContainer {
+        grid-template-columns: $gridItemWidthPC $gridItemWidthPC $gridItemWidthPC;
+        grid-template-rows: repeat(auto-fill, auto);
+    }
+}
+
+@media screen and (min-width: $largeScreenWidth) {
+    #projectContainer {
+        justify-content: space-evenly;
+    }
+}

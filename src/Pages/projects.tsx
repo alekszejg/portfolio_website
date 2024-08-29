@@ -1,34 +1,11 @@
-import NavMenu from 'Components/Layout/nav';
-import 'Styling/mainPagesStyles/projectsPage.scss';
+import PageLayout from 'Components/Layout/pageLayout';
+import ProjectPreview, { ProjectImage } from 'Components/Projects/projectPreview';
+import 'Styling/Pages/allProjects.scss';
 import { useState, useRef, useEffect} from 'react';
-import { Link } from "react-router-dom";
 
 
-interface ProjectTemplateProps {
-    linkTo: string,
-    imgType: string,
-    imgID: string,
-    imgSrc: string,
-    imgAlt: string,
-    projectTitle: string
-    finalLink?: boolean;
-}
-
-function ProjectTemplate(props: ProjectTemplateProps) {
-    return (
-        <Link className="projectLink" id={props.finalLink ? "finalLink" : undefined} to={props.linkTo}>
-            <div className="projectImgContainer">
-                <img className={`projectImg ${props.imgType === "vector" ? "vectorImg" : "rasterImg"}`} id={props.imgID} src={props.imgSrc} alt={props.imgAlt}/>
-            </div>
-            <div className="projectReference">
-                <h3 className="projectHeader">{props.projectTitle}</h3>
-                <img className="visitPageIcon" src="/Icons/visitPageIcon.svg" alt="visit this webpage icon"/>
-            </div>
-        </Link>
-    );
-}
-
-function MyProjects() {
+export default function MyProjects() {
+    
     const totalChildren = useRef<HTMLDivElement>(null);
     const [totalProjects, setTotalProjects] = useState(0);
 
@@ -38,48 +15,53 @@ function MyProjects() {
     }, [])
     
     const botProjectProps = {
-        linkTo: "/projects/discord-bot",
-        imgType: "vector",
-        imgID: "botProfileImage",
+        urlPath: "/projects/discord-bot",
+        imgType: "svg" as ProjectImage,
         imgSrc: "/Images/discordLogo.svg",
-        imgAlt: "a discord bot image",
-        projectTitle: "Discord Bot"
+        imgAlt: "discord bot",
+        title: "Discord Bot",
+        description: `A Discord bot written in Python with discord.py module to 
+                    simplify interactions with Discord's API. It was my 1st experience with bot programming 
+                    as well as event-driven programming. The bot has some standard features such as basic interactions, 
+                    reactions and entertainment. Its more advanced features include a music player, interactive role 
+                    assignment, an advertisement sender and a file sender to a specific location. Bot development 
+                    will continue in future, when all its features and edge cases are finished and improved.`
     }
 
     const thisWebsiteProjectProps = {
-        linkTo: "/projects/this-website",
-        imgType: "raster",
-        imgID: "thisWebsiteProfileImage",
+        urlPath: "/projects/this-website",
+        imgType: "standard" as ProjectImage,
         imgSrc: "/Images/thisWebsite.png",
         imgAlt: "folder structure image of this website",
-        projectTitle: "This Website"
-    }
+        title: "This Website",
+        description: `This is a 1st website that I have created. Since website development takes time, 
+                I wanted to experiment and use as many technologies as possible, to gain some priceless 
+                experience. Below I'll uncover and explain some "behind the scenes" moments and decisions 
+                that during website's production.`
+        }
 
     const moreToComeProps = {
-        linkTo: "/projects",
-        imgType: "vector",
-        imgID: "hourglassIcon",
+        urlPath: "/projects",
+        imgType: "svg" as ProjectImage,
         imgSrc: "/Icons/hourglass.svg",
-        imgAlt: "an hourglass image",
-        projectTitle: "A lot more to come...",
+        imgAlt: "hourglass",
+        title: "More to come...",
         finalLink: true
     }
     
     return (
-        <>
-        <NavMenu />
-        <div id="mainHeaderContainer">
-            <img id="lampIcon" src="/Icons/lampIcon.svg" alt="a lamp icon" />
-            <h1 id="mainProjectHeader">My Projects ({totalProjects})</h1>
-        </div>
-    
-        <div id="projectContainer" ref={totalChildren}>
-            <ProjectTemplate {...botProjectProps} />
-            <ProjectTemplate {...thisWebsiteProjectProps} />
-            <ProjectTemplate {...moreToComeProps} />
-        </div>
-        </>
+        <PageLayout layoutID="allProjectsLayout">
+            <div id="mainHeaderContainer">
+                <img id="lampIcon" src="/Icons/lampIcon.svg" alt="lamp icon" />
+                <h1 id="mainProjectHeader">My Projects ({totalProjects})</h1>
+            </div>
+        
+            <div id="projectContainer" ref={totalChildren}>
+                <ProjectPreview {...botProjectProps} />
+                <ProjectPreview {...thisWebsiteProjectProps} />
+                <ProjectPreview {...moreToComeProps} />
+            </div>
+        </PageLayout>
     );
 }
 
-export default MyProjects;

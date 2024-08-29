@@ -1,6 +1,6 @@
 import NavMenu from 'Components/Layout/nav';
 import Footer from 'Components/Layout/footer';
-import 'Styling/mainPagesStyles/contactForm.scss';
+import 'Styling/Pages/contactForm.scss';
 import { useState, useEffect, ChangeEvent } from 'react';
 
 
@@ -16,16 +16,12 @@ function ContactForm() {
     
     const handleInput = (event: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
-        setForm((prevForm) => ({
-            ...formNow, [name]: value
-        }));
+        setForm((prevForm) => ({...formNow, [name]: value}));
     }
 
     const handleTextArea = (event: ChangeEvent<HTMLTextAreaElement>) => {
         const { name, value } = event.target;
-        setForm((prevForm) => ({
-            ...formNow, [name]: value
-        }));
+        setForm((prevForm) => ({...formNow, [name]: value}));
     }
 
     const handleSubmit = (event: ChangeEvent<HTMLInputElement>) => {

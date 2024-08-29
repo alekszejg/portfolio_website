@@ -5,8 +5,8 @@ import InfoSection from 'Components/Homepage/infoSection';
 
 import AccordionItem from 'Components/Homepage/accordionItem';
 
-import 'Styling/mainPagesStyles/homepageMobile.scss';
-import 'Styling/mainPagesStyles/homepagePC.scss';
+import 'Styling/Pages/homepageMobile.scss';
+import 'Styling/Pages/homepagePC.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';

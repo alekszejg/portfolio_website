@@ -1,10 +1,8 @@
 // Color Variables
-$yellowColor: rgba(251, 247, 218, 1);
-$blueColor: rgba(199, 255, 254, 1);
+$yellow: rgba(251, 247, 218, 1);
+$blue: rgba(199, 255, 254, 1);
 
 // Gaps and Padding
-
-
 $sectionGap: 3.5rem;
 $panelPadVertical: calc($sectionGap * 2);
 
@@ -15,36 +13,32 @@ $featureHeaderPadMobile: 1.5rem 0 0.5rem 0;
 $featureHeaderPadBottomPC: 1rem;
 
 
-// Panel and Img Container 
-$imgContainerMinWidth: 375px;
-$imgContainerMaxWidth: 437.50px; 
-$imgContainerShadow: 0 0 0.55rem black;
+// Image Wrappers Width
+$imgWrapperWidthPC: clamp(375px, 40%, 437.50px);
+$imgWrapperShadow: 0 0 0.55rem black;
+ 
+$svgImgWrapperWidthMobile: min(170px, 55%);
+$svgImgWrapperWidthPC: clamp(200px, 40%, 300px);
 
-// Vector img container 
-
-$vectorImgWidthMobile: min(170px, 55%);
-$vectorImgWidthPC: clamp(200px, 40%, 300px);
-
-
-// Font Variables
+// Fonts
 $headerFont: clamp(1.1rem, 3vw, 1.5rem);
 $textFont: clamp(0.9rem, 2vw, 1.2rem);
 
 
 .yellowPanel {
-    background-color: $yellowColor;
+    background-color: $yellow;
 }
 
 .bluePanel {
-    background-color: $blueColor;
+    background-color: $blue;
 }
 
 
-@mixin generalPanelStyleMobile {
+@mixin panelMobile {
     #aboutProjectPanel {
         padding: $sectionGap 2rem;
         box-sizing: border-box;
-        background-color: $yellowColor;
+        background-color: $yellow;
 
         #aboutProjectHeader {
             padding-bottom: $aboutProjectPadBottomMobile;
@@ -65,27 +59,27 @@ $textFont: clamp(0.9rem, 2vw, 1.2rem);
         padding: $sectionGap 2rem;
     
         .imgWrapper {
-            width: 100%;  
+            width: 100%; 
+            aspect-ratio: 5/4; 
             
             .panelImage {
                 width: 100%;
                 height: 100%;
                 border-radius: 1.2rem;
-                box-shadow: $imgContainerShadow;
+                box-shadow: $imgWrapperShadow;
                 aspect-ratio: 5/4;
                 object-fit: cover;
             }
         }
 
         .svgImgWrapper  {
-            width: $vectorImgWidthMobile;
+            width: $svgImgWrapperWidthMobile;
             aspect-ratio: 1/1;
 
             .panelImage {
                 width: 100%;
                 height: 100%;
-                border-radius: 1.2rem;
-                box-shadow: $imgContainerShadow;
+                box-shadow: $imgWrapperShadow;
             }
         }
 
@@ -93,7 +87,6 @@ $textFont: clamp(0.9rem, 2vw, 1.2rem);
             display: flex;
             flex-direction: column;
             box-sizing: border-box;
-
 
             .featureHeader {
                 padding: $featureHeaderPadMobile;
@@ -110,7 +103,7 @@ $textFont: clamp(0.9rem, 2vw, 1.2rem);
     } 
 }
 
-@mixin generalPanelStylePC() {
+@mixin panelPC() {
     #aboutProjectPanel {
         padding: $sectionGap 20%;
         text-align: center;
@@ -127,52 +120,29 @@ $textFont: clamp(0.9rem, 2vw, 1.2rem);
         column-gap: 4.5rem;
         padding: $panelPadVertical 0;
     
-       
-        
         .imgWrapperRight {
             order: 2;
         }
         
-        
         .imgWrapper {
-            min-width: $imgContainerMinWidth;
-            max-width: $imgContainerMaxWidth;
-            aspect-ratio: 5/4;
-
-            .panelImage {
-                width: 100%;
-                height: 100%;
-                border-radius: 1.2rem;
-                box-shadow: $imgContainerShadow;
-                object-fit: cover;
-            }
+            width: $imgWrapperWidthPC;
         }
 
         .svgImgWrapper {
-            width: $vectorImgWidthPC;
+            width: $svgImgWrapperWidthPC;
 
             .panelImage {
-                width: 100%;
-                height: 100%;
-                box-shadow: $imgContainerShadow;
+                border-radius: 1.2rem;
             }
         }
 
         .panelTextContainer {
-            display: flex;
-            flex-direction: column;
             justify-content: center;
             width: 40%;
             flex-shrink: 0;
 
             .featureHeader {
                 padding-bottom: $featureHeaderPadBottomPC;
-                margin: 0;
-            }
-
-            .featureText {
-                padding: 0;
-                margin: 0;
             }
         } 
     }  

@@ -1,15 +1,15 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import MyCV from "./Pages/myCV";
 import MyProjects from "./Pages/projects";
-import BotProjectPage from './Pages/Portfolio/botProjectPage';
-import ThisWebsiteProjectPage from './Pages/Portfolio/thisWebsiteProjectPage';
+import BotProjectPage from './Pages/Portfolio/discordBot';
+import ThisWebsiteProjectPage from './Pages/Portfolio/thisWebsite';
 import ContactForm from "./Pages/contact";
 import './Styling/index.scss';
 
 export default function App() {
   return (
     <div className="App">
-      <script src="https://kit.fontawesome.com/4c6d9ff94d.js" crossOrigin="anonymous"></script>
+      <script src="https://kit.fontawesome.com/4c6d9ff94d.js" crossOrigin="anonymous" />
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<MyCV />} />

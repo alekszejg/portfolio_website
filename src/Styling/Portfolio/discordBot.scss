@@ -1,0 +1,12 @@
+@import "featurePanel";
+
+// DESIGN FOR MOBILE PHONES 
+@include panelMobile();
+
+
+// DESKTOP DESIGN 
+@media screen and (min-width: 480px) {
+    @include panelPC();
+}
+
+

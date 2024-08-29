@@ -1,7 +1,7 @@
 import PageLayout from 'Components/Layout/pageLayout';
 import ProjectFeaturePanel from 'Components/Layout/panelMaker';
 import { ImageWrapper } from 'Components/Layout/panelMaker';
-import 'Styling/portfolioStyles/botProjectPage.scss';
+import 'Styling/Portfolio/discordBot.scss';
 
 
 function BotProjectPage() {
