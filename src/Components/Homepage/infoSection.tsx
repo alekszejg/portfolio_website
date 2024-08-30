@@ -7,18 +7,19 @@ interface InfoSectionProps {
     headerIconSrc: string;
     headerClass: string;
     header: string;
-    infoListID: string;
-    infoLoop: ReactElement[]
+    infoLoop: ReactElement[];
+    infoListID?: string;
+    infoListClass?: string;
 }
 
 export default function InfoSection(props: InfoSectionProps) {
-    const { infoListID, infoLoop } = props;
+    const { infoLoop, infoListID, infoListClass } = props;
     const { headerWrapperClass, headerIconID, headerIconSrc, headerClass, header } = props;
     
     return (
         <>
-        <SectionHeader headerWrapperClass={headerWrapperClass !== undefined ? `headerContainer ${headerWrapperClass}` : "headerContainer"} iconID={headerIconID} icon={headerIconSrc} headerClass={headerClass} header={header} />
-        <ul id={infoListID}>{infoLoop}</ul>
+        <SectionHeader headerWrapperClass={headerWrapperClass ? `headerContainer ${headerWrapperClass}` : "headerContainer"} iconID={headerIconID} icon={headerIconSrc} headerClass={headerClass} header={header} />
+        <ul className={infoListClass} id={infoListID}>{infoLoop}</ul>
         </>
     );
 }

@@ -1,0 +1,397 @@
+@import "homepagePartial";
+
+// PROFILE PICTURE VARIABLES
+$profilePicWidth: clamp(180px, 55%, 200px);
+
+
+// FONT VARIABLES
+$myNameFont: clamp(1.8rem, 5vw, 2.3rem);
+
+$generalTextFont: 1rem;
+$skillFont: clamp(1rem, 5vw, 1.3rem);
+
+$approachItemFont: clamp(1.1rem, 5vw, 1.2rem);
+$approachDropdownFont: clamp(0.95rem, 5vw, 1.05rem);
+
+
+
+// PADDING VARIABLES
+$descrInfoLeftPad: 0.4rem;
+
+$listItemGapMobile: 2.5rem;
+
+
+// !!!! DESKTOP VARIABLES (SORT ASAP) !!!!
+$contactIconHeight: clamp(1rem, 5vw, 1.5rem);
+
+
+
+$contactIconsTextGapPC: 0.6rem; 
+
+$puzzleIconHeightPC: 1.7rem; 
+$gearIconHeightPC: 2.7rem;
+$speechIconHeightPC: 2rem;
+
+
+// PADDING VARIABLES
+$basicInfoGapPC: 5rem;
+
+$listItemVerticalMarginPC: 2rem;
+
+
+#homepageLayout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #generalSection {
+        padding: $sectionGap 15%;
+        background-color: $aboutMeSectionColor;
+
+        #profileWrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        
+            #myPhotoWrapper {
+                width: $profilePicWidth;
+                aspect-ratio: 1/1;
+
+                #myPhoto {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    box-shadow: 0 0 0.15rem black;
+                }
+            }
+
+            #name {
+                padding-top: $myNameGapTop;
+                margin: 0;
+                font-size: $myNameFont;
+                text-align: center;
+            }
+        }
+
+        #stickyWrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: $sectionGap;
+
+            #aboutMeWrapper {
+                width: 100%;
+
+                #contactIcon {
+                    height: calc($contactIconHeight + 0.1rem);
+                    @include iconSelectPrevent();
+                }
+
+                #aboutMeText {
+                    font-size: $generalTextFont;
+                    margin: $descrGapFromHeader 0 0 0;
+                }
+            }
+            
+            #contactWrapper { 
+                width: 100%;
+
+                #contactBookIcon {
+                    height: $contactIconHeight;
+                    @include iconSelectPrevent();
+                }
+            
+                #contactList {
+                    padding-left: $descrInfoLeftPad;
+                    margin: $descrGapFromHeader 0 0 0;
+
+                    .contactInfoItem {
+                        font-size: $generalTextFont;
+                        list-style-type: none;
+                        margin-top: 1.4rem;
+
+                        #emailIcon, #phoneIcon, #linkedInIcon {
+                            padding-right: 0.6rem;
+                            vertical-align: -0.2rem;
+                            @include iconSelectPrevent()
+                        }
+                    }
+
+                    #contactEmail, #contactLinkedIn {
+                        word-break: break-all; 
+                    }
+                }
+            }
+            
+            #educationWrapper {
+                width: 100%;
+
+                #educationHatIcon {
+                    height: $contactIconHeight;
+                    @include iconSelectPrevent();
+                }
+
+                #educationList {
+                    padding-left: $descrInfoLeftPad;
+                    margin: $descrGapFromHeader 0 0 0;
+
+                    .educationInfoItem {
+                        font-size: $generalTextFont;
+                        list-style-type: none;
+                        margin-top: 1.4rem;
+
+                        .educationYear {
+                            display: inline-block;
+                            margin-left: 0.8rem;
+                        }  
+                    }
+                }
+            }
+        }
+    }
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid black;
+
+    .generalHeader {
+        padding-left: 0.7rem;
+        margin: 0; 
+        font-size: 1rem; 
+        text-align: center;
+    }
+
+    .expertiseHeader {
+        padding-left: 0.5rem;
+        margin: 0;
+        font-size: 1.3rem;
+        text-align: center;
+    }
+}
+
+#expertiseSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @mixin sticky-header($bg-color) {
+        background-color: $bg-color;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+
+    @mixin expertise-wrapper($bg-color) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+        padding: $sectionGap 15%;
+        background-color: $bg-color;
+    }
+
+    #approachesWrapper {
+        @include expertise-wrapper($bg-color: $approachSectionColor);
+
+        .approachHeaderContainer {
+            @include sticky-header($bg-color: $approachHeaderColor);
+
+            #puzzleIcon {
+                width: 1.7rem;
+                @include iconSelectPrevent();
+            }
+        }
+
+        #approachList {
+            padding: 0;
+            margin: 0;
+        
+            .approachItem:hover {
+                background-color: $listItemColorHover;
+                cursor: pointer;
+            }
+
+            .approachItem {
+                padding: $listItemPadding;
+                margin-top: $listItemGapMobile;
+                box-sizing: border-box;
+                border-radius: 1rem;
+                box-shadow: $listItemShadow;
+                font-size: $approachItemFont;
+                list-style-type: none;
+                background-color: $listItemColor;
+                @include accordionStyling;
+                position: relative;
+
+                .dropdownDescr {
+                    font-size: $approachDropdownFont;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    #skillsWrapper {
+        @include expertise-wrapper($bg-color: $skillsSectionColor);
+        row-gap: 5rem;
+
+        .skillHeaderContainer {
+            @include sticky-header($bg-color: $skillHeaderColor);
+
+            #gearIcon {
+                width: 2.5rem;
+                @include iconSelectPrevent();
+            }
+
+            #speechIcon {
+                width: 1.7rem;
+                @include iconSelectPrevent();
+            }
+        }
+
+        .skillListWrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .skillList {
+                padding: 0;
+                margin: 0;
+    
+                .eachSkill {
+                    margin-top: $listItemGapMobile;
+                    text-align: center;
+                    font-size: $skillFont;
+                    list-style-type: none;
+                }
+            }
+        }
+    }
+}     
+
+
+// DESKTOP DESIGN
+@media screen and (min-width: 480px) {
+
+    #homepageLayout {
+        flex-direction: row;
+        align-items: stretch;
+
+        #generalSection {
+            width: 42%;
+            padding: $sectionGap 0 0 0;
+    
+            &:hover {
+                background-color: $aboutMeSectionColorHover;
+            }
+
+            #stickyWrapper {
+                width: 80%;
+                padding-top: $sectionGap;
+                margin: 0 auto;
+                position: sticky;
+                top: 0;
+                z-index: 999;
+
+                .generalHeader {
+                    font-size: 1.5rem;
+                }
+                
+                #educationList {
+                    padding-left: 0;
+                    margin: 0;  
+                }
+            }   
+        }
+
+        #expertiseSection {
+            width: 58%;
+    
+            .experiseHeader {
+                font-size: 2rem;
+            }
+    
+            #approachesWrapper {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                padding: 3.5rem 8% 3.5rem 8%;
+                box-sizing: border-box;
+                background-color: $approachSectionColor;
+    
+                &:hover {
+                    background-color: $approachSectionColorHover;
+                }
+
+                .approachHeaderContainer {
+                    background-color: none;
+                    position: static;
+
+                    #puzzleIcon {
+                        height: $puzzleIconHeightPC;
+                    }
+                }
+
+                .approachItem {
+                    padding-right: 5rem;
+                    margin-top: $listItemVerticalMarginPC;
+                }
+            }
+            
+            #skillsWrapper {
+                width: 100%;
+                row-gap: 4rem;
+                padding: 3.5rem 8% 3.5rem 8%;
+                box-sizing: border-box;
+
+                &:hover {
+                    background-color: $skillSectionColorHover;
+                }
+
+                #gearIcon {
+                    height: $gearIconHeightPC;
+                }
+        
+                #speechIcon {
+                    height: $speechIconHeightPC;
+                    padding-top: 0.4rem;
+                }
+            
+                #skillListWrapper {
+                    width: 84%;
+
+                    .skillList {
+                        padding-left: 0;
+                        margin: 0;
+
+                        .eachSkill {
+                            margin-top: $listItemVerticalMarginPC;
+                        }
+                    } 
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 1335px) {
+    
+    #homepageLayout #expertiseSection #skillsWrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .skillListWrapper {
+            width: 45%;
+            padding: 0;
+        }
+    }
+} 

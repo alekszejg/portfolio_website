@@ -5,8 +5,7 @@ import InfoSection from 'Components/Homepage/infoSection';
 
 import AccordionItem from 'Components/Homepage/accordionItem';
 
-import 'Styling/Pages/homepageMobile.scss';
-import 'Styling/Pages/homepagePC.scss';
+import 'Styling/Pages/myCV.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
@@ -20,7 +19,7 @@ export default function MyCV() {
         headerIconSrc: "/Icons/contactIcon.svg",
         headerClass: "generalHeader",
         header: "About me",
-        descriptionClass: "aboutMeInfo",
+        descriptionClass: "aboutMeText",
         description: `A self-taught programmer with a diploma in BSc Economics, who is currently building his portfolio 
         from various front-end and Python projects`
     }
@@ -43,7 +42,7 @@ export default function MyCV() {
         header: "Contact details",
         headerIconID: "contactBookIcon",
         headerIconSrc: "/Icons/contactBookIcon.svg",
-        infoListID: "contactInfoList",
+        infoListID: "contactList",
         infoLoop: contactListLoop
     };
 
@@ -144,7 +143,7 @@ export default function MyCV() {
         headerIconSrc: "/Icons/gearIcon.svg",
         headerClass: "expertiseHeader",
         header: "Technical Skills",
-        infoListID: "techSkillListFull",
+        infoListClass: "skillList",
         infoLoop: skillsLoop(technicalSkills)
     };
 
@@ -154,7 +153,7 @@ export default function MyCV() {
         headerIconSrc: "/Icons/speechIcon.svg",
         headerClass: "expertiseHeader",
         header: "Soft Skills",
-        infoListID: "softSkillListFull",
+        infoListClass: "skillList",
         infoLoop: skillsLoop(softSkills)
     };
     
@@ -162,41 +161,40 @@ export default function MyCV() {
     return (
         <PageLayout layoutID="homepageLayout">
             <div id="generalSection">
-                
-                <div id="profileContainer">
-                    <div id="myPhotoContainer">
+                <div id="profileWrapper">
+                    <div id="myPhotoWrapper">
                         <img id="myPhoto" src="/Images/myPhoto.png" alt="My Photo" />
                     </div>
-                    <h1 id="myName">Alekszej Guljajev</h1>
+                    <h1 id="name">Alekszej Guljajev</h1>
                 </div>
                 
-                <div id="aboutMeContainer">
-                    <div id="aboutMeInfoContainer">
+                <div id="stickyWrapper">
+                    <div id="aboutMeWrapper">
                         <AboutMeSection {...aboutMeProps} />
                     </div>
                     
-                    <div id="contactInfoContainer">
+                    <div id="contactWrapper">
                         <InfoSection {...contactSectionProps} />
                     </div>
                     
-                    <div id="educationContainer">
+                    <div id="educationWrapper">
                         <InfoSection {...educationSectionProps} />
                     </div>
                 </div>
-
+                
             </div>
             
             <div id="expertiseSection">
                 
-                <div id="approachContainer">
+                <div id="approachesWrapper">
                     <InfoSection {...approachSectionProps} />
                 </div>
                 
                 <div id="skillsWrapper">
-                    <div id="techSkillsContainer">
+                    <div className="skillListWrapper">
                         <InfoSection {...technicalSkillsProps} />
                     </div>
-                    <div id="softSkillsContainer">
+                    <div className="skillListWrapper">
                         <InfoSection {...softSkillsProps} />
                     </div>
                 </div>

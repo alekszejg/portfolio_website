@@ -43,9 +43,7 @@ export default function Navbar() {
                 <img ref={burgerIconRef} id="burgerMenuIcon" src="/Icons/burgerMenuIcon.svg" onClick={toggleBurgerMenu} />
             </div>
             
-           <div ref={mobileMenuRef} id="burgerMenu">
-                <NavList id="navContentList" />
-            </div>
+           {/*Insert mobile list here later*/}
             
             <NavList id="navContentList" />
             
@@ -60,6 +58,10 @@ export default function Navbar() {
         </>
     );
 }
+
+//<div ref={mobileMenuRef} id="burgerMenu">
+//    <NavList id="navContentList" />
+//</div>
 
 function NavList({id}: {id: string} ) {
     const dropdownLinks = [
