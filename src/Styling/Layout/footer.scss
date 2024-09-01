@@ -2,6 +2,8 @@
 $footerColor: rgba(155, 155, 155, 1);
 $findMeColor: rgba(245, 245, 245, 1);
 
+$footerHeight: 8rem;
+
 // Icon Variables
 $iconWidth: 1.8rem;
 $githubIconHeight: 1.75rem;
@@ -15,7 +17,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 8rem;
+    height: $footerHeight;
     background-color: $footerColor;
     margin-top: auto;
     

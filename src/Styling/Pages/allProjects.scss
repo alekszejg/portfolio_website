@@ -1,9 +1,15 @@
+@use "Styling/Layout/navbar" as *;
+@use "Styling/Layout/footer" as *;
+
 // Colors and Fonts 
 $mainHeaderColor: hsla(67, 27%, 94%, 1);
 $projectMainColor: rgba(245, 245, 245, 1);
 $projectHeaderColor: rgba(240, 240, 240, 1);
 
 $projectTitleFont: clamp(1.2rem, 2vw, 1.5rem);
+
+// Layout dimensions
+$minLayoutHeight: calc(100vh - $navHeight - $footerHeight);
 
 // Each Project Dimensions
 $minImgWidthPC: 250px;
@@ -24,6 +30,9 @@ $gridItemWidthMaxed: minmax($minImgWidthPC, auto);
 $mediumScreenWidth: calc($minImgWidthPC * 2 + $gridColumnGap + 2 * $gridPaddingHorizontal); // fit 2 grid items
 $largeScreenWidth: calc($maxImgWidthPC * 3 + 2 * $gridColumnGap + 2 * $gridPaddingHorizontal); // fit 3 grid items
 
+#allProjectsLayout {
+    min-height: $minLayoutHeight;
+}
 
 #mainHeaderContainer {
     display: flex;
@@ -51,29 +60,10 @@ $largeScreenWidth: calc($maxImgWidthPC * 3 + 2 * $gridColumnGap + 2 * $gridPaddi
     padding: 4rem 5rem;
     box-sizing: border-box;
     
-    
-    #finalLink {
-        margin: 0;
-    }
-   
-    .projectLink:hover {
-        .projectImgContainer, .projectReference {
-            opacity: 0.25;
-        }
-
-        .descriptionWrapper {
-            display: block;
-            position: absolute;
-        }
-    }
-    
-    .projectLink:active {
-        outline: 1px solid grey;
-    }
-
     .projectLink {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         min-width: $minImgWidthPC;
         width: 100%;
         margin-bottom: 4rem;
@@ -83,6 +73,10 @@ $largeScreenWidth: calc($maxImgWidthPC * 3 + 2 * $gridColumnGap + 2 * $gridPaddi
         overflow: hidden;
         background-color: $projectMainColor;
         text-decoration: none;
+
+        &:active {
+            outline: 1px solid grey;
+        }
         
         .projectImgContainer {
             width: 100%;
@@ -125,8 +119,38 @@ $largeScreenWidth: calc($maxImgWidthPC * 3 + 2 * $gridColumnGap + 2 * $gridPaddi
             }
         }
 
-        .descriptionWrapper {
+        .semiTransparent {
+            opacity: 0.1;
+        }
+
+        .descrWrapperOpened {
+            display: block;
+            align-self: center;
+            position: absolute;
+            padding: 1.5rem;
+            color: black;
+            text-align: center;
+
+            p {
+                margin: 0
+            }
+        }
+    
+        .descrWrapperHidden {
             display: none;
+        }
+
+        .showDescriptionIconWrapper {
+            width: 2rem;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 999;
+
+            img {
+                width: 100%;
+                height: 100%
+            }
         }
     }
 }

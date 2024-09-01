@@ -5,6 +5,7 @@ $dropdownLinkHoverColor: black;
 
 $navFontPC: 1.1rem;
 
+$testColor: yellow;
 
 $navHeight: 3rem;
 $contentsWidth: 30%; 
@@ -34,12 +35,14 @@ $dropdownMainLinkGap: 0.6rem;
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: 100%;
         padding: 0;
         margin-top: 2.5rem;
         list-style-type: none;
 
         .linkWrapper {
             width: 100%;
+            
 
             &:hover {
                 background-color: rgba(150, 150, 150, 0.7);
@@ -170,7 +173,7 @@ nav {
                         height: 100%;
                         justify-content: center;
                         align-items: center;
-                        padding-bottom: 0.7rem;
+                        padding: 0;
                         text-decoration: none;
                         font-size: $navFontPC;
                         color: black;

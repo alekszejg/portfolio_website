@@ -4,7 +4,6 @@ import MyProjects from "./Pages/projects";
 import BotProjectPage from './Pages/Portfolio/discordBot';
 import ThisWebsiteProjectPage from './Pages/Portfolio/thisWebsite';
 import ContactForm from "./Pages/contact";
-import './Styling/index.scss';
 
 export default function App() {
   return (

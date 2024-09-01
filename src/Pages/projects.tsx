@@ -14,7 +14,7 @@ export default function MyProjects() {
         setTotalProjects(elementCount - 1);
     }, [])
     
-    const botProjectProps = {
+    const discordBotProps = {
         urlPath: "/projects/discord-bot",
         imgType: "svg" as ProjectImage,
         imgSrc: "/Images/discordLogo.svg",
@@ -28,8 +28,8 @@ export default function MyProjects() {
                     will continue in future, when all its features and edge cases are finished and improved.`
     }
 
-    const thisWebsiteProjectProps = {
-        urlPath: "/projects/this-website",
+    const thisWebsiteProps = {
+        urlPath: "/projects/portfolio-website",
         imgType: "standard" as ProjectImage,
         imgSrc: "/Images/thisWebsite.png",
         imgAlt: "folder structure image of this website",
@@ -40,13 +40,13 @@ export default function MyProjects() {
                 that during website's production.`
         }
 
-    const moreToComeProps = {
+    const finalPreviewProps = {
         urlPath: "/projects",
         imgType: "svg" as ProjectImage,
         imgSrc: "/Icons/hourglass.svg",
         imgAlt: "hourglass",
         title: "More to come...",
-        finalLink: true
+        finalPreview: true
     }
     
     return (
@@ -57,9 +57,9 @@ export default function MyProjects() {
             </div>
         
             <div id="projectContainer" ref={totalChildren}>
-                <ProjectPreview {...botProjectProps} />
-                <ProjectPreview {...thisWebsiteProjectProps} />
-                <ProjectPreview {...moreToComeProps} />
+                <ProjectPreview {...discordBotProps} />
+                <ProjectPreview {...thisWebsiteProps} />
+                <ProjectPreview {...finalPreviewProps} />
             </div>
         </PageLayout>
     );

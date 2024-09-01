@@ -1,9 +1,9 @@
 import PageLayout from 'Components/Layout/pageLayout';
 
-import AboutMeSection from 'Components/Homepage/aboutMeSection';
-import InfoSection from 'Components/Homepage/infoSection';
+import AboutMeSection from 'Components/MyCV/aboutMeSection';
+import InfoSection from 'Components/MyCV/infoSection';
 
-import AccordionItem from 'Components/Homepage/accordionItem';
+import AccordionItem from 'Components/MyCV/accordionItem';
 
 import 'Styling/Pages/myCV.scss';
 
