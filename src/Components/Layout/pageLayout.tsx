@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import Navbar from "./nav";
+import Navbar from "./Navbar/navbar";
 import Footer from "./footer";
 
 export default function PageLayout(props: {children: ReactNode, layoutID: string}) {

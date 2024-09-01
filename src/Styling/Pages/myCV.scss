@@ -1,4 +1,4 @@
-@import "homepagePartial";
+@import "myCVMixins";
 
 // PROFILE PICTURE VARIABLES
 $profilePicWidth: clamp(180px, 55%, 200px);
@@ -16,27 +16,18 @@ $approachDropdownFont: clamp(0.95rem, 5vw, 1.05rem);
 
 
 // PADDING VARIABLES
-$descrInfoLeftPad: 0.4rem;
-
 $listItemGapMobile: 2.5rem;
+$listItemVerticalMarginPC: 2rem;
 
+$basicInfoGapPC: 5rem;
 
-// !!!! DESKTOP VARIABLES (SORT ASAP) !!!!
+// ICONS 
 $contactIconHeight: clamp(1rem, 5vw, 1.5rem);
-
-
-
 $contactIconsTextGapPC: 0.6rem; 
-
 $puzzleIconHeightPC: 1.7rem; 
 $gearIconHeightPC: 2.7rem;
 $speechIconHeightPC: 2rem;
 
-
-// PADDING VARIABLES
-$basicInfoGapPC: 5rem;
-
-$listItemVerticalMarginPC: 2rem;
 
 
 #homepageLayout {
@@ -104,7 +95,7 @@ $listItemVerticalMarginPC: 2rem;
                 }
             
                 #contactList {
-                    padding-left: $descrInfoLeftPad;
+                    padding-left: 0;
                     margin: $descrGapFromHeader 0 0 0;
 
                     .contactInfoItem {
@@ -134,7 +125,7 @@ $listItemVerticalMarginPC: 2rem;
                 }
 
                 #educationList {
-                    padding-left: $descrInfoLeftPad;
+                    padding-left: 0;
                     margin: $descrGapFromHeader 0 0 0;
 
                     .educationInfoItem {
@@ -260,6 +251,7 @@ $listItemVerticalMarginPC: 2rem;
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 100%;
 
             .skillList {
                 padding: 0;
@@ -305,7 +297,6 @@ $listItemVerticalMarginPC: 2rem;
                 }
                 
                 #educationList {
-                    padding-left: 0;
                     margin: 0;  
                 }
             }   
