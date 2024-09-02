@@ -4,7 +4,7 @@ import DropdownMenu from "./dropdownMenu";
 export default function NavList() {
     
     const mainLinks = [
-        {title: "My CV", href: "/"},
+        {title: "My CV", href: "/cv"},
         {title: "My Projects", href: "/projects"},
         {title: "Contact", href: "/contact"}
     ];
