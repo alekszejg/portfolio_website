@@ -3,6 +3,8 @@
 }
 
 #profileWrapper {
+    position: relative;
+    
     #backgroundPhotoWrapper {
         width: 100%;
         aspect-ratio: 3/1;
@@ -14,13 +16,12 @@
     }
 
     #myPhotoWrapper {
-        width: 230px;
-        position: relative;
-        left: 6rem;
-        bottom: 10rem;
-        display: none;
+        width: min(25%, 300px);
+        aspect-ratio: 1;
+        z-index: 2;
+        position: absolute;
+        transform: translate(30%, -65%);
 
-    
         img {
             width: 100%;
             height: 100%;
@@ -29,22 +30,60 @@
     }
 }
 
-
-#locationWrapper {
-    display: flex;
-    align-items: center;
-    column-gap: 0.5rem;
-
-    p {
+#textWrapper {
+    margin-left: 5%;
+    margin-top: 10%;
+    
+    h2 {
         margin: 0;
+    }
+
+    #location {
+        display: flex;
+        align-items: center;
+        column-gap: 0.5rem;
+        margin: 0;
+    }
+    
+    .visitLinkWrapper {
+        display: flex;
+        align-items: center;
+        column-gap: 0.5rem;
     }
 }
 
-.visitLinkWrapper {
+#buttonWrapper {
     display: flex;
-    align-items: center;
-    column-gap: 0.5rem;
+    justify-content: space-between;
+    width: 25%;
+    margin-left: 5%;
+    margin-top: 1.2rem;
+
+    a {
+        width: 45%;
+
+        button {
+            width: 100%;
+            height: 100%;
+            padding: 0.5rem 1rem;
+            border: 1px solid gray;
+            border-radius: 0.8rem;
+        }
+    }
 }
+
+#viewMenuWrapper {
+    display: flex;
+    justify-content: center;
+    column-gap: 20%;
+    margin-top: 1.5rem;
+
+    button {
+        background: none;
+        border: 0;
+    }
+}
+
 
 @media screen and (min-width: 1400px) {
     #homepageLayout {
