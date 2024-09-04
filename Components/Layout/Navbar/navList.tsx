@@ -1,8 +1,6 @@
 import Link from "next/link";
-import DropdownMenu from "./dropdownMenu";
 
 export default function NavList() {
-    
     const mainLinks = [
         {title: "My CV", href: "/cv"},
         {title: "My Projects", href: "/projects"},
@@ -13,17 +11,8 @@ export default function NavList() {
         <ul id="navList">
             
             {mainLinks.map((link, index) => (
-                <li id={`linkWrapper${index + 1}`} className="linkWrapper">
-                    
-                    {link.title === "My Projects" ? 
-                    <>
-                    <Link id={`link${index + 1}`} className="navlink" href={link.href}>{link.title}</Link> 
-                    <DropdownMenu /> 
-                    </>
-                    :
+                <li key={`linkWrapper${index + 1}`} id={`linkWrapper${index + 1}`} className="linkWrapper">
                     <Link id={`link${index + 1}`} className="navlink" href={link.href}>{link.title}</Link>
-                    }
-
                 </li>
             ))}
 
