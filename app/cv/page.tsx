@@ -10,7 +10,6 @@ import '@/Styling/Pages/myCV.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import {faEnvelope} from '@fortawesome/free-regular-svg-icons';
-import {faLinkedin} from '@fortawesome/free-brands-svg-icons'
 
 export default function MyCV() {
 
@@ -27,11 +26,10 @@ export default function MyCV() {
     const contactList = [
         {id: "contactEmail", iconID: "emailIcon", icon: faEnvelope, text: "alexeyguljajev@gmail.com"},
         {id: "contactPhone", iconID: "phoneIcon", icon: faPhone, text: "+49 174 6541424"},
-        {id: "contactLinkedIn", iconID: "linkedInIcon", icon: faLinkedin, text: "https://www.linkedin.com/in/alekszej-guljajev/"}
     ];
 
     const contactListLoop = contactList.map((info, index) => (
-        <li key={`infoPiece${index + 1}`} id={info.id} className="contactInfoItem">
+        <li key={`contactInfo${index + 1}`} id={info.id} className="contactInfoItem">
             <FontAwesomeIcon id={info.iconID} icon={info.icon} />
             {info.text}
         </li>
@@ -53,8 +51,13 @@ export default function MyCV() {
         "Self-taught programer": "2023 -"
     };
 
-    const educationLoop = Object.keys(myEducation).map(key => {
-        return <li className="educationInfoItem">{key}<span className="educationYear">{myEducation[key]}</span></li>
+    const educationLoop = Object.keys(myEducation).map((key, index) => {
+        return (
+            <li key={`educationPlace${index + 1}`} className="educationInfoItem">
+            {key}
+                <span className="educationYear">{myEducation[key]}</span>
+            </li>
+        );
     });
 
     const educationSectionProps = {
@@ -133,7 +136,7 @@ export default function MyCV() {
 
     const skillsLoop = (list: string[]) => {
         return list.map((skill, index) => (
-            <li key={`${skill}${index + 1}`} className="eachSkill">{skill}</li>
+            <li key={`skill${index + 1}`} className="eachSkill">{skill}</li>
         ));
     };
 

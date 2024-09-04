@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function AccordionItem(props: {key: string; title: string; description: string}) {
-    const { key, title, description } = props;    
+    const { title, description } = props;    
     
     const [arrowIconStatus, setArrowIconStatus] = useState("blackArrowDownDefault");
     const [descrStatus, setDescrStatus] = useState("descrContainerHidden");
@@ -19,7 +19,7 @@ export default function AccordionItem(props: {key: string; title: string; descri
     } 
     
     return (
-        <li className="approachItem" onClick={handleClick} key={key}>
+        <li className="approachItem" onClick={handleClick}>
             {title}
             <img className={arrowIconStatus} onClick={handleClick} src="/Icons/blackArrowDown.svg" />
             <div className={descrStatus}>

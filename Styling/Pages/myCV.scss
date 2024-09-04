@@ -103,14 +103,15 @@ $speechIconHeightPC: 2rem;
                         list-style-type: none;
                         margin-top: 1.4rem;
 
-                        #emailIcon, #phoneIcon, #linkedInIcon {
+                        #emailIcon, #phoneIcon {
+                            height: 1rem;
                             padding-right: 0.6rem;
                             vertical-align: -0.2rem;
                             @include iconSelectPrevent()
                         }
                     }
 
-                    #contactEmail, #contactLinkedIn {
+                    #contactEmail {
                         word-break: break-all; 
                     }
                 }
@@ -319,6 +320,10 @@ $speechIconHeightPC: 2rem;
     
                 &:hover {
                     background-color: $approachSectionColorHover;
+
+                    .approachHeaderContainer {
+                        background-color: $approachSectionColorHover
+                    }
                 }
 
                 .approachHeaderContainer {
@@ -344,6 +349,10 @@ $speechIconHeightPC: 2rem;
 
                 &:hover {
                     background-color: $skillSectionColorHover;
+
+                    .skillHeaderContainer {
+                        background-color: $skillSectionColorHover;
+                    }
                 }
 
                 #gearIcon {
