@@ -30,8 +30,8 @@ export default function AllProjects() {
                     will continue in future, when all its features and edge cases are finished and improved.`
     }
 
-    const thisWebsiteProps = {
-        urlPath: "/projects/portfolio-website",
+    const myWebsiteProps = {
+        urlPath: "/projects/my-website",
         imgType: "standard" as ProjectImage,
         imgSrc: "/Images/thisWebsite.png",
         imgAlt: "folder structure image of this website",
@@ -60,7 +60,7 @@ export default function AllProjects() {
         
             <div id="projectContainer" ref={totalChildren}>
                 <ProjectPreview {...discordBotProps} />
-                <ProjectPreview {...thisWebsiteProps} />
+                <ProjectPreview {...myWebsiteProps} />
                 <ProjectPreview {...finalPreviewProps} />
             </div>
         </PageLayout>
