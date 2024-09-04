@@ -9,7 +9,7 @@ export default function MyWebsiteProjectPage() {
         imgWrapperClass: "svgImgWrapper" as ImageWrapper,
         imgID: "sassLogoImg",
         imgSide: "left",
-        imgSrc: "/Images/sassLogo.svg",
+        imgSrc: "/Images/Logos/sass.svg",
         imgAlt: "a SASS logo",
         header: "Styled with SCSS. No CSS libraries were used",
         text: `While CSS libraries and website constructors offer easier
@@ -25,7 +25,7 @@ export default function MyWebsiteProjectPage() {
     const reactLibraryProps = {
         imgWrapperClass: "svgImgWrapper" as ImageWrapper,
         imgSide: "right",
-        imgSrc: "/Images/reactLogo.svg",
+        imgSrc: "/Images/Logos/react.svg",
         imgAlt: "a React logo",
         header: "Front-end built with React library",
         text: `React is the most popular tool that promotes code reuse 
@@ -42,7 +42,7 @@ export default function MyWebsiteProjectPage() {
         imgWrapperClass: "svgImgWrapper" as ImageWrapper,
         imgID: "typescriptLogoImg",
         imgSide: "left",
-        imgSrc: "/Images/typescriptLogo.svg",
+        imgSrc: "/Images/Logos/ts.svg",
         imgAlt: "a TypeScript logo",
         header: "TypeScript over plain JavaScript",
         text: `Development of this website gave me some practical experience 
