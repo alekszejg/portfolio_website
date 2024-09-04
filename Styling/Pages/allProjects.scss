@@ -1,5 +1,4 @@
 @use "Styling/Layout/navbar" as *;
-@use "Styling/Layout/footer" as *;
 
 // Colors and Fonts 
 $mainHeaderColor: hsla(67, 27%, 94%, 1);
@@ -9,7 +8,7 @@ $projectHeaderColor: rgba(240, 240, 240, 1);
 $projectTitleFont: clamp(1.2rem, 2vw, 1.5rem);
 
 // Layout dimensions
-$minLayoutHeight: calc(100vh - $navHeight - $footerHeight);
+$minLayoutHeight: calc(100vh - $navHeight);
 
 // Each Project Dimensions
 $minImgWidthPC: 250px;
