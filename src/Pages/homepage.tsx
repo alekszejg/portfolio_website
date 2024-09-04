@@ -1,3 +1,5 @@
+import MyStack from 'Components/Homepage/myStack';
+
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faLink } from '@fortawesome/free-solid-svg-icons';
@@ -6,25 +8,10 @@ import PageLayout from 'Components/Layout/pageLayout';
 import "Styling/Pages/homepage.scss";
 
 export default function Homepage() {
-    
-    const techStack = [
-        {name: "HTML CSS", description: "", image: ""},
-        {name: "HTML CSS", description: "", image: ""},
-        {name: "Sass/SCSS", description: "", image: ""},
-        {name: "Tailwind CSS", description: "", image: ""},
-
-        {name: "JavaScript", description: "", image: ""},
-        {name: "TypeScript", description: "", image: ""},
-        {name: "Python", description: "", image: ""},
-        
-        {name: "React", description: "", image: ""},
-        {name: "Next.js", description: "", image: ""},
-    ]
-    
     return (
         <PageLayout layoutID="homepageLayout">
             
-            <div id="profileWrapper">
+            <div id="homepageProfileWrapper">
                 <div id="backgroundPhotoWrapper">
                     <img src="/Images/myLogo.svg" alt="My logo in background" />
                 </div>
@@ -62,6 +49,8 @@ export default function Homepage() {
                     <Link to="/contact"><button>My Stack</button></Link>
                     <Link to="/projects"><button>Posts</button></Link>
                 </div>
+
+                <MyStack />
                 
             </div>
 

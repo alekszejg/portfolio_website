@@ -161,7 +161,7 @@ export default function MyCV() {
     return (
         <PageLayout layoutID="myCVLayout">
             <div id="generalSection">
-                <div id="profileWrapper">
+                <div id="cvProfileWrapper">
                     <div id="myPhotoWrapper">
                         <img id="myPhoto" src="/Images/myPhoto.png" alt="My Photo" />
                     </div>
