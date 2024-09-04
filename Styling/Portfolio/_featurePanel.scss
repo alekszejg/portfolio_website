@@ -105,7 +105,6 @@ $textFont: clamp(0.9rem, 2vw, 1.2rem);
 
 @mixin panelPC() {
     #aboutProjectPanel {
-        display: flex;
         padding: $sectionGap 20%;
         text-align: center;
 
