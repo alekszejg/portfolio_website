@@ -2,7 +2,6 @@
 
 # my content
 /app/post-creator
-/middleware.ts
 
 # dependencies
 /node_modules
