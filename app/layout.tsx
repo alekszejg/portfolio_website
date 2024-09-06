@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import NextSessionProvider from "@/Components/nextSessionProvider";
 import "@/Styling/index.scss";
 import "@/Styling/Pages/homepage.scss";
 
@@ -9,10 +10,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout(props: Readonly<{children: React.ReactNode;}>) {
   return (
-    <html lang="en">
-      <body>
-        {props.children}
-      </body>
-    </html>
+    <NextSessionProvider>
+      <html lang="en">
+        <body>
+          {props.children}
+        </body>
+      </html>
+    </NextSessionProvider>
   );
 }
+
+
