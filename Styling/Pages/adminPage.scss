@@ -1,3 +1,5 @@
+@import "../blogpost";
+
 @mixin edit-focused-element {
     &:focus {
         border-color: hsla(0, 0%, 65%, 1); 
@@ -7,6 +9,7 @@
 
 #adminPageLayout {
     display: flex;
+    column-gap: 2.5rem;
     padding: 3rem 0;
 
     h2 {
@@ -89,16 +92,42 @@
                 transform: scale(1.01);
             }
         }
+
+        #submittedText {
+            align-self: center;
+            color: green;
+        }
     }
 
-    #recentPostsWrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    #recentPostsSection {
         width: 50%;
 
         h2 {
             margin: 0 0 1.5rem;
         }
+
+        #recentPostsWrapper {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+
+            @include blogpost($width: 90%);
+    
+            button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50%;
+                padding: 0.5rem 0;
+                border-radius: 0.3rem;
+                border: 2px solid hsla(0, 0%, 75%, 1);
+                font-family: "Montserrat-Medium";
+    
+                &:hover {
+                    transform: scale(1.01);
+                }
+            }
+        }
     }
+    
 }
