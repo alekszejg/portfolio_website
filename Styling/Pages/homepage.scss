@@ -1,144 +1,178 @@
+@import "../blogpost";
+
 #homepageLayout {
     max-width: 1400px;
-}
 
-#homepageProfileWrapper {
-    position: relative;
-    
-    #backgroundPhotoWrapper {
-        width: 100%;
-        aspect-ratio: 3/1;
-
-        img {
+    #homepageProfileWrapper {
+        position: relative;
+        
+        #backgroundPhotoWrapper {
             width: 100%;
-            height: 100%;
-        }
-    }
-
-    #myPhotoWrapper {
-        width: min(25%, 300px);
-        aspect-ratio: 1;
-        z-index: 2;
-        position: absolute;
-        transform: translate(30%, -65%);
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-}
-
-#textWrapper {
-    margin-left: 5%;
-    margin-top: 10%;
+            aspect-ratio: 3/1;
     
-    h2 {
-        margin: 0;
-    }
-
-    #location {
-        display: flex;
-        align-items: center;
-        column-gap: 0.5rem;
-        margin: 0;
-
-        #locationIcon {
-            height: 0.8rem;
-        }
-    }
-    
-    .visitLinkWrapper {
-        display: flex;
-        align-items: center;
-        column-gap: 0.5rem;
-
-        .linkIcon {
-            height: 0.7rem;
-        }
-    }
-}
-
-#buttonWrapper {
-    display: flex;
-    justify-content: space-between;
-    width: 25%;
-    margin-left: 5%;
-    margin-top: 1.2rem;
-
-    a {
-        width: 45%;
-
-        button {
-            width: 100%;
-            height: 100%;
-            padding: 0.5rem 1rem;
-            border: 1px solid gray;
-            border-radius: 0.8rem;
-        }
-    }
-}
-
-#viewMenuWrapper {
-    display: flex;
-    justify-content: space-evenly; // change later / split area in half for each of 2 buttons
-    column-gap: 20%;
-    margin-top: 1.5rem;
-
-    button {
-        background: none;
-        border: 0;
-    }
-}
-
-#myStackWrapper {
-    display: flex;
-    padding: 8rem 5%;
-    
-    #allLogosWrapper {
-        display: flex;
-        flex-direction: column;
-        row-gap: 1.6rem;
-        width: 50%;
-
-        .techStackRow {
-            display: flex;
-            justify-content: center;
-            column-gap: 1.2rem;
-
-            .selectedSkillLogoWrapper {
-                border: 2px solid hsla(0, 100%, 75%, 1);
+            img {
+                width: 100%;
+                height: 100%;
             }
-
-            .techSkillLogoWrapper {
-                width: 3rem;
+        }
     
-                &:hover {
-                    transform: scale(1.1);
-                }
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
+        #myPhotoWrapper {
+            width: min(25%, 300px);
+            aspect-ratio: 1;
+            z-index: 2;
+            position: absolute;
+            transform: translate(30%, -65%);
+    
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
         }
     }
 
-    #toolDescriptionWrapper {
-        width: 50%;
-
-        h3, p {
+    #textWrapper {
+        margin-left: 5%;
+        margin-top: 10%;
+        
+        h2 {
             margin: 0;
         }
+    
+        #location {
+            display: flex;
+            align-items: center;
+            column-gap: 0.5rem;
+            margin: 0;
+    
+            #locationIcon {
+                height: 0.8rem;
+            }
+        }
+        
+        .visitLinkWrapper {
+            display: flex;
+            align-items: center;
+            column-gap: 0.5rem;
+    
+            .linkIcon {
+                height: 0.7rem;
+            }
+        }
+    }
+    
+    #buttonWrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 25%;
+        margin-left: 5%;
+        margin-top: 1.2rem;
+    
+        a {
+            width: 45%;
+    
+            button {
+                width: 100%;
+                height: 100%;
+                padding: 0.5rem 1rem;
+                border: 1px solid gray;
+                border-radius: 0.8rem;
+            }
+        }
+    }
+    
+    #viewMenuWrapper {
+        display: flex;
+        justify-content: space-evenly; // change later / split area in half for each of 2 buttons
+        column-gap: 20%;
+        margin-top: 1.5rem;
+    
+        button {
+            background: none;
+            border: 0;
+        }
+    }
+    
+    #stackSection {
+        padding: 3rem 5%;
+    
+        h2 {
+            margin: 0 0 2rem 0;
+        }
+    
+        #myStackWrapper {
+            display: flex;
+            justify-content: flex-start;
+            column-gap: 3rem;
+           
+            #allLogosWrapper {
+                display: flex;
+                flex-direction: column;
+                row-gap: 1.6rem;
+                flex-shrink: 0;
+                width: 30%;
+        
+                .techStackRow {
+                    display: flex;
+                    justify-content: center;
+                    column-gap: 1.2rem;
+                    flex-shrink: 0;
+        
+                    .selectedSkillLogoWrapper {
+                        border: 2px solid hsla(0, 100%, 75%, 1);
+                    }
+        
+                    .techSkillLogoWrapper {
+                        width: 3rem;
+            
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+        
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        
+            #toolDescriptionWrapper {
+                width: 70%;
+        
+                h3, p {
+                    margin: 0;
+                }
+        
+                h3 {
+                    margin-bottom: 0.8rem
+                }
+        
+            }
+        }
+    }
 
-        h3 {
-            margin-bottom: 0.8rem
+    #recentPostsSection {
+        padding: 3rem 5%;
+        box-sizing: border-box;
+        
+        h2 {
+            margin: 0 0 1rem 0;
         }
 
+        #recentPostsWrapper {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+    
+            @include blogpost ($width: 75%);
+        }
     }
 }
+
+
+
+
 
 @media screen and (min-width: 1400px) {
     #homepageLayout {
