@@ -1,3 +1,3 @@
 export { default } from "next-auth/middleware";
 
-export const config = {matcher: ["/post-creator/admin"]};
+export const config = {matcher: ["/admin"]};
