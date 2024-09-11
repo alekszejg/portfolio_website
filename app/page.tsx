@@ -1,13 +1,37 @@
-import MyStack from '@/Components/Homepage/myStack';
-
 import Link from 'next/link';
+import { pool } from '@/postgres';
+import type { PoolClient } from 'pg';
+import getPostCategories, { CategoryData } from '@/actions/blog/getPostCategories';
+import getTotalBlogposts from '@/actions/blog/getTotalBlogposts';
+import getRecentPosts, { PostType } from '@/actions/blog/getRecentPosts';
+
+import PageLayout from '@/Components/Layout/pageLayout';
+import MyStack from '@/Components/Homepage/myStack';
+import RecentPosts from './admin/recentPosts';
+import "@/Styling/Pages/homepage.scss";
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faLink } from '@fortawesome/free-solid-svg-icons';
 
-import PageLayout from '@/Components/Layout/pageLayout';
-import "@/Styling/Pages/homepage.scss";
 
-export default function Homepage() {
+export default async function Homepage() {
+    
+    let client: PoolClient | null = null;
+    let postCategories: CategoryData[] = [];
+    let totalPosts: bigint = BigInt(0);
+    let recentPosts: PostType[] = []; 
+
+    try {
+        client = await pool.connect();
+        postCategories = await getPostCategories({ client });
+        totalPosts = await getTotalBlogposts({ client });
+        recentPosts = await getRecentPosts({client: client, offset: 0});
+    } catch (error: any) {
+        console.error("error: ", error);
+    } finally {
+        client && client.release();
+    }
+
     return (
         <PageLayout layoutID="homepageLayout">
             
@@ -48,12 +72,9 @@ export default function Homepage() {
                     <Link href="/projects"><button>View Projects</button></Link>
                 </div>
 
-                <div id="viewMenuWrapper">
-                    <Link href="/contact"><button>My Stack</button></Link>
-                    <Link href="/projects"><button>Posts</button></Link>
-                </div>
-
                 <MyStack />
+
+                <RecentPosts totalPosts={totalPosts} recentPosts={recentPosts}/>
                 
             </div>
 
