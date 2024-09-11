@@ -1,18 +1,15 @@
 "use server"
-
-import { pool } from "@/postgres";
+import { PoolClient } from "pg";
 
 export type CategoryData = {id: number, category: string};
 
-export default async function getPostCategories(): Promise<CategoryData[] | null> {
-    let results = null
+
+export default async function getPostCategories({client}: {client: PoolClient}): Promise<CategoryData[]> {
+    let results: CategoryData[] = []; 
     try {
-      const client = await pool.connect();
       const response = await client.query('SELECT * FROM posts_category');
       results = response.rows;
-      client.release()
-    } 
-    catch (error: any) {
+    } catch (error: any) {
         console.error('Error executing query', error);
     } 
     
