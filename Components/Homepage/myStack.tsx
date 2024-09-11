@@ -107,32 +107,34 @@ export default function MyStack() {
     };
 
     return (
-        <div id="myStackWrapper">
+        <section id="stackSection">
+            <h2>My stack</h2>
+            <div id="myStackWrapper">
+                <div id="allLogosWrapper">
+                    <StackLogoRow id="htmlcssStackRow">
+                        <TechSkillLogo currentTool={currentTool} name="HTML" imgSrc={techStack["HTML"].image} imgAlt={techStack["HTML"].alt} onClick={handleLogoClick} />
+                        <TechSkillLogo currentTool={currentTool} name="CSS" imgSrc={techStack["CSS"].image} imgAlt={techStack["CSS"].alt} onClick={handleLogoClick} />
+                        <TechSkillLogo currentTool={currentTool} name="Sass / SCSS" imgSrc={techStack["Sass / SCSS"].image} imgAlt={techStack["Sass / SCSS"].alt} onClick={handleLogoClick} />
+                        <TechSkillLogo currentTool={currentTool} name="Tailwind CSS" imgSrc={techStack["Tailwind CSS"].image} imgAlt={techStack["Tailwind CSS"].alt} onClick={handleLogoClick} />
+                    </StackLogoRow>
 
-            <div id="allLogosWrapper">
-                <StackLogoRow id="htmlcssStackRow">
-                    <TechSkillLogo currentTool={currentTool} name="HTML" imgSrc={techStack["HTML"].image} imgAlt={techStack["HTML"].alt} onClick={handleLogoClick} />
-                    <TechSkillLogo currentTool={currentTool} name="CSS" imgSrc={techStack["CSS"].image} imgAlt={techStack["CSS"].alt} onClick={handleLogoClick} />
-                    <TechSkillLogo currentTool={currentTool} name="Sass / SCSS" imgSrc={techStack["Sass / SCSS"].image} imgAlt={techStack["Sass / SCSS"].alt} onClick={handleLogoClick} />
-                    <TechSkillLogo currentTool={currentTool} name="Tailwind CSS" imgSrc={techStack["Tailwind CSS"].image} imgAlt={techStack["Tailwind CSS"].alt} onClick={handleLogoClick} />
-                </StackLogoRow>
+                    <StackLogoRow id="languageStackRow">
+                        <TechSkillLogo currentTool={currentTool} name="JavaScript"imgSrc={techStack["JavaScript"].image} imgAlt={techStack["JavaScript"].alt} onClick={handleLogoClick} />
+                        <TechSkillLogo currentTool={currentTool} name="TypeScript"imgSrc={techStack["TypeScript"].image} imgAlt={techStack["TypeScript"].alt} onClick={handleLogoClick} />
+                        <TechSkillLogo currentTool={currentTool} name="Python" imgSrc={techStack["Python"].image} imgAlt={techStack["Python"].alt} onClick={handleLogoClick} />
+                    </StackLogoRow>
 
-                <StackLogoRow id="languageStackRow">
-                    <TechSkillLogo currentTool={currentTool} name="JavaScript"imgSrc={techStack["JavaScript"].image} imgAlt={techStack["JavaScript"].alt} onClick={handleLogoClick} />
-                    <TechSkillLogo currentTool={currentTool} name="TypeScript"imgSrc={techStack["TypeScript"].image} imgAlt={techStack["TypeScript"].alt} onClick={handleLogoClick} />
-                    <TechSkillLogo currentTool={currentTool} name="Python" imgSrc={techStack["Python"].image} imgAlt={techStack["Python"].alt} onClick={handleLogoClick} />
-                </StackLogoRow>
+                    <StackLogoRow id="frameworkStackRow">
+                        <TechSkillLogo currentTool={currentTool} name="React.js" imgSrc={techStack["React.js"].image} imgAlt={techStack["React.js"].alt} onClick={handleLogoClick} />
+                        <TechSkillLogo currentTool={currentTool} name="Next.js" imgSrc={techStack["Next.js"].image} imgAlt={techStack["Next.js"].alt} onClick={handleLogoClick} />
+                    </StackLogoRow>
+                </div>
 
-                <StackLogoRow id="frameworkStackRow">
-                    <TechSkillLogo currentTool={currentTool} name="React.js" imgSrc={techStack["React.js"].image} imgAlt={techStack["React.js"].alt} onClick={handleLogoClick} />
-                    <TechSkillLogo currentTool={currentTool} name="Next.js" imgSrc={techStack["Next.js"].image} imgAlt={techStack["Next.js"].alt} onClick={handleLogoClick} />
-                </StackLogoRow>
+                <div id="toolDescriptionWrapper">
+                    <h3>{techStack[currentTool as keyof techStackTypes].name}</h3>
+                    <p>{techStack[currentTool as keyof techStackTypes].text}</p>
+                </div>
             </div>
-
-            <div id="toolDescriptionWrapper">
-                <h3>{techStack[currentTool as keyof techStackTypes].name}</h3>
-                <p>{techStack[currentTool as keyof techStackTypes].text}</p>
-            </div>
-        </div>
+        </section>
     );
 }
