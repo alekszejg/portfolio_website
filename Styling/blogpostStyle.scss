@@ -1,0 +1,3 @@
+@import "./blogpost";
+
+@include blogpost($width: 80%);
