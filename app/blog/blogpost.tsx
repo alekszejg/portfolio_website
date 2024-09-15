@@ -1,8 +1,8 @@
-import { PostType } from "@/actions/blog/getBlogposts";
+import { PostType } from "@/actions/blog/getRecentPosts";
+import "@/Styling/blogpostStyle.scss";
 
 export default function Blogpost(props: PostType) {
     const {id, title, content, category_ID, created_at } = props;
-
     const createdAtLocal = new Date(created_at.toLocaleString());
     const dateFormat = new Intl.DateTimeFormat('en-US', {
         year: 'numeric',
@@ -30,7 +30,6 @@ export default function Blogpost(props: PostType) {
             <h4>{title}</h4>
         
             <p className="content">{content}</p>
-            
         </div>
     );
 }

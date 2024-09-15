@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react";
-import Blogpost from "@/Components/Reusable/blogpost";
+import Blogpost from "@/app/blog/blogpost";
 import getRecentPosts, { PostType } from "@/actions/blog/getRecentPosts";
 
 export default function RecentPosts(props: {totalPosts: bigint, recentPosts: PostType[]}) {
