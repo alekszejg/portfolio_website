@@ -1,4 +1,7 @@
 import { Pool } from 'pg'
+import dotenv from 'dotenv';
+dotenv.config();
+
 
 export let pool = new Pool({
   user: process.env.USER,
@@ -7,6 +10,7 @@ export let pool = new Pool({
   password: process.env.PASSWORD,
   port: Number(process.env.DB_PORT),
 });
+
 
 
 
