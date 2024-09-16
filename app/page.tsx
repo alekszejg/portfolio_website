@@ -6,7 +6,7 @@ import getTotalBlogposts from '@/actions/blog/getTotalBlogposts';
 import getRecentPosts, { PostType } from '@/actions/blog/getRecentPosts';
 
 import PageLayout from '@/Components/Layout/pageLayout';
-import MyStack from '@/Components/Homepage/myStack';
+import MyStack from '@/app/_homepage/myStack';
 import RecentPosts from './admin/recentPosts';
 import "@/Styling/Pages/homepage.scss";
 
