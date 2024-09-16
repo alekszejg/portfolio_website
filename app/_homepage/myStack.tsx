@@ -2,8 +2,6 @@
 
 import StackLogoRow from "./stackLogoRow";
 import TechSkillLogo from "./techSkillLogo";
-
-import { useRouter } from "next/router";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef } from "react";
 
