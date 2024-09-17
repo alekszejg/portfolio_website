@@ -1,8 +1,4 @@
 import Link from 'next/link';
-import { pool } from '@/postgres';
-import type { PoolClient } from 'pg';
-import getRecentPosts, { PostType } from '@/actions/blog/getRecentPosts';
-
 import PageLayout from '@/Components/Layout/pageLayout';
 import MyStack from '@/app/_homepage/myStack';
 import RecentPosts from './admin/recentPosts';
@@ -14,18 +10,6 @@ import { faLocationDot, faLink } from '@fortawesome/free-solid-svg-icons';
 
 export default async function Homepage() {
     
-    let client: PoolClient | null = null;
-    let recentPosts: PostType[] = []; 
-
-    try {
-        client = await pool.connect();
-        recentPosts = await getRecentPosts({client: client, offset: 0});
-    } catch (error: any) {
-        console.error("error: ", error);
-    } finally {
-        client && client.release();
-    }
-
     return (
         <PageLayout layoutID="homepageLayout">
             
@@ -68,7 +52,7 @@ export default async function Homepage() {
 
                 <MyStack />
 
-                <RecentPosts poolClient={client} recentPosts={recentPosts}/>
+                <RecentPosts />
                 
             </div>
 
