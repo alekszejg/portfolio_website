@@ -1,32 +1,15 @@
-"use client"
-import { useState } from "react";
 import Blogpost from "@/app/blog/blogpost";
-import getRecentPosts, { PostType } from "@/actions/blog/getRecentPosts";
+import type { PostType } from "../api/blogposts/get-recent-posts/route";
 
-export default function RecentPosts(props: {totalPosts: bigint, recentPosts: PostType[]}) {
+
+export default async function RecentPosts() {
+    const response = await fetch('http://localhost:3000/api/blogposts/get-recent-posts?offset=0');
     
-    let totalPosts: bigint | number = props.totalPosts
-    props.totalPosts <= BigInt(Number.MAX_SAFE_INTEGER) && (totalPosts = Number(props.totalPosts));
+    if (response.ok) {
+        const data = await response.json();
+        const posts: PostType[] = data.recent_posts;
 
-    const [posts, setPosts] = useState<PostType[]>(props.recentPosts);
-    const [totalPostsNumber, setTotalPostsNumber] = useState(totalPosts);
-    const [offset, setOffset] = useState(10);
-
-    const handleViewMore = async () => {
-        const response = await getRecentPosts({offset: offset});
-        response && setPosts(prevPosts => [...prevPosts, ...response]);
-        setOffset(prevOffset => prevOffset + 10); 
-    };
-
-    return (
-        <section id="recentPostsSection">
-            <h2>Recent posts</h2>
-            <div id="recentPostsWrapper">
-
-            {posts.map(value => (<Blogpost key={value.id} {...value} />))}
-
-            {posts.length < totalPostsNumber && <button onClick={handleViewMore}>View more posts (total: {totalPostsNumber})</button>}
-            </div>
-        </section>
-    );
+        return <>{posts.map(post => (<Blogpost key={post.id} {...post} />))}</>;
+    } 
+    else return null;
 }
