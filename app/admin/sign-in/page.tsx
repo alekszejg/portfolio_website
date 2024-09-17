@@ -4,7 +4,7 @@ import { useEffect, useRef, FormEvent, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useRouter } from 'next/navigation';
 import { useSession, signIn } from 'next-auth/react';
-import verifyCaptcha from '@/actions/authentification/verifyCaptcha';
+import verifyCaptcha from '@/actions/verifyCaptcha';
 import sanitizeInput from '@/actions/sanitizeInput';
 import "@/Styling/Pages/adminAuth.scss";
 
