@@ -1,4 +1,4 @@
-import { PostType } from "@/actions/blog/getRecentPosts";
+import type { PostType } from "../api/blogposts/get-recent-posts/route";
 import "@/Styling/blogpostStyle.scss";
 
 export default function Blogpost(props: PostType) {
