@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import { pool } from '@/postgres';
 import type { PoolClient } from 'pg';
-import getPostCategories, { CategoryData } from '@/actions/blog/getPostCategories';
-import getTotalBlogposts from '@/actions/blog/getTotalBlogposts';
 import getRecentPosts, { PostType } from '@/actions/blog/getRecentPosts';
 
 import PageLayout from '@/Components/Layout/pageLayout';
@@ -17,14 +15,10 @@ import { faLocationDot, faLink } from '@fortawesome/free-solid-svg-icons';
 export default async function Homepage() {
     
     let client: PoolClient | null = null;
-    let postCategories: CategoryData[] = [];
-    let totalPosts: bigint = BigInt(0);
     let recentPosts: PostType[] = []; 
 
     try {
         client = await pool.connect();
-        postCategories = await getPostCategories({ client });
-        totalPosts = await getTotalBlogposts({ client });
         recentPosts = await getRecentPosts({client: client, offset: 0});
     } catch (error: any) {
         console.error("error: ", error);
@@ -74,7 +68,7 @@ export default async function Homepage() {
 
                 <MyStack />
 
-                <RecentPosts totalPosts={totalPosts} recentPosts={recentPosts}/>
+                <RecentPosts poolClient={client} recentPosts={recentPosts}/>
                 
             </div>
 
