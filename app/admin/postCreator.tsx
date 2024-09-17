@@ -1,11 +1,10 @@
 "use client"
 
-import { useState, FormEvent } from "react";
-import type { CategoryData } from "@/actions/blog/getPostCategories";
+import { useState, FormEvent, ReactNode } from "react";
 import handlePostSubmit from "@/actions/blog/handlePostSubmit";
 
 
-export default function PostCreator({ postCategories } : {postCategories: CategoryData[] | null}) {
+export default function PostCreator(props: {selectCategory: Promise<JSX.Element | null>}) {
     
     const [ status, setStatus ] = useState({titleError: "", descrError: "", submitted: false}); 
     const { titleError, descrError, submitted } = status;
@@ -19,27 +18,19 @@ export default function PostCreator({ postCategories } : {postCategories: Catego
 
     return (
         <form id="createPosts" onSubmit={handleSubmit}>         
-        
-        <h2>Add new post 
-            {postCategories && 
-            <select name="category"><option value={undefined} />
-                {postCategories.map(category => (
-                <option key={category.id} value={category.id}>{category.category}</option>
-                ))}
-            </select>}
-        </h2>
-        
-        <h3>Title {titleError && <span>{titleError}</span>}</h3>
-        <input type="text" name="title" required />
+            <h2>Add new post {props.selectCategory}</h2>
+            
+            <h3>Title {titleError && <span>{titleError}</span>}</h3>
+            <input type="text" name="title" required />
 
-        <h3 id="title">Description
-            {descrError && <span>{descrError}</span>}  
-        </h3>
-        
-        <textarea name="body" required/>
-        
-        {!submitted && <button type="submit">Submit</button>}
-        {submitted && <p id="submittedText">Post has been submitted</p>}
-    </form>
+            <h3 id="title">Description
+                {descrError && <span>{descrError}</span>}  
+            </h3>
+            
+            <textarea name="body" required/>
+            
+            {!submitted && <button type="submit">Submit</button>}
+            {submitted && <p id="submittedText">Post has been submitted</p>}
+        </form>
     );
 }
