@@ -11,4 +11,3 @@ export default function TechSkillLogo(props: {searchParamName: string, selectedS
     );
 }
 
-//class selectedSkillLogoWrapper for onclicked params
