@@ -1,6 +1,6 @@
 import PageLayout from "@/Components/Layout/pageLayout";
 import PostCreator from "./postCreator";
-import RecentPosts from "./recentPosts";
+import RecentPosts from "./showRecentPosts";
 import "@/Styling/Pages/adminPage.scss";
 import ChoosePostCategory from "./choosePostCategory";
 import DisplayTotalPosts from "./displayTotalPosts";
