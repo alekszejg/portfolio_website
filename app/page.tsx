@@ -1,8 +1,9 @@
-import Link from 'next/link';
 import PageLayout from '@/Components/Layout/pageLayout';
-import SocialProfile from './_homepage/socialProfile';
+import SocialProfile from '@/app/_homepage/socialProfile';
+import MobileViewMenu from '@/app/_homepage/mobileViewMenu';
 import MyStack from '@/app/_homepage/myStack';
-import RecentPosts from './_homepage/recentPosts';
+import MyProjects from '@/app/_homepage/myProjects';
+import RecentPosts from '@/app/_homepage/recentPosts';
 import "@/Styling/Pages/homepage.scss";
 
 
@@ -10,15 +11,13 @@ export default async function Homepage() {
     return (
         <PageLayout layoutID="homepageLayout">
             <SocialProfile />
-
-            <div id="buttonWrapper">
-                <Link href="/contact"><button>Contact</button></Link>
-                <Link href="/projects"><button>View Projects</button></Link>
+            <MobileViewMenu MyStack={<MyStack hasHeader={false} />} MyProjects={<MyProjects hasHeader={false} />} RecentPosts={<RecentPosts hasHeader={false} />}/>
+            
+            <div id="desktopSectionWrapper">
+                <MyStack hasHeader={true} />
+                <MyProjects hasHeader={true} />
+                <RecentPosts hasHeader={true} />
             </div>
-
-            <MyStack />
-            <RecentPosts />
-
         </PageLayout>
-    )
+    );
 }
