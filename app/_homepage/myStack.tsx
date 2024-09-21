@@ -1,11 +1,11 @@
 "use client"
 
-import StackLogoRow from "./stackLogoRow";
+import StackLogoGroup from "./stackLogoGroup";
 import TechSkillLogo from "./techSkillLogo";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef } from "react";
 
-export default function MyStack() {
+export default function MyStack(props: {hasHeader: boolean}) {
     const searchParams = useSearchParams();
     const selectedSkill = searchParams.get("skill");
     
@@ -112,26 +112,40 @@ export default function MyStack() {
 
     return (
         <section id="stackSection">
-            <h2>My stack</h2>
-            <div id="myStackWrapper" ref={stackSectionRef}>
+            {props.hasHeader && <h2>My stack</h2>}
+            <div id="stackWrapper" ref={stackSectionRef}>
+                
                 <div id="allLogosWrapper">
-                    <StackLogoRow id="htmlcssStackRow">
+                    
+                    <StackLogoGroup id="mobileStackGrid">
                         <TechSkillLogo searchParamName="html" selectedSkill={selectedSkill} imgSrc={techStack["html"].image} imgAlt={techStack["html"].alt} />
                         <TechSkillLogo searchParamName="css" selectedSkill={selectedSkill} imgSrc={techStack["css"].image} imgAlt={techStack["css"].alt} />
                         <TechSkillLogo searchParamName="sass/scss" selectedSkill={selectedSkill} imgSrc={techStack["sass/scss"].image} imgAlt={techStack["sass/scss"].alt} />
                         <TechSkillLogo searchParamName="tailwind-css" selectedSkill={selectedSkill} imgSrc={techStack["tailwind-css"].image} imgAlt={techStack["tailwind-css"].alt} />
-                    </StackLogoRow>
-
-                    <StackLogoRow id="languageStackRow">
                         <TechSkillLogo searchParamName="javascript" selectedSkill={selectedSkill} imgSrc={techStack["javascript"].image} imgAlt={techStack["javascript"].alt} />
                         <TechSkillLogo searchParamName="typescript" selectedSkill={selectedSkill} imgSrc={techStack["typescript"].image} imgAlt={techStack["typescript"].alt} />
                         <TechSkillLogo searchParamName="python" selectedSkill={selectedSkill} imgSrc={techStack["python"].image} imgAlt={techStack["python"].alt} />
-                    </StackLogoRow>
-
-                    <StackLogoRow id="frameworkStackRow">
                         <TechSkillLogo searchParamName="reactjs" selectedSkill={selectedSkill} imgSrc={techStack["reactjs"].image} imgAlt={techStack["reactjs"].alt} />
                         <TechSkillLogo searchParamName="nextjs" selectedSkill={selectedSkill} imgSrc={techStack["nextjs"].image} imgAlt={techStack["nextjs"].alt} />
-                    </StackLogoRow>
+                    </StackLogoGroup>
+
+                    <StackLogoGroup id="htmlcssStackRowPC">
+                        <TechSkillLogo searchParamName="html" selectedSkill={selectedSkill} imgSrc={techStack["html"].image} imgAlt={techStack["html"].alt} />
+                        <TechSkillLogo searchParamName="css" selectedSkill={selectedSkill} imgSrc={techStack["css"].image} imgAlt={techStack["css"].alt} />
+                        <TechSkillLogo searchParamName="sass/scss" selectedSkill={selectedSkill} imgSrc={techStack["sass/scss"].image} imgAlt={techStack["sass/scss"].alt} />
+                        <TechSkillLogo searchParamName="tailwind-css" selectedSkill={selectedSkill} imgSrc={techStack["tailwind-css"].image} imgAlt={techStack["tailwind-css"].alt} />
+                    </StackLogoGroup>
+
+                    <StackLogoGroup id="languageStackRowPC">
+                        <TechSkillLogo searchParamName="javascript" selectedSkill={selectedSkill} imgSrc={techStack["javascript"].image} imgAlt={techStack["javascript"].alt} />
+                        <TechSkillLogo searchParamName="typescript" selectedSkill={selectedSkill} imgSrc={techStack["typescript"].image} imgAlt={techStack["typescript"].alt} />
+                        <TechSkillLogo searchParamName="python" selectedSkill={selectedSkill} imgSrc={techStack["python"].image} imgAlt={techStack["python"].alt} />
+                    </StackLogoGroup>
+
+                    <StackLogoGroup id="frameworkStackRowPC">
+                        <TechSkillLogo searchParamName="reactjs" selectedSkill={selectedSkill} imgSrc={techStack["reactjs"].image} imgAlt={techStack["reactjs"].alt} />
+                        <TechSkillLogo searchParamName="nextjs" selectedSkill={selectedSkill} imgSrc={techStack["nextjs"].image} imgAlt={techStack["nextjs"].alt} />
+                    </StackLogoGroup>
                 </div>
 
                 <div id="toolDescriptionWrapper">
