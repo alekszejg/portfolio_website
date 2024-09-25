@@ -13,14 +13,11 @@ export default function ContactIcon() {
             setPopupVisibility(false);
             dialogRef.current?.close();
         } else {
-            setPopupVisibility(false);
+            setPopupVisibility(true);
             dialogRef.current?.showModal()
         }
     }
-    console.log("Is popup visible: ", popupVisible)
-    
-    
-
+  
     return (
         <>
         <FontAwesomeIcon id="mailIcon" icon={faEnvelope} onClick={toggleDialogie} />
