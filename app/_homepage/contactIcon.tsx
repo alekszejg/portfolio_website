@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
@@ -8,11 +8,18 @@ export default function ContactIcon() {
     const dialogRef = useRef<HTMLDialogElement>(null);
     const [popupVisible , setPopupVisibility] = useState(false);
    
-    const toggleDialogie = () => setPopupVisibility(prev => !prev);
+    const toggleDialogie = () => {
+        if (popupVisible) {
+            setPopupVisibility(false);
+            dialogRef.current?.close();
+        } else {
+            setPopupVisibility(false);
+            dialogRef.current?.showModal()
+        }
+    }
+    console.log("Is popup visible: ", popupVisible)
     
-    useEffect(() => {
-        popupVisible ? dialogRef.current?.showModal() : dialogRef.current?.close();
-    }, [popupVisible]);
+    
 
     return (
         <>
