@@ -29,7 +29,6 @@ export default async function handlePostSubmit(formData: FormData) {
             await client.query('INSERT INTO posts (title, content, category_id) VALUES ($1, $2, $3)', [sanitizedInput[0], sanitizedInput[1], category]);
             res.submitted = true;
             client.release();
-            console.log("submitted to db")
         } catch (error: any) {
             console.error("Some error has occured during submission: ", error);
         }

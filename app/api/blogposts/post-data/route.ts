@@ -1,7 +1,7 @@
 import { pool } from "@/postgres";
 import type { PoolClient } from "pg";
 import { NextRequest, NextResponse } from 'next/server';
-import type { PostType } from "@/actions/blog/getRecentPosts";
+import type { PostType } from "../get-recent-posts/route";
 
 export async function GET(req: NextRequest) {
     const searchParams = req.nextUrl.searchParams
@@ -22,3 +22,4 @@ export async function GET(req: NextRequest) {
         client && client.release();
     }
 }
+
