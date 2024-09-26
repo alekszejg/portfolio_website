@@ -21,7 +21,10 @@ export const authOptions = {
       })
     ],
 
-    session: {strategy: 'jwt' as const},
+    session: {
+      strategy: 'jwt' as const,
+      maxAge: 60 * 60 * 24 * 30 // expires in 30 days
+    },
 
     pages: {signIn: '/admin/sign-in'},
 
@@ -33,11 +36,13 @@ export const authOptions = {
         }
         return session;
       },
+
       async jwt({ token, user }: { token: JWT; user: User }) {
         if (user) {
           token.id = user.id;
           token.username = user.username;
         }
+
         return token;
       }
     }
