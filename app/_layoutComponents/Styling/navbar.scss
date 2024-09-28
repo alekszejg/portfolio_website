@@ -23,6 +23,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1400px;
     height: $navHeight;
     position: relative;
     background-color: $navColor;
@@ -144,6 +145,12 @@ nav {
         #logoLink {
             width: $logoWidthPC;
         }
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    nav {
+        margin: 0 auto;
     }
 }
 
