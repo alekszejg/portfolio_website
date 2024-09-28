@@ -1,9 +1,9 @@
 "use client"
-
-import Link from "next/link";
-import NavList from "./navList";
-import '@/Styling/Layout/navbar.scss'
 import { useState, useEffect, useRef } from 'react';
+import Link from "next/link";
+import NavList from "@/app/_layoutComponents/navList";
+import '@/Styling/Layout/navbar.scss'
+
 
 export default function Navbar() {
     const [burgerMenuOpened, setBurgerMenu] = useState(false); 
@@ -11,15 +11,13 @@ export default function Navbar() {
     const burgerIconRef = useRef<HTMLImageElement>(null);
     const mobileMenuRef = useRef<HTMLInputElement>(null);
 
-    const toggleBurgerMenu = () => {
-        setBurgerMenu(!burgerMenuOpened);
-    };
+    const toggleBurgerMenu = () => setBurgerMenu(!burgerMenuOpened);
+
 
     useEffect(() => {
         
         const handleClickOutside = (event: MouseEvent) => {
-            if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)
-            && burgerIconRef.current && !burgerIconRef.current.contains(event.target as Node)) {
+            if (!mobileMenuRef.current?.contains(event.target as Node) && !burgerIconRef.current?.contains(event.target as Node)) {
                 setBurgerMenu(false);
             }
         }
