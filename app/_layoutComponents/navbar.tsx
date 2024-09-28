@@ -1,60 +1,57 @@
 "use client"
 import { useState, useEffect, useRef } from 'react';
 import Link from "next/link";
-import NavList from "@/app/_layoutComponents/navList";
-import '@/Styling/Layout/navbar.scss'
+import '@/app/_layoutComponents/Styling/navbar.scss'
 
 
 export default function Navbar() {
     const [burgerMenuOpened, setBurgerMenu] = useState(false); 
     
-    const burgerIconRef = useRef<HTMLImageElement>(null);
-    const mobileMenuRef = useRef<HTMLInputElement>(null);
-
     const toggleBurgerMenu = () => setBurgerMenu(!burgerMenuOpened);
+   
+    const burgerIconRef = useRef<HTMLImageElement>(null);
+    const mobileMenuRef = useRef<HTMLUListElement>(null);
+    
+    useEffect(() => {
+        if (burgerMenuOpened) {
+            document.body.classList.add("disableScroll");
+        } else {
+            document.body.classList.remove("disableScroll");
+        }
+    }, [burgerMenuOpened]);
 
 
     useEffect(() => {
-        
         const handleClickOutside = (event: MouseEvent) => {
             if (!mobileMenuRef.current?.contains(event.target as Node) && !burgerIconRef.current?.contains(event.target as Node)) {
                 setBurgerMenu(false);
             }
         }
-        
-        if (burgerMenuOpened) {
-            document.body.classList.add("bodyDisableScroll");
-            document.addEventListener('mousedown', handleClickOutside);
 
-        } else {
-            document.body.classList.remove("bodyDisableScroll");
-            document.removeEventListener('mousedown', handleClickOutside);
-        }
-        
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, [])
 
-    }, [burgerMenuOpened]);
+    const links = [
+        {title: "Interactive CV", href: "/interactive-cv"},
+        {title: "Projects", href: "/projects"},
+    ];
 
     return (
-        <>
         <nav> 
-            <div id="burgerMenuIconWrapper">
-                <img ref={burgerIconRef} id="burgerMenuIcon" src="/Icons/burgerMenuIcon.svg" onClick={toggleBurgerMenu} />
-            </div>
+            <button id="burgerMenuButton">
+                <img ref={burgerIconRef} src="/Icons/burgerMenuIcon.svg" alt="toggle mobile menu" onClick={toggleBurgerMenu} />
+            </button>
             
-            <div ref={mobileMenuRef} className={burgerMenuOpened ? "burgerMenuOpened navListWrapper" : "burgerMenuClosed navListWrapper"}>
-                <NavList />
-            </div>
+            <ul className={burgerMenuOpened ? "navList" : "navList burgerMenuClosed"} ref={mobileMenuRef}>
+                {links.map((link, index) => (
+                    <li key={`linkWrapper${index + 1}`}>
+                        <Link href={link.href}>{link.title}</Link>
+                    </li>
+                ))}
+            </ul>
         
-            <div id="logoWrapper">
-                <Link id="logoLink" href="/">Alexey's Portfolio</Link>
-            </div>
-            
-            <div id="spaceFiller" />
-        
+            <Link id="logoLink" href="/"><img src="" alt="logo" /></Link>
         </nav>
-        </>
     );
 }

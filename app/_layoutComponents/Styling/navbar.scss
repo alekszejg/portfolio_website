@@ -1,0 +1,158 @@
+$navColor: white;
+$dropdownMenuColor: rgba(230, 230, 230, 1);
+$dropdownLinkColor: rgba(125, 125, 125, 0.6);
+$dropdownLinkHoverColor: black;
+
+$navFontPC: 1.1rem;
+
+$navHeight: 3rem;
+
+$logoWidth: 40%;
+$logoWidthPC: min(150px, 20%);
+
+$contentsWidth: 30%; 
+$navContentWidthPC: min(345px, 40%);
+
+
+.disableScroll {
+    height: 100vh;
+    overflow: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $navHeight;
+    position: relative;
+    background-color: $navColor;
+
+    #burgerMenuButton {
+        height: 1.6rem;
+        padding: 0;
+        margin: 0 0.6rem 0;
+        background-color: transparent;
+        border: none;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .burgerMenuClosed {
+        display: none;
+    }
+    
+    .navList {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 100%;
+        background-color: rgba(190, 190, 190, 0.95);
+        list-style-type: none;
+        z-index: 999;
+
+        li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 3rem;
+            
+            &:hover {
+                background-color: rgba(150, 150, 150, 0.7);
+            }
+
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%; 
+                height: 100%;
+                font-family: "Montserrat-Medium";
+                letter-spacing: 1px;
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+
+    #logoLink {
+        width: $logoWidth;
+        height: 100%;
+        text-decoration: none;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+} 
+
+
+@media screen and (min-width: 480px) {
+    
+    nav {
+        
+        #burgerMenuButton {
+            display: none;
+        }
+
+        // So in desktop version it was always visible
+        .burgerMenuClosed {
+            display: flex
+        }
+
+        .navList {
+            flex-direction: row;
+            column-gap: 1.5rem;
+            width: $navContentWidthPC;
+            height: 100%;
+            margin-left: 1rem;
+            position: static;
+            background-color: inherit;
+          
+            li {
+                height: 100%;
+        
+                &:hover {
+                    background-color: $navColor;
+                }
+
+                a {
+                    display: inline;
+                    width: auto; 
+                    height: auto;
+                    text-wrap: nowrap;
+                    font-size: $navFontPC;
+                    color: black;
+
+                    &:hover {
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+
+        #logoLink {
+            width: $logoWidthPC;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
