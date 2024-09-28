@@ -249,6 +249,98 @@
         }
     }
 
+    #projectsSection {
+        padding: 3rem 5%;
+        box-sizing: border-box;
+
+        #projectsGrid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 2rem;
+
+            .projectWrapperLink {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                text-decoration: none;
+                color: black;
+    
+                .projectImgWrapper {
+                    width: 100%;
+                    aspect-ratio: 4/5;
+                    border: 1px solid black;
+                    position: relative;
+        
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+                    .semiTransparentImg {
+                        opacity: 0.2;
+                    }
+                }
+
+                h3 {
+                    margin: 0.5rem 0 0;
+                    text-align: center;
+                    font-family: "Montserrat-Medium";
+                    font-size: 1rem;
+                    font-weight: 500;
+                }
+
+                .showButtonMenuIconWrapper {
+                    width: 1.5rem;
+                    position: absolute;
+                    top: 0.5rem;
+                    right: 0.5rem;
+                    z-index: 999;
+
+                    img {
+                        width: 100%;
+                        height: 100%
+                    }
+                }
+
+                .buttonMenuClosed {
+                    display: none;
+                }
+
+                .buttonMenu {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    row-gap: 0.8rem;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    a {
+                        width: 100%;
+                        text-decoration: none;
+
+                        &:hover, &:active {
+                            transform: scale(1.05);
+                        }
+                        
+                        button {
+                            width: 100%;
+                            text-wrap: nowrap;
+                            padding: 0.5rem 1rem;
+                            border: 1px solid black;
+                            transition: transform 0.1s ease;
+                        }
+                    }
+        
+                }
+            }
+        }    
+    }
+
     #recentPostsSection {
         padding: 3rem 5%;
         box-sizing: border-box;
@@ -264,42 +356,6 @@
     
             @include blogpost ($width: 75%);
         }
-    }
-
-    #projectsSection {
-        padding: 3rem 5%;
-        box-sizing: border-box;
-
-        #projectsGrid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            column-gap: 2rem;
-
-            .projectWrapper {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-    
-                .projectImgWrapper {
-                    width: 100%;
-                    aspect-ratio: 4/5;
-                    border: 1px solid black;
-        
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                    }
-                }
-    
-                h3 {
-                    text-align: center;
-                    font-size: 0.9rem;
-                    font-weight: 400;
-                }
-            }
-        }    
     }
 }
 
@@ -365,7 +421,53 @@
         }
 
         #projectsSection #projectsGrid {
-           grid-template-columns: repeat(4, minmax(160px, 200px));
+            grid-template-columns: repeat(4, minmax(160px, 200px));
+            
+            .showButtonMenuIconWrapper {
+                display: none;
+            }
+
+            .buttonMenu {
+                display: none;
+            }
+
+            .projectWrapperLink:hover {
+            
+                .projectImgWrapper img {
+                    opacity: 0.4;
+                }
+
+                .buttonMenu, .buttonMenuClosed {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    row-gap: 0.8rem;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    a {
+                        width: 100%;
+                        text-decoration: none;
+
+                        &:hover, &:active {
+                            transform: scale(1.05);
+                        }
+                        
+                        button {
+                            width: 100%;
+                            text-wrap: nowrap;
+                            padding: 0.5rem 1rem;
+                            border: 1px solid black;
+                            transition: transform 0.1s ease;
+                        }
+                    }
+                }
+            }
+
+
         }
     }
 }

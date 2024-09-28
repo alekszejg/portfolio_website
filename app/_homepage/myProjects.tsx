@@ -3,13 +3,37 @@ import Project from "./project";
 
 export default function MyProjects(props: {hasHeader: boolean}) {
     
+    const discordBotProps = {
+        githubUrl: "https://github.com/alekszejg/discord_bot_python",
+        localUrl: "/projects/discord-bot",
+        imgSrc: "/Images/Project Previews/discordBot.svg", 
+        imgAlt: "discord bot icon",
+        title: "Discord Bot"
+    };
+
+    const portfolioWebsiteProps = {
+        githubUrl: "https://github.com/alekszejg/portfolio_website",
+        localUrl: "/projects/portfolio-website",
+        imgSrc: "", 
+        imgAlt: "this website's homepage",
+        title: "Portfolio Website"
+    }
+
+    const mangopostWebsiteProps = {
+        githubUrl: "https://github.com/alekszejg/mangopost_nextjs",
+        localUrl: "/projects/mangopost-website",
+        imgSrc: "/Images/Project Previews/mangopostWebsite.png", 
+        imgAlt: "Mangopost website screenshot",
+        title: "Mangopost Website"
+    }
+
     return (
         <section id="projectsSection">
             {props.hasHeader && <h2>Projects</h2>}
             <div id="projectsGrid">
-                <Project imgSrc="/Images/Project Previews/discordBot.svg" imgAlt="discord bot icon" title="Discord Bot" />
-                <Project imgSrc="" imgAlt="this website's homepage" title="Portfolio Website" />
-                <Project imgSrc="/Images/Project Previews/mangopostWebsite.png" imgAlt="mangopost homepage" title="Mangopost Website" />
+                <Project  {...discordBotProps} />
+                <Project {...portfolioWebsiteProps} />
+                <Project {...mangopostWebsiteProps} />
             </div>
         </section>
     );
