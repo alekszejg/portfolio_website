@@ -43,7 +43,7 @@ export default function Navbar() {
                 <img ref={burgerIconRef} src="/Icons/burgerMenuIcon.svg" alt="toggle mobile menu" onClick={toggleBurgerMenu} />
             </button>
             
-            <ul className={burgerMenuOpened ? "navList" : "navList burgerMenuClosed"} ref={mobileMenuRef}>
+            <ul className={burgerMenuOpened ? "navList burgerMenuOpened" : "navList burgerMenuClosed"} ref={mobileMenuRef}>
                 {links.map((link, index) => (
                     <li key={`linkWrapper${index + 1}`}>
                         <Link href={link.href}>{link.title}</Link>

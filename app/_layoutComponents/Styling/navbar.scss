@@ -1,7 +1,4 @@
 $navColor: white;
-$dropdownMenuColor: rgba(230, 230, 230, 1);
-$dropdownLinkColor: rgba(125, 125, 125, 0.6);
-$dropdownLinkHoverColor: black;
 
 $navFontPC: 1.1rem;
 
@@ -44,9 +41,13 @@ nav {
     .burgerMenuClosed {
         display: none;
     }
+
+    .burgerMenuOpened {
+        display: flex;
+    }
+    
     
     .navList {
-        display: flex;
         flex-direction: column;
         align-items: center;
         width: 60%;
@@ -84,6 +85,7 @@ nav {
         }
     }
 
+
     #logoLink {
         width: $logoWidth;
         height: 100%;
@@ -108,7 +110,7 @@ nav {
 
         // So in desktop version it was always visible
         .burgerMenuClosed {
-            display: flex
+            display: flex;
         }
 
         .navList {
