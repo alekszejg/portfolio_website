@@ -1,12 +1,8 @@
 import PageLayout from '@/Components/Layout/pageLayout';
-
-import AboutMeSection from '@/Components/MyCV/aboutMeSection';
-import InfoSection from '@/Components/MyCV/infoSection';
-
-import AccordionItem from '@/Components/MyCV/accordionItem';
-
+import AboutMeSection from '@/app/interactive-cv/aboutMeSection';
+import InfoSection from '@/app/interactive-cv/infoSection';
+import AccordionItem from '@/app/interactive-cv/accordionItem';
 import '@/Styling/Pages/myCV.scss';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import {faEnvelope} from '@fortawesome/free-regular-svg-icons';
