@@ -160,7 +160,7 @@ $largeScreenWidth: calc($maxImgWidthPC * 3 + 2 * $gridColumnGap + 2 * $gridPaddi
     
     #mainHeaderContainer {
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
 
         #lampIcon {
             padding-left: 3.8rem;
