@@ -3,18 +3,24 @@
 import StackLogoGroup from "./stackLogoGroup";
 import TechSkillLogo from "./techSkillLogo";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function MyStack(props: {hasHeader: boolean}) {
     const searchParams = useSearchParams();
     const selectedSkill = searchParams.get("skill");
     
     const stackSectionRef = useRef<HTMLDivElement>(null);
+    const [hasMounted, setHasMounted] = useState(false);
+    
     useEffect(() => {
-        if (stackSectionRef && stackSectionRef.current) {
+        setHasMounted(true);
+    }, []);
+
+    useEffect(() => {
+        if (hasMounted && selectedSkill && stackSectionRef.current) {
             stackSectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'center',});
         }
-    }, []);
+    }, [selectedSkill, hasMounted]);
 
     interface techStackTypes {name: string; text: string; image: string; alt: string};
     const techStack: {[key: string]: techStackTypes} = {
