@@ -1,4 +1,4 @@
-import PageLayout from "@/Components/Layout/pageLayout";
+import PageLayout from '@/app/_layoutComponents/pageLayout';
 import PostCreator from "./postCreator";
 import RecentPosts from "./showRecentPosts";
 import "@/Styling/Pages/adminPage.scss";

@@ -1,4 +1,4 @@
-import PageLayout from '@/Components/Layout/pageLayout';
+import PageLayout from '@/app/_layoutComponents/pageLayout';
 import ProjectFeaturePanel, { ImageWrapper } from '@/app/projects/featurePanel';
 import '@/Styling/Portfolio/discordBot.scss';
 

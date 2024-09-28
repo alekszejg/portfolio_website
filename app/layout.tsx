@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import NextSessionProvider from "@/Components/nextSessionProvider";
+import NextSessionProvider from "@/app/_layoutComponents/sessionProvider";
 import "@/Styling/index.scss";
 import "@/Styling/Pages/homepage.scss";
 

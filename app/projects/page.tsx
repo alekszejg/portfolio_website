@@ -1,6 +1,6 @@
 "use client"
 
-import PageLayout from '@/Components/Layout/pageLayout';
+import PageLayout from '@/app/_layoutComponents/pageLayout';
 import ProjectPreview, { ProjectImage } from '@/app/projects/projectPreview';
 import '@/Styling/Pages/allProjects.scss';
 import { useState, useRef, useEffect} from 'react';

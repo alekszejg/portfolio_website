@@ -1,4 +1,4 @@
-import PageLayout from '@/Components/Layout/pageLayout';
+import PageLayout from '@/app/_layoutComponents/pageLayout';
 import AboutMeSection from '@/app/interactive-cv/aboutMeSection';
 import InfoSection from '@/app/interactive-cv/infoSection';
 import AccordionItem from '@/app/interactive-cv/accordionItem';

@@ -1,4 +1,4 @@
-import PageLayout from '@/Components/Layout/pageLayout';
+import PageLayout from '@/app/_layoutComponents/pageLayout';
 import SocialProfile from '@/app/_homepage/socialProfile';
 import MobileViewMenu from '@/app/_homepage/mobileViewMenu';
 import MyStack from '@/app/_homepage/myStack';
