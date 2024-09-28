@@ -42,7 +42,7 @@
                 color: black;
                 margin-left: 0.8rem;
                 position: relative;
-                top: 0.3rem;
+                top: 0.1rem;
 
                 &:hover {
                     transform: scale(1.1);
@@ -53,12 +53,12 @@
             a {
                 margin-left: 0.8rem;
                 position: relative;
-                top: 0.3rem;
+                top: 0.1rem;
                 text-decoration: none;
                 color: black;
                 
                 #whatsappIcon {
-                    width: 1.4rem;
+                    width: 1.5rem;
 
                     &:hover {
                         transform: scale(1.1);
@@ -143,26 +143,35 @@
             }
         }
 
-        #location {
-            display: flex;
-            align-items: center;
-            column-gap: 0.3rem;
-            margin: 0.5rem 0 0;
-    
+        #myLocation {
+            display: inline-block;
+            margin-top: 0.2rem;
+
             #locationIcon {
                 height: 1rem;
+                margin-right: 0.4rem;
                 position: relative;
                 bottom: 1px;
             }
         }
+
         
-        .visitLinkWrapper {
-            display: flex;
-            align-items: center;
-            column-gap: 0.5rem;
-    
+        h3 {
+            margin: 0 0 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        
+        .linkWrapper {
             .linkIcon {
                 height: 0.7rem;
+                position: relative;
+                bottom: 1px;
+            }
+    
+            a {
+                margin-left: 0.3rem;
+                font-size: 0.9rem;
             }
         }
     }
@@ -263,7 +272,6 @@
 
         #projectsGrid {
             display: grid;
-            //grid-template-columns: repeat(auto-fit, minmax(160px, 200px));
             grid-template-columns: repeat(2, 1fr);
             column-gap: 2rem;
 
@@ -271,7 +279,6 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                //width: clamp(160px, 30vw, 200px);
                 width: 100%;
     
                 .projectImgWrapper {
@@ -317,6 +324,7 @@
         #stackWrapper #allLogosWrapper {
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
             row-gap: 1.6rem;
             flex-shrink: 0;
             width: 30%;
@@ -336,6 +344,11 @@
                 }
             }
 
+            #languageStackRowPC, #frameworkStackRowPC {
+                width: calc(1.5rem * 4 + (1.2rem * 3));
+                width: 249.5px;
+            }
+
         
             #toolDescriptionWrapper {
                 width: 70%;
@@ -349,6 +362,10 @@
                 }
         
             }
+        }
+
+        #projectsSection #projectsGrid {
+           grid-template-columns: repeat(4, minmax(160px, 200px));
         }
     }
 }

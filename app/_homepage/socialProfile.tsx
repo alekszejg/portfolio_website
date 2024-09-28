@@ -21,26 +21,26 @@ export default function SocialProfile() {
                 <ContactIcon />
             </h2>
 
-            <p id="location">
-                <FontAwesomeIcon id="locationIcon" icon={faLocationDot} />
-                Munich, Germany
-            </p>
-            
+            <span id="myLocation"><FontAwesomeIcon id="locationIcon" icon={faLocationDot} />Munich, Germany</span>
+              
             <p>A self-taught programmer with BSc Economics Diploma who has been programming for a year in
                 both Python and JavaScript. My portfolio may be no so large yet, but I guarantee that I invest all my 
                 soul, passion and energy into projects I make. Currently aiming to get a job in the industry, meanwhile
                 working on new projects and improving existing ones.  
             </p>
             
-            <div className="visitLinkWrapper">
+            <h3>Check out my other accounts</h3>
+
+            <div className="linkWrapper">
                 <FontAwesomeIcon className="linkIcon" icon={faLink} />
                 <a href="https://github.com/alekszejg" target="_blank" rel="noopener noreferrer">Github</a>
             </div>
 
-            <div className="visitLinkWrapper">
+            <div className="linkWrapper">
                 <FontAwesomeIcon className="linkIcon" icon={faLink} />
-                <a href="https://tryhackme.com/p/alekszejg" target="_blank" rel="noopener noreferrer">TryHackMe</a>
+                <a href="https://tryhackme.com/p/alekszejg" target="_blank" rel="noopener noreferrer">TryHackMe</a>   
             </div>
+        
         </div>
         </>  
     );
