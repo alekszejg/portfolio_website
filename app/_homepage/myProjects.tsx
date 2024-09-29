@@ -14,7 +14,7 @@ export default function MyProjects(props: {hasHeader: boolean}) {
     const portfolioWebsiteProps = {
         githubUrl: "https://github.com/alekszejg/portfolio_website",
         localUrl: "/projects/portfolio-website",
-        imgSrc: "", 
+        imgSrc: "/Images/Project Previews/thisWebsite.png", 
         imgAlt: "this website's homepage",
         title: "Portfolio Website"
     }
