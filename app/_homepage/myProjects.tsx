@@ -27,6 +27,30 @@ export default function MyProjects(props: {hasHeader: boolean}) {
         title: "Mangopost Website"
     }
 
+    const magopostWebsiteProps = {
+        githubUrl: "https://github.com/alekszejg/mangopost_nextjs",
+        localUrl: "/projects/mangopost-website",
+        imgSrc: "/Images/Project Previews/mangopostWebsite.png", 
+        imgAlt: "Mangopost website screenshot",
+        title: "Mangopost Website"
+    }
+
+    const mngopostWebsiteProps = {
+        githubUrl: "https://github.com/alekszejg/mangopost_nextjs",
+        localUrl: "/projects/mangopost-website",
+        imgSrc: "/Images/Project Previews/mangopostWebsite.png", 
+        imgAlt: "Mangopost website screenshot",
+        title: "Mangopost Website"
+    }
+
+    const mangopotWebsiteProps = {
+        githubUrl: "https://github.com/alekszejg/mangopost_nextjs",
+        localUrl: "/projects/mangopost-website",
+        imgSrc: "/Images/Project Previews/mangopostWebsite.png", 
+        imgAlt: "Mangopost website screenshot",
+        title: "Mangopost Website"
+    }
+
     return (
         <section id="projectsSection">
             {props.hasHeader && <h2>Projects</h2>}
@@ -34,6 +58,10 @@ export default function MyProjects(props: {hasHeader: boolean}) {
                 <Project  {...discordBotProps} />
                 <Project {...portfolioWebsiteProps} />
                 <Project {...mangopostWebsiteProps} />
+
+                <Project {...magopostWebsiteProps} />
+                <Project {...mngopostWebsiteProps} />
+                <Project {...mangopotWebsiteProps} />
             </div>
         </section>
     );

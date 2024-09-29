@@ -257,6 +257,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             column-gap: 2rem;
+            row-gap: 2rem;
 
             .projectWrapperLink {
                 display: flex;
@@ -318,24 +319,18 @@
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
-
-                    a {
+  
+                    button {
                         width: 100%;
-                        text-decoration: none;
+                        text-wrap: nowrap;
+                        padding: 0.5rem 1rem;
+                        border: 1px solid black;
+                        transition: transform 0.1s ease;
 
                         &:hover, &:active {
                             transform: scale(1.05);
                         }
-                        
-                        button {
-                            width: 100%;
-                            text-wrap: nowrap;
-                            padding: 0.5rem 1rem;
-                            border: 1px solid black;
-                            transition: transform 0.1s ease;
-                        }
                     }
-        
                 }
             }
         }    
@@ -422,6 +417,8 @@
 
         #projectsSection #projectsGrid {
             grid-template-columns: repeat(4, minmax(160px, 200px));
+            column-gap: 3rem;
+            row-gap: 2.5rem;
             
             .showButtonMenuIconWrapper {
                 display: none;
@@ -431,9 +428,14 @@
                 display: none;
             }
 
-            .projectWrapperLink:hover {
+            h3:hover {
+                transform: scale(1.05);
+                opacity: 0.6;
+            }
+
+            .projectImgWrapper:hover {
             
-                .projectImgWrapper img {
+                img {
                     opacity: 0.4;
                 }
 
@@ -447,27 +449,20 @@
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
-
-                    a {
+ 
+                    button {
                         width: 100%;
-                        text-decoration: none;
+                        text-wrap: nowrap;
+                        padding: 0.5rem 1rem;
+                        border: 1px solid black;
+                        transition: transform 0.1s ease;
 
                         &:hover, &:active {
                             transform: scale(1.05);
                         }
-                        
-                        button {
-                            width: 100%;
-                            text-wrap: nowrap;
-                            padding: 0.5rem 1rem;
-                            border: 1px solid black;
-                            transition: transform 0.1s ease;
-                        }
                     }
                 }
             }
-
-
         }
     }
 }

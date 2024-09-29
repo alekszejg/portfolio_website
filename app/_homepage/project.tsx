@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 type Project = {
     githubUrl: string, 
@@ -18,6 +19,12 @@ export default function Project(props: Project) {
         event.preventDefault(); // stops <Link> parent from being clicked
         setButtonMenuVisibility(prev => !prev);
     };
+
+    const router = useRouter();
+    const handleReadMore = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+        router.push(localUrl);
+    };
     
     return (
         <Link href={localUrl} className="projectWrapperLink">
@@ -26,8 +33,8 @@ export default function Project(props: Project) {
                 <img src={imgSrc} alt={imgAlt} className={buttonMenuVisible ? "semiTransparentImg" : undefined} />
 
                 <div className={buttonMenuVisible ? "buttonMenu" : "buttonMenuClosed"}>
-                    <a href={githubUrl} target="_blank" rel="noopener noreferrer"><button className="toGithubButton">Github</button></a>
-                    <Link href={localUrl}><button className="moreInfoButton">More info</button></Link>
+                    <button className="toGithubButton" onClick={() => window.open(`${githubUrl}`, '_blank')}>Github</button>
+                    <button className="moreInfoButton" onClick={handleReadMore}>More info</button>
                 </div>
 
                 <div className="showButtonMenuIconWrapper" onClick={toggleButtonMenu}>
