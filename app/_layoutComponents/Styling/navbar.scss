@@ -115,7 +115,6 @@ nav {
 
         .navList {
             flex-direction: row;
-            column-gap: 1.5rem;
             width: $navContentWidthPC;
             height: 100%;
             margin-left: 1rem;
@@ -131,8 +130,9 @@ nav {
 
                 a {
                     display: inline;
-                    width: auto; 
+                    width: 100%; 
                     height: auto;
+                    text-align: center;
                     text-wrap: nowrap;
                     font-size: $navFontPC;
                     color: black;
