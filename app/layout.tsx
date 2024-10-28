@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import NextSessionProvider from "@/app/_layoutComponents/sessionProvider";
-import "@/Styling/index.scss";
-import "@/Styling/Pages/homepage.scss";
+import "@/index.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
