@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply m-0 bg-[rgba(240,240,240,1)] font-regular;
+    }
+
+    .disableBodyScroll {
+        height: 100vh;
+        overflow: hidden;
+    }
+}
+  
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("/Fonts/Montserrat-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat-Medium";
+    src: url("/Fonts/Montserrat-Medium.ttf") format("truetype");
+} 
+
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url("/Fonts/Montserrat-Bold.ttf") format("truetype");
+} 
+
+@font-face {
+    font-family: "Montserrat-ExtraBold";
+    src: url("/Fonts/Montserrat-ExtraBold.ttf") format("truetype");
+} 
+
+
+
+
+
+
