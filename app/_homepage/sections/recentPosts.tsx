@@ -1,4 +1,4 @@
-import ShowRecentPosts from "../admin/showRecentPosts";
+import ShowRecentPosts from "@/app/admin/showRecentPosts";
 
 export default function RecentPosts(props: {hasHeader: boolean}) {
     return (

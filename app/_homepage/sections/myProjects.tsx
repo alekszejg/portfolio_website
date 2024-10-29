@@ -1,4 +1,4 @@
-import Project from "./project";
+import Project from "@/app/_homepage/project";
 
 
 export default function MyProjects(props: {hasHeader: boolean}) {
