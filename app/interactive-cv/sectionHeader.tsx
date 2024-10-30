@@ -2,6 +2,7 @@ type SectionHeaderProps = {headerWrapperClass: string, iconClass: string, icon: 
 
 export default function SectionHeader(props: SectionHeaderProps) {
     const { headerWrapperClass, iconClass, icon, headerClass, header } = props;
+   
     return (
         <div className={headerWrapperClass}>
             <img className={iconClass} src={icon} alt="" />

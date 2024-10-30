@@ -8,21 +8,24 @@ interface InfoSectionProps {
     headerClass: string;
     header: string;
     infoLoop?: ReactElement[];
-    infoListID?: string;
     infoListClass?: string;
     descriptionClass?: string;
     description?: string;
 }
 
 export default function InfoSection(props: InfoSectionProps) {
-    const { infoLoop, infoListID, infoListClass } = props;
+    const { infoLoop, infoListClass } = props;
     const { headerWrapperClass, iconClass, headerIconSrc, headerClass, header } = props;
-    
+    const styling = {
+        headerWrapper: "flex justify-center items-center w-full pb-2 border-b-2 border-black",
+    }
+
+
     return (
         <>
-        <SectionHeader headerWrapperClass={headerWrapperClass ? `headerContainer ${headerWrapperClass}` : "headerContainer"} iconClass={iconClass} icon={headerIconSrc} headerClass={headerClass} header={header} />
+        <SectionHeader headerWrapperClass={headerWrapperClass ? `${styling.headerWrapper} ${headerWrapperClass}` : styling.headerWrapper} iconClass={iconClass} icon={headerIconSrc} headerClass={headerClass} header={header} />
         {props.infoLoop && 
-            <ul className={infoListClass} id={infoListID}>
+            <ul className={infoListClass}>
                 {infoLoop}
             </ul>
         }
