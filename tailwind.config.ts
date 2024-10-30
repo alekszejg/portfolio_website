@@ -14,7 +14,14 @@ const config: Config = {
       'tablet': '480px',
       'ultrawide': '1400px',
     },
-    extend: {},
+    extend: {
+      spacing: {
+        'cvSectionYGap': '3rem',
+      },
+      colors: {
+        'cvGeneralSection': 'hsla(0, 0%, 93.5%, 1)',
+      }
+    },
   },
   plugins: [],
 };
