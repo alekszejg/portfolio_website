@@ -19,7 +19,9 @@ const config: Config = {
         'cvSectionYGap': '3rem',
       },
       colors: {
-        'cvGeneralSection': 'hsla(0, 0%, 93.5%, 1)',
+        'cvGeneralSection': 'hsl(0, 0%, 93.5%)',
+        'cvApproachSection': 'hsl(178, 75%, 93%)',
+        'cvApproachHover': 'hsl(0, 0%, 94%)',
       }
     },
   },
