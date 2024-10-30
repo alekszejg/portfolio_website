@@ -10,13 +10,50 @@ export default function MyCV() {
     const styling = {
         layout: "flex flex-col items-center tablet:flex-row tablet:items-stretch",
         general: {
-            section: "bg-cvGeneralSection py-cvSectionYGap px-[15%]",
+            section: "bg-cvGeneralSection py-cvSectionYGap px-[15%] box-border",
             myImgWrapper: "w-[clamp(180px,55%,200px)] mx-auto aspect-square",
             myImg: "w-full h-full object-cover rounded-full ",
             myName: "pt-2 text-center text-[clamp(1.2rem,5vw,1.8rem)]",
             stickyWrapper: "flex flex-col items-center gap-y-cvSectionYGap",
             aboutMe: {
-                headerIcon: "clamp(1rem,5vw,1.5rem) select-none"
+                wrapper: "w-full",
+                headerIcon: "w-[clamp(1rem,5vw,1.5rem)] select-none",
+                header: "pl-[0.7rem] text-center",
+                text: "mt-6"
+            },
+            contact: {
+                wrapper: "w-full",
+                headerIcon: "w-[clamp(1rem,5vw,1.5rem)] select-none",
+                header: "pl-[0.7rem] text-center",
+                list: "mt-6",
+                listItem: "flex items-center mt-6",
+                icons: "w-4 mr-2 align-[-0.2rem] select-none"
+            },
+            education: {
+                wrapper: "w-full",
+                headerIcon: "w-[clamp(1rem,5vw,1.5rem)] select-none",
+                header: "pl-[0.7rem] text-center",
+                list: "mt-6",
+                listItem: "flex items-center mt-6",
+                educationYear: "inline-block ml-[0.8rem]"
+            }
+        },
+        expertise: {
+            section: "flex flex-col items-center",
+            approaches: {
+                wrapper: "flex flex-col items-center py-cvSectionYGap px-[15%] box-border bg-cvApproachSection",
+                headerIcon: "w-[1.7rem] select-none",
+                header: "pl-2 text-[1.3rem] text-center bg-cvApproachSection sticky top-0",
+                list: "flex flex-col gap-y-10 box-border",
+                listItem: "py-6 pl-[1.2rem] pr-12 rounded-2xl box-border text-[clamp(1.1rem,5vw,1.2rem)] relative hover:bg-cvApproachHover hover:cursor-pointer "
+            },
+            skills: {
+                wrapper: "flex flex-col items-center gap-y-20 py-cvSectionYGap px-[15%] box-border bg-cvSkillsSection",
+                gearHeaderIcon: "w-10 select-none",
+                speechHeaderIcon: "w-[1.7rem] select-none",
+                header: "pl-2 text-[1.3rem] text-center bg-cvSkillsSection sticky top-0",
+                listWrapper: "flex flex-col items-center w-full",
+                listItem: "mt-12 text-center text-clamp(1rem,5vw,1.3rem)"
             }
         }
     };
@@ -24,46 +61,48 @@ export default function MyCV() {
     const aboutMeProps = {
         iconClass: styling.general.aboutMe.headerIcon,
         headerIconSrc: "/Icons/contactIcon.svg",
-        headerClass: "generalHeader",
+        headerClass: styling.general.aboutMe.header,
         header: "About me",
-        descriptionClass: "aboutMeText",
+        descriptionClass: styling.general.aboutMe.text,
         description: `A self-taught programmer with a diploma in BSc Economics, who is currently building 
         his portfolio from various front-end and Python projects`
     };
 
     const contactMeLoop = cvInfo.contactMe.map((info, index) => (
-        <li key={`contactInfo${index + 1}`} id={info.id} className="contactInfoItem">
-            <FontAwesomeIcon icon={info.icon} />
+        <li key={`contactInfo${index + 1}`} className={styling.general.contact.listItem}>
+            <FontAwesomeIcon className={styling.general.contact.icons} icon={info.icon} />
             {info.text}
         </li>
     ));
 
     const contactSectionProps = {
-        headerClass: "generalHeader",
+        headerClass: styling.general.contact.header,
         header: "Contact details",
-        iconClass: "contactBookIcon",
+        iconClass: styling.general.contact.headerIcon,
         headerIconSrc: "/Icons/contactBookIcon.svg",
-        infoListID: "contactList",
+        listClass: styling.general.contact.list,
         infoLoop: contactMeLoop
     };
 
     
 
-    const educationLoop = Object.keys(cvInfo.education).map((key, index) => {
+    const educationLoop = Object.keys(cvInfo.education).map((place, index) => {
         return (
-            <li key={`educationPlace${index + 1}`} className="educationInfoItem">
-            {key}
-                <span className="educationYear">{cvInfo.education[key as keyof typeof cvInfo.education]}</span>
+            <li key={`place${index + 1}`} className={styling.general.education.listItem}>
+                {place}
+                <span className={styling.general.education.educationYear}>
+                    {cvInfo.education[place as keyof typeof cvInfo.education]}
+                </span>
             </li>
         );
     });
 
     const educationSectionProps = {
-        headerClass: "generalHeader",
+        headerClass: styling.general.education.header,
         header: "Education",
-        iconClass: "educationHatIcon",
+        iconClass: styling.general.education.headerIcon,
         headerIconSrc: "/Icons/educationHat.svg",
-        infoListID: "educationList",
+        infoListClass: styling.general.education.list,
         infoLoop: educationLoop
     };
 
@@ -76,12 +115,11 @@ export default function MyCV() {
     ));
 
     const approachSectionProps = {
-        headerWrapperClass: "approachHeaderContainer",
-        iconClass: "puzzleIcon",
+        iconClass: styling.expertise.approaches.headerIcon,
         headerIconSrc: "/Icons/puzzle.svg",
-        headerClass: "expertiseHeader",
+        headerClass: styling.expertise.approaches.header,
         header: "Programming approach",
-        infoListID: "approachList",
+        infoListClass: styling.expertise.approaches.list,
         infoLoop: approachLoop
     }
 
@@ -89,27 +127,25 @@ export default function MyCV() {
 
     const skillsLoop = (list: string[]) => {
         return list.map((skill, index) => (
-            <li key={`skill${index + 1}`} className="eachSkill">{skill}</li>
+            <li key={`skill${index + 1}`} className={styling.expertise.skills.listItem}>
+                {skill}
+            </li>
         ));
     };
 
     const technicalSkillsProps = {
-        headerWrapperClass: "skillHeaderContainer",
-        iconClass: "gearIcon",
+        iconClass: styling.expertise.skills.gearHeaderIcon,
         headerIconSrc: "/Icons/gearIcon.svg",
-        headerClass: "expertiseHeader",
+        headerClass: styling.expertise.skills.header,
         header: "Technical Skills",
-        infoListClass: "skillList",
         infoLoop: skillsLoop(cvInfo.technicalSkills)
     };
 
     const softSkillsProps = {
-        headerWrapperClass: "skillHeaderContainer",
-        iconClass: "speechIcon",
+        iconClass: styling.expertise.skills.speechHeaderIcon,
         headerIconSrc: "/Icons/speechIcon.svg",
-        headerClass: "expertiseHeader",
+        headerClass: styling.expertise.skills.header,
         header: "Soft Skills",
-        infoListClass: "skillList",
         infoLoop: skillsLoop(cvInfo.softSkills)
     };
     
@@ -128,8 +164,8 @@ export default function MyCV() {
                 </div>
                 <h1 className={styling.general.myName}>Alekszej Guljajev</h1>
                 
-                <div id="stickyWrapper">
-                    <div id="aboutMeWrapper">
+                <div className={styling.general.stickyWrapper}>
+                    <div className={styling.general.aboutMe.wrapper}>
                         <InfoSection {...aboutMeProps} />
                     </div>
                     
@@ -144,17 +180,17 @@ export default function MyCV() {
                 
             </section>
             
-            <section id="expertiseSection">
+            <section className={styling.expertise.section}>
                 
-                <div id="approachesWrapper">
+                <div className={styling.expertise.approaches.wrapper}>
                     <InfoSection {...approachSectionProps} />
                 </div>
                 
-                <div id="skillsWrapper">
-                    <div className="skillListWrapper">
+                <div className={styling.expertise.skills.wrapper}>
+                    <div className={styling.expertise.skills.listWrapper}>
                         <InfoSection {...technicalSkillsProps} />
                     </div>
-                    <div className="skillListWrapper">
+                    <div className={styling.expertise.skills.listWrapper}>
                         <InfoSection {...softSkillsProps} />
                     </div>
                 </div>
