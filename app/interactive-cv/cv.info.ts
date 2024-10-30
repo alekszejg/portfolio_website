@@ -4,8 +4,8 @@ import {faEnvelope} from '@fortawesome/free-regular-svg-icons';
 
 const cvInfo = {
     contactMe: [
-        {id: "contactEmail", icon: faEnvelope, text: "alexeyguljajev@gmail.com"},
-        {id: "contactPhone", icon: faPhone, text: "+49 174 6541424"},
+        {icon: faEnvelope, text: "alexeyguljajev@gmail.com"},
+        {icon: faPhone, text: "+49 174 6541424"},
     ],
     education: {
         "School N25 in Ussuriysk, Russia": "2007 - 2012",
