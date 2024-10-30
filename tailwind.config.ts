@@ -22,6 +22,8 @@ const config: Config = {
         'cvGeneralSection': 'hsl(0, 0%, 93.5%)',
         'cvApproachSection': 'hsl(178, 75%, 93%)',
         'cvApproachHover': 'hsl(0, 0%, 94%)',
+        'cvSkillsSection': 'hsl(52, 85%, 93.5%)',
+        'cvSkillsHover': 'hsl(52, 85%, 92%)',
       }
     },
   },
