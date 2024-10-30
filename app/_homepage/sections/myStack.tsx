@@ -11,7 +11,10 @@ const stack: {[key: string]: StackType} = myStack;
 
 export default function MyStack(props: {hasHeader: boolean}) {
     const styling = {
-        mobileGrid: "",
+        section: "py-[3rem] px-[5%]",
+        header: "mb-[2rem]",
+        stackWrapper: "flex gap-x-[3rem]",
+        mobileGrid: "grid grid-cols-[repeat(auto-fill,1.5rem)] gap-[1rem] w-[4rem]",
         desktopGrid: "hidden"
     }
 
@@ -36,7 +39,7 @@ export default function MyStack(props: {hasHeader: boolean}) {
     return (
         <section id="stackSection">
             {props.hasHeader && <h2>My stack</h2>}
-            <div id="stackWrapper" ref={stackSectionRef}>
+            <div className={styling.stackWrapper} ref={stackSectionRef}>
                 
                 <div id="stackLogosWrapper">
                     
