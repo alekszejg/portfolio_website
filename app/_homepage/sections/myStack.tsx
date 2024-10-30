@@ -13,9 +13,14 @@ export default function MyStack(props: {hasHeader: boolean}) {
     const styling = {
         section: "py-[3rem] px-[5%]",
         header: "mb-[2rem]",
-        stackWrapper: "flex gap-x-[3rem]",
-        mobileGrid: "grid grid-cols-[repeat(auto-fill,1.5rem)] gap-[1rem] w-[4rem]",
-        desktopGrid: "hidden"
+        stackWrapper: "flex gap-x-[3rem] tablet:gap-x-[1.6rem] tablet:shrink-0 tablet:w-[30%]",
+        mobileGrid: "grid grid-cols-[repeat(auto-fill,1.5rem)] gap-[1rem] w-[4rem] tablet:hidden",
+        desktopGrid: "hidden tablet:flex tablet:flex-col tablet:gap-x-[1.2rem] tablet:shrink-0",
+        description: {
+            wrapper: "tablet:w-[70%]",
+            header: "mb-[0.8rem]",
+            text: ""
+        }
     }
 
     const searchParams = useSearchParams();
@@ -68,9 +73,9 @@ export default function MyStack(props: {hasHeader: boolean}) {
                     </div>
                 </div>
 
-                <div id="toolDescriptionWrapper">
-                    <h3>{stack[selectedSkill as keyof StackType || "html"].name}</h3>
-                    <p>{stack[selectedSkill as keyof StackType || "html"].text}</p>
+                <div className={styling.description.wrapper}>
+                    <h3 className={styling.description.header}>{stack[selectedSkill as keyof StackType || "html"].name}</h3>
+                    <p className={styling.description.text}>{stack[selectedSkill as keyof StackType || "html"].text}</p>
                 </div>
             </div>
         </section>
