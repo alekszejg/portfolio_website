@@ -9,12 +9,14 @@ export default async function Homepage() {
     const styling = {
         layout: "max-w-[1400px] relative ultrawide:mx-auto",
         mobileUI: {
-            wrapper: "block tablet:hidden"
+            wrapper: "block tablet:hidden",
+            recentPostsWrapper: "flex flex-col gap-y-6"
         },
         desktopUI: {
             wrapper: "hidden tablet:block",
             recentPosts: {
                 section: "py-12 box-border",
+                wrapper: "flex flex-col gap-y-6",
                 header: "mb-4"
             }
         }
@@ -29,14 +31,14 @@ export default async function Homepage() {
             wrapperStyling={styling.mobileUI.wrapper}
             MyStack={<MyStack hasHeader={false} />} 
             MyProjects={<MyProjects hasHeader={false} />} 
-            RecentPosts={<ShowRecentPosts width={"w-4/5"} />}/>
+            RecentPosts={<ShowRecentPosts wrapperStyling={styling.mobileUI.recentPostsWrapper} blogpostWidth={"w-3/4"} />}/>
             
             <div className={styling.desktopUI.wrapper}>
                 <MyStack hasHeader={true} />
                 <MyProjects hasHeader={true} />
                 <section className={styling.desktopUI.recentPosts.section}>
                     <h2 className={styling.desktopUI.recentPosts.header}>Recent posts</h2>
-                    <ShowRecentPosts width={"w-4/5"} />
+                    <ShowRecentPosts wrapperStyling={styling.desktopUI.recentPosts.wrapper} blogpostWidth={"w-3/4"} />
                 </section>
             </div>
 
