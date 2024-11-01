@@ -28,6 +28,9 @@ const config: Config = {
         'cvApproachItemHover': 'hsl(0, 0%, 94%)',
         'cvSkillsSection': 'hsl(52, 85%, 93.5%)',
         'cvSkillsHover': 'hsl(52, 85%, 92%)',
+
+        'formInput': 'hsl(0,0%,81%)',
+        'formInputFocused': 'hsl(0,0%,51%)'
       },
       keyframes: {
         rotateForwards: {
