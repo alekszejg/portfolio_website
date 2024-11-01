@@ -3,8 +3,7 @@ import SocialProfile from '@/app/_homepage/sections/socialProfile';
 import MobileUI from '@/app/_homepage/mobileUI';
 import MyStack from '@/app/_homepage/sections/myStack';
 import MyProjects from '@/app/_homepage/sections/myProjects';
-import RecentPosts from '@/app/_homepage/sections/recentPosts';
-
+import ShowRecentPosts from "@/app/blog/showRecentPosts";
 
 export default async function Homepage() {
     const styling = {
@@ -13,7 +12,11 @@ export default async function Homepage() {
             wrapper: "block tablet:hidden"
         },
         desktopUI: {
-            wrapper: "hidden tablet:block"
+            wrapper: "hidden tablet:block",
+            recentPosts: {
+                section: "py-12 box-border",
+                header: "mb-4"
+            }
         }
     }
 
@@ -26,12 +29,15 @@ export default async function Homepage() {
             wrapperStyling={styling.mobileUI.wrapper}
             MyStack={<MyStack hasHeader={false} />} 
             MyProjects={<MyProjects hasHeader={false} />} 
-            RecentPosts={<RecentPosts hasHeader={false} />}/>
+            RecentPosts={<ShowRecentPosts width={"w-4/5"} />}/>
             
             <div className={styling.desktopUI.wrapper}>
                 <MyStack hasHeader={true} />
                 <MyProjects hasHeader={true} />
-                <RecentPosts hasHeader={true} />
+                <section className={styling.desktopUI.recentPosts.section}>
+                    <h2 className={styling.desktopUI.recentPosts.header}>Recent posts</h2>
+                    <ShowRecentPosts width={"w-4/5"} />
+                </section>
             </div>
 
         </PageLayout>
