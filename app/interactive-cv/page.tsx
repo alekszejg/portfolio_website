@@ -10,21 +10,21 @@ export default function MyCV() {
     const styling = {
         layout: "flex flex-col items-center tablet:flex-row tablet:items-stretch",
         general: {
-            section: "bg-cvGeneralSection py-cvSectionYGap px-[15%] box-border",
+            section: "bg-cvGeneralSection py-cvSectionYGap px-[15%] box-border tablet:w-[42%] tablet:px-0 tablet:hover:bg-cvGeneralHover",
             myImgWrapper: "w-[clamp(180px,55%,200px)] mx-auto aspect-square",
             myImg: "w-full h-full object-cover rounded-full ",
             myName: "pt-2 text-center text-[clamp(1.2rem,5vw,1.8rem)]",
-            stickyWrapper: "flex flex-col items-center gap-y-cvSectionYGap",
+            stickyWrapper: "flex flex-col items-center gap-y-cvSectionYGap tablet:w-[80%] tablet:pt-cvSectionYGap tablet:mx-auto tablet:sticky tablet:top-0",
             aboutMe: {
                 wrapper: "w-full",
                 headerIcon: "w-[clamp(1rem,5vw,1.5rem)] select-none",
-                header: "pl-[0.7rem] text-center",
+                header: "pl-[0.7rem] text-center tablet:text-[1.5rem]",
                 text: "mt-6"
             },
             contact: {
                 wrapper: "w-full",
                 headerIcon: "w-[clamp(1rem,5vw,1.5rem)] select-none",
-                header: "pl-[0.7rem] text-center",
+                header: "pl-[0.7rem] text-center tablet:text-[1.5rem]",
                 list: "mt-6",
                 listItem: "flex items-center mt-6",
                 icons: "w-4 mr-2 align-[-0.2rem] select-none"
@@ -32,28 +32,27 @@ export default function MyCV() {
             education: {
                 wrapper: "w-full",
                 headerIcon: "w-[clamp(1rem,5vw,1.5rem)] select-none",
-                header: "pl-[0.7rem] text-center",
+                header: "pl-[0.7rem] text-center tablet:text-[1.5rem]",
                 list: "mt-6",
                 listItem: "flex items-center mt-6",
                 educationYear: "inline-block ml-[0.8rem]"
             }
         },
         expertise: {
-            section: "flex flex-col items-center",
+            section: "flex flex-col items-center tablet:w-[58%]",
             approaches: {
-                wrapper: "flex flex-col items-center py-cvSectionYGap px-[15%] box-border bg-cvApproachSection",
+                wrapper: "flex flex-col items-center py-cvSectionYGap px-[15%] box-border bg-cvApproachSection group tablet:w-full tablet:px-[8%] tablet:box-border tablet:hover:bg-cvApproachSectionHover",
                 headerIcon: "w-[1.7rem] select-none",
-                header: "pl-2 text-[1.3rem] text-center bg-cvApproachSection sticky top-0",
+                header: "pl-2 text-[1.3rem] text-center bg-cvApproachSection sticky top-0 tablet:text-[2rem] tablet:bg-none tablet:static tablet:group-hover:bg-cvApproachSectionHover",
                 list: "flex flex-col gap-y-10 box-border",
-                listItem: "py-6 pl-[1.2rem] pr-12 rounded-2xl box-border text-[clamp(1.1rem,5vw,1.2rem)] relative hover:bg-cvApproachHover hover:cursor-pointer "
             },
             skills: {
-                wrapper: "flex flex-col items-center gap-y-20 py-cvSectionYGap px-[15%] box-border bg-cvSkillsSection",
-                gearHeaderIcon: "w-10 select-none",
-                speechHeaderIcon: "w-[1.7rem] select-none",
-                header: "pl-2 text-[1.3rem] text-center bg-cvSkillsSection sticky top-0",
-                listWrapper: "flex flex-col items-center w-full",
-                listItem: "mt-12 text-center text-clamp(1rem,5vw,1.3rem)"
+                wrapper: "flex flex-col items-center gap-y-20 py-cvSectionYGap px-[15%] box-border bg-cvSkillsSection group tablet:w-full tablet:gap-y-16 tablet:px-[8%] tablet:box-border tablet:hover:bg-cvSkillsHover cvUltrawide:flex-row cvUltrawide:justify-between cvUltrawide:items-start",
+                gearHeaderIcon: "w-10 select-none tablet:w-[2.7rem]",
+                speechHeaderIcon: "w-[1.7rem] select-none tablet:w-8 tablet:pt-[0.4rem]",
+                header: "pl-2 text-[1.3rem] text-center bg-cvSkillsSection sticky top-0 tablet:text-[2rem] tablet:group-hover:bg-cvSkillsHover",
+                listWrapper: "flex flex-col items-center w-full tablet:w-[84%] cvUltrawide:w-[45%]",
+                listItem: "mt-12 text-center text-clamp(1rem,5vw,1.3rem) mt-8"
             }
         }
     };
