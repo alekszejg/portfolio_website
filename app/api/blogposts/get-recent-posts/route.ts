@@ -1,17 +1,15 @@
 "use server"
-
 import { pool } from "@/postgres";
-import { PoolClient } from "pg";
+import type { PoolClient } from "pg";
 import { NextRequest, NextResponse } from "next/server";
-
-export type PostType = {id: number, title: string, content: string, category_ID: string, created_at: Date}
+import type { Blogpost } from "@/app/blog/blogpost";
 
 
 export async function GET(req: NextRequest) {
     const searchParams = req.nextUrl.searchParams
     const offset = searchParams.get('offset')
 
-    let res: PostType[] = [];
+    let res: Blogpost[] = [];
     let client: PoolClient | null = null;
 
     try {
