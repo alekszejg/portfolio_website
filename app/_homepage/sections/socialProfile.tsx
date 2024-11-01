@@ -14,6 +14,8 @@ export default function SocialProfile() {
             myPhoto: "w-full h-full"
         },
         infoWrapper: "ml-[5%] mt-[10%]",
+        whatsAppLink: "ml-[0.8rem] relative top-[0.1rem]",
+        whatsAppIcon: "w-6 hover:scale-110 hover:cursor-pointer",
         location: {
             wrapper: "inline-block mt-[0.2rem]",
             icon: "h-[1rem] mr-[0.4rem]"
@@ -47,8 +49,8 @@ export default function SocialProfile() {
         
         <div className={styling.infoWrapper}>
             <h2>Alekszej Guljajev 
-                <Link href="https://wa.me/491746541424">
-                    <FontAwesomeIcon id="whatsappIcon" icon={faWhatsapp} />
+                <Link className={styling.whatsAppLink} href="https://wa.me/491746541424">
+                    <FontAwesomeIcon className={styling.whatsAppIcon} icon={faWhatsapp} />
                 </Link>
                 <ContactPopup />
             </h2>
