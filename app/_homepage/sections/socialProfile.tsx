@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import ContactIcon from '../contactIcon';
+import ContactPopup from '@/app/_homepage/contactPopup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faLink } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
@@ -50,7 +50,7 @@ export default function SocialProfile() {
                 <Link href="https://wa.me/491746541424">
                     <FontAwesomeIcon id="whatsappIcon" icon={faWhatsapp} />
                 </Link>
-                <ContactIcon />
+                <ContactPopup />
             </h2>
 
             <span className={styling.location.wrapper}>
