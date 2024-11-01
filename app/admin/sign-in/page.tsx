@@ -1,15 +1,21 @@
 "use client"
-
 import { useEffect, useRef, FormEvent, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useRouter } from 'next/navigation';
 import { useSession, signIn } from 'next-auth/react';
 import verifyCaptcha from '@/actions/verifyCaptcha';
 import sanitizeInput from '@/actions/sanitizeInput';
-import "@/Styling/Pages/adminAuth.scss";
+
 
 
 export default function AdminSignInPage() {
+    const styling = {
+        form: "flex flex-col items-center gap-y-6 w-1/2 py-16 px-8 mt-[20vh] mx-auto border-2 border-[lightblue] rounded-xl",
+        error: "text-red",
+        inputField: "w-[300px] h-8 py-[1.2rem] px-[0.7rem] box-border border-2 border-formInput rounded-md focus:outline-none focus:border-formInputFocused",
+        submitButton: "flex justify-center items-center w-[150px] py-3 mt-[0.1rem] border-2 border-formInput rounded-lg font-medium tracking-wide hover:scale-[1.01]"
+    }
+
     let error = "";
 
     const { status } = useSession();
@@ -71,13 +77,13 @@ export default function AdminSignInPage() {
     };
 
     return (
-        <form id="authFormWrapper" onSubmit={handleSubmit}>
-            {error && <p id="errorText">{error}</p>}
+        <form className={styling.form} onSubmit={handleSubmit}>
+            {error && <p className={styling.error}>{error}</p>}
         
-            <input id="username" type="text" placeholder="Username" name="username" /> 
-            <input id="password" type="password" placeholder="Password" name="password" /> 
+            <input className={styling.inputField} type="text" placeholder="Username" name="username" /> 
+            <input className={styling.inputField} type="password" placeholder="Password" name="password" /> 
             <ReCAPTCHA ref={captchaRef} sitekey={process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY!} />
-            <button id="submitButton" type="submit">Submit</button>
+            <button className={styling.submitButton} type="submit">Submit</button>
         </form>
     );
 }
