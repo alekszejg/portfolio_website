@@ -31,8 +31,8 @@ const config: Config = {
       },
       keyframes: {
         rotateForwards: {
-          from: { transform: 'rotate(-180deg)' },
-          to: { transform: 'rotate(0deg)' },
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(-180deg)' },
         },
         rotateBackwards: {
           from: { transform: 'rotate(-180deg)' },
@@ -40,8 +40,8 @@ const config: Config = {
         },
       },
       animation: {
-        rotateForwards: 'rotateForwards 0.5s ease-in-out forwards',
-        rotateBackwards: 'rotateBackwards 0.5s ease-in-out forwards',
+        rotateForwards: 'rotateForwards 0.5s forwards',
+        rotateBackwards: 'rotateBackwards 0.5s forwards',
       },
     },
   },
