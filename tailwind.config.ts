@@ -31,6 +31,9 @@ const config: Config = {
 
         'formInput': 'hsl(0,0%,81%)',
         'formInputFocused': 'hsl(0,0%,51%)',
+
+        'yellowProjectPanel': 'rgb(251,247,218)',
+        'blueProjectPanel': 'rgb(199,255,254,1)'
       },
       keyframes: {
         rotateForwards: {
