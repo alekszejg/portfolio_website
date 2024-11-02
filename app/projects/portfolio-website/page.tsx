@@ -1,6 +1,6 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
 import ProjectFeaturePanel, { ImageWrapper } from '@/app/projects/featurePanel';
-import '@/Styling/Portfolio/thisWebsite.scss';
+import styling from '@/app/projects//styling';
 
 
 export default function MyWebsiteProjectPage() {
@@ -69,8 +69,8 @@ export default function MyWebsiteProjectPage() {
     }
 
     return (
-        <PageLayout layoutID="projectPageLayout">
-            <div id="aboutProjectPanel">
+        <PageLayout className={styling.layout}>
+            <section id="aboutProjectPanel">
                 <h2 id="aboutProjectHeader">About the project</h2>
                 <p id="aboutProjectText">This is a 1st website that I have 
                 created. Since website development takes time, I wanted to experiment
@@ -78,7 +78,7 @@ export default function MyWebsiteProjectPage() {
                 experience. Below I'll uncover and explain some "behind the scenes"
                 moments and decisions that during website's production. 
                 </p>
-            </div>
+            </section>
             <ProjectFeaturePanel {...sassToolProps} />
             <ProjectFeaturePanel {...reactLibraryProps} />
             <ProjectFeaturePanel {...typeScriptProps} />

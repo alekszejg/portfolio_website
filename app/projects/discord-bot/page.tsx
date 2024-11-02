@@ -1,7 +1,6 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
 import ProjectFeaturePanel, { ImageWrapper } from '@/app/projects/featurePanel';
-import '@/Styling/Portfolio/discordBot.scss';
-
+import styling from '@/app/projects//styling';
 
 export default function DiscordBotProjectPage() {
     
@@ -63,7 +62,7 @@ export default function DiscordBotProjectPage() {
     }
     
     return (
-        <PageLayout layoutID="projectPageLayout">
+        <PageLayout className={styling.layout}>
             <div id="aboutProjectPanel">
                 <h2 id="aboutProjectHeader">About the project</h2>
                 <p id="aboutProjectText">A Discord bot written in Python with discord.py module to 
