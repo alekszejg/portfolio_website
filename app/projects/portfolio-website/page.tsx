@@ -1,13 +1,12 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
-import ProjectFeaturePanel, { ImageWrapper } from '@/app/projects/featurePanel';
+import ProjectFeaturePanel, { ImageType } from '@/app/projects/featurePanel';
 import styling from '@/app/projects//styling';
 
 
 export default function MyWebsiteProjectPage() {
     
     const sassToolProps = {
-        imgWrapperClass: "svgImgWrapper" as ImageWrapper,
-        imgID: "sassLogoImg",
+        imgType: "svg" as ImageType,
         imgSide: "left",
         imgSrc: "/Images/Logos/sass.svg",
         imgAlt: "a SASS logo",
@@ -19,11 +18,12 @@ export default function MyWebsiteProjectPage() {
         known issues will help me master any website constructor or UI library and 
         perform changes to their output when needed. Knowledge of SCSS preprocessor, 
         at least its common features allows to write shorter, readable, more 
-        customizable and optimized CSS.`
+        customizable and optimized CSS.`,
+        imgExtraStyling: "rounded-[50%]"
     }
 
     const reactLibraryProps = {
-        imgWrapperClass: "svgImgWrapper" as ImageWrapper,
+        imgType: "svg" as ImageType,
         imgSide: "right",
         imgSrc: "/Images/Logos/react.svg",
         imgAlt: "a React logo",
@@ -39,8 +39,7 @@ export default function MyWebsiteProjectPage() {
     }
 
     const typeScriptProps = {
-        imgWrapperClass: "svgImgWrapper" as ImageWrapper,
-        imgID: "typescriptLogoImg",
+        imgType: "svg" as ImageType,
         imgSide: "left",
         imgSrc: "/Images/Logos/ts.svg",
         imgAlt: "a TypeScript logo",
@@ -51,11 +50,12 @@ export default function MyWebsiteProjectPage() {
         Other important benefits of TypeScript that I didn't expect involve quicker 
         recognition of function's parameters and component's props, especially when 
         coming back to the project after a break, as well as ability to create type-based
-        conditional statements and objects with optional properties.`
+        conditional statements and objects with optional properties.`,
+        imgExtraStyling: "rounded-[2rem] tablet:rounded-[2.9rem]"
     }
 
     const iconCollectionProps = {
-        imgWrapperClass: "svgImgWrapper" as ImageWrapper,
+        imgType: "svg" as ImageType,
         imgSide: "right",
         imgSrc: "/Images/iconGroup.svg",
         imgAlt: "a collection of icons",
@@ -70,9 +70,9 @@ export default function MyWebsiteProjectPage() {
 
     return (
         <PageLayout className={styling.layout}>
-            <section id="aboutProjectPanel">
-                <h2 id="aboutProjectHeader">About the project</h2>
-                <p id="aboutProjectText">This is a 1st website that I have 
+            <section className={styling.about.section}>
+                <h2 className={styling.about.header}>About the project</h2>
+                <p className={styling.about.text}>This is a 1st website that I have 
                 created. Since website development takes time, I wanted to experiment
                 and use as many technologies as possible, to gain some priceless 
                 experience. Below I'll uncover and explain some "behind the scenes"

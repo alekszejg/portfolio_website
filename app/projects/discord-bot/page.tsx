@@ -1,11 +1,11 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
-import ProjectFeaturePanel, { ImageWrapper } from '@/app/projects/featurePanel';
+import ProjectFeaturePanel, { ImageType } from '@/app/projects/featurePanel';
 import styling from '@/app/projects//styling';
 
 export default function DiscordBotProjectPage() {
     
     const musicPlayerProps = {
-        imgWrapperClass: "imgWrapper" as ImageWrapper,
+        imgType: "regular" as ImageType,
         imgSide: "left",
         imgSrc: "/Images/botMusicPlayer.png",
         imgAlt: "an image showing discord bot's music player",
@@ -16,7 +16,7 @@ export default function DiscordBotProjectPage() {
     }
 
     const botResponsesProps = {
-        imgWrapperClass: "imgWrapper" as ImageWrapper,
+        imgType: "regular" as ImageType,
         imgSide: "right",
         imgSrc: "/Images/botResponses.png",
         imgAlt: "an image demonstrating the discord bot telling jokes, quotes and daily facts",
@@ -27,7 +27,7 @@ export default function DiscordBotProjectPage() {
     }
 
     const botReactionRoleProps = {
-        imgWrapperClass: "imgWrapper" as ImageWrapper,      
+        imgType: "regular" as ImageType,      
         imgSide: "left",
         imgSrc: "/Images/botReactionRoles.png",
         imgAlt: "an image demonstrating discord bot's reaction roles feature",
@@ -39,7 +39,7 @@ export default function DiscordBotProjectPage() {
     }
 
     const botRandomGamesProps = {
-        imgWrapperClass: "imgWrapper" as ImageWrapper,
+        imgType: "regular" as ImageType,
         imgSide: "right",
         imgSrc: "/Images/randomGames.png",
         imgAlt: "an image demonstrating discord bot's random-based games and features",
@@ -50,7 +50,7 @@ export default function DiscordBotProjectPage() {
     }
 
     const botFileProps = {
-        imgWrapperClass: "imgWrapper" as ImageWrapper,
+        imgType: "regular" as ImageType,
         imgSide: "left",
         imgSrc: "/Images/botFiles.png",
         imgAlt: "an image demonstrating discord bot's ability to send files",
@@ -63,16 +63,16 @@ export default function DiscordBotProjectPage() {
     
     return (
         <PageLayout className={styling.layout}>
-            <div id="aboutProjectPanel">
-                <h2 id="aboutProjectHeader">About the project</h2>
-                <p id="aboutProjectText">A Discord bot written in Python with discord.py module to 
+            <section className={styling.about.section}>
+                <h2 className={styling.about.header}>About the project</h2>
+                <p className={styling.about.text}>A Discord bot written in Python with discord.py module to 
                     simplify interactions with Discord's API. It was my 1st experience with bot programming 
                     as well as event-driven programming. The bot has some standard features such as basic interactions, 
                     reactions and entertainment. Its more advanced features include a music player, interactive role 
                     assignment, an advertisement sender and a file sender to a specific location. Bot development 
                     will continue in future, when all its features and edge cases are finished and improved.
                 </p>
-            </div>
+            </section>
             <ProjectFeaturePanel {...musicPlayerProps} />
             <ProjectFeaturePanel {...botResponsesProps} />
             <ProjectFeaturePanel {...botReactionRoleProps} />
