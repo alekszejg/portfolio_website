@@ -39,7 +39,7 @@ export default function AllProjects() {
     }
 
     const myWebsiteProps = {
-        urlPath: "/projects/my-website",
+        urlPath: "/projects/portfolio-website",
         imgType: "standard" as ProjectImage,
         imgSrc: "/Images/thisWebsite.png",
         imgAlt: "folder structure image of this website",
