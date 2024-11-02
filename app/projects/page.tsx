@@ -1,13 +1,21 @@
 "use client"
-
+import Image from 'next/image';
 import PageLayout from '@/app/_layoutComponents/pageLayout';
 import ProjectPreview, { ProjectImage } from '@/app/projects/projectPreview';
-import '@/Styling/Pages/allProjects.scss';
 import { useState, useRef, useEffect} from 'react';
 
 
 export default function AllProjects() {
-    
+    const styling = {
+        layout: "min-h-[calc(100vh-3rem)]",
+        header: {
+            wrapper: "flex justify-center items-center h-20 border-y-1 border-grey bg-[hsl(67,27%,94%)] tablet:justify-start",
+            icon: "w-[3.2rem] tablet:ml-[3.8rem]",
+            text: "pl-4"
+        },
+        projectsWrapper: "flex flex-col items-center py-16 px-20 box-border tablet:grid tablet:grid-cols-[repeat(auto-fit,minmax(250px,350px))] tablet:gap-16 tablet:py-16 tablet:px-12"
+    };
+
     const totalChildren = useRef<HTMLDivElement>(null);
     const [totalProjects, setTotalProjects] = useState(0);
 
@@ -52,13 +60,18 @@ export default function AllProjects() {
     }
     
     return (
-        <PageLayout layoutID="allProjectsLayout">
-            <div id="mainHeaderContainer">
-                <img id="lampIcon" src="/Icons/lampIcon.svg" alt="lamp icon" />
-                <h1 id="mainProjectHeader">My Projects ({totalProjects})</h1>
+        <PageLayout className={styling.layout}>
+            <div className={styling.header.wrapper}>
+                <Image 
+                className={styling.header.icon} 
+                width={100}
+                height={100}
+                src="/Icons/lampIcon.svg" 
+                alt="lamp icon" />
+                <h1 className={styling.header.text}>My Projects ({totalProjects})</h1>
             </div>
         
-            <div id="projectContainer" ref={totalChildren}>
+            <div className={styling.projectsWrapper} ref={totalChildren}>
                 <ProjectPreview {...discordBotProps} />
                 <ProjectPreview {...myWebsiteProps} />
                 <ProjectPreview {...finalPreviewProps} />
