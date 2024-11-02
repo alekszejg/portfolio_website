@@ -10,7 +10,7 @@ const styling = {
         imgWrapper: "w-full aspect-[5/4] tablet:w-[clamp(375px,40%,437.50px)]",
         svgImgWrapper: "w-[min(170px,55%)] aspect-square tablet:w-[clamp(200px,40%,300px)]",
         img: "w-full h-full rounded-2xl shadow-[0_0_0.55rem_black] aspect-[5/4] object-cover",
-        cvgImg: "w-full h-full shadow-[0_0_0.55rem_black] tablet:rounded-2xl",
+        svgImg: "w-full h-full shadow-[0_0_0.55rem_black] tablet:rounded-2xl",
         textWrapper: "flex flex-col tablet:justify-center tablet:w-2/5 tablet:shrink-0",
         header: "mt-6 mb-2 text-[clamp(1.1rem,3vw,1.5rem)] tablet:mb-4",
         text: "text-[clamp(0.9rem,2vw,1.2rem)]"
