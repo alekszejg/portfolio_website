@@ -1,5 +1,6 @@
 CURRENT GOALS
 - Each project page must have a hero section (progress bar along with text describing development stages)
+- Project page for mangopost website and rough outline of next-chat project need to be done
 - All outer element wrappers must be outside of child component for styling to be controlled from parent
 - Fix small styling mistakes that happened during migration from SCSS to Tailwind
 
