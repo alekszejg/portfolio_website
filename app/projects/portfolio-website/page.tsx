@@ -4,7 +4,16 @@ import styling from '@/app/projects//styling';
 
 
 export default function MyWebsiteProjectPage() {
-    
+    const stages = {
+        about: `This is a 1st website that I have created. Since website development takes time, 
+            I wanted to experiment and use as many technologies as possible, to gain some priceless experience. 
+            Below I'll uncover and explain some "behind the scenes" moments and decisions that during website's 
+            production.`,
+        planning: ``,
+        development: ``,
+        production: ``
+    }
+
     const sassToolProps = {
         imgType: "svg" as ImageType,
         imgSide: "left",

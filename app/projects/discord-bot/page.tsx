@@ -1,8 +1,20 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
+import ProjectStages from '@/app/projects/projectStages';
 import ProjectFeaturePanel, { ImageType } from '@/app/projects/featurePanel';
 import styling from '@/app/projects//styling';
 
 export default function DiscordBotProjectPage() {
+    const stages = [
+        {stage: "About", text: `A Discord bot written in Python with discord.py module to simplify 
+            interactions with Discord's API. It was my 1st experience with bot programming as well as 
+            event-driven programming. The bot has some standard features such as basic interactions, 
+            reactions and entertainment. Its more advanced features include a music player, interactive 
+            role assignment, an advertisement sender and a file sender to a specific location. Bot 
+            development will continue in future, when all its features and edge cases are finished and improved.`
+        },
+        {stage: "Planning", text: ``},
+        {stage: "Development", text: ``}
+    ];
     
     const musicPlayerProps = {
         imgType: "regular" as ImageType,
@@ -73,6 +85,7 @@ export default function DiscordBotProjectPage() {
                     will continue in future, when all its features and edge cases are finished and improved.
                 </p>
             </section>
+            <ProjectStages stages={stages} />
             <ProjectFeaturePanel {...musicPlayerProps} />
             <ProjectFeaturePanel {...botResponsesProps} />
             <ProjectFeaturePanel {...botReactionRoleProps} />
