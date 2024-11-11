@@ -12,8 +12,17 @@ export default function DiscordBotProjectPage() {
             role assignment, an advertisement sender and a file sender to a specific location. Bot 
             development will continue in future, when all its features and edge cases are finished and improved.`
         },
-        {stage: "Planning", text: ``},
-        {stage: "Development", text: ``}
+        {stage: "Planning", text: `Before I started implementing my ideas into the Discord Bot, I had to 
+            familiarize myself with couple of tutorials that explained basics of Discord.py module as well as 
+            positibilities and limitations of Discord Api from reading official documentations on both Discord's 
+            and Discord.py websites. The most challenging part was understanding how OOP works, which objects are
+            related and can be used to obtain information on other objects.`
+        },
+        {stage: "Development", text: `Development started with testing message content detection and making
+            bot do basic interactions with user. Later I was testing bot's limitations by developing ability
+            to advertise through it to current specific text channel, either current or all servers it's in. As 
+            I got more confident, I implemented some mini-games along with fetching jokes/facts from Ninja API, then
+            developed interactive reaction roles and Youtube music player with FFMPEG`}
     ];
     
     const musicPlayerProps = {
