@@ -1,7 +1,7 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
-import ProjectStages from '@/app/projects/projectStages';
+import HeroSection from '@/app/projects/_reusable/heroSection';
 import ProjectFeaturePanel, { ImageType } from '@/app/projects/featurePanel';
-import styling from '@/app/projects//styling';
+import styling from '@/app/projects/styling';
 
 
 export default function MyWebsiteProjectPage() {
@@ -99,7 +99,7 @@ export default function MyWebsiteProjectPage() {
                 moments and decisions that during website's production. 
                 </p>
             </section>
-            <ProjectStages stages={stages} />
+            <HeroSection wrapperStyling={styling.heroSection} stages={stages} />
             <ProjectFeaturePanel {...sassToolProps} />
             <ProjectFeaturePanel {...reactLibraryProps} />
             <ProjectFeaturePanel {...typeScriptProps} />

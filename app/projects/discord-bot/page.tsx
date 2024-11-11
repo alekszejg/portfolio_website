@@ -1,5 +1,5 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
-import ProjectStages from '@/app/projects/projectStages';
+import HeroSection from '@/app/projects/_reusable/heroSection';
 import ProjectFeaturePanel, { ImageType } from '@/app/projects/featurePanel';
 import styling from '@/app/projects//styling';
 
@@ -94,7 +94,7 @@ export default function DiscordBotProjectPage() {
                     will continue in future, when all its features and edge cases are finished and improved.
                 </p>
             </section>
-            <ProjectStages stages={stages} />
+            <HeroSection wrapperStyling={styling.heroSection} stages={stages} />
             <ProjectFeaturePanel {...musicPlayerProps} />
             <ProjectFeaturePanel {...botResponsesProps} />
             <ProjectFeaturePanel {...botReactionRoleProps} />
