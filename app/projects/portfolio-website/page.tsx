@@ -1,25 +1,29 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
+import ProjectStages from '@/app/projects/projectStages';
 import ProjectFeaturePanel, { ImageType } from '@/app/projects/featurePanel';
 import styling from '@/app/projects//styling';
 
 
 export default function MyWebsiteProjectPage() {
-    const stages = {
-        about: `This is a 1st website that I have created. Since website development takes time, 
+    const stages = [
+        {stage: "About", text: `This is a 1st website that I have created. Since website development takes time, 
             I wanted to experiment and use as many technologies as possible, to gain some priceless experience. 
             Below I'll uncover and explain some "behind the scenes" moments and decisions that during website's 
-            production.`,
-        planning: `At first I planned this website to simply be an interactive CV similar to one I have, but
+            production.`
+        },
+        {stage: "Planning", text: `At first I planned this website to simply be an interactive CV similar to one I have, but
             offer more details and interactivity which regular CV wouldn't allow and also have separate webpages
             for each of my projects with short description and their features along with some images. Later it grew
             into a larger project with a homepage which is similar to a social media profile, blog section, improved
-            contact form and overall with more advanced styling.`,
-        development: `I first developed it using SCSS and React, however later migrated to Next.js for server-side
+            contact form and overall with more advanced styling.`
+        },
+        {stage: "Development", text: `I first developed it using SCSS and React, however later migrated to Next.js for server-side
             benefits as well as migrated to Tailwind to be able to experiment with styling faster and spend less time on it.
             It taught me a lot of new things such as basic implementation of Next Auth for admin page and working with
-            PostgreSQL to handle incoming messages and display blogposts that I make.`,
-        production: `This will be updated after my website becomes accessible to public.`
-    }
+            PostgreSQL to handle incoming messages and display blogposts that I make.`
+        },
+        {stage: "Production", text: `This will be updated after my website becomes accessible to public.`}
+    ]
 
     const sassToolProps = {
         imgType: "svg" as ImageType,
@@ -95,6 +99,7 @@ export default function MyWebsiteProjectPage() {
                 moments and decisions that during website's production. 
                 </p>
             </section>
+            <ProjectStages stages={stages} />
             <ProjectFeaturePanel {...sassToolProps} />
             <ProjectFeaturePanel {...reactLibraryProps} />
             <ProjectFeaturePanel {...typeScriptProps} />
