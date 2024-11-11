@@ -22,7 +22,7 @@ export default function DiscordBotProjectPage() {
             bot do basic interactions with user. Later I was testing bot's limitations by developing ability
             to advertise through it to current specific text channel, either current or all servers it's in. As 
             I got more confident, I implemented some mini-games along with fetching jokes/facts from Ninja API, then
-            developed interactive reaction roles and Youtube music player with FFMPEG`}
+            developed interactive reaction roles and Youtube music player with FFMPEG.`}
     ];
     
     const musicPlayerProps = {
