@@ -5,6 +5,14 @@ import styling from '@/app/projects/styling';
 
 
 export default function MyWebsiteProjectPage() {
+    const images = [
+        {
+            src: "", 
+            alt: "",
+            description: ""
+        }
+    ];
+
     const stages = [
         {stage: "About", text: `This is a 1st website that I have created. Since website development takes time, 
             I wanted to experiment and use as many technologies as possible, to gain some priceless experience. 
@@ -23,7 +31,7 @@ export default function MyWebsiteProjectPage() {
             PostgreSQL to handle incoming messages and display blogposts that I make.`
         },
         {stage: "Production", text: `This will be updated after my website becomes accessible to public.`}
-    ]
+    ];
 
     const sassToolProps = {
         imgType: "svg" as ImageType,
@@ -99,7 +107,7 @@ export default function MyWebsiteProjectPage() {
                 moments and decisions that during website's production. 
                 </p>
             </section>
-            <HeroSection wrapperStyling={styling.heroSection} stages={stages} />
+            <HeroSection images={images} stages={stages} wrapperStyling={styling.heroSection} />
             <ProjectFeaturePanel {...sassToolProps} />
             <ProjectFeaturePanel {...reactLibraryProps} />
             <ProjectFeaturePanel {...typeScriptProps} />

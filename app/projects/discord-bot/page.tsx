@@ -4,6 +4,34 @@ import ProjectFeaturePanel, { ImageType } from '@/app/projects/featurePanel';
 import styling from '@/app/projects//styling';
 
 export default function DiscordBotProjectPage() {
+    const images = [
+        {
+            src: "/Images/botMusicPlayer.png", 
+            alt: "discord bot's music player", 
+            description: ""
+        },
+        {
+            src: "/Images/botResponses.png",
+            alt: "discord bot telling jokes, quotes and daily facts",
+            description: ""
+        },
+        {
+            src: "/Images/botReactionRoles.png",
+            alt: "discord bot's reaction roles feature",
+            description: ""
+        },
+        {
+            src: "/Images/randomGames.png",
+            alt: "discord bot's random-based games and features",
+            description: ""
+        },
+        {
+            src: "/Images/botFiles.png",
+            alt: "discord bot's ability to send files",
+            description: ""
+        }
+    ]
+
     const stages = [
         {stage: "About", text: `A Discord bot written in Python with discord.py module to simplify 
             interactions with Discord's API. It was my 1st experience with bot programming as well as 
@@ -94,7 +122,7 @@ export default function DiscordBotProjectPage() {
                     will continue in future, when all its features and edge cases are finished and improved.
                 </p>
             </section>
-            <HeroSection wrapperStyling={styling.heroSection} stages={stages} />
+            <HeroSection images={images} stages={stages} wrapperStyling={styling.heroSection} />
             <ProjectFeaturePanel {...musicPlayerProps} />
             <ProjectFeaturePanel {...botResponsesProps} />
             <ProjectFeaturePanel {...botReactionRoleProps} />
