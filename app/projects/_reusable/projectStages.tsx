@@ -9,10 +9,10 @@ type ProjectStagesProps = {
 
 export default function ProjectStages({ stages, wrapperStyling }: ProjectStagesProps) {
     const styling = {
-        progressBar: "flex flex-col justify-between w-[70px] h-[585px] bg-[hsl(0,0,95%)] rounded-full shadow-[1px_1px_10px] shadow-[#BEBEBE] relative left-10",
+        progressBar: "flex flex-col justify-between self-center w-[25px] h-2/3 bg-[hsl(0,0,95%)] rounded-full shadow-[1px_1px_10px] shadow-[#BEBEBE] relative",
         progressBarColored: "w-full rounded-full shadow-[1px_1px_10px] shadow-[#BEBEBE] absolute",
-        button: "w-[70px] h-[70px] rounded-full bg-[hsl(0,0,92%)] z-50",
-        activeButton: "w-[70px] h-[70px] rounded-full bg-red-500 z-50"
+        button: "w-[25px] h-[25px] rounded-full bg-[hsl(0,0,92%)] z-50",
+        activeButton: "w-[25px] h-[25px] rounded-full bg-red-500 z-50"
     };
 
     const [stageIndex, setIndex] = useState<number>(0);
@@ -30,7 +30,7 @@ export default function ProjectStages({ stages, wrapperStyling }: ProjectStagesP
                 case 0:
                     return "h-full bg-transparent"
                 case 1: 
-                    return "h-[calc(50%+2rem)] bg-green-500"
+                    return "h-[calc(50%+0.7rem)] bg-green-500"
                 case 2:
                     return "h-full bg-green-500"
             }
@@ -41,9 +41,9 @@ export default function ProjectStages({ stages, wrapperStyling }: ProjectStagesP
                 case 0:
                     return "h-full bg-transparent"
                 case 1: 
-                    return "h-[calc(100%/3+2rem)] bg-green-500"
+                    return "h-[calc(100%/3+1rem)] bg-green-500"
                 case 2:
-                    return "h-[calc(100%/3*2+1rem)] bg-green-500"
+                    return "h-[calc(100%/3*2)] bg-green-500"
                 case 3:
                     return "h-full bg-green-500"
             }

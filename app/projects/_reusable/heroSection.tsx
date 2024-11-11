@@ -11,7 +11,7 @@ type HeroSectionProps = {
 export default function HeroSection({ images, stages, wrapperStyling}: HeroSectionProps) {
     const styling = {
         imageCarouselWrapper: "flex justify-between items-center",
-        stagesWrapper: "flex justify-between"
+        stagesWrapper: "flex justify-between gap-x-6"
     }
 
     return (
