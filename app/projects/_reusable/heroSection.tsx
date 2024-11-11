@@ -1,12 +1,14 @@
 import ImageCarousel from "@/app/projects/_reusable/imageCarousel";
 import ProjectStages from "@/app/projects/_reusable/projectStages";
+import type { ImageArray } from "@/app/projects/_reusable/imageCarousel";
 
 type HeroSectionProps = {
+    images: ImageArray,
     stages: {stage: string, text: string}[],
     wrapperStyling: string
 }
 
-export default function HeroSection({ stages, wrapperStyling}: HeroSectionProps) {
+export default function HeroSection({ images, stages, wrapperStyling}: HeroSectionProps) {
     const styling = {
         imageCarouselWrapper: "flex justify-between items-center",
         stagesWrapper: "flex justify-between"
@@ -14,7 +16,7 @@ export default function HeroSection({ stages, wrapperStyling}: HeroSectionProps)
 
     return (
         <section className={wrapperStyling}>
-            <ImageCarousel wrapperStyling={styling.imageCarouselWrapper}/>
+            <ImageCarousel images={images} wrapperStyling={styling.imageCarouselWrapper}/>
             <ProjectStages stages={stages} wrapperStyling={styling.stagesWrapper}/>
         </section>
     )
