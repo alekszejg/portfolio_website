@@ -4,8 +4,8 @@ import Image from "next/image";
 export default function TechSkillLogo(props: {searchParamName: string, selectedSkill: string | null, imgSrc: string, imgAlt: string}) {
     const { searchParamName, selectedSkill, imgSrc, imgAlt } = props;
     const styling = {
-        skill: "w-[1.5rem] hover:scale-110 tablet:w-12",
-        selectedSkill: "w-[1.5rem] hover:scale-110 border-2 border-[hsl(0,100%,75%)]",
+        skill: "w-6 aspect-square hover:scale-110 tablet:w-12",
+        selectedSkill: "w-6 aspect-square hover:scale-110 border-2 border-[hsl(0,100%,75%)] tablet:w-12",
         image: "w-full h-full"
     }
 
