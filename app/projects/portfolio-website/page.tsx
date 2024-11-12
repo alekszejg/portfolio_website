@@ -1,5 +1,5 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
-import HeroSection from '@/app/projects/_reusable/heroSection';
+import PreviewSection from '@/app/projects/_reusable/previewSection';
 import ProjectFeaturePanel, { ImageType } from '@/app/projects/featurePanel';
 import styling from '@/app/projects/styling';
 
@@ -107,7 +107,7 @@ export default function MyWebsiteProjectPage() {
                 moments and decisions that during website's production. 
                 </p>
             </section>
-            <HeroSection images={images} stages={stages} wrapperStyling={styling.heroSection} />
+            <PreviewSection images={images} stages={stages} wrapperStyling={styling.previewSection} />
             <ProjectFeaturePanel {...sassToolProps} />
             <ProjectFeaturePanel {...reactLibraryProps} />
             <ProjectFeaturePanel {...typeScriptProps} />

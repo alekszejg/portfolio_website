@@ -5,7 +5,7 @@ const styling = {
         header: "pb-2 text-[clamp(1.1rem,3vw,1.5rem)] tablet:pb-[0.6rem]",
         text: "text-[clamp(0.9rem,2vw,1.2rem)]"
     },
-    heroSection: "flex gap-x-6 w-[92%] mx-auto",
+    previewSection: "flex gap-x-6 w-[92%] mx-auto",
     panel: {
         wrapper: "flex flex-col items-center py-14 px-8 tablet:flex-row tablet:justify-center tablet:gap-x-18 tablet:py-28 tablet:px-0",
         imgWrapper: "w-full aspect-[5/4] tablet:w-[clamp(375px,40%,437.50px)]",
