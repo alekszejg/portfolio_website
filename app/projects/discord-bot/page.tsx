@@ -112,16 +112,6 @@ export default function DiscordBotProjectPage() {
     
     return (
         <PageLayout className={styling.layout}>
-            <section className={styling.about.section}>
-                <h2 className={styling.about.header}>About the project</h2>
-                <p className={styling.about.text}>A Discord bot written in Python with discord.py module to 
-                    simplify interactions with Discord's API. It was my 1st experience with bot programming 
-                    as well as event-driven programming. The bot has some standard features such as basic interactions, 
-                    reactions and entertainment. Its more advanced features include a music player, interactive role 
-                    assignment, an advertisement sender and a file sender to a specific location. Bot development 
-                    will continue in future, when all its features and edge cases are finished and improved.
-                </p>
-            </section>
             <PreviewSection images={images} stages={stages} wrapperStyling={styling.previewSection} />
             <ProjectFeaturePanel {...musicPlayerProps} />
             <ProjectFeaturePanel {...botResponsesProps} />

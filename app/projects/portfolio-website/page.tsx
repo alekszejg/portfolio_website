@@ -98,15 +98,6 @@ export default function MyWebsiteProjectPage() {
 
     return (
         <PageLayout className={styling.layout}>
-            <section className={styling.about.section}>
-                <h2 className={styling.about.header}>About the project</h2>
-                <p className={styling.about.text}>This is a 1st website that I have 
-                created. Since website development takes time, I wanted to experiment
-                and use as many technologies as possible, to gain some priceless 
-                experience. Below I'll uncover and explain some "behind the scenes"
-                moments and decisions that during website's production. 
-                </p>
-            </section>
             <PreviewSection images={images} stages={stages} wrapperStyling={styling.previewSection} />
             <ProjectFeaturePanel {...sassToolProps} />
             <ProjectFeaturePanel {...reactLibraryProps} />
