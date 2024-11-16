@@ -1,10 +1,20 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
+import HeroSection from '@/app/projects/_reusable/heroSection';
 import PreviewSection from '@/app/projects/_reusable/previewSection';
 import ProjectFeaturePanel, { ImageType } from '@/app/projects/featurePanel';
 import styling from '@/app/projects/styling';
 
 
 export default function MyWebsiteProjectPage() {
+    const heroProps = {
+        wrapperStyling: "",
+        header: "Portfolio Website",
+        text: `My personal website featuring an interactive CV, detailed information about 
+        completed as well as ongoing projects, and a blog section displaying my posts.`,
+        imgSrc: "/Images/Project Previews/thisWebsite.png",
+        imgAlt: "this website's homepage"
+    };
+
     const images = [
         {
             src: "", 
@@ -98,6 +108,7 @@ export default function MyWebsiteProjectPage() {
 
     return (
         <PageLayout className={styling.layout}>
+            <HeroSection {...heroProps} />
             <PreviewSection images={images} stages={stages} wrapperStyling={styling.previewSection} />
             <ProjectFeaturePanel {...sassToolProps} />
             <ProjectFeaturePanel {...reactLibraryProps} />
