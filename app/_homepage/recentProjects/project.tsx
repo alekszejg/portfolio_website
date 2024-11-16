@@ -5,11 +5,11 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 
-type Project = {githubUrl: string, localUrl: string, imgSrc: string, imgAlt: string, title: string};
+type Project = {githubUrl: string, localPath: string, imgSrc: string, imgAlt: string, title: string};
 
 
 export default function Project(props: Project) {
-    const { githubUrl, localUrl, imgSrc, imgAlt, title } = props;
+    const { githubUrl, localPath, imgSrc, imgAlt, title } = props;
 
     const [buttonsVisible, setButtonsVisibility] = useState(false);
     const toggleButtonMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -20,7 +20,7 @@ export default function Project(props: Project) {
     const router = useRouter();
     const handleReadMore = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
-        router.push(localUrl);
+        router.push(localPath);
     };
 
     const styling = {
@@ -39,7 +39,7 @@ export default function Project(props: Project) {
     }
     
     return (
-        <Link href={localUrl} className="projectWrapperLink">
+        <Link href={localPath} className={styling.link}>
             
             <div className={styling.projectImgWrapper}>
                 <Image 
