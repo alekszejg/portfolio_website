@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import handleMessageSubmit from '@/actions/handleMessageSubmit';
 
-export default function ContactPopup() {
+export default function TriggerContactForm() {
     const dialogRef = useRef<HTMLDialogElement>(null);
     const [popupVisible , setPopupVisibility] = useState(false);
    

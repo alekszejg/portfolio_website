@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import ContactPopup from '@/app/_homepage/contactPopup';
+import TriggerContactForm from '@/app/_homepage/basicInfo/triggerContactForm';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faLink } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
-export default function SocialProfile() {
+export default function BasicInfo() {
     const styling = {
         images: {
             bgWrapper: "w-full aspect-[3/1]",
@@ -52,7 +52,7 @@ export default function SocialProfile() {
                 <Link className={styling.whatsAppLink} href="https://wa.me/491746541424">
                     <FontAwesomeIcon className={styling.whatsAppIcon} icon={faWhatsapp} />
                 </Link>
-                <ContactPopup />
+                <TriggerContactForm />
             </h2>
 
             <span className={styling.location.wrapper}>
