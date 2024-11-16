@@ -4,7 +4,7 @@ import { useState, ReactNode } from "react"
 
 type Section = "Stack" | "Projects" | "Posts";
 
-export default function MobileUI(props: {wrapperStyling: string, MyStack: ReactNode, MyProjects: ReactNode, RecentPosts: ReactNode}) {
+export default function ResponsiveUI(props: {wrapperStyling: string, MyStack: ReactNode, MyProjects: ReactNode, RecentPosts: ReactNode}) {
     const styling = {
         buttonsWrapper: "flex justify-around w-4/5 mt-[1.5rem] mx-auto tablet:hidden",
         regularButton: "w-1/3 py-[0.5rem] active:bg-[rgb(225,225,225)]",
