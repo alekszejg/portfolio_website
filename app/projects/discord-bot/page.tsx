@@ -6,7 +6,7 @@ import styling from '@/app/projects//styling';
 
 export default function DiscordBotProjectPage() {
     const heroProps = {
-        wrapperStyling: "",
+        imgWrapperStyling: "",
         header: "Versatile Discord Bot",
         text: `A bot that goes beyond basic user interactions, entertainment and event reactions, 
         offering more advanced features like interactive role assignment, ad posting, 

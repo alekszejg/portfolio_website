@@ -7,7 +7,7 @@ import styling from '@/app/projects/styling';
 
 export default function MangopostWebsiteProjectPage() {
     const heroProps = {
-        wrapperStyling: "",
+        imgWrapperStyling: "",
         header: "Mangopost Website",
         text: `A bilingual static website showcasing the services offered by Mangopost in 
         both English and German, with contact options via widgets and provided information. The development 

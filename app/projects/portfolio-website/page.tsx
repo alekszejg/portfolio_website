@@ -7,7 +7,7 @@ import styling from '@/app/projects/styling';
 
 export default function MyWebsiteProjectPage() {
     const heroProps = {
-        wrapperStyling: "",
+        imgWrapperStyling: "",
         header: "Portfolio Website",
         text: `My personal website featuring an interactive CV, detailed information about 
         completed as well as ongoing projects, and a blog section displaying my posts.`,
