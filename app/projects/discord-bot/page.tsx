@@ -12,7 +12,9 @@ export default function DiscordBotProjectPage() {
         offering more advanced features like interactive role assignment, ad posting, 
         file sharing, a YouTube music player and much more.`,
         imgSrc: "/Images/Project Previews/discordBot.svg",
-        imgAlt: "artwork of discord bot"
+        imgAlt: "artwork of discord bot",
+        githubUrl: "https://github.com/alekszejg/discord_bot_python",
+        localUrl: "/projects/discord-bot"
     };
 
     const images = [

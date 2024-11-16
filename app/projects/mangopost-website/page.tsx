@@ -13,7 +13,9 @@ export default function MangopostWebsiteProjectPage() {
         both English and German, with contact options via widgets and provided information. The development 
         focused on an intuitive user interface and responsive design.`,
         imgSrc: "/Images/Project Previews/mangopostWebsite.png",
-        imgAlt: "Mangopost website's homepage"
+        imgAlt: "Mangopost website's homepage", 
+        githubUrl: "https://github.com/alekszejg/mangopost_nextjs",
+        localUrl: "https://github.com/alekszejg/mangopost_nextjs"
     };
 
     return (

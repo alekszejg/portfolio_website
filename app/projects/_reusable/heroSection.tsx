@@ -7,13 +7,16 @@ type HeroSectionProps = {
     header: string, 
     text: string, 
     imgSrc: string, 
-    imgAlt: string
+    imgAlt: string,
+    githubUrl: string,
+    localUrl: string
 };
 
 
-export default function HeroSection({ imgWrapperStyling, header, text, imgSrc, imgAlt }: HeroSectionProps) {
+export default function HeroSection({ imgWrapperStyling, header, text, imgSrc, imgAlt, githubUrl, localUrl }: HeroSectionProps) {
     const styling = {
         section: globalStyling.heroSection,
+        infoWrapper: "flex flex-col",
         header: "",
         text: "",
         image: "w-full h-full"
@@ -21,8 +24,12 @@ export default function HeroSection({ imgWrapperStyling, header, text, imgSrc, i
 
     return (
         <section className={styling.section}>
-            <h2 className={styling.header}>{header}</h2>
-            <p className={styling.text}>{text}</p>
+
+            <div className={styling.infoWrapper}>
+                <h2 className={styling.header}>{header}</h2>
+                <p className={styling.text}>{text}</p>
+            </div>
+    
             <div className={imgWrapperStyling}>
                 <Image 
                 className={styling.image}
@@ -31,6 +38,7 @@ export default function HeroSection({ imgWrapperStyling, header, text, imgSrc, i
                 src={imgSrc} 
                 alt={imgAlt} />
             </div>
+
         </section>
     );
 }

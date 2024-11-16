@@ -12,7 +12,9 @@ export default function MyWebsiteProjectPage() {
         text: `My personal website featuring an interactive CV, detailed information about 
         completed as well as ongoing projects, and a blog section displaying my posts.`,
         imgSrc: "/Images/Project Previews/thisWebsite.png",
-        imgAlt: "this website's homepage"
+        imgAlt: "this website's homepage",
+        githubUrl: "https://github.com/alekszejg/portfolio_website",
+        localUrl: "/projects/portfolio-website"
     };
 
     const images = [
