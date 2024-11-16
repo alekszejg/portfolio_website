@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import Link from "next/link";
-import urlPaths from "@/urlPaths.json";
+import urlPaths from '@/app/url.paths';
 
 export default function Navbar() {
     const [burgerMenuOpened, setBurgerMenu] = useState(false); 
@@ -53,11 +53,12 @@ export default function Navbar() {
             </button>
             
             <ul className={`${styling.navListMobile} ${styling.navListPC}`}>
-                {urlPaths.map((link, index) => (
-                    <li key={`linkWrapper${index + 1}`} className={styling.navListItem}>
-                        <Link href={link.href} className={styling.navLink}>{link.title}</Link>
-                    </li>
-                ))}
+                <li className={styling.navListItem}>
+                    <Link href={urlPaths.cv} className={styling.navLink}>Interactive CV</Link>
+                </li>
+                <li className={styling.navListItem}>
+                    <Link href={urlPaths.projects.base} className={styling.navLink}>Projects</Link>
+                </li>
             </ul>
         
             <Link className={styling.logoLink} href="/">
