@@ -3,9 +3,9 @@ import globalStyling from "@/app/projects/styling";
 
 
 type HeroSectionProps = {
-    imgWrapperStyling: string, 
     header: string, 
     text: string, 
+    imgWrapperStyling?: string, 
     imgSrc: string, 
     imgAlt: string,
     githubUrl: string,
