@@ -1,6 +1,6 @@
 const styling = {
     layout: "flex flex-col",
-    heroSection: "flex justify-center gap-x-6 min-h-50vh",
+    heroSection: "flex justify-center gap-x-6 min-h-[50vh]",
     previewSection: "flex gap-x-6 w-[92%] mx-auto",
     panel: {
         wrapper: "flex flex-col items-center py-14 px-8 tablet:flex-row tablet:justify-center tablet:gap-x-18 tablet:py-28 tablet:px-0",
