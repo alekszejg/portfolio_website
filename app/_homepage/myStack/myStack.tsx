@@ -6,10 +6,10 @@ import skills from "@/app/_homepage/myStack/skills.data";
 import type { SkillsType } from "@/app/_homepage/myStack/skills.data";
 
 
-export default function MyStack({ hasHeader }: {hasHeader: boolean}) {
+export default function MyStack() {
     const styling = {
         section: "py-[3rem] px-[5%]",
-        header: "mb-[2rem]",
+        header: "hidden tablet:block tablet:mb-[2rem]",
         stackWrapper: "flex gap-x-[3rem] tablet:gap-x-[1.6rem] tablet:shrink-0",
         mobileGrid: "grid grid-cols-[repeat(2,1.5rem)] gap-[1rem] w-16 h-[1px] tablet:hidden", // leave h-[1px], it overrites automatic h-full
         desktopLogosWrapper: "hidden tablet:flex tablet:flex-col tablet:items-center tablet:gap-y-[1.6rem] tablet:shrink-0",
@@ -26,7 +26,6 @@ export default function MyStack({ hasHeader }: {hasHeader: boolean}) {
     
     const stackSectionRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
-        console.log("effect was executed")
         if (selectedSkill) {
             stackSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }  
@@ -44,7 +43,7 @@ export default function MyStack({ hasHeader }: {hasHeader: boolean}) {
     return (
         <section className={styling.section}>
             
-            {hasHeader && <h2 className={styling.header}>My stack</h2>}
+            <h2 className={styling.header}>My stack</h2>
             
             <div className={styling.stackWrapper} ref={stackSectionRef}>
                         
