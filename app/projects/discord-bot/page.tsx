@@ -1,9 +1,20 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
+import HeroSection from '@/app/projects/_reusable/heroSection';
 import PreviewSection from '@/app/projects/_reusable/previewSection';
 import ProjectFeaturePanel, { ImageType } from '@/app/projects/featurePanel';
 import styling from '@/app/projects//styling';
 
 export default function DiscordBotProjectPage() {
+    const heroProps = {
+        wrapperStyling: "",
+        header: "Versatile Discord Bot",
+        text: `A bot that goes beyond basic user interactions, entertainment and event reactions, 
+        offering more advanced features like interactive role assignment, ad posting, 
+        file sharing, a YouTube music player and much more.`,
+        imgSrc: "/Images/Project_Previews/discordBot.svg",
+        imgAlt: "artwork of discord bot"
+    };
+
     const images = [
         {
             src: "/Images/botMusicPlayer.png", 
@@ -112,6 +123,7 @@ export default function DiscordBotProjectPage() {
     
     return (
         <PageLayout className={styling.layout}>
+            <HeroSection {...heroProps} />
             <PreviewSection images={images} stages={stages} wrapperStyling={styling.previewSection} />
             <ProjectFeaturePanel {...musicPlayerProps} />
             <ProjectFeaturePanel {...botResponsesProps} />
