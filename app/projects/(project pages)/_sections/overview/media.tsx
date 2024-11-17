@@ -6,8 +6,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export type ImageArray = {src: string, alt: string, description: string}[]
 
-export default function ImageCarousel({ images, wrapperStyling }: {images: ImageArray, wrapperStyling: string}) {
+
+export default function Media({ images, wrapperStyling }: {images: ImageArray, wrapperStyling: string}) {
     const styling = {
+        wrapper: wrapperStyling,
         imgPreview: {
             list: "flex flex-col gap-y-3",
             listItem: "w-[40px] aspect-[5/4] hover:scale-110",
@@ -32,33 +34,23 @@ export default function ImageCarousel({ images, wrapperStyling }: {images: Image
 
     const handleArrowClick = (switchTo: "previous" | "next") => {
         switch (switchTo) {
-            
             case "previous":
-                if (imgIndex - 1 < 0) {
-                    setImgIndex(images.length - 1);
-                } else {
-                    setImgIndex(imgIndex - 1);
-                }
+                (imgIndex - 1 < 0) ? setImgIndex(images.length - 1) : setImgIndex(imgIndex - 1);
                 break;
-
-            case "next":
-                if (imgIndex + 1 > images.length - 1) {
-                    setImgIndex(0);
-                } else {
-                    setImgIndex(imgIndex + 1);
-                }
+            case "next": 
+                (imgIndex + 1 > images.length - 1) ? setImgIndex(0) : setImgIndex(imgIndex + 1);
                 break;
         }
     };
 
     
     return (
-        <div className={wrapperStyling}>
+        <div className={styling.wrapper}>
             
             <ul className={styling.imgPreview.list}>
                 {images.map((image, index) => (
                     <li 
-                    key={`image${index + 1}`} 
+                    key={`imgPreview${index + 1}`} 
                     className={imgIndex === index ? styling.imgPreview.listItemSelected : styling.imgPreview.listItem}
                     onClick={() => handleImgClick(index)}>
                         <Image 

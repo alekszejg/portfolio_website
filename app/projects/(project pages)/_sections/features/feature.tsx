@@ -1,23 +1,10 @@
 import Image from "next/image";
 import globalStyling from "@/app/projects/(project pages)/styling.wrappers";
+import type { AllFeatureProps } from "@/app/projects/(project pages)/_sections/features/featuresSection";
 
 
-export type ImageType = "regular" | "svg";
-
-
-export type ProjectFeatureProps = {
-    imgType: ImageType,
-    imgSide: string,
-    imgSrc: string,
-    imgAlt: string,
-    header: string,
-    text: string,
-    imgExtraStyling?: string
-}
-
-
-export default function ProjectFeature(props: ProjectFeatureProps) {
-    const {imgType, imgSide, imgSrc, imgAlt, header, text, imgExtraStyling } = props;
+export default function Feature(props: AllFeatureProps) {
+    const {imgIsSVG, imgSide, imgSrc, imgAlt, header, text, imgExtraStyling } = props;
 
     const styling = {
         wrapper: `${globalStyling.featureWrapper} ${imgSide === "left" ? "bg-blueProjectPage" : "bg-yellowProjectPage"}`,
@@ -33,9 +20,9 @@ export default function ProjectFeature(props: ProjectFeatureProps) {
     return (
         <div className={styling.wrapper}>
             
-            <div className={`${imgType === "regular" ? styling.imgWrapper : styling.svgImgWrapper} ${imgExtraStyling || ""}`}>
+            <div className={`${imgIsSVG ? styling.svgImgWrapper : styling.imgWrapper} ${imgExtraStyling || ""}`}>
                 <Image 
-                className={imgType === "regular" ? styling.img : styling.svgImg} 
+                className={imgIsSVG ? styling.svgImg : styling.img} 
                 width={1000}
                 height={1000}
                 src={imgSrc} 
