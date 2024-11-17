@@ -1,91 +1,69 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client"
 import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 
+type Project = {githubUrl: string, localPath: string, imgSrc: string, imgAlt: string, title: string};
 
-export type ProjectImage = "standard" | "svg";
 
-interface ProjectPreviewProps {
-    urlPath: string,
-    imgType: ProjectImage,
-    imgSrc: string,
-    imgAlt: string,
-    title: string,
-    description?: string,
-    imgID?: string,
-    finalPreview?: boolean;
-}
-
-export default function ProjectPreview(props: ProjectPreviewProps) {
-    const { urlPath, imgType, imgID, imgSrc, imgAlt, title, description, finalPreview } = props;
+export default function ProjectPreview({ githubUrl, localPath, imgSrc, imgAlt, title }: Project) {
     
-    const [descriptionVisible, showDescription] = useState(false);
-    const toggleDescription = (event: React.MouseEvent<HTMLElement>) => {
-        event.preventDefault(); // stops <Link> parent from being clicked
-        showDescription(prev => !prev);
+    const [buttonsVisible, setButtonsVisibility] = useState(false);
+    const toggleButtonMenu = (event: React.MouseEvent<HTMLElement>) => {
+        event.preventDefault(); 
+        setButtonsVisibility(prev => !prev);
+    };
+
+    const router = useRouter();
+    const handleReadMore = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+        router.push(localPath);
     };
 
     const styling = {
-        link: "flex flex-col justify-centert min-w-[250px] w-full mb-16 rounded-2xl shadow-[0_0_0.1rem_black] relative overflow-hidden bg-[rgb(245,245,245)] active:outline active:outline-1 active:outline-grey tablet:m-0",
-        imgWrapper: descriptionVisible ? "w-full opacity-10" : "w-full",
-        img: "w-full h-full aspect-[5/4]",
-        nonSvgImg: "object-cover", 
-        svgImg: "py-8 box-border",
-        reference: {
-            wrapper: descriptionVisible ? "flex justify-between items-center h-16 py-4 box-border bg-[rgba(240,240,240)] opacity-10" : "flex justify-between items-center h-16 py-4 box-border bg-[rgba(240,240,240)]",
-            header: "pl-6 text-[clamp(1.2rem,2vw,1.5rem)]",
-            icon: "h-[1.25rem] pr-6 tablet:h-6"
-        },
-        description: {
-            wrapper: descriptionVisible ? "block self-center absolute p-6 text-center text-black" : "hidden",
-            text: "",
-            toggleDescriptionButton: "w-8 absolute top-4 right-4",
-            toggleDescriptionIcon: "w-full h-full"
-
+        link: "flex flex-col items-center w-full text-black",
+        projectImgWrapper: "w-full aspect-[4/5] border-1 border-[black] relative group",
+        projectImgRegular: "w-full h-full tablet:group-hover:opacity-40",
+        projectImgTransparent: "w-full h-full opacity-20",
+        projectName: "mt-2 text-center font-medium tablet:hover:scale-105 tablet:hover:opacity-60",
+        buttons: {
+            menu: "flex flex-col justify-center items-center gap-x-[0.8rem] absolute top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] tablet:group-hover:flex tablet:group-hover:flex-col tablet:group-hover:justify-center tablet:group-hover:items-center tablet:group-hover:gap-y-[0.8rem] tablet:group-hover:absolute tablet:group-hover:top-1/2 tablet:group-hover:left-1/2 tablet:group-hover:translate-x-[-50%] tablet:group-hover:translate-y-[-50%]",
+            menuClosed: "hidden tablet:group-hover:flex tablet:group-hover:flex-col tablet:group-hover:justify-center tablet:group-hover:items-center tablet:group-hover:gap-y-[0.8rem] tablet:group-hover:absolute tablet:group-hover:top-1/2 tablet:group-hover:left-1/2 tablet:group-hover:translate-x-[-50%] tablet:group-hover:translate-y-[-50%]",
+            button: "w-full py-2 px-4 text-nowrap transition duration-100 ease-in-out tablet:group-hover:w-full tablet:group-hover:text-nowrap tablet:group-hover:py-2 tablet:group-hover:px-4 tablet:group-hover:border-1 tablet:group-hover:border-[black] tablet:group-hover:transition tablet:group-hover:duration-100 tablet:group-hover:ease-in-out tablet:group-hover:hover:scale-105 tablet:group-hover:active:scale-105",
+            toggleMenuButton: "w-6 absolute top-2 right-2 tablet:hidden",
+            toggleMenuImg: "w-full h-full",
         }
-    };
-
+    }
+    
     return (
-        <Link className={styling.link} href={!finalPreview ? urlPath : ""}>
+        <Link href={localPath} className={styling.link}>
             
-            <div className={styling.imgWrapper}>
+            <div className={styling.projectImgWrapper}>
                 <Image 
-                className={imgType === "svg" ? `${styling.img} ${styling.svgImg}` : `${styling.img} ${styling.nonSvgImg}`} 
+                className={buttonsVisible ? styling.projectImgTransparent : styling.projectImgRegular} 
                 width={1000}
                 height={1000}
                 src={imgSrc} 
-                alt={imgAlt} />
-            </div>
+                alt={imgAlt}  />
 
-            <div className={styling.reference.wrapper}>
-                <h3 className={styling.reference.header}>{title}</h3>
-                {!finalPreview && 
-                <Image 
-                className={styling.reference.icon} 
-                width={100} 
-                height={100} 
-                src="/Icons/visitPageIcon.svg" 
-                alt="visit project's page"/>}
-            </div>
+                <div className={buttonsVisible ? styling.buttons.menu : styling.buttons.menuClosed}>
+                    <button className={styling.buttons.button} onClick={() => window.open(`${githubUrl}`, '_blank')}>Github</button>
+                    <button className={styling.buttons.button} onClick={handleReadMore}>More info</button>
+                </div>
 
-            {!finalPreview && 
-                <button className={styling.description.toggleDescriptionButton} onClick={toggleDescription}>
+                <button className={styling.buttons.toggleMenuButton} onClick={toggleButtonMenu}>
                     <Image 
-                    className={styling.description.toggleDescriptionIcon}
+                    className={styling.buttons.toggleMenuImg} 
                     width={100}
                     height={100}
                     src="/Icons/infoIcon.svg" 
                     alt="show information" />
                 </button>
-            }
+            </div>
 
-            {!finalPreview && 
-                <div className={styling.description.wrapper}>
-                    <p className={styling.description.text}>{description}</p>
-                </div>
-            }
-
+            <h3 className={styling.projectName}>{title}</h3>
         </Link>
     );
 }
