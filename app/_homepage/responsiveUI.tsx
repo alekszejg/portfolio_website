@@ -5,29 +5,20 @@ import MyStack from "@/app/_homepage/myStack/myStack";
 
 
 type ResponsiveUIProps = {
-    RecentProjects: ReactNode,
-    RecentPosts: ReactNode
+    ProjectsSection: ReactNode,
+    ShowRecentPosts: ReactNode
 }
 
 
-export default function ResponsiveUI({ RecentProjects, RecentPosts }: ResponsiveUIProps) {
+export default function ResponsiveUI({ ProjectsSection, ShowRecentPosts }: ResponsiveUIProps) {
     const styling = {
         buttonsWrapper: "flex justify-around w-4/5 mt-[1.5rem] mx-auto tablet:hidden",
         regularButton: "w-1/3 py-[0.5rem] active:bg-[rgb(225,225,225)]",
-        clickedButton: "w-1/3 py-[0.5rem] active:bg-[rgb(225,225,225)] border-b-2 border-[hsla(0,0%,75%,1)",
-        desktopUI: {
-            recentProjects: {
-                section: "py-[3rem] px-[5%]"
-            },
-            recentPosts: {
-                section: "py-12 box-border",
-                wrapper: "flex flex-col gap-y-6",
-                header: "mb-4"
-            }
-        }
+        clickedButton: "w-1/3 py-[0.5rem] active:bg-[rgb(225,225,225)] border-b-2 border-[hsla(0,0%,75%,1)"
     }
 
     type Section = "Stack" | "Projects" | "Posts" | "DesktopUI";
+
     const [section, setSection] = useState<Section>("DesktopUI");
     
 
@@ -65,18 +56,10 @@ export default function ResponsiveUI({ RecentProjects, RecentPosts }: Responsive
 
             {(section === "Stack" || section === "DesktopUI") && <MyStack />}
 
-            {(section === "Projects" || section === "DesktopUI") && 
-                <section className={styling.desktopUI.recentProjects.section}>
-                    {RecentProjects}
-                </section>
-            }
-
-            {(section === "Posts" || section === "DesktopUI") && 
-                <section className={styling.desktopUI.recentPosts.section}>
-                    <h2 className={styling.desktopUI.recentPosts.header}>Recent posts</h2>
-                    {RecentPosts}
-                </section>
-            }
+            {(section === "Projects" || section === "DesktopUI") && ProjectsSection}
+                
+            {(section === "Posts" || section === "DesktopUI") && ShowRecentPosts}
+        
         </div>
     );
 }
