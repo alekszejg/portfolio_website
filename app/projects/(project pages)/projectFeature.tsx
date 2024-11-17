@@ -20,7 +20,7 @@ export default function ProjectFeature(props: ProjectFeatureProps) {
     const {imgType, imgSide, imgSrc, imgAlt, header, text, imgExtraStyling } = props;
 
     const styling = {
-        wrapper: `${globalStyling.featureWrapper} ${imgSide === "left" ? "bg-blueProjectPanel" : "bg-yellowProjectPanel"}`,
+        wrapper: `${globalStyling.featureWrapper} ${imgSide === "left" ? "bg-blueProjectPage" : "bg-yellowProjectPage"}`,
         imgWrapper: `w-full aspect-[5/4] tablet:w-[clamp(375px,40%,437.50px)] ${imgSide === "right" ? "order-2" : ""}`,
         svgImgWrapper: `w-[min(170px,55%)] aspect-square tablet:w-[clamp(200px,40%,300px)] ${imgSide === "right" ? "order-2" : ""}`,
         img: "w-full h-full rounded-2xl shadow-[0_0_0.55rem_black] aspect-[5/4] object-cover",
