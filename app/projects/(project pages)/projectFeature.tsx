@@ -4,7 +4,8 @@ import globalStyling from "@/app/projects/(project pages)/styling.wrappers";
 
 export type ImageType = "regular" | "svg";
 
-interface ProjectFeatureProps {
+
+export type ProjectFeatureProps = {
     imgType: ImageType,
     imgSide: string,
     imgSrc: string,
@@ -14,13 +15,14 @@ interface ProjectFeatureProps {
     imgExtraStyling?: string
 }
 
+
 export default function ProjectFeature(props: ProjectFeatureProps) {
     const {imgType, imgSide, imgSrc, imgAlt, header, text, imgExtraStyling } = props;
 
     const styling = {
         wrapper: `${globalStyling.featureWrapper} ${imgSide === "left" ? "bg-blueProjectPanel" : "bg-yellowProjectPanel"}`,
-        imgWrapper: `w-full aspect-[5/4] tablet:w-[clamp(375px,40%,437.50px)] ${imgSide === "left" ? "order-1" : "order-2"}`,
-        svgImgWrapper: `w-[min(170px,55%)] aspect-square tablet:w-[clamp(200px,40%,300px)] ${imgSide === "left" ? "order-1" : "order-2"}`,
+        imgWrapper: `w-full aspect-[5/4] tablet:w-[clamp(375px,40%,437.50px)] ${imgSide === "right" ? "order-2" : ""}`,
+        svgImgWrapper: `w-[min(170px,55%)] aspect-square tablet:w-[clamp(200px,40%,300px)] ${imgSide === "right" ? "order-2" : ""}`,
         img: "w-full h-full rounded-2xl shadow-[0_0_0.55rem_black] aspect-[5/4] object-cover",
         svgImg: "w-full h-full shadow-[0_0_0.55rem_black] tablet:rounded-2xl",
         textWrapper: "flex flex-col tablet:justify-center tablet:w-2/5 tablet:shrink-0",
