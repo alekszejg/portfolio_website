@@ -1,5 +1,5 @@
 import Project from "@/app/_homepage/recentProjects/project";
-import { recentProjects } from "@/app/projects/projects.data";
+import { recentProjects } from "@/app/projects/(project pages)/projects.data";
 
 export default function RecentProjects() {
     const styling = {
