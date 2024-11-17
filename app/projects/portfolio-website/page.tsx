@@ -7,10 +7,10 @@ import styling from '@/app/projects/styling';
 
 export default function MyWebsiteProjectPage() {
     const heroProps = {
-        imgWrapperStyling: "",
         header: "Portfolio Website",
         text: `My personal website featuring an interactive CV, detailed information about 
         completed as well as ongoing projects, and a blog section displaying my posts.`,
+        imgWrapperStyling: "h-3/4 rounded-3xl",
         imgSrc: "/Images/Project Previews/thisWebsite.png",
         imgAlt: "this website's homepage",
         githubUrl: "https://github.com/alekszejg/portfolio_website",
@@ -111,7 +111,7 @@ export default function MyWebsiteProjectPage() {
     return (
         <PageLayout className={styling.layout}>
             <HeroSection {...heroProps} />
-            <PreviewSection images={images} stages={stages} wrapperStyling={styling.previewSection} />
+            <PreviewSection images={images} stages={stages} />
             <ProjectFeaturePanel {...sassToolProps} />
             <ProjectFeaturePanel {...reactLibraryProps} />
             <ProjectFeaturePanel {...typeScriptProps} />

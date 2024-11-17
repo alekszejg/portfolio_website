@@ -126,7 +126,7 @@ export default function DiscordBotProjectPage() {
     return (
         <PageLayout className={styling.layout}>
             <HeroSection {...heroProps} />
-            <PreviewSection images={images} stages={stages} wrapperStyling={styling.previewSection} />
+            <PreviewSection images={images} stages={stages} />
             <ProjectFeaturePanel {...musicPlayerProps} />
             <ProjectFeaturePanel {...botResponsesProps} />
             <ProjectFeaturePanel {...botReactionRoleProps} />
