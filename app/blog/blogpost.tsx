@@ -1,13 +1,13 @@
 import Image from "next/image";
 
 export type BlogpostType = {id: number, title: string, content: string, category_ID: string, created_at: Date}
-export type BlogpostProps = {id: number, width: string, title: string, content: string, category_ID: string, created_at: Date}
+export type BlogpostProps = {id: number, wrapperStyling: string, title: string, content: string, category_ID: string, created_at: Date}
 
 export default function Blogpost(props: BlogpostProps) {
-    const {id, width, title, content, category_ID, created_at } = props;
+    const {id, wrapperStyling, title, content, category_ID, created_at } = props;
     
     const styling = {
-        wrapper: `${width} py-2 px-4 border-2 border-[hsl(0,0%,75%)] rounded-md box-border`,
+        wrapper: wrapperStyling,
         header: {
             wrapper: "flex items-center gap-x-[0.8rem] mb-2",
             profile: {
@@ -34,7 +34,7 @@ export default function Blogpost(props: BlogpostProps) {
     const createdAtFormatted = dateFormat.format(createdAtLocal);
 
     return (
-        <div className={styling.wrapper}>
+        <li className={styling.wrapper}>
             <div className={styling.header.wrapper}>
                 
                 <div className={styling.header.profile.wrapper}>
@@ -54,6 +54,6 @@ export default function Blogpost(props: BlogpostProps) {
             <h4 className={styling.title}>{title}</h4>
         
             <p className={styling.text}>{content}</p>
-        </div>
+        </li>
     );
 }
