@@ -6,7 +6,7 @@ export const allProjects = {
         githubUrl: urlPaths.projects.discordBot.githubUrl,
         localPath: urlPaths.projects.discordBot.localPath,
         imgSrc: "/Images/Project Previews/discordBot.svg", 
-        imgAlt: "discord bot icon",
+        imgAlt: "discord bot artwork",
         title: "Discord Bot"
     },
 
