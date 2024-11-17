@@ -32,11 +32,11 @@ const config: Config = {
         'formInput': 'hsl(0,0%,81%)',
         'formInputFocused': 'hsl(0,0%,51%)',
 
-        'yellowProjectPage': 'hsl(53,90%,92%)',
-        'blueProjectPage': 'hsl(179,100%,89%)'
+        'yellowProjectPage': 'hsl(53,90%,93%)',
+        'blueProjectPage': 'hsl(179,100%,93%)'
       },
       backgroundImage: {
-        'gradient-to-135deg': 'linear-gradient(135deg, hsl(53,90%,93%) 0%, hsl(53,90%,83%) 65%, hsl(53,90%,78%) 100%)',
+        'gradient-to-135deg': 'linear-gradient(135deg, hsla(53,90%,93%,1) 0%, hsla(53,90%,87%,0.6) 65%, hsla(53,90%,84%,0.6) 100%)',
       },
       keyframes: {
         rotateForwards: {
