@@ -8,12 +8,18 @@ export type ImageArray = {src: string, alt: string, description: string}[]
 
 export default function ImageCarousel({ images, wrapperStyling }: {images: ImageArray, wrapperStyling: string}) {
     const styling = {
-        imgList: "flex flex-col gap-y-3",
-        imgListItem: "w-[40px] aspect-[5/4] hover:scale-110",
-        imgListItemSelected: "w-[40px] aspect-[5/4] hover:scale-110 border-2 border-[hsl(0,100%,75%)]",
-        previewImg: "w-full h-full",
-        currentImgWrapper: "w-[350px] aspect-[5/4]",
-        currentImg: "w-full h-full"
+        imgPreview: {
+            list: "flex flex-col gap-y-3",
+            listItem: "w-[40px] aspect-[5/4] hover:scale-110",
+            listItemSelected: "w-[40px] aspect-[5/4] hover:scale-110 border-2 border-[hsl(0,100%,75%)]",
+            img: "w-full h-full"
+        },
+        currentImg: {
+            wrapper: "flex flex-col gap-y-1.5",
+            imgWrapper: "w-[350px] aspect-[5/4]",
+            img: "w-full h-full",
+            text: "text-xs tablet:text-center"
+        }
     }
 
     const [imgIndex, setImgIndex] = useState<number>(0);
@@ -49,14 +55,14 @@ export default function ImageCarousel({ images, wrapperStyling }: {images: Image
     return (
         <div className={wrapperStyling}>
             
-            <ul className={styling.imgList}>
+            <ul className={styling.imgPreview.list}>
                 {images.map((image, index) => (
                     <li 
                     key={`image${index + 1}`} 
-                    className={imgIndex === index ? styling.imgListItemSelected : styling.imgListItem}
+                    className={imgIndex === index ? styling.imgPreview.listItemSelected : styling.imgPreview.listItem}
                     onClick={() => handleImgClick(index)}>
                         <Image 
-                        className={styling.previewImg} 
+                        className={styling.imgPreview.img} 
                         width={100} 
                         height={100} 
                         src={image.src} 
@@ -67,13 +73,16 @@ export default function ImageCarousel({ images, wrapperStyling }: {images: Image
 
             <button onClick={() => handleArrowClick("previous")}><ChevronLeft /></button>
             
-            <div className={styling.currentImgWrapper}>
-                <Image 
-                className={styling.currentImg}
-                width={1000} 
-                height={1000} 
-                src={images[imgIndex].src} 
-                alt={images[imgIndex].alt} />
+            <div className={styling.currentImg.wrapper}>
+                <div className={styling.currentImg.imgWrapper}>
+                    <Image 
+                    className={styling.currentImg.img}
+                    width={1000} 
+                    height={1000} 
+                    src={images[imgIndex].src} 
+                    alt={images[imgIndex].alt} />
+                </div>
+                <p className={styling.currentImg.text}>{images[imgIndex].description}</p>
             </div>
 
             <button onClick={() => handleArrowClick("next")}><ChevronRight /></button>
