@@ -1,10 +1,10 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
-import HeroSection from '@/app/projects/(project pages)/heroSection';
-import PreviewSection from '@/app/projects/(project pages)/previewSection';
-import ProjectFeaturePanel, { ImageType } from '@/app/projects/(project pages)/projectFeature';
+import HeroSection from '@/app/projects/(project pages)/_sections/heroSection';
 import { allProjects } from '@/app/projects/(project pages)/projects.data';
+import OverviewSection from '@/app/projects/(project pages)/_sections/overview/overviewSection';
+import FeaturesSection, { FeatureProps } from '@/app/projects/(project pages)/_sections/features/featuresSection';
 import styling from '@/app/projects/(project pages)/styling.wrappers';
-import type { ProjectFeatureProps } from '@/app/projects/(project pages)/projectFeature';
+
 
 
 export default function DiscordBotProjectPage() {
@@ -38,7 +38,7 @@ export default function DiscordBotProjectPage() {
             description: "Create and manage server's reaction roles available for members to select"
         },
         {
-            src: "/Images/randomGames.png",
+            src: "/Images/chanceGames.png",
             alt: "bot's chance games",
             description: "Toss a coin, roll dice or get a random number on command"
         },
@@ -51,53 +51,48 @@ export default function DiscordBotProjectPage() {
 
 
     const stages = [
-        {stage: "About", text: `A Discord bot written in Python with discord.py module to simplify 
+        {header: "About", text: `A Discord bot written in Python with discord.py module to simplify 
             interactions with Discord's API. It was my 1st experience with bot programming as well as 
             event-driven programming. The bot has some standard features such as basic interactions, 
             reactions and entertainment. Its more advanced features include a music player, interactive 
             role assignment, an advertisement sender and a file sender to a specific location. Bot 
             development will continue in future, when all its features and edge cases are finished and improved.`
         },
-        {stage: "Planning", text: `Before I started implementing my ideas into the Discord Bot, I had to 
+        {header: "Planning", text: `Before I started implementing my ideas into the Discord Bot, I had to 
             familiarize myself with couple of tutorials that explained basics of Discord.py module as well as 
             positibilities and limitations of Discord Api from reading official documentations on both Discord's 
             and Discord.py websites. The most challenging part was understanding how OOP works, which objects are
             related and can be used to obtain information on other objects.`
         },
-        {stage: "Development", text: `Development started with testing message content detection and making
+        {header: "Development", text: `Development started with testing message content detection and making
             bot do basic interactions with user. Later I was testing bot's limitations by developing ability
             to advertise through it to current specific text channel, either current or all servers it's in. As 
             I got more confident, I implemented some mini-games along with fetching jokes/facts from Ninja API, then
-            developed interactive reaction roles and Youtube music player with FFMPEG.`}
+            developed interactive reaction roles and Youtube music player with FFMPEG.`
+        }
     ];
 
     
-    const featureList = [
+    const featureList: FeatureProps[] = [
         {
-            imgType: "regular" as ImageType,
-            imgSide: "left",
             imgSrc: "/Images/botMusicPlayer.png",
-            imgAlt: "an image showing discord bot's music player",
+            imgAlt: "bot's music player",
             header: "Look up the songs and play them!",
             text: `Find and play songs from Youtube, Spotify and Soundcloud with simple 
             <b>/search_youtube</b>, <b>/search_spotify</b> and <b>/search_soundcloud</b> commands. 
             Each command includes a UI music player to navigate through songs.`
         },
         {
-            imgType: "regular" as ImageType,
-            imgSide: "right",
             imgSrc: "/Images/botResponses.png",
-            imgAlt: "an image demonstrating the discord bot telling jokes, quotes and daily facts",
+            imgAlt: "bot telling jokes, quotes and daily facts",
             header: "Would you like to hear a joke, a quote or a daily fact?",
             text: `The bot obtains various jokes and quotes from Ninja API and sends them to anyone upon 
             request with <b>/say_joke</b> and <b>/say_quote</b> commands. Once a day the bot will send a 
             daily fact for you to discuss.`
         },
-        {
-            imgType: "regular" as ImageType,      
-            imgSide: "left",
+        {    
             imgSrc: "/Images/botReactionRoles.png",
-            imgAlt: "an image demonstrating discord bot's reaction roles feature",
+            imgAlt: "bot's customizable and interactive reaction roles",
             header: "Stop with manual role assignment",
             text: `Add, remove, customize and view various available roles and let the bot handle the 
             rest. Get full control of reaction roles with <b>/view_reaction_roles</b>, 
@@ -106,20 +101,16 @@ export default function DiscordBotProjectPage() {
             afterwards, roles are still modifiable!` 
         },
         {
-            imgType: "regular" as ImageType,
-            imgSide: "right",
             imgSrc: "/Images/chanceGames.png",
-            imgAlt: "an image demonstrating discord bot's random-based games and features",
+            imgAlt: "bot's chance games",
             header: "Whose turn is next?",
             text: `Wonder no more, just launch one of bot's chance games with <b>/diceroll</b>, 
             <b>/randomroll</b> or <b>/cointflip</b> commands to choose a randomizer of your liking and 
             decide who goes next!`
         },
         {
-            imgType: "regular" as ImageType,
-            imgSide: "left",
             imgSrc: "/Images/botFiles.png",
-            imgAlt: "an image demonstrating discord bot's ability to send files",
+            imgAlt: "bot's file sender",
             header: "Share up to 10 cute photos or documents with your community",
             text: `The times of manual file uploads have passed, instead select files and choose where
             to send them with a single <b>/send_files</b> command. Send files to current channel only, 
@@ -133,11 +124,9 @@ export default function DiscordBotProjectPage() {
             
             <HeroSection {...heroProps} />
             
-            <PreviewSection images={imageList} stages={stages} />
+            <OverviewSection images={imageList} stages={stages} />
             
-            {featureList.map((featureProps: ProjectFeatureProps, index) => (
-                <ProjectFeaturePanel key={`feature${index + 1}`} {...featureProps} />
-            ))}
+            <FeaturesSection featureList={featureList} />
 
         </PageLayout> 
     );

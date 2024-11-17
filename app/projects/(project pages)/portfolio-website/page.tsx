@@ -1,10 +1,10 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
-import HeroSection from '@/app/projects/(project pages)/heroSection';
-import PreviewSection from '@/app/projects/(project pages)/previewSection';
-import ProjectFeaturePanel, { ImageType } from '@/app/projects/(project pages)/projectFeature';
+import HeroSection from '@/app/projects/(project pages)/_sections/heroSection';
 import { allProjects } from '@/app/projects/(project pages)/projects.data';
+import OverviewSection from '@/app/projects/(project pages)/_sections/overview/overviewSection';
+import FeaturesSection, { FeatureProps } from '@/app/projects/(project pages)/_sections/features/featuresSection';
 import styling from '@/app/projects/(project pages)/styling.wrappers';
-import type { ProjectFeatureProps } from '@/app/projects/(project pages)/projectFeature';
+
 
 
 export default function PortfolioWebsiteProjectPage() {
@@ -31,30 +31,29 @@ export default function PortfolioWebsiteProjectPage() {
 
 
     const stages = [
-        {stage: "About", text: `This is a 1st website that I have created. Since website development takes time, 
+        {header: "About", text: `This is a 1st website that I have created. Since website development takes time, 
             I wanted to experiment and use as many technologies as possible, to gain some priceless experience. 
             Below I'll uncover and explain some "behind the scenes" moments and decisions that during website's 
             production.`
         },
-        {stage: "Planning", text: `At first I planned this website to simply be an interactive CV similar to one I have, but
+        {header: "Planning", text: `At first I planned this website to simply be an interactive CV similar to one I have, but
             offer more details and interactivity which regular CV wouldn't allow and also have separate webpages
             for each of my projects with short description and their features along with some images. Later it grew
             into a larger project with a homepage which is similar to a social media profile, blog section, improved
             contact form and overall with more advanced styling.`
         },
-        {stage: "Development", text: `I first developed it using SCSS and React, however later migrated to Next.js for server-side
+        {header: "Development", text: `I first developed it using SCSS and React, however later migrated to Next.js for server-side
             benefits as well as migrated to Tailwind to be able to experiment with styling faster and spend less time on it.
             It taught me a lot of new things such as basic implementation of Next Auth for admin page and working with
             PostgreSQL to handle incoming messages and display blogposts that I make.`
         },
-        {stage: "Production", text: `This will be updated after my website becomes accessible to public.`}
+        {header: "Production", text: `This will be updated after my website becomes accessible to public.`}
     ];
 
     
-    const featureList = [
+    const featureList: FeatureProps[] = [
         {
-            imgType: "svg" as ImageType,
-            imgSide: "left",
+            imgIsSVG: true,
             imgSrc: "/Images/Logos/sass.svg",
             imgAlt: "a SASS logo",
             header: "Styled with SCSS. No CSS libraries were used",
@@ -69,8 +68,7 @@ export default function PortfolioWebsiteProjectPage() {
             imgExtraStyling: "rounded-[50%]"
         },
         {
-            imgType: "svg" as ImageType,
-            imgSide: "right",
+            imgIsSVG: true,
             imgSrc: "/Images/Logos/react.svg",
             imgAlt: "a React logo",
             header: "Front-end built with React library",
@@ -84,8 +82,7 @@ export default function PortfolioWebsiteProjectPage() {
             project afterwards, as well as to continue using React.`
         },
         {
-            imgType: "svg" as ImageType,
-            imgSide: "left",
+            imgIsSVG: true,
             imgSrc: "/Images/Logos/ts.svg",
             imgAlt: "a TypeScript logo",
             header: "TypeScript over plain JavaScript",
@@ -99,8 +96,7 @@ export default function PortfolioWebsiteProjectPage() {
             imgExtraStyling: "rounded-[2rem] tablet:rounded-[2.9rem]"
         },
         {
-            imgType: "svg" as ImageType,
-            imgSide: "right",
+            imgIsSVG: true,
             imgSrc: "/Images/iconGroup.svg",
             imgAlt: "a collection of icons",
             header: "Using Font Awesome icons and making custom ones with Figma",
@@ -118,11 +114,9 @@ export default function PortfolioWebsiteProjectPage() {
             
             <HeroSection {...heroProps} />
             
-            <PreviewSection images={imageList} stages={stages} />
+            <OverviewSection images={imageList} stages={stages} />
             
-            {featureList.map((featureProps: ProjectFeatureProps, index) => (
-                <ProjectFeaturePanel key={`feature${index + 1}`} {...featureProps} />
-            ))}
+            <FeaturesSection featureList={featureList} />
             
         </PageLayout> 
     );

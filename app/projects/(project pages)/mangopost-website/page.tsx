@@ -1,7 +1,7 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
-import HeroSection from '@/app/projects/(project pages)/heroSection';
-import PreviewSection from '@/app/projects/(project pages)/previewSection';
-import ProjectFeaturePanel, { ImageType } from '@/app/projects/(project pages)/projectFeature';
+import HeroSection from '@/app/projects/(project pages)/_sections/heroSection';
+import PreviewSection from '@/app/projects/(project pages)/_sections/overview/overviewSection';
+import ProjectFeaturePanel, { ImageType } from '@/app/projects/(project pages)/_sections/features/feature';
 import styling from '@/app/projects/(project pages)/styling.wrappers';
 
 
