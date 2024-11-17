@@ -57,6 +57,7 @@ export default function ProjectStages({ stages, wrapperStyling }: ProjectStagesP
             <div className={styling.progressBar}>
                 {stages.map((stage, index) => (
                     <button 
+                        key={`button${index + 1}`}
                         className={index === stageIndex ? styling.activeButton : styling.button} 
                         onClick={() => handleClick(index)} />
                 ))}
