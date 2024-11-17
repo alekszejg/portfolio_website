@@ -66,7 +66,7 @@ export default function Navbar() {
                     className={styling.logoImg} 
                     width={0} 
                     height={0} 
-                    src="" 
+                    src="data:,"
                     alt="logo" />
             </Link>
         </nav>
