@@ -9,11 +9,11 @@ type HeroSectionProps = {
     imgSrc: string, 
     imgAlt: string,
     githubUrl: string,
-    localUrl: string
+    localPath: string
 };
 
 
-export default function HeroSection({ imgWrapperStyling, header, text, imgSrc, imgAlt, githubUrl, localUrl }: HeroSectionProps) {
+export default function HeroSection({ imgWrapperStyling, header, text, imgSrc, imgAlt, githubUrl, localPath }: HeroSectionProps) {
     const styling = {
         section: globalStyling.heroSection,
         infoWrapper: "flex flex-col w-2/3",
