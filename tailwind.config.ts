@@ -32,8 +32,11 @@ const config: Config = {
         'formInput': 'hsl(0,0%,81%)',
         'formInputFocused': 'hsl(0,0%,51%)',
 
-        'yellowProjectPanel': 'rgb(251,247,218)',
-        'blueProjectPanel': 'rgb(199,255,254,1)'
+        'yellowProjectPage': 'hsl(53,90%,92%)',
+        'blueProjectPage': 'hsl(179,100%,89%)'
+      },
+      backgroundImage: {
+        'gradient-to-135deg': 'linear-gradient(135deg, hsl(53,90%,90%) 0%, hsl(53,90%,80%) 60%, hsl(53,90%,70%) 100%)',
       },
       keyframes: {
         rotateForwards: {
