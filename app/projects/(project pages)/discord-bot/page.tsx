@@ -19,6 +19,7 @@ export default function DiscordBotProjectPage() {
         localPath: allProjects.discordBot.localPath
     };
 
+
     const imageList = [
         {
             src: "/Images/botMusicPlayer.png", 
@@ -45,7 +46,8 @@ export default function DiscordBotProjectPage() {
             alt: "bot's file sender",
             description: "Send files to specific text channels or other servers"
         }
-    ]
+    ];
+
 
     const stages = [
         {stage: "About", text: `A Discord bot written in Python with discord.py module to simplify 
@@ -67,6 +69,7 @@ export default function DiscordBotProjectPage() {
             I got more confident, I implemented some mini-games along with fetching jokes/facts from Ninja API, then
             developed interactive reaction roles and Youtube music player with FFMPEG.`}
     ];
+
     
     const featureList = [
         {
