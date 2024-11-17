@@ -36,7 +36,7 @@ const config: Config = {
         'blueProjectPage': 'hsl(179,100%,89%)'
       },
       backgroundImage: {
-        'gradient-to-135deg': 'linear-gradient(135deg, hsl(53,90%,90%) 0%, hsl(53,90%,80%) 60%, hsl(53,90%,70%) 100%)',
+        'gradient-to-135deg': 'linear-gradient(135deg, hsl(53,90%,93%) 0%, hsl(53,90%,83%) 65%, hsl(53,90%,78%) 100%)',
       },
       keyframes: {
         rotateForwards: {

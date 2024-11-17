@@ -13,7 +13,8 @@ export default function DiscordBotProjectPage() {
         text: `A bot that goes beyond basic user interactions, entertainment and event reactions, 
         offering more advanced features like interactive role assignment, ad posting, 
         file sharing, a YouTube music player and much more.`,
-        imgSrc: allProjects.discordBot.imgSrc,
+        imgWrapperStyling: "h-5/6",
+        imgSrc: "/Images/Project Previews/discordBotTransparentBG.svg",
         imgAlt: allProjects.discordBot.imgAlt,
         githubUrl: allProjects.discordBot.githubUrl,
         localPath: allProjects.discordBot.localPath

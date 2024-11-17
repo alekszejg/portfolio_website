@@ -12,7 +12,8 @@ export default function PortfolioWebsiteProjectPage() {
         header: "Portfolio Website",
         text: `My personal website featuring an interactive CV, detailed information about 
         completed as well as ongoing projects, and a blog section displaying my posts.`,
-        imgWrapperStyling: "h-3/4 rounded-3xl",
+        imgWrapperStyling: "h-3/4 rounded-3xl opacity-[78%]",
+        imgStylingExtra: "shadow-[0_0_0.1rem_rgb(120,120,120)]",
         imgSrc: allProjects.portfolioWebsite.imgSrc,
         imgAlt: allProjects.portfolioWebsite.imgAlt,
         githubUrl: allProjects.portfolioWebsite.githubUrl,
