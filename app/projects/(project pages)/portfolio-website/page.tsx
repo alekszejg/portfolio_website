@@ -23,7 +23,7 @@ export default function PortfolioWebsiteProjectPage() {
 
     const imageList = [
         {
-            src: "", 
+            src: "data:,", 
             alt: "",
             description: ""
         }
