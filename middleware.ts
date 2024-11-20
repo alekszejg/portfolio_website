@@ -1,3 +1,8 @@
-export { default } from "next-auth/middleware";
+import NextAuth from 'next-auth';
+import { authConfig } from '@/app/api/auth/[...nextauth]/auth.config';
 
-export const config = {matcher: ["/admin"]};
+export const { auth: middleware } = NextAuth(authConfig)
+  
+export const config = {
+    matcher: ['/((?!api|_next/static|_next/image|favicon|fonts|icons|login).*)'],
+}
