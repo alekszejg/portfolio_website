@@ -7,27 +7,13 @@ export default function Projects() {
     const styling = {
         layout: "min-h-[calc(100vh-3rem)]",
         header: {
-            wrapper: "flex justify-center items-center h-20 border-y-1 border-grey bg-[hsl(67,27%,94%)] tablet:justify-start",
-            icon: "w-[3.2rem] tablet:ml-[3.8rem]",
-            text: "pl-4"
+            wrapper: "flex justify-center items-center gap-x-3 h-20 border-y-1 border-grey bg-[hsl(67,27%,94%)] tablet:justify-start",
+            icon: "w-[3.2rem] tablet:ml-12",
+            text: "font-medium text-2xl"
         },
-        projectsSection: "flex flex-col items-center py-16 px-20 box-border  tablet:grid tablet:grid-cols-[repeat(auto-fit,minmax(250px,350px))] tablet:gap-16 tablet:py-16 tablet:px-12"
+        projectsSection: "flex flex-col items-center py-16 px-20 box-border tablet:grid tablet:grid-cols-[repeat(auto-fit,minmax(250px,350px))] tablet:gap-16 tablet:py-16 tablet:px-12"
     };
 
-    
-    
-    
-
-
-    /*const finalPreviewProps = {
-        urlPath: "/projects",
-        imgType: "svg" as ProjectImage,
-        imgSrc: "/Icons/hourglass.svg",
-        imgAlt: "hourglass",
-        title: "More to come...",
-        finalPreview: true
-    }*/
-    
     return (
         <PageLayout className={styling.layout}>
             

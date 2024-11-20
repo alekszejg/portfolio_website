@@ -2,12 +2,11 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import type { Project } from "@/app/projects/projects.data";
 
 
-type Project = {githubUrl: string, localPath: string, imgSrc: string, imgAlt: string, title: string};
 
-
-export default function ProjectPreview({ githubUrl, localPath, imgSrc, imgAlt, title }: Project) {
+export default function ProjectPreview({ githubUrl, localPath, imgSrc, imgAlt, title, isFinal }: Project) {
     
     const [buttonsVisible, setButtonsVisibility] = useState(false);
     const toggleButtonMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -30,8 +29,8 @@ export default function ProjectPreview({ githubUrl, localPath, imgSrc, imgAlt, t
     const styling = {
         link: "flex flex-col items-center w-full text-black",
         projectImgWrapper: "w-full aspect-[4/5] border-1 border-[black] relative group",
-        projectImgRegular: "w-full h-full tablet:group-hover:opacity-40",
-        projectImgTransparent: "w-full h-full opacity-20",
+        projectImgRegular: "w-full h-full aspect-[4/5] tablet:group-hover:opacity-40",
+        projectImgTransparent: "w-full h-full aspect-[4/5] opacity-20",
         projectName: "mt-2 text-center font-medium tablet:hover:scale-105 tablet:hover:opacity-60",
         buttons: {
             menu: "flex flex-col justify-center items-center gap-x-[0.8rem] absolute top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] tablet:group-hover:flex tablet:group-hover:flex-col tablet:group-hover:justify-center tablet:group-hover:items-center tablet:group-hover:gap-y-[0.8rem] tablet:group-hover:absolute tablet:group-hover:top-1/2 tablet:group-hover:left-1/2 tablet:group-hover:translate-x-[-50%] tablet:group-hover:translate-y-[-50%]",
@@ -53,19 +52,24 @@ export default function ProjectPreview({ githubUrl, localPath, imgSrc, imgAlt, t
                 src={imgSrc} 
                 alt={imgAlt}  />
 
-                <div className={buttonsVisible ? styling.buttons.menu : styling.buttons.menuClosed}>
-                    <button className={styling.buttons.button} onClick={(e) => handleRedirect(e, "github")}>Github</button>
-                    <button className={styling.buttons.button} onClick={(e) => handleRedirect(e, "local")}>More info</button>
-                </div>
+                {!isFinal && 
+                    <>
+                    <div className={buttonsVisible ? styling.buttons.menu : styling.buttons.menuClosed}>
+                        <button className={styling.buttons.button} onClick={(e) => handleRedirect(e, "github")}>Github</button>
+                        <button className={styling.buttons.button} onClick={(e) => handleRedirect(e, "local")}>More info</button>
+                    </div>
 
-                <button className={styling.buttons.toggleMenuButton} onClick={toggleButtonMenu}>
-                    <Image 
-                    className={styling.buttons.toggleMenuImg} 
-                    width={100}
-                    height={100}
-                    src="/Icons/infoIcon.svg" 
-                    alt="show information" />
-                </button>
+                    <button className={styling.buttons.toggleMenuButton} onClick={toggleButtonMenu}>
+                        <Image 
+                        className={styling.buttons.toggleMenuImg} 
+                        width={100}
+                        height={100}
+                        src="/Icons/infoIcon.svg" 
+                        alt="show information" />
+                    </button>
+                    </>
+                }
+
             </div>
 
             <h3 className={styling.projectName}>{title}</h3>
