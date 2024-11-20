@@ -18,7 +18,7 @@ export default function SkillLogo({ searchParamName, imgSrc, imgAlt, isSelected 
     }
 
     return (
-        <Link href={`?stack=${searchParamName}`} scroll={false} className={isSelected ? styling.selectedLink : styling.link}>
+        <Link href={`?skill=${searchParamName}`} scroll={false} className={isSelected ? styling.selectedLink : styling.link}>
             <Image className={styling.image} width={100} height={100} src={imgSrc} alt={imgAlt} />
         </Link>
     );

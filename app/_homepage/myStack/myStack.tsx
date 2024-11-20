@@ -1,6 +1,6 @@
 "use client"
 import { useSearchParams } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import SkillLogo from "@/app/_homepage/myStack/skillLogo";
 import skills from "@/app/_homepage/myStack/skills.data";
 import type { SkillsType } from "@/app/_homepage/myStack/skills.data";
@@ -22,21 +22,23 @@ export default function MyStack() {
     }
 
     const searchParams = useSearchParams();
-    const selectedSkill = searchParams.get("stack");
+    const selectedSkill = searchParams.get("skill");
+    const currentSkill = selectedSkill && skills.hasOwnProperty(selectedSkill) ? selectedSkill : "html";
     
     const stackSectionRef = useRef<HTMLDivElement>(null);
-    useEffect(() => {
-        if (selectedSkill) {
+
+    useLayoutEffect(() => {
+        if (currentSkill) {
             stackSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }  
-    }, []);
+    }, [currentSkill]);
 
 
     const getProps = (skillName: keyof SkillsType) => {
         const { header, text, ...requiredProps } = skills[skillName];
         const combinedProps = {
             ...requiredProps, 
-            ...((skillName === selectedSkill || skillName === "html" && !selectedSkill) && { isSelected: true })};
+            ...((skillName === currentSkill || skillName === "html" && !currentSkill) && { isSelected: true })};
         return combinedProps;
     }
     
@@ -75,8 +77,8 @@ export default function MyStack() {
                
 
                 <div className={styling.description.wrapper}>
-                    <h3 className={styling.description.header}>{skills[selectedSkill as keyof SkillsType || "html"].header}</h3>
-                    <p className={styling.description.text}>{skills[selectedSkill as keyof SkillsType || "html"].text}</p>
+                    <h3 className={styling.description.header}>{skills[currentSkill].header}</h3>
+                    <p className={styling.description.text}>{skills[currentSkill].text}</p>
                 </div>
             </div>
         </section>
