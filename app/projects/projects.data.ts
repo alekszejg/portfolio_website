@@ -2,11 +2,12 @@ import urlPaths from "@/app/url.paths"
 
 
 export type Project = {
-    githubUrl: string, 
+    githubUrl?: string, 
     localPath: string,
     imgSrc: string, 
     imgAlt: string, 
-    title: string
+    title: string,
+    isFinal?: boolean
 };
 
 
@@ -31,11 +32,19 @@ export const allProjects: {[key: string]: Project} = {
         imgSrc: "/Images/Project Previews/mangopostWebsite.png", 
         imgAlt: "Mangopost website screenshot",
         title: "Mangopost Website"
+    },
+
+    comingSoon: {
+        localPath: urlPaths.projects.base,
+        imgSrc: "/Icons/hourglass.svg",
+        imgAlt: "hourglass artwork",
+        title: "More to come...",
+        isFinal: true
     }
 }
 
-
-export const recentProjects = allProjects; // later choose limit for recent projects
+const { comingSoon, ...existingProjects } = allProjects
+export const recentProjects = existingProjects; // later choose limit for recent projects
 
 
 export const totalProjects = Object.keys(allProjects).length
