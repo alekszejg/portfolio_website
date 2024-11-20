@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 
 type Project = {githubUrl: string, localPath: string, imgSrc: string, imgAlt: string, title: string};
@@ -16,10 +15,16 @@ export default function ProjectPreview({ githubUrl, localPath, imgSrc, imgAlt, t
         setButtonsVisibility(prev => !prev);
     };
 
-    const router = useRouter();
-    const handleReadMore = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const handleRedirect = (event: React.MouseEvent<HTMLButtonElement>, redirectType: "local" | "github") => {
         event.preventDefault();
-        router.push(localPath);
+        switch (redirectType) {
+            case "local":
+                window.open(localPath, '_blank', 'noopener,noreferrer');
+                break;
+            case "github":
+                window.open(githubUrl, '_blank', 'noopener,noreferrer');
+                break;    
+        }
     };
 
     const styling = {
@@ -49,8 +54,8 @@ export default function ProjectPreview({ githubUrl, localPath, imgSrc, imgAlt, t
                 alt={imgAlt}  />
 
                 <div className={buttonsVisible ? styling.buttons.menu : styling.buttons.menuClosed}>
-                    <button className={styling.buttons.button} onClick={() => window.open(`${githubUrl}`, '_blank')}>Github</button>
-                    <button className={styling.buttons.button} onClick={handleReadMore}>More info</button>
+                    <button className={styling.buttons.button} onClick={(e) => handleRedirect(e, "github")}>Github</button>
+                    <button className={styling.buttons.button} onClick={(e) => handleRedirect(e, "local")}>More info</button>
                 </div>
 
                 <button className={styling.buttons.toggleMenuButton} onClick={toggleButtonMenu}>
