@@ -28,9 +28,9 @@ export default function ProjectPreview({ githubUrl, localPath, imgSrc, imgAlt, t
 
     const styling = {
         link: "flex flex-col items-center w-full text-black",
-        projectImgWrapper: "w-full aspect-[4/5] border-1 border-[black] relative group",
-        projectImgRegular: "w-full h-full aspect-[4/5] tablet:group-hover:opacity-40",
-        projectImgTransparent: "w-full h-full aspect-[4/5] opacity-20",
+        projectImgWrapper: "w-full aspect-[4/5] rounded-xl relative group shadow-[0_0_0.15rem_grey]",
+        projectImgRegular: "w-full h-full aspect-[4/5] tablet:group-hover:opacity-40 rounded-xl",
+        projectImgTransparent: "w-full h-full aspect-[4/5] opacity-20 rounded-xl",
         projectName: "mt-2 text-center font-medium tablet:hover:scale-105 tablet:hover:opacity-60",
         buttons: {
             menu: "flex flex-col justify-center items-center gap-x-[0.8rem] absolute top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] tablet:group-hover:flex tablet:group-hover:flex-col tablet:group-hover:justify-center tablet:group-hover:items-center tablet:group-hover:gap-y-[0.8rem] tablet:group-hover:absolute tablet:group-hover:top-1/2 tablet:group-hover:left-1/2 tablet:group-hover:translate-x-[-50%] tablet:group-hover:translate-y-[-50%]",
