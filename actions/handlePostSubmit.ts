@@ -1,13 +1,11 @@
 "use server"
-
-import { getServerSession } from "next-auth"
-import { authOptions } from "@/app/api/auth/[...nextauth]/options";
+import { auth } from "@/auth";
 import { pool } from "@/postgres";
 import sanitizeInput from "@/actions/sanitizeInput";
 
 export default async function handlePostSubmit(formData: FormData) {
     
-    const session = await getServerSession(authOptions);
+    const session = await auth();
     if (!session || session.username !== process.env.admin_user) {
         throw new Error("Unauthorized access");
     } else {
