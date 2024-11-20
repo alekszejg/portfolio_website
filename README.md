@@ -1,13 +1,26 @@
 CURRENT GOALS / STEPS
-- Do rough mobile styling for hero section of each project, make it vertical
-Overview section of each project must have alrger margins, figure out appropriate styling for mobile
-- Do features for Portfolio Website project (add photos later)
-- Mangopost website project page needs OverView section and media related to it, also add features (talk about UX/UI)
-- Make more formal homepage profile photo 
-- Come up with basic logo for website (simialr to homepage background would do)
-10) Before checking blogpost section again, move to next auth v5 beta and Next.js 15, fix mistakes that occured from using old synchronous approach + add new async approach
+- General: logo is needed (similar to homepage background would do)
+- General: each webpage needs metadata object
 
-- (Optional before production) Next-chat website could use rough structure outline
+- Homepage: adjust font sizes and tailwind style errors, including contact form
+- Homepage: replace profile photo with more formal image
+- Homepage + All Projects: fix overflow of projects in grid
+
+- Interactive CV: some sections missing full width
+- Interactive CV: sticky headers not working
+- Interactive CV: add shadows to programming approaches + left border to dropdown description
+
+- Each Project Page: start mobile styling for hero and overview sections
+
+- Portfolio Website Page: add text content for its UI/UX features
+- Portfolio Website Page: add photos at the end when almost done
+
+- Mangopost Website Page: add hero and overview sections
+- Mangopost Website Page: add images and feature contents (talk about UI/UX)
+
+- (Optional) Next-chat Website Page: could start structural outline
+
+
 
 SOON
 - JWT tokens must be renewed periodically
