@@ -21,7 +21,7 @@ export default function HeroSection({ imgWrapperStyling, imgStylingExtra, header
             wrapper: "flex flex-col w-[55%]",
             header: "text-3xl font-bold tracking-wider",
             text: "",
-            buttonsWrapper: ""
+            buttonsWrapper: "flex gap-x-12 mt-5"
         },
         imgWrapper: imgWrapperStyling ? imgWrapperStyling : "h-1/2",
         img: imgStylingExtra ? `${imgStylingExtra} w-full h-full rounded-xl` : "w-full h-full rounded-xl"
