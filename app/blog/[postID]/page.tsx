@@ -12,10 +12,11 @@ export async function generateStaticParams() {
 }
 
 
-export default async function BlogpostPage({params}: {params: {postID: string}}) {
+export default async function BlogpostPage(props: {params: Promise<{postID: string}>}) {
+    const params = await props.params;
     console.log("parameter is ", params.postID)
     const response = await fetch(`http://localhost:3000/api/blogposts/post-data?postID=${params.postID}`);
-    
+
     if (response.ok) {
         const data = await response.json();
         return <Blogpost {...data.postData} />

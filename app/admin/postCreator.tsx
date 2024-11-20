@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, FormEvent, ReactNode } from "react";
+import { useState, FormEvent, ReactNode, type JSX } from "react";
 import handlePostSubmit from "@/actions/handlePostSubmit";
 
 
