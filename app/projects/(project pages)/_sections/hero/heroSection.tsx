@@ -1,6 +1,6 @@
 import Image from "next/image";
 import globalStyling from "@/app/projects/(project pages)/styling.wrappers";
-
+import ClientButtons from "@/app/projects/(project pages)/_sections/hero/clientButtons";
 
 type HeroSectionProps = {
     header: string, 
@@ -17,9 +17,12 @@ type HeroSectionProps = {
 export default function HeroSection({ imgWrapperStyling, imgStylingExtra, header, text, imgSrc, imgAlt, githubUrl, localPath }: HeroSectionProps) {
     const styling = {
         section: globalStyling.heroSection,
-        infoWrapper: "flex flex-col w-[55%]",
-        header: "text-3xl font-bold tracking-wider",
-        text: "",
+        info: {
+            wrapper: "flex flex-col w-[55%]",
+            header: "text-3xl font-bold tracking-wider",
+            text: "",
+            buttonsWrapper: ""
+        },
         imgWrapper: imgWrapperStyling ? imgWrapperStyling : "h-1/2",
         img: imgStylingExtra ? `${imgStylingExtra} w-full h-full rounded-xl` : "w-full h-full rounded-xl"
     }
@@ -27,9 +30,11 @@ export default function HeroSection({ imgWrapperStyling, imgStylingExtra, header
     return (
         <section className={styling.section}>
 
-            <div className={styling.infoWrapper}>
-                <h2 className={styling.header}>{header}</h2>
-                <p className={styling.text}>{text}</p>
+            <div className={styling.info.wrapper}>
+                <h2 className={styling.info.header}>{header}</h2>
+                <p className={styling.info.text}>{text}</p>
+
+                <ClientButtons wrapperStyling={styling.info.buttonsWrapper} githubUrl={githubUrl} />
             </div>
     
             <div className={styling.imgWrapper}>
