@@ -2,7 +2,7 @@ import urlPaths from "@/app/url.paths"
 
 
 export type Project = {
-    githubUrl?: string, 
+    githubUrl: string, 
     localPath: string,
     imgSrc: string, 
     imgAlt: string, 
@@ -35,6 +35,7 @@ export const allProjects: {[key: string]: Project} = {
     },
 
     comingSoon: {
+        githubUrl: "",
         localPath: urlPaths.projects.base,
         imgSrc: "/Icons/hourglass.svg",
         imgAlt: "hourglass artwork",
