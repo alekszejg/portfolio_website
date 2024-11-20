@@ -32,19 +32,20 @@ export default function BasicInfo() {
         <div className={styling.images.bgWrapper}>
             <Image 
             className={styling.images.bg} 
-            width={100}
-            height={100}
-            src="/Images/myLogo.svg" 
-            alt="My logo in background" />
+            width={1000}
+            height={1000}
+            src="/Images/bgLogo.svg" 
+            alt="Background illustration" />
         </div>
 
         <div className={styling.images.myPhotoWrapper}>
             <Image 
             className={styling.images.myPhoto}
-            height={100}
-            width={100}
+            height={1000}
+            width={1000}
             src="/Images/myPhoto.png" 
-            alt="My Photo" />
+            alt="Author of this website" 
+            priority />
         </div>
         
         <div className={styling.infoWrapper}>
