@@ -1,6 +1,7 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
-import HeroSection from '@/app/projects/(project pages)/_sections/heroSection';
+import HeroSection from '@/app/projects/(project pages)/_sections/hero/heroSection';
 import { allProjects } from '@/app/projects/projects.data';
+import OverviewClientWrapper from '@/app/projects/(project pages)/_sections/overview/clientWrapper';
 import OverviewSection from '@/app/projects/(project pages)/_sections/overview/overviewSection';
 import FeaturesSection, { FeatureProps } from '@/app/projects/(project pages)/_sections/features/featuresSection';
 import styling from '@/app/projects/(project pages)/styling.wrappers';
@@ -114,7 +115,9 @@ export default function PortfolioWebsiteProjectPage() {
             
             <HeroSection {...heroProps} />
             
-            <OverviewSection images={imageList} stages={stages} />
+            <OverviewClientWrapper wrapperStyling={styling.overviewSection}>
+                <OverviewSection images={imageList} stages={stages} />
+            </OverviewClientWrapper>
             
             <FeaturesSection featureList={featureList} />
             
