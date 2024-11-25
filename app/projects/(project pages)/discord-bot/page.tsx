@@ -23,27 +23,27 @@ export default function DiscordBotProjectPage() {
 
     const imageList = [
         {
-            src: "/Images/botMusicPlayer.png", 
+            src: "/Images/Projects/DiscordBot/musicPlayer.png", 
             alt: "bot's music player", 
             description: "Create music playlists and play songs added from YouTube"
         },
         {
-            src: "/Images/botResponses.png",
+            src: "/Images/Projects/DiscordBot/responses.png",
             alt: "bot telling jokes, quotes and daily facts",
             description: "Receive jokes, quotes or daily facts on command"
         },
         {
-            src: "/Images/botReactionRoles.png",
+            src: "/Images/Projects/DiscordBot/reactionRoles.png",
             alt: "bot's reaction roles creator and manager",
             description: "Create and manage server's reaction roles available for members to select"
         },
         {
-            src: "/Images/chanceGames.png",
+            src: "/Images/Projects/DiscordBot/chanceGames.png",
             alt: "bot's chance games",
             description: "Toss a coin, roll dice or get a random number on command"
         },
         {
-            src: "/Images/botFiles.png",
+            src: "/Images/Projects/DiscordBot/fileSender.png",
             alt: "bot's file sender",
             description: "Send files to specific text channels or other servers"
         }
