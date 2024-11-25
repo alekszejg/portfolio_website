@@ -48,12 +48,23 @@ export default function MangopostWebsiteProjectPage() {
     ];
 
     const stages = [
-        {header: "Planning", text: ``
+        {header: "Planning", text: `Before making styling and UI decisions I first had to gather information
+            about Mangopost company. This was done by asking questions to its owner, about company, its goalsm,
+            unique features and how things are done. Afterwards I was looking at Dean&David and Foodja websites for
+            design inspirations, since both comapnies work in same industry. After finding positives and negatives
+            in their mobile and desktop design I used that information to make similar design and adapt it to Mangopost's
+            logo and their services.`
         },
-        {header: "Development", text: ``
+        {header: "Development", text: `At first it was agreed that I only do frontend, however as it got closer 
+            to production I was asked to publish the website too. This motivated me to learn basics of Next.js to 
+            successfully migrate from React, being able to dynamically change metadata based on language, 
+            customize HTTP headers and use server-side rendering for most components.`
         },
-        {header: "Production", text: ``
-
+        {header: "Production", text: `When it came to production, I had to learn basics of docker to 
+            containerize my application, as well as familiarize myself with how nginx works and what the
+            scripts do that I've found. Afterwards I did basic DNS configuration in IONOS and connected it
+            to IP of my server. When it came to SSL certificates, I created a cron-job that launches certbot
+            once every 2 months to update them.`
         }
     ];
 
