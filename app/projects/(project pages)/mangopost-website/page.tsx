@@ -19,6 +19,7 @@ export default function MangopostWebsiteProjectPage() {
         localPath: "https://github.com/alekszejg/mangopost_nextjs"
     };
 
+
     const imageList = [
         {
             src: "/Images/Projects/Mangopost/engagingNavigation.png",
@@ -37,7 +38,7 @@ export default function MangopostWebsiteProjectPage() {
         },
         {
             src: "/Images/Projects/Mangopost/contactDetails.png", 
-            alt: "Interactive contact details", 
+            alt: "Interactive contact details and widgets", 
             description: "Interactive contact details and widgets to simplify communication process"
         },
         {
@@ -46,6 +47,7 @@ export default function MangopostWebsiteProjectPage() {
             description: "Flexible localization logic which allows more translations to be added later"
         },
     ];
+
 
     const stages = [
         {header: "Planning", text: `Before making styling and UI decisions I first had to gather information
@@ -68,6 +70,45 @@ export default function MangopostWebsiteProjectPage() {
         }
     ];
 
+
+    const featureList: FeatureProps[] = [
+        {
+            imgSrc: "/Images/Projects/Mangopost/engagingNavigation.png",
+            imgAlt: "engaging website navigation",
+            header: "Engaging Website Navigation",
+            text: `Design's main goal is to familiarize users with services offered by Mangopost food 
+            delivery company. Using beautiful buttons matching company's logo that also respond 
+            to user's hovers and clicks along with calls to specific action offer clear and 
+            memorable user experience.`
+        },
+        {
+            imgSrc: "/Images/Projects/Mangopost/visualization2.png",
+            imgAlt: "visualizing complex ideas",
+            header: "Visuals for text-heavy ideas",
+            text: `I spent time designing SVG illustrations, hoping to improve user's focus and 
+            engagement with my website by combining text and visual elements. This was done to make user
+            have more positive experience while also have their attention on ideas we want to share.`
+        },
+        {
+            imgSrc: "/Images/Projects/Mangopost/contactDetails.png", 
+            imgAlt: "Interactive contact details and widgets", 
+            header: "Interactive contact details and widgets",
+            text: `Contact information has visual hints that indicate its interactivity: size and color 
+            change when user hovers or clicks it. Contact email was programmed to open user's mail app, 
+            similarly contact phone opens user's phone app. Both mobile and desktop design have live chat widget,
+            while mobile design also comes with Whatsapp widget.`
+        },
+        {
+            imgSrc: "/Images/Projects/Mangopost/localization.png", 
+            imgAlt: "flexible localization logic", 
+            header: "Flexible localization logic",
+            text: `Website's localization was planned ahead with perspective of adding more translations
+            later as well as possibility of quickly adjusting content for all languages. All translations 
+            for same element of a webpage are placed together and are easy to navigate by finding a 
+            needed object.`
+        }
+    ];
+
     return (
         <PageLayout className={styling.layout}>
             
@@ -76,6 +117,8 @@ export default function MangopostWebsiteProjectPage() {
             <OverviewClientWrapper wrapperStyling={styling.overviewSection}>
                 <OverviewSection images={imageList} stages={stages} />
             </OverviewClientWrapper>
+
+            <FeaturesSection featureList={featureList} />
 
         </PageLayout>
     );
