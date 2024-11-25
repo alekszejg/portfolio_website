@@ -21,9 +21,9 @@ export default function MangopostWebsiteProjectPage() {
 
     const imageList = [
         {
-            src: "/Images/Projects/Mangopost/localization.png", 
-            alt: "flexible localization logic", 
-            description: "Flexible localization logic which allows more translations to be added later"
+            src: "/Images/Projects/Mangopost/engagingNavigation.png",
+            alt: "engaging website navigation",
+            description: "Engaging website navigation through distinct eye-catching buttons containing a call-to-action"
         },
         {
             src: "/Images/Projects/Mangopost/visualization.png",
@@ -34,21 +34,23 @@ export default function MangopostWebsiteProjectPage() {
             src: "/Images/Projects/Mangopost/visualization2.png",
             alt: "visualizing complex ideas #2",
             description: "Improving and simplifying the presentation of text-heavy information through visuals"
-        }
+        },
+        {
+            src: "/Images/Projects/Mangopost/contactDetails.png", 
+            alt: "Interactive contact details", 
+            description: "Interactive contact details and widgets to simplify communication process"
+        },
+        {
+            src: "/Images/Projects/Mangopost/localization.png", 
+            alt: "flexible localization logic", 
+            description: "Flexible localization logic which allows more translations to be added later"
+        },
     ];
 
     const stages = [
-        {header: "Planning", text: `Before I started implementing my ideas into the Discord Bot, I had to 
-            familiarize myself with couple of tutorials that explained basics of Discord.py module as well as 
-            positibilities and limitations of Discord Api from reading official documentations on both Discord's 
-            and Discord.py websites. The most challenging part was understanding how OOP works, which objects are
-            related and can be used to obtain information on other objects.`
+        {header: "Planning", text: ``
         },
-        {header: "Development", text: `Development started with testing message content detection and making
-            bot do basic interactions with user. Later I was testing bot's limitations by developing ability
-            to advertise through it to current specific text channel, either current or all servers it's in. As 
-            I got more confident, I implemented some mini-games along with fetching jokes/facts from Ninja API, then
-            developed interactive reaction roles and Youtube music player with FFMPEG.`
+        {header: "Development", text: ``
         },
         {header: "Production", text: ``
 
