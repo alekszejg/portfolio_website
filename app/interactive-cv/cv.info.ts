@@ -1,12 +1,4 @@
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import {faEnvelope} from '@fortawesome/free-regular-svg-icons';
-
-
 const cvInfo = {
-    contactMe: [
-        {icon: faEnvelope, text: "alexeyguljajev@gmail.com"},
-        {icon: faPhone, text: "+49 174 6541424"},
-    ],
     education: {
         "School N25 in Ussuriysk, Russia": "2007 - 2012",
         "Munich International School in Munich, Germany": "2013 - 2020",

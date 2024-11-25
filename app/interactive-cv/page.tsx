@@ -3,7 +3,7 @@ import PageLayout from '@/app/_layoutComponents/pageLayout';
 import InfoSection from '@/app/interactive-cv/infoSection';
 import AccordionItem from '@/app/interactive-cv/accordionItem';
 import cvInfo from '@/app/interactive-cv/cv.info';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Phone, Mail } from 'lucide-react';
 
 
 export default function MyCV() {
@@ -67,9 +67,14 @@ export default function MyCV() {
         his portfolio from various front-end and Python projects`
     };
 
-    const contactMeLoop = cvInfo.contactMe.map((info, index) => (
+    const contactInfo = [
+        {icon: <Phone className={styling.general.contact.icons}/>, text: "alexeyguljajev@gmail.com"},
+        {icon: <Mail className={styling.general.contact.icons} />, text: "+49 174 6541424"}
+    ];
+
+    const contactMeLoop = contactInfo.map((info, index) => (
         <li key={`contactInfo${index + 1}`} className={styling.general.contact.listItem}>
-            <FontAwesomeIcon className={styling.general.contact.icons} icon={info.icon} />
+            {info.icon}
             {info.text}
         </li>
     ));
