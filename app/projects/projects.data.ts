@@ -48,4 +48,4 @@ const { comingSoon, ...existingProjects } = allProjects
 export const recentProjects = existingProjects; // later choose limit for recent projects
 
 
-export const totalProjects = Object.keys(allProjects).length
+export const totalProjects = Object.keys(allProjects).length - 1;
