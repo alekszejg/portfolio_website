@@ -1,4 +1,5 @@
 CURRENT GOALS / STEPS
+- General: replace fontawesome with lucide icons entirely + remove dependencies
 - General: logo is needed (similar to homepage background would do)
 - General: each webpage needs metadata object
 
@@ -10,13 +11,11 @@ CURRENT GOALS / STEPS
 - Interactive CV: sticky headers not working
 - Interactive CV: add shadows to programming approaches + left border to dropdown description
 
-- Each Project Page: start mobile styling for hero and overview sections
+- Each Project Page: add mobile styling to hero and overview sections
+- Each Project Page: add gap between image and text for project features
 
 - Portfolio Website Page: add text content for its UI/UX features
 - Portfolio Website Page: add photos at the end when almost done
-
-- Mangopost Website Page: add hero and overview sections
-- Mangopost Website Page: add images and feature contents (talk about UI/UX)
 
 - (Optional) Next-chat Website Page: could start structural outline
 
