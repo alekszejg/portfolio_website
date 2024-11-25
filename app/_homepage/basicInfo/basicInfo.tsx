@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import TriggerContactForm from '@/app/_homepage/basicInfo/triggerContactForm';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faLink } from '@fortawesome/free-solid-svg-icons';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { MessageCircleMore, MapPin, Link as LinkIcon} from 'lucide-react';
+
 
 export default function BasicInfo() {
     const styling = {
@@ -14,16 +13,19 @@ export default function BasicInfo() {
             myPhoto: "w-full h-full"
         },
         infoWrapper: "ml-[5%] mt-[10%]",
-        whatsAppLink: "ml-[0.8rem] relative top-[0.1rem]",
-        whatsAppIcon: "w-6 hover:scale-110 hover:cursor-pointer",
+        header: {
+            text: "flex items-center gap-x-1.5 text-xl",
+            whatsappIcon: "w-6 hover:scale-110 hover:cursor-pointer"
+        },
         location: {
-            wrapper: "inline-block mt-[0.2rem]",
-            icon: "h-[1rem] mr-[0.4rem]"
+            wrapper: "flex items-center mt-[0.2rem] relative right-1.5",
+            icon: "h-[1rem]"
         },
         myAccounts: {
             header: "mt-1 mb-0.5 text-sm",
+            linkWrapper: "flex items-center gap-x-1 relative right-1.5",
             linkIcon: "h-[0.7rem] relative bottom-0.5",
-            link: "ml-[0.3rem] text-xs"
+            link: "text-xs"
         }
     };
     
@@ -49,17 +51,17 @@ export default function BasicInfo() {
         </div>
         
         <div className={styling.infoWrapper}>
-            <h2>Alekszej Guljajev 
-                <Link className={styling.whatsAppLink} href="https://wa.me/491746541424">
-                    <FontAwesomeIcon className={styling.whatsAppIcon} icon={faWhatsapp} />
+            <h2 className={styling.header.text}>Alekszej Guljajev 
+                <Link href="https://wa.me/491746541424">
+                    <MessageCircleMore className={styling.header.whatsappIcon}/>
                 </Link>
                 <TriggerContactForm />
             </h2>
 
-            <span className={styling.location.wrapper}>
-                <FontAwesomeIcon className={styling.location.icon} icon={faLocationDot} />
+            <div className={styling.location.wrapper}>
+                <MapPin className={styling.location.icon} />
                 Munich, Germany
-            </span>
+            </div>
               
             <p>A self-taught programmer with BSc Economics Diploma who has been programming for a year in
                 both Python and JavaScript. My portfolio may be no so large yet, but I guarantee that I invest all my 
@@ -69,8 +71,8 @@ export default function BasicInfo() {
             
             <h3 className={styling.myAccounts.header}>Check out my other accounts</h3>
 
-            <div>
-                <FontAwesomeIcon className={styling.myAccounts.linkIcon} icon={faLink} />
+            <div className={styling.myAccounts.linkWrapper}>
+                <LinkIcon className={styling.myAccounts.linkIcon} />
                 <a 
                 className={styling.myAccounts.link} 
                 href="https://github.com/alekszejg" 
@@ -80,8 +82,8 @@ export default function BasicInfo() {
                 </a>
             </div>
 
-            <div>
-                <FontAwesomeIcon className={styling.myAccounts.linkIcon} icon={faLink} />
+            <div className={styling.myAccounts.linkWrapper}>
+                <LinkIcon className={styling.myAccounts.linkIcon} />
                 <a 
                 className={styling.myAccounts.link} 
                 href="https://tryhackme.com/p/alekszejg" 

@@ -1,8 +1,8 @@
 "use client"
 import Image from 'next/image';
-import { useState, useRef, FormEvent } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { useState, useRef } from 'react';
+import type { FormEvent } from 'react';
+import { Mail } from 'lucide-react';
 import handleMessageSubmit from '@/actions/handleMessageSubmit';
 
 export default function TriggerContactForm() {
@@ -33,7 +33,7 @@ export default function TriggerContactForm() {
     }
 
     const styling = {
-        icon: "w-6 ml-[0.8rem] relative top-[0.1rem] hover:scale-110 hover:cursor-pointer",
+        icon: "w-6 hover:scale-110 hover:cursor-pointer",
         dialogue: "w-[min(400px,50%)] pt-10 px-10 pb-16 border-1 border-black box-border rounded-2xl fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]",
         form: {
             wrapper: "flex flex-col gap-y-6",
@@ -48,7 +48,7 @@ export default function TriggerContactForm() {
   
     return (
         <>
-        <FontAwesomeIcon className={styling.icon} icon={faEnvelope} onClick={toggleDialogie} />
+        <Mail className={styling.icon} onClick={toggleDialogie} />
         <dialog className={styling.dialogue} ref={dialogRef}>
             <button className={styling.closeButton} onClick={toggleDialogie}>
                 <Image 
