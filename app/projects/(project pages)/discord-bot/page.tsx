@@ -75,7 +75,7 @@ export default function DiscordBotProjectPage() {
     
     const featureList: FeatureProps[] = [
         {
-            imgSrc: "/Images/botMusicPlayer.png",
+            imgSrc: "/Images/Projects/DiscordBot/musicPlayer.png",
             imgAlt: "bot's music player",
             header: "Look up the songs and play them!",
             text: `Find and play songs from Youtube, Spotify and Soundcloud with simple 
@@ -83,7 +83,7 @@ export default function DiscordBotProjectPage() {
             Each command includes a UI music player to navigate through songs.`
         },
         {
-            imgSrc: "/Images/botResponses.png",
+            imgSrc: "/Images/Projects/DiscordBot/responses.png",
             imgAlt: "bot telling jokes, quotes and daily facts",
             header: "Would you like to hear a joke, a quote or a daily fact?",
             text: `The bot obtains various jokes and quotes from Ninja API and sends them to anyone upon 
@@ -91,7 +91,7 @@ export default function DiscordBotProjectPage() {
             daily fact for you to discuss.`
         },
         {    
-            imgSrc: "/Images/botReactionRoles.png",
+            imgSrc: "/Images/Projects/DiscordBot/reactionRoles.png",
             imgAlt: "bot's customizable and interactive reaction roles",
             header: "Stop with manual role assignment",
             text: `Add, remove, customize and view various available roles and let the bot handle the 
@@ -101,7 +101,7 @@ export default function DiscordBotProjectPage() {
             afterwards, roles are still modifiable!` 
         },
         {
-            imgSrc: "/Images/chanceGames.png",
+            imgSrc: "/Images/Projects/DiscordBot/chanceGames.png",
             imgAlt: "bot's chance games",
             header: "Whose turn is next?",
             text: `Wonder no more, just launch one of bot's chance games with <b>/diceroll</b>, 
@@ -109,7 +109,7 @@ export default function DiscordBotProjectPage() {
             decide who goes next!`
         },
         {
-            imgSrc: "/Images/botFiles.png",
+            imgSrc: "/Images/Projects/DiscordBot/fileSender.png",
             imgAlt: "bot's file sender",
             header: "Share up to 10 cute photos or documents with your community",
             text: `The times of manual file uploads have passed, instead select files and choose where
