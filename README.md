@@ -1,7 +1,6 @@
 CURRENT GOALS / STEPS
-- General: replace fontawesome with lucide icons entirely + remove dependencies
-- General: logo is needed (similar to homepage background would do)
-- General: each webpage needs metadata object
+- General: add logo (similar to homepage background would do)
+- General: add metadata object to every page
 
 - Homepage: adjust font sizes and tailwind style errors, including contact form
 - Homepage: replace profile photo with more formal image
