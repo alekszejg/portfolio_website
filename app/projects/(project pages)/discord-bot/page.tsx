@@ -9,7 +9,7 @@ import type { Metadata } from 'next'
 
 
 export const metadata: Metadata = {
-    title: "Project: Multifunctional Discord Bot - Alexey Guljajev",
+    title: "Multifunctional Discord Bot - Alexey Guljajev's Projects",
     description: `A bot that goes beyond basic user interactions, entertainment and event reactions, 
     offering more advanced features like interactive role assignment...`
 };

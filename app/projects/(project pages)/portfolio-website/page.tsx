@@ -5,6 +5,14 @@ import OverviewClientWrapper from '@/app/projects/(project pages)/_sections/over
 import OverviewSection from '@/app/projects/(project pages)/_sections/overview/overviewSection';
 import FeaturesSection, { FeatureProps } from '@/app/projects/(project pages)/_sections/features/featuresSection';
 import styling from '@/app/projects/(project pages)/styling.wrappers';
+import type { Metadata } from 'next'
+
+
+export const metadata: Metadata = {
+    title: "Portfolio Website - Alexey Guljajev's Projects",
+    description: `My personal website featuring an interactive CV, detailed information about 
+    completed as well as ongoing projects, and a blog section...`
+};
 
 
 
