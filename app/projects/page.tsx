@@ -2,6 +2,15 @@ import Image from 'next/image';
 import PageLayout from '@/app/_layoutComponents/pageLayout';
 import ProjectsSection from '@/app/projects/projectsSection';
 import { totalProjects } from '@/app/projects//projects.data';
+import type { Metadata } from 'next'
+
+
+export const metadata: Metadata = {
+    title: "Browse Projects - Alexey Guljajev",
+    description: `Click to view all finished and ongoing projects that I have built. It's not
+    a lot yet, but there is a much more to come!`
+};
+
 
 export default function Projects() {
     const styling = {
