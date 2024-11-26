@@ -5,12 +5,20 @@ import OverviewClientWrapper from '@/app/projects/(project pages)/_sections/over
 import OverviewSection from '@/app/projects/(project pages)/_sections/overview/overviewSection';
 import FeaturesSection, { FeatureProps } from '@/app/projects/(project pages)/_sections/features/featuresSection';
 import styling from '@/app/projects/(project pages)/styling.wrappers';
+import type { Metadata } from 'next'
+
+
+export const metadata: Metadata = {
+    title: "Mangopost Website - Alexey Guljajev's Projects",
+    description: `A bilingual static website showcasing the services offered by Mangopost company in 
+    both English and German...`
+};
 
 
 export default function MangopostWebsiteProjectPage() {
     const heroProps = {
         header: "Mangopost Website",
-        text: `A bilingual static website showcasing the services offered by Mangopost in 
+        text: `A bilingual static website showcasing the services offered by Mangopost company in 
         both English and German, with contact options via widgets and provided information. The development 
         focused on an intuitive user interface and responsive design.`,
         imgSrc: "/Images/Project Previews/mangopostWebsite.png",
