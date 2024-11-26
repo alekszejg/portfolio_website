@@ -20,7 +20,7 @@ export default function Projects() {
             icon: "w-[3.2rem] tablet:ml-12",
             text: "font-medium text-2xl"
         },
-        projectsSection: "flex flex-col items-center py-16 px-20 box-border tablet:grid tablet:grid-cols-[repeat(auto-fit,minmax(250px,350px))] tablet:gap-16 tablet:py-16 tablet:px-12"
+        projectsSection: "py-16 px-20"
     };
 
     return (
