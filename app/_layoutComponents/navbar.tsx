@@ -70,10 +70,10 @@ export default function Navbar() {
             <Link className={styling.logo.link} href="/">
                 <Image 
                     className={styling.logo.img} 
-                    width={0} 
-                    height={0} 
-                    src="data:,"
-                    alt="logo" />
+                    width={500} 
+                    height={500} 
+                    src="/Images/logo.svg"
+                    alt="clickable logo" />
             </Link>
         </nav>
     );
