@@ -3,6 +3,15 @@ import BasicInfo from '@/app/_homepage/basicInfo/basicInfo';
 import ResponsiveUI from '@/app/_homepage/responsiveUI';
 import ProjectsSection from '@/app/projects/projectsSection';
 import ShowRecentPosts from "@/app/blog/showRecentPosts";
+import type { Metadata } from 'next'
+
+
+export const metadata: Metadata = {
+    title: "Welcome! - Alexey Guljajev",
+    description: `Greetings people! I am A self-taught programmer with BSc Economics Diploma 
+    who has been programming for a year in both Python and JavaScript...`
+};
+
 
 export default async function Homepage() {
     const styling = {
