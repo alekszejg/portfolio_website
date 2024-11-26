@@ -1,6 +1,4 @@
 CURRENT GOALS / STEPS
-- General: add logo (similar to homepage background would do)
-
 - Homepage: adjust font sizes and tailwind style errors, including contact form
 - Homepage: replace profile photo with more formal image
 - Homepage + All Projects: fix overflow of projects in grid
@@ -15,15 +13,14 @@ CURRENT GOALS / STEPS
 - Portfolio Website Page: add text content for its UI/UX features
 - Portfolio Website Page: add photos at the end when almost done
 
-- (Optional) Next-chat Website Page: could start structural outline
+- Security: protect server actions (read more info on that)
+- (Optional) redesign homepage background photo + navbar logo
+- (Optional) next-chat Website Page: could start structural outline
 
 
-
-SOON
-- JWT tokens must be renewed periodically
 - For safety blogpost submission action should have authorization system
 
-LEAVE FOR LATER
+WHEN MOST OF GOALS ARE DONE
 - Pages for specific blogposts should show posts from same category, if nothing [] then show recent posts
 - Make post links as search params instead of dynamic routes (/blogposts/?post=ID) 
 - View more button for blogposts can be replaced with load on scroll 
