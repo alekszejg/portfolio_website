@@ -1,6 +1,5 @@
 CURRENT GOALS / STEPS
 - General: add logo (similar to homepage background would do)
-- General: add metadata object to every page
 
 - Homepage: adjust font sizes and tailwind style errors, including contact form
 - Homepage: replace profile photo with more formal image
