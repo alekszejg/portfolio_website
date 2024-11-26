@@ -5,6 +5,14 @@ import OverviewClientWrapper from '@/app/projects/(project pages)/_sections/over
 import OverviewSection from '@/app/projects/(project pages)/_sections/overview/overviewSection';
 import FeaturesSection, { FeatureProps } from '@/app/projects/(project pages)/_sections/features/featuresSection';
 import styling from '@/app/projects/(project pages)/styling.wrappers';
+import type { Metadata } from 'next'
+
+
+export const metadata: Metadata = {
+    title: "Project: Multifunctional Discord Bot - Alexey Guljajev",
+    description: `A bot that goes beyond basic user interactions, entertainment and event reactions, 
+    offering more advanced features like interactive role assignment...`
+};
 
 
 export default function DiscordBotProjectPage() {
