@@ -4,7 +4,14 @@ import InfoSection from '@/app/interactive-cv/infoSection';
 import AccordionItem from '@/app/interactive-cv/accordionItem';
 import cvInfo from '@/app/interactive-cv/cv.info';
 import { Phone, Mail } from 'lucide-react';
+import type { Metadata } from 'next'
 
+
+export const metadata: Metadata = {
+    title: "Interactive CV - Alexey Guljajev",
+    description: `Click to view interactive online version of my CV! I'm a self-taught 
+    programmer with a diploma in BSc Economics, who is currently building his portfolio...`
+};
 
 export default function MyCV() {
     const styling = {
