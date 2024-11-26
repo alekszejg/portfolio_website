@@ -1,7 +1,6 @@
 CURRENT GOALS / STEPS
 - Homepage: adjust font sizes and tailwind style errors, including contact form
 - Homepage: replace profile photo with more formal image
-- Homepage + All Projects: fix overflow of projects in grid
 
 - Interactive CV: some sections missing full width
 - Interactive CV: sticky headers not working
