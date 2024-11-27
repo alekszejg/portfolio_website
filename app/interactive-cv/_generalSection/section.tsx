@@ -104,11 +104,11 @@ export default function GeneralInfoSection({ wrapperStyling }: {wrapperStyling: 
                     <InfoSection {...aboutMeProps} />
                 </div>
                 
-                <div id="contactWrapper">
+                <div className={styling.contact.wrapper}>
                     <InfoSection {...contactSectionProps} />
                 </div>
                 
-                <div id="educationWrapper">
+                <div>
                     <InfoSection {...educationSectionProps} />
                 </div>
             </div>
