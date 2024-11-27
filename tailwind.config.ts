@@ -5,6 +5,7 @@ const config: Config = {
   content: ["./app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     fontFamily: {
+      'regular-italic': ['Montserrat-Regular-Italic'],
       'regular': ['Montserrat-Regular'],
       'medium': ['Montserrat-Medium'],
       'bold': ['Montserrat-Bold'],

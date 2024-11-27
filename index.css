@@ -13,7 +13,13 @@
     }
 }
     
+/* Italic fonts */
+@font-face {
+    font-family: "Montserrat-Regular-Italic";
+    src: url("/Fonts/Montserrat-Regular-Italic.ttf") format("truetype");
+}
 
+/* Roman fonts */
 @font-face {
     font-family: "Montserrat-Regular";
     src: url("/Fonts/Montserrat-Regular.ttf") format("truetype");
