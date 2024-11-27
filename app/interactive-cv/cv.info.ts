@@ -1,10 +1,10 @@
 const cvInfo = {
-    education: {
-        "School N25 in Ussuriysk, Russia": "2007 - 2012",
-        "Munich International School in Munich, Germany": "2013 - 2020",
-        "University of Westminster in London, UK": "2020 - 2023",
-        "Self-taught programer": "2023 -"
-    },
+    education: [
+        {name: "Self-taught programer", year: "2023 - Now"},
+        {name: "University of Westminster", location: "London, UK | ", year: "2020 - 2023"},
+        {name: "Munich International School", location: "Munich, Germany | ", year: "2013 - 2020"},
+        {name: "School N25", location: "Ussuriysk, Russia | ", year: "2007 - 2012"}, 
+    ],
     programmingApproaches: {
         "Most tasks are programmable": `Most tasks that involve computers, specifically working with data and its manipulation, 
         can be programmed. While due to API limitations or calculation complexit the solution found might not be ideal, 
