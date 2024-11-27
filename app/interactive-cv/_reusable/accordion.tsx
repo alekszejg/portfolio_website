@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export default function AccordionItem({ title, description }: {title: string; description: string}) {    
+export default function Accordion({ title, description }: {title: string; description: string}) {    
     const [arrowIcon, setArrowIcon] = useState<"default" | "rotateForwards" | "rotateBackwards">("default");
     const [descriptionVisible, setVisibility] = useState(false);
     

@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import SectionHeader from "./sectionHeader";
+import SectionHeader from "./header";
 
 interface InfoSectionProps {
     headerWrapperClass?: string;
@@ -23,12 +23,17 @@ export default function InfoSection(props: InfoSectionProps) {
 
     return (
         <>
-        <SectionHeader headerWrapperClass={headerWrapperClass ? `${styling.headerWrapper} ${headerWrapperClass}` : styling.headerWrapper} iconClass={iconClass} icon={headerIconSrc} headerClass={headerClass} header={header} />
+        <SectionHeader 
+        wrapperStyling={headerWrapperClass ? `${styling.headerWrapper} ${headerWrapperClass}` : styling.headerWrapper} 
+        icon={{styling: iconClass, svg: headerIconSrc}} 
+        header={{styling: headerClass, text: header}} />
+        
         {props.infoLoop && 
             <ul className={infoListClass}>
                 {infoLoop}
             </ul>
         }
+
         {props.description && 
             <p className={props.descriptionClass}>{props.description}</p>
         }
