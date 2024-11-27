@@ -7,10 +7,12 @@ import { Phone, Mail } from 'lucide-react';
 export default function GeneralInfoSection({ wrapperStyling }: {wrapperStyling: string}) {
     const styling = {
         section: wrapperStyling,
-        myImgWrapper: "w-[clamp(180px,55%,200px)] mx-auto aspect-square",
-        myImg: "w-full h-full object-cover rounded-full ",
-        myName: "pt-2 text-center text-[clamp(1.2rem,5vw,1.8rem)]",
         stickyWrapper: "flex flex-col items-center gap-y-cvSectionYGap tablet:w-[80%] tablet:pt-cvSectionYGap tablet:mx-auto tablet:sticky tablet:top-0",
+        profile: {
+            imgWrapper: "w-[clamp(180px,55%,200px)] mx-auto aspect-square",
+            img: "w-full h-full object-cover rounded-full",
+            name: "mt-2 font-bold tracking-wider text-center text-2xl" 
+        },
         aboutMe: {
             wrapper: "w-full",
             headerIcon: "w-[clamp(1rem,5vw,1.5rem)] select-none",
@@ -36,6 +38,7 @@ export default function GeneralInfoSection({ wrapperStyling }: {wrapperStyling: 
     };
 
     const aboutMeProps = {
+        wrapperStyling: styling.aboutMe.wrapper,
         iconClass: styling.aboutMe.headerIcon,
         headerIconSrc: "/Icons/contactIcon.svg",
         headerClass: styling.aboutMe.header,
@@ -58,6 +61,7 @@ export default function GeneralInfoSection({ wrapperStyling }: {wrapperStyling: 
     ));
 
     const contactSectionProps = {
+        wrapperStyling: styling.contact.wrapper,
         headerClass: styling.contact.header,
         header: "Contact details",
         iconClass: styling.contact.headerIcon,
@@ -78,6 +82,7 @@ export default function GeneralInfoSection({ wrapperStyling }: {wrapperStyling: 
     });
 
     const educationSectionProps = {
+        wrapperStyling: styling.education.wrapper,
         headerClass: styling.education.header,
         header: "Education",
         iconClass: styling.education.headerIcon,
@@ -89,28 +94,20 @@ export default function GeneralInfoSection({ wrapperStyling }: {wrapperStyling: 
     return (
         <section className={styling.section}>
                 
-            <div className={styling.myImgWrapper}>
+            <div className={styling.profile.imgWrapper}>
                 <Image 
-                className={styling.myImg} 
+                className={styling.profile.img} 
                 width={1000} 
                 height={1000} 
                 src="/Images/myPhoto.png" 
                 alt="My Photo" />
             </div>
-            <h1 className={styling.myName}>Alekszej Guljajev</h1>
+            <h1 className={styling.profile.name}>Alekszej Guljajev</h1>
             
             <div className={styling.stickyWrapper}>
-                <div className={styling.aboutMe.wrapper}>
-                    <InfoSection {...aboutMeProps} />
-                </div>
-                
-                <div className={styling.contact.wrapper}>
-                    <InfoSection {...contactSectionProps} />
-                </div>
-                
-                <div>
-                    <InfoSection {...educationSectionProps} />
-                </div>
+                <InfoSection {...aboutMeProps} />
+                <InfoSection {...contactSectionProps} />
+                <InfoSection {...educationSectionProps} />
             </div>
             
         </section>

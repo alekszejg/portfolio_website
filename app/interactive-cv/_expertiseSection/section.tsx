@@ -30,6 +30,7 @@ export default function ExpertiseSection({ wrapperStyling }: {wrapperStyling: st
     ));
 
     const approachSectionProps = {
+        wrapperStyling: styling.approaches.wrapper,
         iconClass: styling.approaches.headerIcon,
         headerIconSrc: "/Icons/puzzle.svg",
         headerWrapperClass: "sticky sticky top-0 z-50 bg-cvApproachSection tablet:group-hover:bg-cvApproachSectionHover",
@@ -48,6 +49,7 @@ export default function ExpertiseSection({ wrapperStyling }: {wrapperStyling: st
     };
 
     const technicalSkillsProps = {
+        wrapperStyling: styling.skills.listWrapper,
         iconClass: styling.skills.gearHeaderIcon,
         headerIconSrc: "/Icons/gearIcon.svg",
         headerWrapperClass: "sticky sticky top-0 z-50 bg-cvSkillsSection tablet:group-hover:bg-cvSkillsHover",
@@ -57,6 +59,7 @@ export default function ExpertiseSection({ wrapperStyling }: {wrapperStyling: st
     };
 
     const softSkillsProps = {
+        wrapperStyling: styling.skills.listWrapper,
         iconClass: styling.skills.speechHeaderIcon,
         headerIconSrc: "/Icons/speechIcon.svg",
         headerClass: styling.skills.header,
@@ -66,18 +69,12 @@ export default function ExpertiseSection({ wrapperStyling }: {wrapperStyling: st
 
     return (
         <section className={styling.section}>
-                
-            <div className={styling.approaches.wrapper}>
-                <InfoSection {...approachSectionProps} />
-            </div>
             
+            <InfoSection {...approachSectionProps} />
+        
             <div className={styling.skills.wrapper}>
-                <div className={styling.skills.listWrapper}>
-                    <InfoSection {...technicalSkillsProps} />
-                </div>
-                <div className={styling.skills.listWrapper}>
-                    <InfoSection {...softSkillsProps} />
-                </div>
+                <InfoSection {...technicalSkillsProps} />
+                <InfoSection {...softSkillsProps} />
             </div>
 
         </section> 
