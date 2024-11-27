@@ -2,9 +2,10 @@ CURRENT GOALS / STEPS
 - Homepage: adjust font sizes and tailwind style errors, including contact form
 - Homepage: replace profile photo with more formal image
 
-- Interactive CV: some sections missing full width
-- Interactive CV: sticky headers not working
-- Interactive CV: add shadows to programming approaches + left border to dropdown description
+- Interactive CV: Mobile and desktop design needs polishing
+- Interactive CV: general and expertise section need to be split into subsections
+- Interactive CV: simplify props logic
+
 
 - Each Project Page: add mobile styling to hero and overview sections
 - Each Project Page: add gap between image and text for project features
