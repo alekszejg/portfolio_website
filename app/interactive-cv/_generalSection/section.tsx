@@ -22,7 +22,7 @@ export default function GeneralInfoSection({ wrapperStyling }: {wrapperStyling: 
         contact: {
             wrapper: "w-full",
             headerIcon: "w-[clamp(1rem,5vw,1.5rem)] select-none",
-            header: "pl-[0.7rem] text-center tablet:text-[1.5rem]",
+            header: "pl-[0.7rem] text-  center tablet:text-[1.5rem]",
             list: "flex flex-col items-center gap-y-6 mt-6",
             listItem: "flex items-center w-5/6 text-left",
             icons: "w-4 mr-2 align-[-0.2rem] select-none"
