@@ -17,22 +17,27 @@ export default function GeneralInfoSection({ wrapperStyling }: {wrapperStyling: 
             wrapper: "w-full",
             headerIcon: "w-[clamp(1rem,5vw,1.5rem)] select-none",
             header: "pl-[0.7rem] text-center tablet:text-[1.5rem]",
-            text: "mt-6"
+            text: "w-5/6 mt-6 mx-auto text-sm"
         },
         contact: {
             wrapper: "w-full",
             headerIcon: "w-[clamp(1rem,5vw,1.5rem)] select-none",
             header: "pl-[0.7rem] text-center tablet:text-[1.5rem]",
-            list: "mt-6",
-            listItem: "flex items-center mt-6",
+            list: "flex flex-col items-center gap-y-6 mt-6",
+            listItem: "flex items-center w-5/6 text-left",
             icons: "w-4 mr-2 align-[-0.2rem] select-none"
         },
         education: {
             wrapper: "w-full",
             headerIcon: "w-[clamp(1rem,5vw,1.5rem)] select-none",
             header: "pl-[0.7rem] text-center tablet:text-[1.5rem]",
-            list: "mt-6",
-            listItem: "flex items-center mt-6",
+            list: "flex flex-col gap-y-6 mt-6",
+            listItem: {
+                wrapper: "flex flex-col items-center",
+                place: "w-4/5 text-left font-medium",
+                location: "w-4/5 text-left text-sm",
+                year: "text-sm font-regular-italic"
+            },
             educationYear: "inline-block ml-[0.8rem]"
         }
     };
@@ -66,17 +71,18 @@ export default function GeneralInfoSection({ wrapperStyling }: {wrapperStyling: 
         header: "Contact details",
         iconClass: styling.contact.headerIcon,
         headerIconSrc: "/Icons/contactBookIcon.svg",
-        listClass: styling.contact.list,
+        infoListClass: styling.contact.list,
         infoLoop: contactMeLoop
     };
 
-    const educationLoop = Object.keys(cvInfo.education).map((place, index) => {
+    const educationLoop = cvInfo.education.map((place, index) => {
         return (
-            <li key={`place${index + 1}`} className={styling.education.listItem}>
-                {place}
-                <span className={styling.education.educationYear}>
-                    {cvInfo.education[place as keyof typeof cvInfo.education]}
-                </span>
+            <li key={`place${index + 1}`} className={styling.education.listItem.wrapper}>
+                <p className={styling.education.listItem.place}>{place.name}</p>
+                <p className={styling.education.listItem.location}>
+                    {place.location}
+                    <span className={styling.education.listItem.year}>{place.year}</span>
+                </p>
             </li>
         );
     });
