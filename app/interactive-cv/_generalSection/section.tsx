@@ -7,7 +7,7 @@ import { Phone, Mail } from 'lucide-react';
 export default function GeneralInfoSection({ wrapperStyling }: {wrapperStyling: string}) {
     const styling = {
         section: wrapperStyling,
-        stickyWrapper: "flex flex-col items-center gap-y-cvSectionYGap tablet:w-[80%] tablet:pt-cvSectionYGap tablet:mx-auto tablet:sticky tablet:top-0",
+        stickyWrapper: "flex flex-col items-center gap-y-cvSectionYGap pt-cvSectionYGap tablet:w-[80%] tablet:mx-auto tablet:sticky tablet:top-0",
         profile: {
             imgWrapper: "w-[clamp(180px,55%,200px)] mx-auto aspect-square",
             img: "w-full h-full object-cover rounded-full",
@@ -16,22 +16,22 @@ export default function GeneralInfoSection({ wrapperStyling }: {wrapperStyling: 
         aboutMe: {
             wrapper: "w-full",
             headerIcon: "w-[clamp(1rem,5vw,1.5rem)] select-none",
-            header: "pl-[0.7rem] text-center tablet:text-[1.5rem]",
-            text: "w-5/6 mt-6 mx-auto text-sm"
+            header: "pl-2 text-center font-medium text-xl",
+            text: "w-5/6 mt-4 mx-auto text-sm tablet:mt-6"
         },
         contact: {
             wrapper: "w-full",
             headerIcon: "w-[clamp(1rem,5vw,1.5rem)] select-none",
-            header: "pl-[0.7rem] text-  center tablet:text-[1.5rem]",
-            list: "flex flex-col items-center gap-y-6 mt-6",
+            header: "pl-2 text-center font-medium text-xl",
+            list: "flex flex-col items-center gap-y-6 mt-4 tablet:mt-6",
             listItem: "flex items-center w-5/6 text-left",
             icons: "w-4 mr-2 align-[-0.2rem] select-none"
         },
         education: {
             wrapper: "w-full",
             headerIcon: "w-[clamp(1rem,5vw,1.5rem)] select-none",
-            header: "pl-[0.7rem] text-center tablet:text-[1.5rem]",
-            list: "flex flex-col gap-y-6 mt-6",
+            header: "pl-2 text-center font-medium text-xl",
+            list: "flex flex-col gap-y-6 mt-4 tablet:mt-6",
             listItem: {
                 wrapper: "flex flex-col items-center",
                 place: "w-4/5 text-left font-medium",
