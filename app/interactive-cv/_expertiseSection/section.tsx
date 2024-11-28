@@ -9,16 +9,17 @@ export default function ExpertiseSection({ wrapperStyling }: {wrapperStyling: st
         approaches: {
             wrapper: "flex flex-col items-center py-cvSectionYGap w-full px-[15%] bg-cvApproachSection group tablet:px-[8%] tablet:hover:bg-cvApproachSectionHover",
             headerIcon: "w-[1.7rem] select-none",
-            header: "pl-2 text-[1.3rem] text-center tablet:text-[2rem]",
-            list: "flex flex-col gap-y-10 box-border",
+            header: "pl-2 text-center font-medium text-xl text-nowrap",
+            list: "flex flex-col gap-y-10 mt-4 tablet:mt-6",
         },
         skills: {
             wrapper: "flex flex-col items-center gap-y-20 w-full py-cvSectionYGap px-[15%] bg-cvSkillsSection group tablet:gap-y-16 tablet:px-[8%] tablet:box-border tablet:hover:bg-cvSkillsHover cvUltrawide:flex-row cvUltrawide:justify-between cvUltrawide:items-start",
             gearHeaderIcon: "w-10 select-none tablet:w-[2.7rem]",
             speechHeaderIcon: "w-[1.7rem] select-none tablet:w-8 tablet:pt-[0.4rem]",
-            header: "pl-2 text-[1.3rem] text-center tablet:text-[2rem]",
-            listWrapper: "flex flex-col items-center w-full tablet:w-[84%] cvUltrawide:w-[45%]",
-            listItem: "mt-12 text-center text-clamp(1rem,5vw,1.3rem) mt-8"
+            header: "pl-2 text-center font-medium text-xl",
+            listWrapper: "flex flex-col items-center w-full",
+            list: "flex flex-col gap-y-6 mt-4 tablet:mt-6",
+            listItem: "text-center text-clamp(1rem,5vw,1.3rem)"
         }
     };
 
@@ -55,6 +56,7 @@ export default function ExpertiseSection({ wrapperStyling }: {wrapperStyling: st
         headerWrapperClass: "sticky sticky top-0 z-50 bg-cvSkillsSection tablet:group-hover:bg-cvSkillsHover",
         headerClass: styling.skills.header,
         header: "Technical Skills",
+        infoListClass: styling.skills.list,
         infoLoop: skillsLoop(cvInfo.technicalSkills)
     };
 
@@ -64,6 +66,7 @@ export default function ExpertiseSection({ wrapperStyling }: {wrapperStyling: st
         headerIconSrc: "/Icons/speechIcon.svg",
         headerClass: styling.skills.header,
         header: "Soft Skills",
+        infoListClass: styling.approaches.list,
         infoLoop: skillsLoop(cvInfo.softSkills)
     };
 
