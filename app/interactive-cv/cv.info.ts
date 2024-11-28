@@ -12,25 +12,25 @@ const cvInfo = {
         thought in mind allows me to relax and face challenges with confidence, focusing on brainstorming and testing 
         potential solutions, rather than question feasibility of faced challenge.`,
     
-        "Experiment with available technology and tools": `Not learning or using available technology would be a missed
+        "Explore available tools and tech": `Not learning or using available technology would be a missed
         opportunity, since various tools, packages and modules can singificantly optimize mundane programming tasks. Even
         using most basic well-known features provides me more knowledge and experience with that technology compared 
         to those who never used it.`,
         
-        "Understand concepts on fundamental in-depth level": `While developers have access to many tools such
+        "Learn the fundamentals": `While developers have access to many tools such
         as website constructors, modules and packages that abstract and simplify various programming processes, 
         it's still important to me to look for underlying concepts and patterns these tools have. Gaining more knowledge
         about fundamental concepts and processes allows me to ask more questions which lead to finding more detailed 
         answers and connecting recently acquired information with knowledge that I already have.`,
         
-        "Assume all clients have no programming knowledge": `During the development of a Discord bot I was investigating 
+        "Clients are not programmers": `During the development of a Discord bot I was investigating 
         possible methods to enhance interaction between users and the bot. It has often led me to forums where I encountered
         hobbyists who provided very detailed instructions on how to use their bot and specific input each command expects to 
         be executed successfully. I find such approach to be confusing and repelling to the end-user. I believe that we as
         developers must simplify all user interactions with our program and anticipate all probable and improbable edge 
         cases that may occur during the interaction. We shouldn't just rely on user to behave exactly as we expect.`,
     
-        "Start simple, then gradually add complexity when needed": `Everything in a program needs to be as simple and intutive 
+        "Always start simple": `Everything in a program needs to be as simple and intutive 
         as possible. This applies to the code our applicaiton was programmed in, but it's especially crucial for 
         UI, which guides users through the application. For example using universally recognizable symbols for 
         specific buttons and functionalities would be more effective than re-inventing the wheel by re-designing those 
@@ -38,7 +38,7 @@ const cvInfo = {
         from user's prevous experiences, habits and even muscle memory. If we can develop an application or UI that 
         resonates with users, there is a high chance that our application and UI have achieved their goals.`,
         
-        "Ensure the code is clear and easily readable": `While many of us chase the satisfying, perfectly functioning 
+        "Clear and readable code": `While many of us chase the satisfying, perfectly functioning 
         end-result, it's crucial to look back and ensure our code can be easily read and understood by others, as well as
         by our future selves. Standards for clear code might be subjective, but adding some indentation, line-breaks and 
         comments is the minimum I can do. When possible, I combine similar code into reusable functions and components or 
