@@ -19,7 +19,11 @@ export default function Navbar() {
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (!mobileMenuRef.current?.contains(event.target as Node) && !burgerIconRef.current?.contains(event.target as Node)) {
-                setBurgerMenu(false);
+                console.log("outside click detected")
+                setBurgerMenu(prevState => {
+                    if (prevState) return false; 
+                    else return prevState;
+                });
             }
         }
 
@@ -34,8 +38,7 @@ export default function Navbar() {
             img: "w-full h-full"
         },
         navMenu: {
-            listMobile: burgerMenuOpened ? "flex flex-col w-3/5 h-screen p-0 m-0 absolute top-full bg-[rgba(190,190,190,0.95)] z-50" : "hidden",
-            listPC: "tablet:flex tablet:flex-row tablet:w-[30%] tablet:h-full tablet:static tablet:bg-inherit",
+            list: burgerMenuOpened ? "flex flex-col w-3/5 h-screen p-0 m-0 absolute top-full bg-[rgba(190,190,190,0.95)] z-50" : "hidden tablet:flex tablet:flex-row tablet:w-[30%] tablet:h-full tablet:static tablet:bg-inherit",
             listItem: "flex justify-center items-center w-full h-12 hover:bg-[rgba(150,150,150,0.7)] tablet-h-full tablet:mx-4 tablet:hover:bg-inherit",
             link: "flex justify-center items-center w-full h-full text-white font-bold tracking-wider tablet:inline tablet:h-auto tablet:text-center tablet:text-nowrap tablet:text-black tablet:text-[1.1rem] tablet:opacity-40 tablet:hover:opacity-60"
         },
@@ -58,7 +61,7 @@ export default function Navbar() {
                 onClick={toggleBurgerMenu} />
             </button>
             
-            <ul className={`${styling.navMenu.listMobile} ${styling.navMenu.listPC}`}>
+            <ul ref={mobileMenuRef} className={styling.navMenu.list}>
                 <li className={styling.navMenu.listItem}>
                     <Link href={urlPaths.cv} className={styling.navMenu.link}>Interactive CV</Link>
                 </li>
