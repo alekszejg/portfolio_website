@@ -7,7 +7,7 @@ export default function ExpertiseSection({ wrapperStyling }: {wrapperStyling: st
     const styling = {
         section: wrapperStyling,
         approaches: {
-            wrapper: "flex flex-col items-center py-cvSectionYGap w-full px-[15%] bg-cvApproachSection group tablet:px-[8%] tablet:box-border tablet:hover:bg-cvApproachSectionHover",
+            wrapper: "flex flex-col items-center py-cvSectionYGap w-full px-[15%] bg-cvApproachSection group tablet:px-[8%] tablet:hover:bg-cvApproachSectionHover",
             headerIcon: "w-[1.7rem] select-none",
             header: "pl-2 text-[1.3rem] text-center tablet:text-[2rem]",
             list: "flex flex-col gap-y-10 box-border",
