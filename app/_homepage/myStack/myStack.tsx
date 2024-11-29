@@ -9,7 +9,7 @@ import type { SkillsType } from "@/app/_homepage/myStack/skills.data";
 export default function MyStack() {
     const styling = {
         section: "py-[3rem] px-[5%]",
-        header: "hidden tablet:block tablet:mb-[2rem]",
+        header: "hidden font-medium text-xl tablet:block tablet:mb-4",
         stackWrapper: "flex gap-x-[3rem] tablet:gap-x-[1.6rem] tablet:shrink-0",
         mobileGrid: "grid grid-cols-[repeat(2,1.5rem)] gap-[1rem] w-16 h-[1px] tablet:hidden", // leave h-[1px], it overrites automatic h-full
         desktopLogosWrapper: "hidden tablet:flex tablet:flex-col tablet:items-center tablet:gap-y-[1.6rem] tablet:shrink-0",
@@ -45,7 +45,7 @@ export default function MyStack() {
     return (
         <section className={styling.section}>
             
-            <h2 className={styling.header}>My stack</h2>
+            <h2 className={styling.header}>MY STACK</h2>
             
             <div className={styling.stackWrapper} ref={stackSectionRef}>
                         

@@ -12,7 +12,7 @@ type ShowRecentPostsProps = {
 export default async function ShowRecentPosts({ wrapperStyling, includeHeader, blogpostWidth }: ShowRecentPostsProps) {
     const styling = {
         section: wrapperStyling,
-        header: "mb-4",
+        header: "mb-4 font-medium text-xl",
         list: "flex flex-col gap-y-6",
         listItem: `${blogpostWidth} py-2 px-4 border-2 border-[hsl(0,0%,75%)] rounded-md box-border`
     }
@@ -24,7 +24,7 @@ export default async function ShowRecentPosts({ wrapperStyling, includeHeader, b
 
         return (
             <section className={styling.section}>
-                {includeHeader && <h2 className={styling.header}>Recent posts</h2>}
+                {includeHeader && <h2 className={styling.header}>RECENT POSTS</h2>}
                 
                 <ul className={styling.list}>
                     {posts.map(post => (
