@@ -13,19 +13,21 @@ export default function BasicInfo() {
             myPhoto: "w-full h-full"
         },
         infoWrapper: "ml-[5%] mt-[10%]",
-        header: {
-            text: "flex items-center gap-x-1.5 text-xl",
-            whatsappIcon: "w-6 hover:scale-110 hover:cursor-pointer"
+        name: {
+            text: "flex items-center gap-x-1.5 font-medium text-xl",
+            whatsappIcon: "w-6 text-[hsl(142,70%,49%)] opacity-70 hover:scale-105 hover:cursor-pointer",
+            messageIcon: "w-6 opacity-70 hover:scale-105 hover:cursor-pointer"
         },
+        description: "text-sm",
         location: {
-            wrapper: "flex items-center mt-[0.2rem] relative right-1.5",
-            icon: "h-[1rem]"
+            wrapper: "flex items-center relative right-1.5 text-xs",
+            icon: "h-[0.8rem]"
         },
         myAccounts: {
-            header: "mt-1 mb-0.5 text-sm",
-            linkWrapper: "flex items-center gap-x-1 relative right-1.5",
-            linkIcon: "h-[0.7rem] relative bottom-0.5",
-            link: "text-xs"
+            header: "mt-1 font-medium text-sm",
+            linkWrapper: "flex items-center mt-1 relative right-1.5",
+            linkIcon: "h-[0.7rem] relative bottom-[1px]",
+            link: "font-medium text-xs text-[hsl(210,100%,60%)] tracking-wider hover:underline active:underline"
         }
     };
     
@@ -51,11 +53,11 @@ export default function BasicInfo() {
         </div>
         
         <div className={styling.infoWrapper}>
-            <h2 className={styling.header.text}>Alekszej Guljajev 
+            <h2 className={styling.name.text}>Alekszej Guljajev 
                 <Link href="https://wa.me/491746541424">
-                    <MessageCircleMore className={styling.header.whatsappIcon}/>
+                    <MessageCircleMore className={styling.name.whatsappIcon}/>
                 </Link>
-                <TriggerContactForm />
+                <TriggerContactForm iconStyling={styling.name.messageIcon} />
             </h2>
 
             <div className={styling.location.wrapper}>
@@ -63,7 +65,7 @@ export default function BasicInfo() {
                 Munich, Germany
             </div>
               
-            <p>A self-taught programmer with BSc Economics Diploma who has been programming for a year in
+            <p className={styling.description}>A self-taught programmer with BSc Economics Diploma who has been programming for a year in
                 both Python and JavaScript. My portfolio may be no so large yet, but I guarantee that I invest all my 
                 soul, passion and energy into projects I make. Currently aiming to get a job in the industry, meanwhile
                 working on new projects and improving existing ones.  
