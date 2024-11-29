@@ -5,7 +5,7 @@ import type { FormEvent } from 'react';
 import { Mail } from 'lucide-react';
 import handleMessageSubmit from '@/actions/handleMessageSubmit';
 
-export default function TriggerContactForm() {
+export default function TriggerContactForm({ iconStyling }: {iconStyling: string}) {
     const dialogRef = useRef<HTMLDialogElement>(null);
     const [popupVisible , setPopupVisibility] = useState(false);
    
@@ -33,7 +33,7 @@ export default function TriggerContactForm() {
     }
 
     const styling = {
-        icon: "w-6 hover:scale-110 hover:cursor-pointer",
+        icon: iconStyling,
         dialogue: "w-[min(400px,50%)] pt-10 px-10 pb-16 border-1 border-black box-border rounded-2xl fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]",
         form: {
             wrapper: "flex flex-col gap-y-6",
