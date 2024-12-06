@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import NextSessionProvider from "@/app/_layoutComponents/sessionProvider";
 import "../index.css";
 
 export const metadata: Metadata = {
@@ -14,13 +13,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout(props: Readonly<{children: React.ReactNode;}>) {
   return (
-    <NextSessionProvider>
-      <html lang="en">
-        <body>
-          {props.children}
-        </body>
-      </html>
-    </NextSessionProvider>
+    <html lang="en">
+      <body>
+        {props.children}
+      </body>
+    </html>
   );
 }
 
