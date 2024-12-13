@@ -11,9 +11,13 @@ export default async function DisplayTotalPosts() {
         const response = await client.query('SELECT COUNT(*) FROM posts;');
         totalPosts = BigInt(response.rows[0].count);
         return totalPosts.toString();
-    } catch (error: any) {
+    } 
+    
+    catch (error: any) {
         console.error('Error executing query', error);
-    } finally {
+    } 
+    
+    finally {
         client && client.release();
     }
     
