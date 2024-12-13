@@ -1,5 +1,7 @@
 import Blogpost from "../blogpost";
 
+export const dynamic = "force-dynamic";
+
 
 export async function generateStaticParams() {
     const response = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/blogposts/get-all-post-ids`);

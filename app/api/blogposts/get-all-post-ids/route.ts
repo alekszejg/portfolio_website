@@ -2,7 +2,12 @@ import { PoolClient } from "pg";
 import { pool } from "@/postgres";
 import { NextResponse } from 'next/server';
 
+
+export const dynamic = "force-dynamic";
+
+
 export type CategoryData = {id: number, category: string};
+
 
 export async function GET() {
     let res: {id: string}[] = [];
