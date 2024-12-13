@@ -20,7 +20,11 @@ export default async function AdminPage() {
             <PostCreator wrapperStyling={styling.postCreatorWrapper} selectCategory={ChoosePostCategory()} />
             <section className={styling.recentPosts.section}>
                 <h2 className={styling.recentPosts.header}>Recent posts {<DisplayTotalPosts />}</h2>
-                <ShowRecentPosts wrapperStyling={styling.recentPosts.wrapper} includeHeader={false} blogpostWidth="w-[90%]" />
+                <ShowRecentPosts 
+                wrapperStyling={styling.recentPosts.wrapper} 
+                includeHeader={false} 
+                blogpostWidth="w-[90%]" 
+                offset={10} />
             </section>
         </PageLayout>
     );  
