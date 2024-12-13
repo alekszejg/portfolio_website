@@ -1,7 +1,7 @@
 import Blogpost from "../blogpost";
 
 export async function generateStaticParams() {
-    const response = await fetch('http://localhost:3000/api/blogposts/get-all-post-ids');
+    const response = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/blogposts/get-all-post-ids`);
     
     if (response.ok) {
         const data = await response.json();
@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 export default async function BlogpostPage(props: {params: Promise<{postID: string}>}) {
     const params = await props.params;
     console.log("parameter is ", params.postID)
-    const response = await fetch(`http://localhost:3000/api/blogposts/post-data?postID=${params.postID}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/blogposts/post-data?postID=${params.postID}`);
 
     if (response.ok) {
         const data = await response.json();

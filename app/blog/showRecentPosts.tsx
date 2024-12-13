@@ -17,7 +17,7 @@ export default async function ShowRecentPosts({ wrapperStyling, includeHeader, b
         listItem: `${blogpostWidth} py-2 px-4 border-2 border-[hsl(0,0%,75%)] rounded-md box-border`
     }
 
-    const response = await fetch('http://localhost:3000/api/blogposts/get-recent-posts?offset=0', {cache: 'no-store'});
+    const response = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/blogposts/get-recent-posts?offset=0`, {cache: 'no-store'});
     if (response.ok) {
         const data = await response.json();
         const posts: BlogpostType[] = data.recent_posts;

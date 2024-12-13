@@ -1,7 +1,7 @@
 export default async function DisplayTotalPosts() {
     let totalPosts = 0;
 
-    const response = await fetch('http://localhost:3000/api/blogposts/total');
+    const response = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/blogposts/total`);
     if (response.ok) {
         const data = await response.json();
         totalPosts = parseInt(data.totalPosts, 10);

@@ -6,7 +6,7 @@ export default async function ChoosePostCategory() {
         select: "relative bottom-[3px] border-hsl(0,0%,65%) focus:border-hsl(0,0%,65%) focus:outline-none" 
     };
 
-    const response = await fetch('http://localhost:3000/api/blogposts/all-categories');
+    const response = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/blogposts/all-categories`);
     if (response.ok) {
         const data = await response.json();
         return (
