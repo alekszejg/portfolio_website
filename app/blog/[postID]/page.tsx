@@ -1,5 +1,6 @@
 import Blogpost from "../blogpost";
 
+
 export async function generateStaticParams() {
     const response = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/blogposts/get-all-post-ids`);
     
@@ -8,6 +9,7 @@ export async function generateStaticParams() {
         return data.post_ids;
     } else {
         console.error("Failed to fetch total posts", response.statusText);
+        return [];
     }
 }
 
