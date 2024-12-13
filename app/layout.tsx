@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../index.css";
+import { Suspense } from "react"; // prevents full page going to client-side when using useSearchParams()
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +16,9 @@ export default function RootLayout(props: Readonly<{children: React.ReactNode;}>
   return (
     <html lang="en">
       <body>
-        {props.children}
+        <Suspense>
+          {props.children}
+        </Suspense>
       </body>
     </html>
   );
