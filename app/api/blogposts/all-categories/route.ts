@@ -1,8 +1,8 @@
-import { PoolClient } from "pg";
+import type { PoolClient } from "pg";
 import { pool } from "@/postgres";
 import { NextResponse } from 'next/server';
+import type { CategoryData } from "@/app/blog/blogpost";
 
-export type CategoryData = {id: number, category: string};
 
 export async function GET() {
     let res: CategoryData[] = [];
