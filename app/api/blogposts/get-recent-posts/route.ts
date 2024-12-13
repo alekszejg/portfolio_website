@@ -2,14 +2,14 @@
 import { pool } from "@/postgres";
 import type { PoolClient } from "pg";
 import { NextRequest, NextResponse } from "next/server";
-import type { Blogpost } from "@/app/blog/blogpost";
+import type { BlogpostType } from "@/app/blog/blogpost";
 
 
 export async function GET(req: NextRequest) {
     const searchParams = req.nextUrl.searchParams
     const offset = searchParams.get('offset')
 
-    let res: Blogpost[] = [];
+    let res: BlogpostType[] = [];
     let client: PoolClient | null = null;
 
     try {
