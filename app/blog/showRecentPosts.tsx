@@ -28,7 +28,6 @@ export default async function ShowRecentPosts(props: ShowRecentPostsProps) {
         client = await pool.connect();
         const response = await client.query('SELECT * FROM posts ORDER BY created_at DESC LIMIT 10 OFFSET $1', [offset]);
         posts = response.rows;
-        return posts;
     } catch (error: any) {
         console.error('Error executing query', error);
     } finally {
