@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useRef, FormEvent, useState } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
+import ReCAPTCHA, { ReCAPTCHAInstance } from 'react-google-recaptcha';
 import { useRouter } from 'next/navigation';
 import { useSession, signIn } from 'next-auth/react';
 import verifyCaptcha from '@/actions/verifyCaptcha';
@@ -29,7 +29,7 @@ export default function SignInForm() {
 
     
     const [errors, setErrors] = useState({username: "", password: "", captcha: ""});
-    const captchaRef = useRef<any>(null);
+    const captchaRef = useRef<ReCAPTCHAInstance | null>(null);
 
     const handleSubmit = async (event: FormEvent) => {
         event.preventDefault();
@@ -38,7 +38,7 @@ export default function SignInForm() {
         const rawUsername = formData.get('username') as string;
         const rawPassword = formData.get('password') as string;
 
-        const tempCaptchaValue = captchaRef.current.getValue(); 
+        const tempCaptchaValue = captchaRef.current?.getValue(); 
 
         if (!tempCaptchaValue) {
             setErrors({...errors, captcha: "Failed to obtain Captcha"});
@@ -66,7 +66,7 @@ export default function SignInForm() {
         // handle errors later
         if (result && result.error) {
             error = result.error;
-            captchaRef.current.reset();
+            captchaRef.current?.reset();
         } else if (result && result.ok) {
             router.push('/admin');
         } else {
