@@ -1,15 +1,19 @@
-import Blogpost from "@/app/blog/blogpost";
-import type { BlogpostType } from "@/app/blog/blogpost";
+import { pool } from "@/postgres";
+import type { PoolClient } from "pg";
+import Blogpost, { BlogpostType } from "@/app/blog/blogpost";
 
 
 type ShowRecentPostsProps = {
     wrapperStyling: string, 
     includeHeader: boolean,
-    blogpostWidth: string
+    blogpostWidth: string,
+    offset: number | string, 
 }
 
 
-export default async function ShowRecentPosts({ wrapperStyling, includeHeader, blogpostWidth }: ShowRecentPostsProps) {
+export default async function ShowRecentPosts(props: ShowRecentPostsProps) {
+    const { wrapperStyling, includeHeader, blogpostWidth, offset } = props;
+
     const styling = {
         section: wrapperStyling,
         header: "mb-4 font-medium text-xl",
@@ -17,11 +21,21 @@ export default async function ShowRecentPosts({ wrapperStyling, includeHeader, b
         listItem: `${blogpostWidth} py-2 px-4 border-2 border-[hsl(0,0%,75%)] rounded-md box-border`
     }
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/blogposts/get-recent-posts?offset=0`, {cache: 'no-store'});
-    if (response.ok) {
-        const data = await response.json();
-        const posts: BlogpostType[] = data.recent_posts;
+    let posts: BlogpostType[] = [];
+    let client: PoolClient | null = null;
 
+    try {
+        client = await pool.connect();
+        const response = await client.query('SELECT * FROM posts ORDER BY created_at DESC LIMIT 10 OFFSET $1', [offset]);
+        posts = response.rows;
+        return posts;
+    } catch (error: any) {
+        console.error('Error executing query', error);
+    } finally {
+        client && client.release();
+    }
+
+    if (posts.length > 0) {
         return (
             <section className={styling.section}>
                 {includeHeader && <h2 className={styling.header}>RECENT POSTS</h2>}
@@ -31,10 +45,8 @@ export default async function ShowRecentPosts({ wrapperStyling, includeHeader, b
                         <Blogpost key={post.id} wrapperStyling={styling.listItem} {...post} />
                     ))}
                 </ul>
-                
-
+    
             </section>
         );
-    } 
-    else return null;
+    } else return null;
 }
