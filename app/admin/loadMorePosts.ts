@@ -1,4 +1,4 @@
-"use client"
+/*"use client"
 
 import { useState } from "react";
 import Blogpost from "@/app/blog/blogpost";
@@ -27,3 +27,4 @@ export default function LoadMorePosts({ initialPosts }: { initialPosts: Blogpost
         </>
     );
 }
+    */
