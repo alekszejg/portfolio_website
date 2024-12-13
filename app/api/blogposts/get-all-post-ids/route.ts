@@ -3,9 +3,6 @@ import { pool } from "@/postgres";
 import { NextResponse } from 'next/server';
 
 
-export type CategoryData = {id: number, category: string};
-
-
 export async function GET() {
     let res: {id: string}[] = [];
     let client: PoolClient | null = null;

@@ -1,7 +1,9 @@
 import Image from "next/image";
 
 export type BlogpostType = {id: number, title: string, content: string, category_ID: string, created_at: Date}
+export type CategoryData = {id: number, category: string};
 export type BlogpostProps = {id: number, wrapperStyling: string, title: string, content: string, category_ID: string, created_at: Date}
+
 
 export default function Blogpost(props: BlogpostProps) {
     const {id, wrapperStyling, title, content, category_ID, created_at } = props;
