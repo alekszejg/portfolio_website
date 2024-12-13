@@ -4,16 +4,6 @@ import { pool } from "@/postgres";
 
 
 export async function generateStaticParams() {
-    /*const response = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/blogposts/get-all-post-ids`);
-    
-    if (response.ok) {
-        const data = await response.json();
-        return data.post_ids;
-    } else {
-        console.error("Failed to fetch total posts", response.statusText);
-        return [];
-    }*/
-
     let client: PoolClient | null = null;
 
     try {
