@@ -24,7 +24,7 @@ export default async function AdminPage() {
                 wrapperStyling={styling.recentPosts.wrapper} 
                 includeHeader={false} 
                 blogpostWidth="w-[90%]" 
-                offset={10} />
+                offset={0} />
             </section>
         </PageLayout>
     );  
