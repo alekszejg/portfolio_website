@@ -76,7 +76,8 @@ export default function Navbar() {
                     width={500} 
                     height={500} 
                     src="/Images/logo.svg"
-                    alt="clickable logo" />
+                    alt="clickable logo" 
+                    priority />
             </Link>
         </nav>
     );
