@@ -30,6 +30,7 @@
     "**/*.tsx", 
     "app/admin/sign-in/react-google-recaptcha.d.ts", // for react-google-captcha type file
     ".next/types/**/*.ts", 
-    "app/api/auth/[...nextauth]"],
+    "app/api/auth/[...nextauth]"
+  ],
   "exclude": ["node_modules"]
 }
