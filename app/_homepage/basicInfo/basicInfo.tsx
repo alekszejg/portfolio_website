@@ -48,8 +48,7 @@ export default function BasicInfo() {
             height={1000}
             width={1000}
             src="/Images/myPhoto.png" 
-            alt="Author of this website" 
-            priority />
+            alt="Author of this website" />
         </div>
         
         <div className={styling.infoWrapper}>
