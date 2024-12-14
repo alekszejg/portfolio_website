@@ -3,8 +3,8 @@ import { useEffect, useRef, FormEvent, useState } from 'react';
 import ReCAPTCHA, { ReCAPTCHAInstance } from 'react-google-recaptcha';
 import { useRouter } from 'next/navigation';
 import { useSession, signIn } from 'next-auth/react';
-import verifyCaptcha from '@/actions/verifyCaptcha';
-import sanitizeInput from '@/actions/sanitizeInput';
+import verifyCaptcha from '@/app/_actions/verifyCaptcha';
+import sanitizeInput from '@/app/_actions/sanitizeInput';
 
 
 export default function SignInForm() {

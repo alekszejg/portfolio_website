@@ -1,7 +1,6 @@
 "use client"
-
 import { useState, FormEvent, ReactNode, type JSX } from "react";
-import handlePostSubmit from "@/actions/handlePostSubmit";
+import handlePostSubmit from "@/app/_actions/handlePostSubmit";
 
 
 export default function PostCreator(props: {wrapperStyling: string, selectCategory: Promise<JSX.Element | null>}) {
