@@ -23,7 +23,6 @@ export default function SignInForm() {
     useEffect(() => {
         if (status === "loading") return; 
         if(status === "authenticated") router.push('/admin');
-        console.log("status is ", status)
     }, [status, router]);
 
 
