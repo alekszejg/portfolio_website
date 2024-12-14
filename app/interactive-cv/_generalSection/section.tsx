@@ -106,7 +106,8 @@ export default function GeneralInfoSection({ wrapperStyling }: {wrapperStyling: 
                 width={1000} 
                 height={1000} 
                 src="/Images/myPhoto.png" 
-                alt="My Photo" />
+                alt="My Photo" 
+                priority />
             </div>
             <h1 className={styling.profile.name}>Alekszej Guljajev</h1>
             
