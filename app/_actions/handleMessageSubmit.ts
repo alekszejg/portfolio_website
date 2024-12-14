@@ -1,5 +1,5 @@
 "use server"
-import sanitizeInput from "@/actions/sanitizeInput";
+import sanitizeInput from "@/app/_actions/sanitizeInput";
 import { pool } from "@/postgres";
 
 

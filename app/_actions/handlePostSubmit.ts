@@ -1,7 +1,7 @@
 "use server"
 import { auth } from "@/auth";
 import { pool } from "@/postgres";
-import sanitizeInput from "@/actions/sanitizeInput";
+import sanitizeInput from "@/app/_actions/sanitizeInput";
 
 export default async function handlePostSubmit(formData: FormData) {
     
