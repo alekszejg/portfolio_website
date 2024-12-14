@@ -19,7 +19,6 @@ export default function Navbar() {
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (!mobileMenuRef.current?.contains(event.target as Node) && !burgerIconRef.current?.contains(event.target as Node)) {
-                console.log("outside click detected")
                 setBurgerMenu(prevState => {
                     if (prevState) return false; 
                     else return prevState;
@@ -73,11 +72,10 @@ export default function Navbar() {
             <Link className={styling.logo.link} href="/">
                 <Image 
                     className={styling.logo.img} 
-                    width={500} 
-                    height={500} 
+                    width={300} 
+                    height={300} 
                     src="/Images/logo.svg"
-                    alt="clickable logo" 
-                    priority />
+                    alt="clickable logo" />
             </Link>
         </nav>
     );
