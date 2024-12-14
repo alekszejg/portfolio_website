@@ -4,6 +4,9 @@ new vhost for alexeyguljajev.com domain and issued SSL to it. After knowing it c
 
 
 CURRENT GOALS / STEPS
+- ( IMPORTANT ) Before production ensure colors are as bright as intended on mobile systems and other computers, since
+changing my monitor contrast significantly changed how colors are shown 
+
 - Homepage: adjust font sizes and tailwind style errors, including contact form
 
 - Homepage: more formal profile image needed
