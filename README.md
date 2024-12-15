@@ -7,7 +7,7 @@ CURRENT GOALS / STEPS
 - ( IMPORTANT ) Before production ensure colors are as bright as intended on mobile systems and other computers, since
 changing my monitor contrast significantly changed how colors are shown 
 
-- Homepage: adjust font sizes and tailwind style errors, including contact form
+- Homepage: improve contact form design, tweak existing styles
 
 - Homepage: more formal profile image needed
 
@@ -23,11 +23,7 @@ changing my monitor contrast significantly changed how colors are shown
 
 - Portfolio Website Page: add photos at the end when almost done
 
-- Security: ensure all server actions routes filters input and doesnt reveal .env data
-
-- Security: add "trustworthy host" ENV to nextauth (current domain?), will be successful if it doesnt return server error in production
-
-- Security: learn how to effectively calculate and apply rate limiting, what are the strateges (more focus on how predictable is number of HTTP requests per page, per request??)
+- Security: learn to calculate and apply Nginx rate limiting efficiently
 
 - Security: familiarize myself with log management, have better control of cronjobs and running docker contains + more knowledge needed of nginx
 
