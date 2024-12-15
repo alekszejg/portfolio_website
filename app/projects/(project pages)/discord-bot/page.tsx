@@ -22,7 +22,7 @@ export default function DiscordBotProjectPage() {
         offering more advanced features like interactive role assignment, ad posting, 
         file sharing, a YouTube music player and much more.`,
         imgWrapperStyling: "h-5/6",
-        imgSrc: "/Images/Project Previews/discordBotTransparentBG.svg",
+        imgSrc: "/Images/Project Previews/discordBotTransparentBg.svg",
         imgAlt: allProjects.discordBot.imgAlt,
         githubUrl: allProjects.discordBot.githubUrl,
         localPath: allProjects.discordBot.localPath
