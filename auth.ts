@@ -17,8 +17,12 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
             const { username, password } = credentials;
         
             if (!(username === process.env.admin_user && password === process.env.admin_password)) {
-                return null
-            } else return {id: "1", username: username as string};
+              return null;
+            } 
+
+            else {
+              return {id: "1", username: username as string};
+            }
           }
         })
     ],

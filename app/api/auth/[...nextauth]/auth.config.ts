@@ -16,8 +16,7 @@ export const authConfig = {
     },
     pages: {signIn: '/admin/sign-in'},
   
-      callbacks: {
-        
+    callbacks: {
         async authorized({ auth, request }) {
             const PROTECTED_PATHS = ["/admin"];
             const isLoggedIn = auth?.user;
