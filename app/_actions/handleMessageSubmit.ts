@@ -1,9 +1,17 @@
 "use server"
-import sanitizeInput from "@/app/_actions/sanitizeInput";
+import handleRawInput from "@/app/_utils/handleRawInput";
+import type { PoolClient } from "pg";
 import { pool } from "@/postgres";
 
 
-export default async function handleMessageSubmit(formData: FormData) {
+export default async function handleMessageSubmit(formData: unknown) {
+    
+    // check if argument is malicous (if it isnt FormData)
+    if (!(formData instanceof FormData)) {
+        console.error("Invalid argument passed to handleMessageSubmit");
+        throw new Error("Invalid input: Expected FormData object as argument");
+    }
+
     const res = {nameError: "", emailError: "", messageError: "", submitted: false};
 
     const rawName = formData.get('name') as string;
@@ -14,25 +22,32 @@ export default async function handleMessageSubmit(formData: FormData) {
         res.nameError = "Name should be below 100 characters";
     }
 
-    if (rawEmail && rawEmail.length > 100) {
+    if (rawEmail.length > 100) {
         res.emailError = "Email should be below 100 characters"
     }
 
-    const sanitizedInput = await sanitizeInput([rawName, rawEmail, rawMessage]);
-    !sanitizedInput[0] && (res.nameError = "Name contains illegal characters");
-    rawEmail && !sanitizedInput[1] && (res.emailError = "Email contains illegal characters");
-    !sanitizedInput[2] && (res.messageError) && (res.messageError = "Message contains illagal characters");
+    if (rawMessage.length <= 9) {
+        res.messageError = "Message hould be at least 10 characters"
+    }
 
-    if (sanitizedInput[0] && (rawEmail && sanitizedInput[1] || !rawEmail) && sanitizedInput[2]) {
-        let optionalEmail = sanitizedInput[1] ?? null; 
-        try {
-            const client = await pool.connect();
-            await client.query('INSERT INTO user_messages (name, email, message) VALUES ($1, $2, $3)', [sanitizedInput[0], optionalEmail, sanitizedInput[2]]);
-            res.submitted = true;
-            client.release();
-        } catch (error: any) {
-            console.error("Some error has occured during submission: ", error);
-        }
+    // Don't sanitize if length checks failed
+    if (res.nameError || res.emailError || res.messageError) {
+        return res;
+    }
+
+    // Continue to sanitize and escape raw input
+    const sanitizedInput = handleRawInput([rawName, rawEmail, rawMessage], "recursiveEscape");
+    let client: PoolClient | null = null;
+    
+    try {
+        client = await pool.connect();
+        const query = 'INSERT INTO user_messages (name, email, message) VALUES ($1, $2, $3)';
+        await client.query(query, [sanitizedInput[0], sanitizedInput[1], sanitizedInput[2]]);
+        res.submitted = true;
+        client.release();
+    } catch (error: any) {
+        console.error("Error during message submission to user_messages has occured", error);
+        client && client.release();
     }
     return res;
 }
