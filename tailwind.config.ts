@@ -21,6 +21,8 @@ const config: Config = {
         'cvSectionYGap': '3rem',
       },
       colors: {
+        
+        // INTERACTIVE CV SECTIONS
         'cvGeneralSection': 'hsl(0, 0%, 93.5%)',
         'cvGeneralHover': 'hsl(0,0%,92%,1)',
         'cvApproachSection': 'hsl(178, 75%, 93%)',
@@ -30,11 +32,16 @@ const config: Config = {
         'cvSkillsSection': 'hsl(52, 85%, 93.5%)',
         'cvSkillsHover': 'hsl(52, 85%, 92%)',
 
+        // SECTIONS OF EACH PROJECT PAGE
+        'yellowProjectPage': 'hsl(53,90%,93%)',
+        'blueProjectPage': 'hsl(179,100%,93%)',
+
+        // ADMIN PAGE
         'formInput': 'hsl(0,0%,81%)',
         'formInputFocused': 'hsl(0,0%,51%)',
 
-        'yellowProjectPage': 'hsl(53,90%,93%)',
-        'blueProjectPage': 'hsl(179,100%,93%)'
+        'blogpostBorder': 'hsl(0,0%,75%)',
+        'messageBorder': 'hsl(0,0%,75%)',
       },
       backgroundImage: {
         'gradient-to-135deg': 'linear-gradient(135deg, hsla(53,90%,93%,1) 0%, hsla(53,90%,87%,0.6) 65%, hsla(53,90%,84%,0.6) 100%)',
