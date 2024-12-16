@@ -1,23 +1,22 @@
 import fetchRecentPosts from "@/app/_utils/fetchRecentPosts";
-import Blogpost, { BlogpostType } from "@/app/blog/blogpost";
+import Blogpost from "@/app/blog/blogpost";
 
 
 type ShowRecentPostsProps = {
     wrapperStyling: string, 
     includeHeader: boolean,
     blogpostWidth: string,
-    offset: number | string, 
 }
 
 
-export default async function ShowRecentPosts(props: ShowRecentPostsProps) {
-    const { wrapperStyling, includeHeader, blogpostWidth, offset } = props;
+export default async function RecentPosts(props: ShowRecentPostsProps) {
+    const { wrapperStyling, includeHeader, blogpostWidth } = props;
 
     const styling = {
         section: wrapperStyling,
         header: "mb-4 font-medium text-xl",
         list: "flex flex-col gap-y-6",
-        listItem: `${blogpostWidth} py-2 px-4 border-2 border-[hsl(0,0%,75%)] rounded-md box-border`
+        listItem: `${blogpostWidth} py-2 px-4 border-2 border-messageBorder rounded-md`
     }
 
     const { posts, error } = await fetchRecentPosts();
