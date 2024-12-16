@@ -16,7 +16,7 @@ export default async function RecentPosts(props: ShowRecentPostsProps) {
         section: wrapperStyling,
         header: "mb-4 font-medium text-xl",
         list: "flex flex-col gap-y-6",
-        listItem: `${blogpostWidth} py-2 px-4 border-2 border-messageBorder rounded-md`
+        listItem: `${blogpostWidth} py-2 px-4 border-2 border-blogpostBorder rounded-md`
     }
 
     const { posts, error } = await fetchRecentPosts();
