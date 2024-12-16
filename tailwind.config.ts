@@ -19,6 +19,7 @@ const config: Config = {
     extend: {
       spacing: {
         'cvSectionYGap': '3rem',
+        'adminPageLSide': '1.25rem',
       },
       colors: {
         
