@@ -2,20 +2,13 @@ import 'server-only'
 import { unstable_cache } from 'next/cache';
 import { pool } from "@/postgres";
 import type { PoolClient } from "pg";
-
-
-export type Message = {
-    id: string,
-    email: string,
-    message: string,
-    created_at: string
-}
+import type { UserMessage } from '@/app/admin/userMessage';
 
 
 const fetchRecentMessages = unstable_cache(
     async () => {
         let client: PoolClient | null = null;
-        let messages: Message[] | [] = [];
+        let messages: UserMessage[] | [] = [];
         let errorMessage = ""; 
 
         try {
