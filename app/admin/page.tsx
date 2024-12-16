@@ -1,14 +1,15 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
 import PostCreator from "./postCreator";
 import RecentMessages from './recentMessages';
-import ShowRecentPosts from "../blog/showRecentPosts";
+import RecentPosts from "../blog/recentPosts";
 import ChoosePostCategory from "./choosePostCategory";
-import DisplayTotalPosts from "./displayTotalPosts";
+
 
 export default async function AdminPage() {
     const styling = {
         layout: "grid grid-cols-2 gap-x-10 py-12",
         postCreatorForm: "flex flex-col",
+        recentMessagesWrapper: "flex flex-col",
         viewPostsWrapper: "flex flex-col gap-y-4"
     };
 
@@ -16,14 +17,13 @@ export default async function AdminPage() {
         <PageLayout className={styling.layout}>
             <div>
                 <PostCreator wrapperStyling={styling.postCreatorForm} selectCategory={ChoosePostCategory()} />
-                <RecentMessages />
+                <RecentMessages wrapperStyling={styling.recentMessagesWrapper} />
             </div>
 
-            <ShowRecentPosts 
+            <RecentPosts 
             wrapperStyling={styling.viewPostsWrapper} 
             includeHeader={true} 
-            blogpostWidth="w-[90%]" 
-            offset={0} />
+            blogpostWidth="w-[90%]" />
 
         </PageLayout>
     );  
