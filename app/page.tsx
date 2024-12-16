@@ -2,7 +2,7 @@ import PageLayout from '@/app/_layoutComponents/pageLayout';
 import BasicInfo from '@/app/_homepage/basicInfo/basicInfo';
 import ResponsiveUI from '@/app/_homepage/responsiveUI';
 import ProjectsSection from '@/app/projects/projectsSection';
-import ShowRecentPosts from "@/app/blog/showRecentPosts";
+import RecentPosts from "@/app/blog/recentPosts";
 import type { Metadata } from 'next'
 
 
@@ -26,7 +26,7 @@ export default async function Homepage() {
             
             <ResponsiveUI 
             ProjectsSection={<ProjectsSection display="recent" wrapperStyling={styling.recentProjectsSection} includeHeader={true} />} 
-            ShowRecentPosts={<ShowRecentPosts wrapperStyling={styling.recentPostsSection} includeHeader={true} blogpostWidth="w-3/4" offset={0} />} 
+            ShowRecentPosts={<RecentPosts wrapperStyling={styling.recentPostsSection} includeHeader={true} blogpostWidth="w-3/4" />} 
             />
             
         </PageLayout>
