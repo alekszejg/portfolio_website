@@ -1,12 +1,4 @@
-AWESOME NEWS!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-- After 2 days with little breaks I finally managed to get nginx running with
-new vhost for alexeyguljajev.com domain and issued SSL to it. After knowing it can be published with just few clicks all is left rn is some polishing (visual improvement + security) 
-
-
-CURRENT GOALS / STEPS
-- ( IMPORTANT ) Before production ensure colors are as bright as intended on mobile systems and other computers, since
-changing my monitor contrast significantly changed how colors are shown 
-
+DEVELOPMENT STAGE GOALS:
 - Homepage: improve contact form design, tweak existing styles
 
 - Homepage: more formal profile image needed
@@ -23,19 +15,30 @@ changing my monitor contrast significantly changed how colors are shown
 
 - Portfolio Website Page: add photos at the end when almost done
 
-- Security: learn to calculate and apply Nginx rate limiting efficiently
 
-- Security: familiarize myself with log management, have better control of cronjobs and running docker contains + more knowledge needed of nginx
+BEFORE PRODUCTION STAGE GOALS: 
+- Ensure website compatibility with Chrome, Safari, Firefox (firefox styling differs for some reason)
 
-- (Optional) homepage background art could use deeper 3D effect 
-- (Optional) logo could be lighter, same as background, overall could be more creative...
-- (Optional) Next-chat Website Page: could start structural outline
+- Ensure SSL certificates compatibility with Chrome, Safari, Firefox (firefox doesnt recognize Lets Encrypt)
 
+- Ensure colors are as bright as intended on mobile systems and other computers, since changing my monitor contrast significantly changed how colors are shown 
 
+- Nginx: calculate total HTTP requests per page and get rate limiting to work
 
-WHEN MOST OF GOALS ARE DONE
+AFTER PRODUCTION STAGE GOALS:
+- Homepage: background art could use deeper 3D effect
+
+- Navbar Logo: make lighter or change it completely
+
+- Next-chat Project Page: needs to be made
+
+- Log Management: do some research and start applying knowledge 
+
+AFTER PRODUCTION STAGE (OPTIONAL GOALS): 
 - Pages for specific blogposts should show posts from same category, if nothing [] then show recent posts
+
 - Make post links as search params instead of dynamic routes (/blogposts/?post=ID) 
+
 - View more button for blogposts can be replaced with load on scroll 
 
 
