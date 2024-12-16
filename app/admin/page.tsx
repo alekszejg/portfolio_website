@@ -8,8 +8,8 @@ import ChoosePostCategory from "./choosePostCategory";
 export default async function AdminPage() {
     const styling = {
         layout: "grid grid-cols-2 gap-x-10 py-12",
-        postCreatorForm: "flex flex-col",
-        recentMessagesWrapper: "flex flex-col",
+        postCreatorForm: "flex flex-col pl-adminPageLSide",
+        recentMessagesWrapper: "flex flex-col pl-adminPageLSide",
         viewPostsWrapper: "flex flex-col gap-y-4"
     };
 
