@@ -1,31 +1,30 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
 import PostCreator from "./postCreator";
+import RecentMessages from './recentMessages';
 import ShowRecentPosts from "../blog/showRecentPosts";
 import ChoosePostCategory from "./choosePostCategory";
 import DisplayTotalPosts from "./displayTotalPosts";
 
 export default async function AdminPage() {
     const styling = {
-        layout: "flex gap-x-10 py-12",
-        postCreatorWrapper: "flex flex-col w-1/2",
-        recentPosts: {
-            section: "w-1/2",
-            wrapper: "flex flex-col gap-y-4",
-            header: "mb-6"
-        }
+        layout: "grid grid-cols-2 gap-x-10 py-12",
+        postCreatorForm: "flex flex-col",
+        viewPostsWrapper: "flex flex-col gap-y-4"
     };
 
     return (
         <PageLayout className={styling.layout}>
-            <PostCreator wrapperStyling={styling.postCreatorWrapper} selectCategory={ChoosePostCategory()} />
-            <section className={styling.recentPosts.section}>
-                <h2 className={styling.recentPosts.header}>Recent posts {<DisplayTotalPosts />}</h2>
-                <ShowRecentPosts 
-                wrapperStyling={styling.recentPosts.wrapper} 
-                includeHeader={false} 
-                blogpostWidth="w-[90%]" 
-                offset={0} />
-            </section>
+            <div>
+                <PostCreator wrapperStyling={styling.postCreatorForm} selectCategory={ChoosePostCategory()} />
+                <RecentMessages />
+            </div>
+
+            <ShowRecentPosts 
+            wrapperStyling={styling.viewPostsWrapper} 
+            includeHeader={true} 
+            blogpostWidth="w-[90%]" 
+            offset={0} />
+
         </PageLayout>
     );  
 }
