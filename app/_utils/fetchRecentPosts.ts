@@ -28,7 +28,7 @@ const fetchRecentPosts = unstable_cache(
     // cache key
     ["recentPosts"],
     {
-        tags: ['users'],
+        tags: ['recentPosts'],
         // revalidate cache every 15 min
         revalidate: 900,
     }
