@@ -1,3 +1,4 @@
+import 'server-only'
 import { unstable_cache } from 'next/cache';
 import { pool } from "@/postgres";
 import type { PoolClient } from "pg";
