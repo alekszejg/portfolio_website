@@ -14,17 +14,13 @@ DEVELOPMENT STAGE GOALS:
 
 - All Projects Page: Needs to have ultrawide support
 - All Projects Page: Leftmost pixels of lamp icon in header need to have same left alignment as project grid
-- All Projects Page: (Repeated) Project previews need better buttons styling
+- (REPEATED) All Projects Page: Project previews need better buttons styling
 
 - Individual Project Pages: add mobile styling (aka vertical version but slightly more creative) to hero and overview sections
 - Individual Project Pages: add gap between image and text for project features
 
 - Portfolio Website Page: add text content for its UI/UX features
 - Portfolio Website Page: add photos at the end when almost done
-
-- (CLEANUP) Admin Page: data fetching inside choosePostCategory can be added as async util, while its JSX can be added into PostCreator. This is because functionality for obtaining all blogpost categories will be re-used to make client-side blogpost filters 
-
-- (CLEANUP) Blogpost and Message components: make reusable util for converting UTC data into Local Time for reusability and shorter code in both pages
 
 
 BEFORE PRODUCTION STAGE GOALS: 
