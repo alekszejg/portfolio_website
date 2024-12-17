@@ -1,10 +1,9 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
-import { fetchPostCategories } from '@/app/_utils/fetchPostCategories';
+import { fetchPostCategories } from '@/app/_lib/utils/fetchPostCategories';
 import type { CategoryData } from '@/app/blog/blogpost';
-import PostCreator from "./postCreator";
-import RecentMessages from './recentMessages';
-import RecentPosts from "../blog/recentPosts";
-
+import PostCreator from "@/app/admin/postCreator";
+import RecentMessages from '@/app/admin/recentMessages';
+import RecentPosts from "@/app/blog/recentPosts";
 
 
 export default async function AdminPage() {
@@ -16,7 +15,7 @@ export default async function AdminPage() {
     };
 
     const postCategoriesRes = await fetchPostCategories();
-    const postCategories = postCategoriesRes.categories;
+    const postCategories: CategoryData[] = postCategoriesRes.categories;
 
     return (
         <PageLayout className={styling.layout}>
