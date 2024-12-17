@@ -1,4 +1,5 @@
 "use server"
+import { revalidateTag } from 'next/cache'
 import { auth } from "@/auth";
 import type { PoolClient } from "pg";
 import { pool } from "@/postgres";
@@ -7,18 +8,19 @@ import handleRawInput from "@/app/_utils/handleRawInput";
 
 export default async function handlePostSubmit(formData: unknown) {
     
+    // only to be sued by authorized users (me)
+    const session = await auth();
+    if (!session) {
+        console.error("handlePostSubmit action was triggered by unauthorized user")
+        throw new Error("Authorization Error")
+    }
+     
     // check if argument is malicous (if it isnt FormData)
     if (!(formData instanceof FormData)) {
         console.error("Invalid argument passed to handleMessageSubmit");
         throw new Error("Invalid input: Expected FormData object as argument");
     }
 
-    const session = await auth();
-    if (!session) {
-        console.error("handlePostSubmit action was triggered by unauthorized user")
-        throw new Error("Authorization Error")
-    }
-    
     const res = {titleError: "", descrError: "", submitted: false};
 
     const rawTitle = formData.get('title') as string;
@@ -44,5 +46,6 @@ export default async function handlePostSubmit(formData: unknown) {
         console.error("Error during post submission to posts has occured", error);
         client && client.release();
     }
+    revalidateTag('recentPosts');
     return res;
 }
