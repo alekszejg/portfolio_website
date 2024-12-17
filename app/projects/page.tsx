@@ -14,13 +14,13 @@ export const metadata: Metadata = {
 
 export default function Projects() {
     const styling = {
-        layout: "min-h-[calc(100vh-3rem)]",
+        layout: "max-w-[1400px] py-8 ultrawide:mx-auto",
         header: {
-            wrapper: "flex justify-center items-center gap-x-3 h-20 border-y-1 border-grey bg-[hsl(67,27%,94%)] tablet:justify-start",
-            icon: "w-[3.2rem] tablet:ml-12",
+            wrapper: "flex justify-center items-center gap-x-2 mb-6 mx-[5%] relative right-1.5 tablet:justify-start",
+            icon: "w-8 relative bottom-[1px]",
             text: "font-medium text-2xl"
         },
-        projectsSection: "py-16 px-20"
+        projectsSection: "mx-[5%]"
     };
 
     return (
@@ -33,7 +33,7 @@ export default function Projects() {
                 height={100}
                 src="/Icons/lampIcon.svg" 
                 alt="" />
-                <h2 className={styling.header.text}>My Projects ({totalProjects})</h2>
+                <h2 className={styling.header.text}>MY PROJECTS ({totalProjects})</h2>
             </div>
 
             <ProjectsSection display="all" wrapperStyling={styling.projectsSection} includeHeader={false} />
