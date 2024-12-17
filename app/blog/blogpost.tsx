@@ -1,19 +1,10 @@
 import Image from "next/image";
 
 
-export type CategoryData = {id: number, category: string};
+export type CategoryData = {id: string, category: string};
 
-export interface BlogpostType {
-    id: string; 
-    title: string; 
-    content: string; 
-    category_ID: string; 
-    created_at: Date;
-}
-
-export interface BlogpostProps extends BlogpostType {
-    wrapperStyling: string
-}
+export interface BlogpostType<T = string> {id: T; title: T; content: T; category_ID: T; created_at: Date;}
+export interface BlogpostProps extends BlogpostType {wrapperStyling: string}
 
 
 export default function Blogpost(props: BlogpostProps) {
