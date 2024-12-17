@@ -1,11 +1,16 @@
 "use client"
 import { useState, FormEvent } from "react";
 import handlePostSubmit from "@/app/_actions/handlePostSubmit";
+import type { CategoryData } from "@/app/blog/blogpost";
 
 
-export default function PostCreator(props: {wrapperStyling: string, selectCategory: Promise<React.JSX.Element | null>}) {
+type PostCreatorProps = {wrapperStyling: string, postCategories: CategoryData[] | []}
+
+
+export default function PostCreator({ wrapperStyling, postCategories }: PostCreatorProps) {
     const styling = {
-        addPostsHeader: "flex items-end gap-x-[0.8rem]",
+        addPostsHeader: "flex items-end gap-x-2 font-medium text-xl",
+        selectCategory: "relative bottom-[3px] font-regular text-sm border-hsl(0,0%,65%) focus:border-hsl(0,0%,65%) focus:outline-none",
         inputLabel: "mb-2 mt-4",
         error: "ml-[0.3rem] text-[10px] text-[red]",
         input: "h-8 px-[0.7rem] mb-6 border-2 border-[hsl(0,0%,75%)] rounded-md box-border focus:border-[hsl(0,0%,65%)] focus:outline-none",
@@ -25,11 +30,22 @@ export default function PostCreator(props: {wrapperStyling: string, selectCatego
     }
 
     return (
-        <form className={props.wrapperStyling} onSubmit={handleSubmit}>         
-            <h2 className={styling.addPostsHeader}>Add new post {props.selectCategory}</h2>
+        <form className={wrapperStyling} onSubmit={handleSubmit}>         
             
-            <h3 className={styling.inputLabel}>
-                Title
+            <h2 className={styling.addPostsHeader}>CREATE A BLOGPOST
+                <select className={styling.selectCategory} name="category">
+                    <option value={undefined}>choose category</option>
+                    
+                    {postCategories.length > 0 && postCategories.map((category: CategoryData) => (
+                        <option key={category.id} value={category.id}>{category.category}</option>
+                    ))}
+
+                </select>
+
+                {postCategories.length === 0 && <span>Failed to fetch categories</span>}
+            </h2>
+            
+            <h3 className={styling.inputLabel}>Title
                 {titleError && <span className={styling.error}>{titleError}</span>}
             </h3>
 
