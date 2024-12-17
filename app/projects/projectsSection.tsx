@@ -13,7 +13,7 @@ export default function ProjectsSection({ display, wrapperStyling, includeHeader
     const styling = {
         section: wrapperStyling,
         header: "hidden font-medium text-xl tablet:block tablet:mb-4",
-        projectsGrid: "flex flex-col gap-y-10 tablet:grid tablet:grid-cols-[repeat(auto-fit,minmax(160px,220px))] tablet:gap-x-12"
+        projectsGrid: "flex flex-col gap-y-10 tablet:grid tablet:grid-cols-[repeat(auto-fit,minmax(130px,190px))] tablet:gap-x-12"
     }
 
     const displayOption = (display === "all" ? allProjects : recentProjects);
