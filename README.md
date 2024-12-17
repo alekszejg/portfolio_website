@@ -1,13 +1,11 @@
 DEVELOPMENT STAGE GOALS:
-- Navbar: ensure tablet+ version of navbar has same pad/margin as homepage or /projects (5% left and right)
-
 - Homepage: Profile description needs right padding (change left margin to padding)
 - Homepage: Make better design of contact popup, ensure it fits
 - Homepage: On desktop try increasing headers to 2xl
 - Homepage: After font change raise height of desktop stack to height obtained from largest description
 - Homepage: more formal profile image needed
 
-- Interactive CV: Move education palces to the left so they were aligned like about me or contact details
+- Interactive CV: Move education places to the left so they were aligned like about me or contact details
 - Interactive CV: General section needs to have an earlier breakpoint for margin/padding so headers didnt extend so much
 - Interactive CV: Programming approaches with closed accordion need to have larger width like ones with opened accordions (list has limited width currently)
 - Interactive CV: more formal profile image needed
@@ -19,8 +17,6 @@ DEVELOPMENT STAGE GOALS:
 - Portfolio Website Page: add text content for its UI/UX features
 - Portfolio Website Page: add photos at the end when almost done
 
-- (CLEANUP) Place _actions and _utils folders inside new _lib folder to keep them closer and fix any
-import problems which will come up
 
 MISSING CONTENT!!!
 1) /api/blogposts/post-data/route.ts needs to be checked and applied for blog or blog/[postID] pages
