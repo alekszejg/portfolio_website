@@ -31,6 +31,6 @@
     "app/admin/sign-in/react-google-recaptcha.d.ts", // for react-google-captcha type file
     ".next/types/**/*.ts", 
     "app/api/auth/[...nextauth]"
-  ],
+, "app/interactive-cv/cv.info.jsx"  ],
   "exclude": ["node_modules"]
 }
