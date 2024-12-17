@@ -20,12 +20,14 @@ const urlPaths = {
        }
     },
     admin: "/admin",
+    adminSignIn: "/admin/sign-in",
     misc: {
         myAccounts: {
             whatsapp: "https://wa.me/491746541424",
             github: "https://github.com/alekszejg",
             tryhackme: "https://tryhackme.com/p/alekszejg",
         },
+        authBasePath: "/api/auth",
         external: {
             verifyRecaptcha: "https://www.google.com/recaptcha/api/siteverify?",
         }
