@@ -22,6 +22,13 @@ DEVELOPMENT STAGE GOALS:
 - Portfolio Website Page: add text content for its UI/UX features
 - Portfolio Website Page: add photos at the end when almost done
 
+- (CLEANUP) Place _actions and _utils folders inside new _lib folder to keep them closer and fix any
+import problems which will come up
+
+MISSING CONTENT!!!
+1) /api/blogposts/post-data/route.ts needs to be checked and applied for blog or blog/[postID] pages
+2) Entire /blog/[postID]/page.tsx needs reworking and adjustments 
+
 
 BEFORE PRODUCTION STAGE GOALS: 
 - Ensure website compatibility with Chrome, Safari, Firefox (firefox styling differs for some reason)
