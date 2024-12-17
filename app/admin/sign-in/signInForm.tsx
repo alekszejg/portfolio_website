@@ -3,7 +3,7 @@ import { useEffect, useRef, FormEvent, useState } from 'react';
 import ReCAPTCHA, { ReCAPTCHAInstance } from 'react-google-recaptcha';
 import { useRouter } from 'next/navigation';
 import { useSession, signIn } from 'next-auth/react';
-import handleAdminSignin from '@/app/_actions/handleAdminSignin';
+import handleAdminSignin from '@/app/_lib/actions/handleAdminSignin';
 import urlPaths from '@/app/url.paths';
 
 

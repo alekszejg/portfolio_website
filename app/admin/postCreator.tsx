@@ -1,6 +1,6 @@
 "use client"
 import { useState, FormEvent } from "react";
-import handlePostSubmit from "@/app/_actions/handlePostSubmit";
+import handlePostSubmit from "@/app/_lib/actions/handlePostSubmit";
 import type { CategoryData } from "@/app/blog/blogpost";
 
 

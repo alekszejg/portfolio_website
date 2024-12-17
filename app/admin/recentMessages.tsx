@@ -1,4 +1,4 @@
-import fetchRecentMessages from "@/app/_utils/fetchRecentMessages";
+import fetchRecentMessages from "@/app/_lib/utils/fetchRecentMessages";
 import UserMessage from "@/app/admin/userMessage";
 
 export default async function RecentMessages({ wrapperStyling }: {wrapperStyling: string}) {

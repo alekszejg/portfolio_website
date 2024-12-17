@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useState, useRef } from 'react';
 import type { FormEvent } from 'react';
 import { Mail } from 'lucide-react';
-import handleMessageSubmit from '@/app/_actions/handleMessageSubmit';
+import handleMessageSubmit from '@/app/_lib/actions/handleMessageSubmit';
 
 export default function TriggerContactForm({ iconStyling }: {iconStyling: string}) {
     const dialogRef = useRef<HTMLDialogElement>(null);

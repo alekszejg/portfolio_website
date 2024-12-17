@@ -1,4 +1,4 @@
-import utcToLocalTime from "@/app/_utils/utcToLocalTime";
+import utcToLocalTime from "@/app/_lib/utils/utcToLocalTime";
 
 
 export interface UserMessage<T = string> {id: T; name: T; email: T; message: T; created_at: Date;};

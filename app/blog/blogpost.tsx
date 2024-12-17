@@ -1,5 +1,5 @@
 import Image from "next/image";
-import utcToLocalTime from "@/app/_utils/utcToLocalTime";
+import utcToLocalTime from "@/app/_lib/utils/utcToLocalTime";
 
 
 export type CategoryData = {id: string, category: string};

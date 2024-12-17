@@ -1,4 +1,4 @@
-import fetchRecentPosts from "@/app/_utils/fetchRecentPosts";
+import fetchRecentPosts from "@/app/_lib/utils/fetchRecentPosts";
 import Blogpost from "@/app/blog/blogpost";
 
 
