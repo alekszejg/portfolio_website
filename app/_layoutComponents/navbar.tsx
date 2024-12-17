@@ -14,6 +14,21 @@ export default function Navbar() {
     useEffect(() => {
         const bodyClasses = document.body.classList;
         burgerMenuOpened ? bodyClasses.add("disableBodyScroll") : bodyClasses.remove("disableBodyScroll")
+        
+        const mediaQuery = window.matchMedia("(min-width: 480px)");
+        const handleResize = () => {
+            if (mediaQuery.matches && burgerMenuOpened) {
+                bodyClasses.remove("disableBodyScroll")
+                setBurgerMenu(false);
+            }
+        };
+
+        handleResize();
+
+        mediaQuery.addEventListener("change", handleResize);
+
+        return () => mediaQuery.removeEventListener("change", handleResize);
+
     }, [burgerMenuOpened]);
 
     useEffect(() => {
@@ -33,13 +48,13 @@ export default function Navbar() {
     const styling = {
         nav: "flex justify-between items-center max-w-[1400px] h-[3rem] relative bg-[white] ultrawide:mx-auto",
         burgerMenu: {
-            button: "h-[1.6rem] p-0 mx-[0.6rem] bg-transparent border-0 tablet:hidden",
+            button: "w-9 p-0 ml-[3%] bg-transparent border-0 tablet:hidden",
             img: "w-full h-full"
         },
         navMenu: {
-            list: burgerMenuOpened ? "flex flex-col w-3/5 h-screen p-0 m-0 absolute top-full bg-[rgba(190,190,190,0.95)] z-50" : "hidden tablet:flex tablet:flex-row tablet:w-[30%] tablet:h-full tablet:static tablet:bg-inherit",
-            listItem: "flex justify-center items-center w-full h-12 hover:bg-[rgba(150,150,150,0.7)] tablet-h-full tablet:mx-4 tablet:hover:bg-inherit",
-            link: "flex justify-center items-center w-full h-full text-white font-bold tracking-wider tablet:inline tablet:h-auto tablet:text-center tablet:text-nowrap tablet:text-black tablet:text-[1.1rem] tablet:opacity-40 tablet:hover:opacity-60"
+            list: `${burgerMenuOpened ? "flex flex-col" : "hidden"} w-3/5 h-screen p-0 m-0 absolute top-full bg-[rgba(190,190,190,0.95)] z-50 tablet:flex tablet:flex-row tablet:gap-x-8 tablet:w-fit tablet:h-full tablet:ml-[5%] tablet:static tablet:bg-inherit`,
+            listItem: "flex justify-center items-center w-full h-12 hover:bg-[rgba(150,150,150,0.7)] tablet-h-full tablet:hover:bg-inherit",
+            link: "flex justify-center items-center w-full h-full text-white font-bold tracking-wider tablet:inline tablet:h-auto tablet:text-center tablet:text-nowrap tablet:text-black tablet:text-lg tablet:opacity-[0.45] tablet:hover:opacity-60"
         },
         logo: {
             link: "w-2/5 h-full tablet:w-[min(150px,20%)]",
