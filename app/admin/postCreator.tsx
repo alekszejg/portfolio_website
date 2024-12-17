@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation'
 import { useState, useEffect, FormEvent } from "react";
 import handlePostSubmit from "@/app/_actions/handlePostSubmit";
-import urlPaths from '@/app/url.paths';
+
 
 export default function PostCreator(props: {wrapperStyling: string, selectCategory: Promise<React.JSX.Element | null>}) {
     const styling = {
