@@ -18,7 +18,8 @@ const urlPaths = {
         githubUrl: "https://github.com/alekszejg/mangopost_nextjs",
         localPath: "/projects/mangopost-website",
        }
-    }
+    },
+    admin: "/admin"
 };
 
 
