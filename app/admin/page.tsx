@@ -1,8 +1,10 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
+import { fetchPostCategories } from '@/app/_utils/fetchPostCategories';
+import type { CategoryData } from '@/app/blog/blogpost';
 import PostCreator from "./postCreator";
 import RecentMessages from './recentMessages';
 import RecentPosts from "../blog/recentPosts";
-import ChoosePostCategory from "./choosePostCategory";
+
 
 
 export default async function AdminPage() {
@@ -13,10 +15,13 @@ export default async function AdminPage() {
         viewPostsWrapper: "flex flex-col gap-y-4"
     };
 
+    const postCategoriesRes = await fetchPostCategories();
+    const postCategories = postCategoriesRes.categories;
+
     return (
         <PageLayout className={styling.layout}>
             <div>
-                <PostCreator wrapperStyling={styling.postCreatorForm} selectCategory={ChoosePostCategory()} />
+                <PostCreator wrapperStyling={styling.postCreatorForm} postCategories={postCategories} />
                 <RecentMessages wrapperStyling={styling.recentMessagesWrapper} />
             </div>
 
