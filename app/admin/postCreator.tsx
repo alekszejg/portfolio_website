@@ -1,9 +1,10 @@
 "use client"
-import { useState, FormEvent, ReactNode, type JSX } from "react";
+import { useRouter } from 'next/navigation'
+import { useState, useEffect, FormEvent } from "react";
 import handlePostSubmit from "@/app/_actions/handlePostSubmit";
+import urlPaths from '@/app/url.paths';
 
-
-export default function PostCreator(props: {wrapperStyling: string, selectCategory: Promise<JSX.Element | null>}) {
+export default function PostCreator(props: {wrapperStyling: string, selectCategory: Promise<React.JSX.Element | null>}) {
     const styling = {
         addPostsHeader: "flex items-end gap-x-[0.8rem]",
         inputLabel: "mb-2 mt-4",
@@ -14,9 +15,18 @@ export default function PostCreator(props: {wrapperStyling: string, selectCatego
         submittedMessage: "self-center text-[green]"
     };
 
+    const router = useRouter();
     const [ status, setStatus ] = useState({titleError: "", descrError: "", submitted: false}); 
     const { titleError, descrError, submitted } = status;
     
+    useEffect(() => {
+        if (!submitted) return;
+        
+        router.refresh();
+
+    }, [submitted, router]);
+    
+
     const handleSubmit = async (event: FormEvent) => {
         event.preventDefault();
         const { titleError, descrError, submitted } = await handlePostSubmit(new FormData(event.currentTarget as HTMLFormElement));
