@@ -23,8 +23,8 @@ export default function MangopostWebsiteProjectPage() {
         focused on an intuitive user interface and responsive design.`,
         imgSrc: "/Images/Project Previews/mangopostWebsite.png",
         imgAlt: "Mangopost website's homepage", 
-        githubUrl: "https://github.com/alekszejg/mangopost_nextjs",
-        localPath: "https://github.com/alekszejg/mangopost_nextjs"
+        githubUrl: allProjects.mangopostWebsite.githubUrl,
+        localPath: allProjects.mangopostWebsite.localPath
     };
 
 
