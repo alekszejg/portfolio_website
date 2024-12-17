@@ -2,14 +2,14 @@ import fetchRecentPosts from "@/app/_utils/fetchRecentPosts";
 import Blogpost from "@/app/blog/blogpost";
 
 
-type ShowRecentPostsProps = {
+type RecentPostsProps = {
     wrapperStyling: string, 
     includeHeader: boolean,
     blogpostWidth: string,
 }
 
 
-export default async function RecentPosts(props: ShowRecentPostsProps) {
+export default async function RecentPosts(props: RecentPostsProps) {
     const { wrapperStyling, includeHeader, blogpostWidth } = props;
 
     const styling = {
