@@ -4,6 +4,7 @@ import ReCAPTCHA, { ReCAPTCHAInstance } from 'react-google-recaptcha';
 import { useRouter } from 'next/navigation';
 import { useSession, signIn } from 'next-auth/react';
 import handleAdminSignin from '@/app/_actions/handleAdminSignin';
+import urlPaths from '@/app/url.paths';
 
 
 export default function SignInForm() {
@@ -57,7 +58,7 @@ export default function SignInForm() {
             return;
         } 
 
-        router.push('/admin')  
+        router.push(urlPaths.admin);  
     };
 
 
