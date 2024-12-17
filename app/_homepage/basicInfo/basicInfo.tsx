@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import TriggerContactForm from '@/app/_homepage/basicInfo/triggerContactForm';
 import { MessageCircleMore, MapPin, Link as LinkIcon} from 'lucide-react';
-
+import urlPaths from '@/app/url.paths';
 
 export default function BasicInfo() {
     const styling = {
@@ -53,7 +53,7 @@ export default function BasicInfo() {
         
         <div className={styling.infoWrapper}>
             <h2 className={styling.name.text}>Alekszej Guljajev 
-                <Link href="https://wa.me/491746541424">
+                <Link href={urlPaths.misc.myAccounts.whatsapp}>
                     <MessageCircleMore className={styling.name.whatsappIcon}/>
                 </Link>
                 <TriggerContactForm iconStyling={styling.name.messageIcon} />
@@ -76,7 +76,7 @@ export default function BasicInfo() {
                 <LinkIcon className={styling.myAccounts.linkIcon} />
                 <a 
                 className={styling.myAccounts.link} 
-                href="https://github.com/alekszejg" 
+                href={urlPaths.misc.myAccounts.github}
                 target="_blank" 
                 rel="noopener noreferrer">
                 Github
@@ -87,7 +87,7 @@ export default function BasicInfo() {
                 <LinkIcon className={styling.myAccounts.linkIcon} />
                 <a 
                 className={styling.myAccounts.link} 
-                href="https://tryhackme.com/p/alekszejg" 
+                href={urlPaths.misc.myAccounts.tryhackme}
                 target="_blank" 
                 rel="noopener noreferrer">
                 TryHackMe
