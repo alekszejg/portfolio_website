@@ -1,4 +1,5 @@
 import Image from "next/image";
+import utcToLocalTime from "@/app/_utils/utcToLocalTime";
 
 
 export type CategoryData = {id: string, category: string};
@@ -25,17 +26,7 @@ export default function Blogpost(props: BlogpostProps) {
         text: "text-[12px]"
     }
     
-    const createdAtLocal = new Date(created_at.toLocaleString());
-    const dateFormat = new Intl.DateTimeFormat('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false // no AM or PM
-    });
-
-    const createdAtFormatted = dateFormat.format(createdAtLocal);
+    const localDateAndTime: string = utcToLocalTime(created_at); 
 
     return (
         <li className={styling.wrapper}>
@@ -52,7 +43,7 @@ export default function Blogpost(props: BlogpostProps) {
                     </div>
                     <h3 className={styling.header.profile.name}>Alekszej Guljajev</h3>
                 </div>
-                <p className="createdAtInfo">at {createdAtFormatted}</p>
+                <p className="createdAtInfo">at {localDateAndTime}</p>
                 
             </div>
             <h4 className={styling.title}>{title}</h4>

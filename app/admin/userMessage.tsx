@@ -1,4 +1,7 @@
-export interface UserMessage<T = string> {id: T; name: T; email: T; message: T; created_at: T;};
+import utcToLocalTime from "@/app/_utils/utcToLocalTime";
+
+
+export interface UserMessage<T = string> {id: T; name: T; email: T; message: T; created_at: Date;};
 export interface UserMessageProps extends UserMessage {wrapperStyling: string;}
 
 
@@ -11,23 +14,13 @@ export default function UserMessage(props: UserMessageProps) {
         text: "text-sm"
     }
     
-    const createdAtLocal = new Date(created_at.toLocaleString());
-    const dateFormat = new Intl.DateTimeFormat('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false // no AM or PM
-    });
-
-    const createdAtFormatted = dateFormat.format(createdAtLocal); 
+    const localDateAndTime: string = utcToLocalTime(created_at); 
 
     return (
         <li className={styling.wrapper}>
 
            <p className={styling.senderInfo}>
-                From {name} {email && <span>| {email} |</span>} {createdAtFormatted}
+                From {name} {email && <span>| {email} |</span>} {localDateAndTime}
             </p>
 
            <p className={styling.text}>{message}</p>
