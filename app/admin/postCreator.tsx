@@ -1,6 +1,5 @@
 "use client"
-import { useRouter } from 'next/navigation'
-import { useState, useEffect, FormEvent } from "react";
+import { useState, FormEvent } from "react";
 import handlePostSubmit from "@/app/_actions/handlePostSubmit";
 
 
@@ -15,23 +14,14 @@ export default function PostCreator(props: {wrapperStyling: string, selectCatego
         submittedMessage: "self-center text-[green]"
     };
 
-    const router = useRouter();
     const [ status, setStatus ] = useState({titleError: "", descrError: "", submitted: false}); 
     const { titleError, descrError, submitted } = status;
     
-    useEffect(() => {
-        if (!submitted) return;
-        
-        router.refresh();
-
-    }, [submitted, router]);
-    
-
     const handleSubmit = async (event: FormEvent) => {
         event.preventDefault();
         const { titleError, descrError, submitted } = await handlePostSubmit(new FormData(event.currentTarget as HTMLFormElement));
         setStatus({titleError: titleError, descrError: descrError, submitted: submitted});
-        submitted && setTimeout(() => {window.location.reload()}, 2000);
+        submitted && setTimeout(() => {window.location.reload()}, 500);
     }
 
     return (
