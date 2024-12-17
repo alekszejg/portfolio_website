@@ -1,6 +1,6 @@
 "use server"
 import handleRawInput from "@/app/_utils/handleRawInput";
-
+import urlPaths from "@/app/url.paths";
 
 export default async function handleAdminSignin(formData: unknown, tempCaptchaValue: unknown) {
     
@@ -33,7 +33,7 @@ export default async function handleAdminSignin(formData: unknown, tempCaptchaVa
         return res;
     }
 
-    const url = "https://www.google.com/recaptcha/api/siteverify?";  
+    const url = urlPaths.misc.external.verifyRecaptcha;  
     const response = await fetch(url, {
         method: 'POST',
         headers: {'Content-Type': 'application/x-www-form-urlencoded'},

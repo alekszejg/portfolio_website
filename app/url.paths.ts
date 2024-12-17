@@ -19,7 +19,12 @@ const urlPaths = {
         localPath: "/projects/mangopost-website",
        }
     },
-    admin: "/admin"
+    admin: "/admin",
+    misc: {
+        external: {
+            verifyRecaptcha: "https://www.google.com/recaptcha/api/siteverify?",
+        }
+    }
 };
 
 
