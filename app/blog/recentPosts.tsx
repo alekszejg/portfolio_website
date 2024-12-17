@@ -19,11 +19,11 @@ export default async function RecentPosts(props: ShowRecentPostsProps) {
         listItem: `${blogpostWidth} py-2 px-4 border-2 border-blogpostBorder rounded-md`
     }
 
-    const { posts, error } = await fetchRecentPosts();
+    const { total, posts, error } = await fetchRecentPosts();
 
     return (
         <section className={styling.section}>
-            {includeHeader && <h2 className={styling.header}>RECENT POSTS</h2>}
+            {includeHeader && <h2 className={styling.header}>RECENT POSTS (total: {total})</h2>}
 
             {posts.length > 0 && 
             <ul className={styling.list}>

@@ -8,14 +8,20 @@ import type { BlogpostType } from '@/app/blog/blogpost';
 const fetchRecentPosts = unstable_cache(
     async () => {
         let client: PoolClient | null = null;
-        let posts: BlogpostType[] = [];
+        let totalPosts: string = "0";
+        let recentPosts: BlogpostType[] = [];
         let errorMessage = ""; 
 
         try {
             client = await pool.connect();
-            const response = await client.query('SELECT * FROM posts ORDER BY created_at DESC LIMIT 10');
-            posts = response.rows;
-            posts.length === 0 && (errorMessage = "No recent posts available at the moment.");
+            
+            const totalPostsResponse = await client.query('SELECT COUNT(*) FROM posts');
+            totalPosts = totalPostsResponse.rows[0].count;
+            
+            const postsResponse = await client.query('SELECT * FROM posts ORDER BY created_at DESC LIMIT 5');
+            recentPosts = postsResponse.rows;
+            recentPosts.length === 0 && (errorMessage = "No recent posts available at the moment.");
+
         } catch (error: any) {
             console.error('Error executing query', error);
             errorMessage = "Failed to fetch recent blogposts. Please try again later.";
@@ -23,8 +29,9 @@ const fetchRecentPosts = unstable_cache(
             client && client.release();
         }
 
-        return {posts: posts, error: errorMessage};
+        return {total: totalPosts, posts: recentPosts, error: errorMessage};
     },
+
     // cache key
     ["recentPosts"],
     {
