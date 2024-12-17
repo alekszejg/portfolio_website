@@ -69,7 +69,7 @@ export default function Navbar() {
                 </li>
             </ul>
         
-            <Link className={styling.logo.link} href="/">
+            <Link className={styling.logo.link} href={urlPaths.homepage}>
                 <Image 
                     className={styling.logo.img} 
                     width={300} 
