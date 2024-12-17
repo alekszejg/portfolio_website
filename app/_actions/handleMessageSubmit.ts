@@ -1,7 +1,8 @@
 "use server"
-import handleRawInput from "@/app/_utils/handleRawInput";
 import type { PoolClient } from "pg";
 import { pool } from "@/postgres";
+import handleRawInput from "@/app/_utils/handleRawInput";
+import { revalidateTag } from "next/cache";
 
 
 export default async function handleMessageSubmit(formData: unknown) {
@@ -44,6 +45,7 @@ export default async function handleMessageSubmit(formData: unknown) {
         const query = 'INSERT INTO user_messages (name, email, message) VALUES ($1, $2, $3)';
         await client.query(query, [sanitizedInput[0], sanitizedInput[1], sanitizedInput[2]]);
         res.submitted = true;
+        revalidateTag('recentMessages');
         client.release();
     } catch (error: any) {
         console.error("Error during message submission to user_messages has occured", error);
