@@ -1,9 +1,10 @@
 DEVELOPMENT STAGE GOALS:
+- Navbar: ensure tablet+ version of navbar has same pad/margin as homepage or /projects (5% left and right)
+
 - Homepage: Profile description needs right padding (change left margin to padding)
 - Homepage: Make better design of contact popup, ensure it fits
 - Homepage: On desktop try increasing headers to 2xl
 - Homepage: After font change raise height of desktop stack to height obtained from largest description
-- Homepage: Reduce project previews a littlebit and add buttons to them
 - Homepage: more formal profile image needed
 
 - Interactive CV: Move education palces to the left so they were aligned like about me or contact details
@@ -11,10 +12,6 @@ DEVELOPMENT STAGE GOALS:
 - Interactive CV: Programming approaches with closed accordion need to have larger width like ones with opened accordions (list has limited width currently)
 - Interactive CV: more formal profile image needed
 - Interactive CV: simplify props logic and 'styling' object
-
-- All Projects Page: Needs to have ultrawide support
-- All Projects Page: Leftmost pixels of lamp icon in header need to have same left alignment as project grid
-- (REPEATED) All Projects Page: Project previews need better buttons styling
 
 - Individual Project Pages: add mobile styling (aka vertical version but slightly more creative) to hero and overview sections
 - Individual Project Pages: add gap between image and text for project features
