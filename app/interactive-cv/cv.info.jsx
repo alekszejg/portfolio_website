@@ -1,11 +1,23 @@
+import { Phone, Mail } from "lucide-react";
+
+
+const contactIconStyling = "w-[clamp(1rem,5vw,1.5rem)] select-none";
+
+
 const cvInfo = {
+    aboutMe: `A self-taught programmer with a diploma in BSc Economics, who is currently building 
+            his portfolio from various front-end and Python projects`,
+    contact: [
+        {icon: <Phone className={contactIconStyling}/>, text: "alexeyguljajev@gmail.com"},
+        {icon: <Mail className={contactIconStyling} />, text: "+49 174 6541424"}
+    ],
     education: [
         {name: "Self-taught programer", year: "2023 - Now"},
         {name: "University of Westminster", location: "London, UK | ", year: "2020 - 2023"},
         {name: "Munich International School", location: "Munich, Germany | ", year: "2013 - 2020"},
         {name: "School N25", location: "Ussuriysk, Russia | ", year: "2007 - 2012"}, 
     ],
-    programmingApproaches: {
+    approaches: {
         "Most tasks are programmable": `Most tasks that involve computers, specifically working with data and its manipulation, 
         can be programmed. While due to API limitations or calculation complexit the solution found might not be ideal, 
         or be different to previous expectations,there will be at least a single solution for the problem. Keeping this 
