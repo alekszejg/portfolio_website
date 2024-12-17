@@ -1,26 +1,13 @@
-export type UserMessage = {
-    id: string,
-    name: string,
-    email: string,
-    message: string,
-    created_at: string
-}
+export interface UserMessage<T = string> {id: T; name: T; email: T; message: T; created_at: T;};
+export interface UserMessageProps extends UserMessage {wrapperStyling: string;}
 
-export type UserMessageProps = {
-    wrapperStyling: string,
-    id: string,
-    name: string,
-    email: string,
-    message: string,
-    created_at: string
-}
 
 export default function UserMessage(props: UserMessageProps) {
     const { wrapperStyling, id, name, email, message, created_at } = props;
     
     const styling = {
         wrapper: wrapperStyling,
-        senderInfo: "text-xs opacity-60 mb-1.5",
+        senderInfo: "text-xs opacity-60 mb-1",
         text: "text-sm"
     }
     
@@ -38,7 +25,11 @@ export default function UserMessage(props: UserMessageProps) {
 
     return (
         <li className={styling.wrapper}>
-           <p className={styling.senderInfo}>Sent by {name}, at {createdAtFormatted}</p>
+
+           <p className={styling.senderInfo}>
+                From {name} {email && <span>| {email} |</span>} {createdAtFormatted}
+            </p>
+
            <p className={styling.text}>{message}</p>
         </li>
     );
