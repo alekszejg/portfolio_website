@@ -8,15 +8,15 @@ import type { SkillsType } from "@/app/_homepage/myStack/skills.data";
 
 export default function MyStack() {
     const styling = {
-        section: "py-[3rem] px-[5%]",
-        header: "hidden font-medium text-xl tablet:block tablet:mb-4",
+        section: "w-full px-homepageXPad py-homepageYPad", 
+        header: "hidden font-medium text-2xl tracking-wide tablet:block tablet:mb-5",
         stackWrapper: "flex gap-x-[3rem] tablet:gap-x-[1.6rem] tablet:shrink-0",
         mobileGrid: "grid grid-cols-[repeat(2,1.5rem)] gap-[1rem] w-16 h-[1px] tablet:hidden", // leave h-[1px], it overrites automatic h-full
         desktopLogosWrapper: "hidden tablet:flex tablet:flex-col tablet:items-center tablet:gap-y-[1.6rem] tablet:shrink-0",
         desktopLogoRow: "hidden tablet:flex tablet:gap-x-[1.2rem]",
         description: {
             wrapper: "tablet:w-[70%]",
-            header: "mb-[0.8rem]",
+            header: "mb-[0.8rem] font-medium text-xl tracking-wide",
             text: ""
         }
     }
