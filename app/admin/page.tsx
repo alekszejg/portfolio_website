@@ -27,7 +27,8 @@ export default async function AdminPage() {
             <RecentPosts 
             wrapperStyling={styling.viewPostsWrapper} 
             includeHeader={true} 
-            blogpostWidth="w-[90%]" />
+            blogpostWidth="w-[90%]" 
+            showTotalCount={true}/>
 
         </PageLayout>
     );  

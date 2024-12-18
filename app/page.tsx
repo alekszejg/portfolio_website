@@ -26,7 +26,7 @@ export default async function Homepage() {
             
             <ResponsiveUI 
             ProjectsSection={<ProjectsSection display="recent" wrapperStyling={styling.recentProjectsSection} includeHeader={true} />} 
-            ShowRecentPosts={<RecentPosts wrapperStyling={styling.recentPostsSection} includeHeader={true} blogpostWidth="w-3/4" />} 
+            ShowRecentPosts={<RecentPosts wrapperStyling={styling.recentPostsSection} includeHeader={true} blogpostWidth="w-3/4" showTotalCount={false} />} 
             />
             
         </PageLayout>
