@@ -1,7 +1,7 @@
 import { Phone, Mail } from "lucide-react";
 
 
-const contactIconStyling = "w-[clamp(1rem,5vw,1.5rem)] select-none";
+const contactIconStyling = "w-4 mr-2 align-[-0.2rem] shrink-0 select-none";
 
 
 const cvInfo = {
