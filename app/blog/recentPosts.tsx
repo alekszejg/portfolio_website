@@ -6,15 +6,16 @@ type RecentPostsProps = {
     wrapperStyling: string, 
     includeHeader: boolean,
     blogpostWidth: string,
+    showTotalCount: boolean
 }
 
 
 export default async function RecentPosts(props: RecentPostsProps) {
-    const { wrapperStyling, includeHeader, blogpostWidth } = props;
+    const { wrapperStyling, includeHeader, blogpostWidth, showTotalCount } = props;
 
     const styling = {
         section: wrapperStyling,
-        header: "mb-4 font-medium text-xl",
+        header: "mb-4 font-medium text-2xl tracking-wide",
         list: "flex flex-col gap-y-6",
         listItem: `${blogpostWidth} py-2 px-4 border-2 border-blogpostBorder rounded-md`
     }
@@ -23,7 +24,7 @@ export default async function RecentPosts(props: RecentPostsProps) {
 
     return (
         <section className={styling.section}>
-            {includeHeader && <h2 className={styling.header}>RECENT POSTS (total: {total})</h2>}
+            {includeHeader && <h2 className={styling.header}>RECENT POSTS {showTotalCount && <span>(total: {total})</span>}</h2>}
 
             {posts.length > 0 && 
             <ul className={styling.list}>
