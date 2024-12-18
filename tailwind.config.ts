@@ -26,6 +26,10 @@ const config: Config = {
         'expertiseSectionWidth': '55%',
       },
       spacing: {
+        // HOMEPAGE
+        'homepageXPad': '5%',
+        'homepageYPad': '2.5rem',
+
         // INTERACTIVE CV 
         'cvHeaders-mobile': '1rem',
         'cvHeaders-pc': '1.25rem',
