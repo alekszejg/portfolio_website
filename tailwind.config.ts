@@ -13,12 +13,29 @@ const config: Config = {
     },
     screens: {
       'tablet': '480px',
+      
+      'cvTablet': '700px',
       'cvUltrawide': '1335px',
+      
       'ultrawide': '1400px',
     },
     extend: {
+      width: {
+        // INTERACTIVE CV 
+        'generalSectionWidth': '45%',
+        'expertiseSectionWidth': '55%',
+      },
       spacing: {
+        // INTERACTIVE CV 
+        'cvHeaders-mobile': '1rem',
+        'cvHeaders-pc': '1.25rem',
+
+        'cvPadX-mobile': '8%',
+        'cvPadX-pc': '4vw',
+      
         'cvSectionYGap': '3rem',
+
+        // ADMIN PAGE
         'adminPageLSide': '1.25rem',
       },
       colors: {
