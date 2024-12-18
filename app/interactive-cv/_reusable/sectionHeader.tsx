@@ -9,12 +9,12 @@ type HeaderProps = {
 
 
 export default function SectionHeader({ wrapperStyling, icon, header }: HeaderProps) {
-    const defaultWrapperStyling = "flex justify-center items-center w-full pb-2 border-b-2 border-black"
+    const defaultWrapperStyling = "flex justify-center items-center gap-x-3 w-full pb-2 mb-cvHeaders-mobile border-b-2 border-black cvTablet:mb-cvHeaders-pc"
     
     const styling = {
         wrapper: wrapperStyling ? `${defaultWrapperStyling} ${wrapperStyling}` : defaultWrapperStyling,
         icon: icon.styling,
-        header: "pl-2 text-center font-medium text-xl text-nowrap",
+        header: "text-center font-medium text-xl text-nowrap",
     };
 
     return (
