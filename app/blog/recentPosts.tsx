@@ -15,7 +15,7 @@ export default async function RecentPosts(props: RecentPostsProps) {
 
     const styling = {
         section: wrapperStyling,
-        header: "mb-4 font-medium text-2xl tracking-wide",
+        header: "hidden font-medium text-2xl tracking-wide tablet:block tablet:mb-5",
         list: "flex flex-col gap-y-6",
         listItem: `${blogpostWidth} py-2 px-4 border-2 border-blogpostBorder rounded-md`
     }
