@@ -11,22 +11,18 @@ export default function GeneralInfoSection({ wrapperStyling }: {wrapperStyling: 
             wrapper: "w-[clamp(180px,55%,200px)] mx-auto aspect-square",
             img: "w-full h-full object-cover rounded-full"
         },
-        name: "mt-2 font-bold tracking-wider text-center text-2xl", 
+        name: "mt-3 font-bold tracking-wider text-center text-2xl", 
+        contentWrappers: "w-full",
         stickyWrapper: {
-            wrapper: "flex flex-col items-center gap-y-cvSectionYGap pt-cvSectionYGap tablet:w-4/5 tablet:mx-auto tablet:sticky tablet:top-0",
-            contentWrappers: "w-full",
-            aboutMeText: "w-5/6 mt-4 mx-auto text-sm tablet:mt-6",
-            sectionHeaders: {
-                wrapper: "flex justify-center items-center w-full pb-2 border-b-2 border-black",
-                icons: "w-[clamp(1rem,5vw,1.5rem)] select-none"
-            },
-            lists: "flex flex-col gap-y-6 mt-4 tablet:mt-6",
-            contactListItem: "flex items-center w-5/6 text-left",
-            contactListIcons: "w-4 mr-2 align-[-0.2rem] select-none",
+            wrapper: "flex flex-col items-center gap-y-cvSectionYGap pt-cvSectionYGap tablet:sticky tablet:top-0",
+            aboutMeText: "text-sm",
+            headerIcons: "w-6 flex-none select-none",
+            lists: "flex flex-col gap-y-6",
+            contactListItem: "flex items-center",
             education: {
-                listItem: "flex flex-col items-center",
-                place: "w-4/5 text-left font-medium",
-                location: "w-4/5 text-left text-sm",
+                listItem: "flex flex-col text-sm",
+                place: "font-medium",
+                location: "text-sm",
                 year: "text-sm font-regular-italic"
             }
         } 
@@ -34,9 +30,8 @@ export default function GeneralInfoSection({ wrapperStyling }: {wrapperStyling: 
 
     // styling is same, only iconSrc and header text differ
     const genHeaderProps = (iconSrc: string, header: string) => {
-        const headerStyling = styling.stickyWrapper.sectionHeaders;
         return {
-            icon: {src: iconSrc, styling: headerStyling.icons},
+            icon: {src: iconSrc, styling: styling.stickyWrapper.headerIcons},
             header: header
         };
     };
@@ -57,12 +52,12 @@ export default function GeneralInfoSection({ wrapperStyling }: {wrapperStyling: 
             
             <div className={styling.stickyWrapper.wrapper}>
                 
-                <Subsection wrapperStyling={styling.stickyWrapper.contentWrappers}>
+                <Subsection wrapperStyling={styling.contentWrappers}>
                     <SectionHeader {...genHeaderProps("/Icons/contactIcon.svg", "About me")} />
                     <p className={styling.stickyWrapper.aboutMeText}>{cvInfo.aboutMe}</p>
                 </Subsection>
                 
-                <Subsection wrapperStyling={styling.stickyWrapper.contentWrappers}>
+                <Subsection wrapperStyling={styling.contentWrappers}>
                     <SectionHeader {...genHeaderProps("/Icons/contactBookIcon.svg", "Contact details")} />
                     <ul className={styling.stickyWrapper.lists}>
                         {cvInfo.contact.map((info, index) => (
@@ -74,7 +69,7 @@ export default function GeneralInfoSection({ wrapperStyling }: {wrapperStyling: 
                     </ul>
                 </Subsection> 
 
-                <Subsection wrapperStyling={styling.stickyWrapper.contentWrappers}>
+                <Subsection wrapperStyling={styling.contentWrappers}>
                     <SectionHeader {...genHeaderProps("/Icons/educationHat.svg", "Education")} />
                     <ul className={styling.stickyWrapper.lists}>
                         {cvInfo.education.map((place, index) => (    
