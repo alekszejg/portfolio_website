@@ -5,11 +5,9 @@ DEVELOPMENT STAGE GOALS:
 - Homepage: After font change raise height of desktop stack to height obtained from largest description
 - Homepage: more formal profile image needed
 
-- Interactive CV: Move education places to the left so they were aligned like about me or contact details
-- Interactive CV: General section needs to have an earlier breakpoint for margin/padding so headers didnt extend so much
-- Interactive CV: Programming approaches with closed accordion need to have larger width like ones with opened accordions (list has limited width currently)
+ 
 - Interactive CV: more formal profile image needed
-- Interactive CV: simplify props logic and 'styling' object
+
 
 - Individual Project Pages: add mobile styling (aka vertical version but slightly more creative) to hero and overview sections
 - Individual Project Pages: add gap between image and text for project features
