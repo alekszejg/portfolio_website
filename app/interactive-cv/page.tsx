@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 
 export default function InteractiveCVPage() {
     const styling = {
-        layout: "flex flex-col items-center max-w-[1400px] tablet:flex-row tablet:items-stretch ultrawide:mx-auto",
+        layout: "flex flex-col items-center max-w-[1400px] cvTablet:flex-row cvTablet:items-stretch ultrawide:mx-auto",
         sections: {
-            generalInfo: "py-cvSectionYGap px-[15%] bg-cvGeneralSection tablet:w-[42%] tablet:px-0 tablet:hover:bg-cvGeneralHover",
-            expertise: "w-full tablet:w-[58%]"
+            generalInfo: "w-full px-cvPadX-mobile py-cvSectionYGap bg-cvGeneralSection cvTablet:w-generalSectionWidth cvTablet:px-cvPadX-pc cvTablet:hover:bg-cvGeneralHover",
+            expertise: "w-full cvTablet:w-expertiseSectionWidth"
         }
     };
 
