@@ -16,8 +16,10 @@ export const metadata: Metadata = {
 export default async function Homepage() {
     const styling = {
         layout: "max-w-[1400px] relative ultrawide:mx-auto",
-        recentProjectsSection: "py-12 px-[5%]",
-        recentPostsSection: "py-12 px-[5%]",
+        sections: {
+            recentProjects: "px-homepageXPad py-homepageYPad",
+            recentPosts: "px-homepageXPad py-homepageYPad"
+        }
     }
 
     return (
@@ -25,8 +27,8 @@ export default async function Homepage() {
             <BasicInfo />
             
             <ResponsiveUI 
-            ProjectsSection={<ProjectsSection display="recent" wrapperStyling={styling.recentProjectsSection} includeHeader={true} />} 
-            ShowRecentPosts={<RecentPosts wrapperStyling={styling.recentPostsSection} includeHeader={true} blogpostWidth="w-3/4" showTotalCount={false} />} 
+            ProjectsSection={<ProjectsSection display="recent" wrapperStyling={styling.sections.recentProjects} includeHeader={true} />} 
+            ShowRecentPosts={<RecentPosts wrapperStyling={styling.sections.recentPosts} includeHeader={true} blogpostWidth="w-3/4" showTotalCount={false} />} 
             />
             
         </PageLayout>
