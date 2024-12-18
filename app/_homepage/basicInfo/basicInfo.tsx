@@ -4,47 +4,50 @@ import TriggerContactForm from '@/app/_homepage/basicInfo/triggerContactForm';
 import { MessageCircleMore, MapPin, Link as LinkIcon} from 'lucide-react';
 import urlPaths from '@/app/url.paths';
 
+
 export default function BasicInfo() {
     const styling = {
-        images: {
-            bgWrapper: "w-full aspect-[3/1]",
-            bg: "w-full h-full", 
-            myPhotoWrapper: "w-[min(25%,300px)] aspect-square absolute translate-x-[30%] translate-y-[-65%]",
-            myPhoto: "w-full h-full"
+        infoWrapper: "px-[5%] pt-[10%]",
+        bgImage: {
+            wrapper: "w-full aspect-[3/1]",
+            img: "w-full aspect-[3/1]"
         },
-        infoWrapper: "ml-[5%] mt-[10%]",
-        name: {
-            text: "flex items-center gap-x-1.5 font-medium text-xl",
-            whatsappIcon: "w-6 text-[hsl(142,70%,49%)] opacity-70 hover:scale-105 hover:cursor-pointer",
-            messageIcon: "w-6 opacity-70 hover:scale-105 hover:cursor-pointer"
+        photo: {
+            wrapper: "w-[min(25%,300px)] aspect-square absolute translate-x-[30%] translate-y-[-65%]",
+            img: "w-full h-full"
         },
-        description: "text-sm",
+        name: "flex items-center gap-x-1.5 font-medium text-xl",
+        whatsappIcon: "w-6 text-[hsl(142,70%,49%)] opacity-70 hover:scale-105 hover:cursor-pointer",
+        messageIcon: "w-6 opacity-70 hover:scale-105 hover:cursor-pointer",
         location: {
             wrapper: "flex items-center relative right-1.5 text-xs",
             icon: "h-[0.8rem]"
         },
+        description: "text-sm",
         myAccounts: {
             header: "mt-1 font-medium text-sm",
-            linkWrapper: "flex items-center mt-1 relative right-1.5",
-            linkIcon: "h-[0.7rem] relative bottom-[1px]",
-            link: "font-medium text-xs text-[hsl(210,100%,60%)] tracking-wider hover:underline active:underline"
+            link: {
+                wrapper: "flex items-center mt-1 relative right-1.5",
+                icon: "h-[0.7rem] relative bottom-[1px]",
+                url: "font-medium text-xs text-[hsl(210,100%,60%)] tracking-wider hover:underline active:underline"
+            }
         }
     };
     
     return (
         <>
-        <div className={styling.images.bgWrapper}>
+        <div className={styling.bgImage.wrapper}>
             <Image 
-            className={styling.images.bg} 
+            className={styling.bgImage.img} 
             width={1000}
             height={1000}
             src="/Images/bgLogo.svg" 
             alt="Background illustration" />
         </div>
 
-        <div className={styling.images.myPhotoWrapper}>
+        <div className={styling.photo.wrapper}>
             <Image 
-            className={styling.images.myPhoto}
+            className={styling.photo.img}
             height={1000}
             width={1000}
             src="/Images/myPhoto.png" 
@@ -52,11 +55,11 @@ export default function BasicInfo() {
         </div>
         
         <div className={styling.infoWrapper}>
-            <h2 className={styling.name.text}>Alekszej Guljajev 
+            <h2 className={styling.name}>Alekszej Guljajev 
                 <Link href={urlPaths.misc.myAccounts.whatsapp}>
-                    <MessageCircleMore className={styling.name.whatsappIcon}/>
+                    <MessageCircleMore className={styling.whatsappIcon}/>
                 </Link>
-                <TriggerContactForm iconStyling={styling.name.messageIcon} />
+                <TriggerContactForm iconStyling={styling.messageIcon} />
             </h2>
 
             <div className={styling.location.wrapper}>
@@ -72,10 +75,10 @@ export default function BasicInfo() {
             
             <h3 className={styling.myAccounts.header}>Check out my other accounts</h3>
 
-            <div className={styling.myAccounts.linkWrapper}>
-                <LinkIcon className={styling.myAccounts.linkIcon} />
+            <div className={styling.myAccounts.link.wrapper}>
+                <LinkIcon className={styling.myAccounts.link.icon} />
                 <a 
-                className={styling.myAccounts.link} 
+                className={styling.myAccounts.link.url} 
                 href={urlPaths.misc.myAccounts.github}
                 target="_blank" 
                 rel="noopener noreferrer">
@@ -83,10 +86,10 @@ export default function BasicInfo() {
                 </a>
             </div>
 
-            <div className={styling.myAccounts.linkWrapper}>
-                <LinkIcon className={styling.myAccounts.linkIcon} />
+            <div className={styling.myAccounts.link.wrapper}>
+                <LinkIcon className={styling.myAccounts.link.icon} />
                 <a 
-                className={styling.myAccounts.link} 
+                className={styling.myAccounts.link.url} 
                 href={urlPaths.misc.myAccounts.tryhackme}
                 target="_blank" 
                 rel="noopener noreferrer">
