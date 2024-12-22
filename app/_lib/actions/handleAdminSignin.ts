@@ -1,6 +1,6 @@
 "use server"
 import handleRawInput from "@/app/_lib/utils/handleRawInput";
-import urlPaths from "@/app/url.paths";
+import verifyCaptcha from "@/app/_lib/utils/verifyCaptcha";
 
 export default async function handleAdminSignin(formData: unknown, tempCaptchaValue: unknown) {
     
@@ -33,15 +33,8 @@ export default async function handleAdminSignin(formData: unknown, tempCaptchaVa
         return res;
     }
 
-    const url = urlPaths.misc.external.verifyRecaptcha;  
-    const response = await fetch(url, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        body: `secret=${process.env.captcha_secret}&response=${tempCaptchaValue}`
-    });
-
-    const data = await response.json();
-    !data.success && (res.captchaError = "Failed to verify Captcha");
+    const captcha_verified = await verifyCaptcha(tempCaptchaValue);
+    !captcha_verified && (res.captchaError = "Failed to verify Captcha");
     
     return res;
 }
