@@ -25,8 +25,14 @@ export default function TriggerContactForm({ iconStyling }: {iconStyling: string
         }
     }
 
-    const [ status, setStatus ] = useState({nameError: "", emailError: "", messageError: "", submitted: false}); 
-    const { nameError, emailError, messageError, submitted } = status;
+    const [ status, setStatus ] = useState({
+        nameError: "", 
+        emailError: "", 
+        messageError: "", 
+        captchaError: "", 
+        submitted: false}
+    ); 
+    const { nameError, emailError, messageError, captchaError, submitted } = status;
 
     
     const handleCancel = () => {
@@ -39,8 +45,17 @@ export default function TriggerContactForm({ iconStyling }: {iconStyling: string
 
     const handleSubmit = async (event: FormEvent) => {
         event.preventDefault();
-        const { nameError, emailError, messageError, submitted } = await handleMessageSubmit(new FormData(event.currentTarget as HTMLFormElement));
-        setStatus({nameError: nameError, emailError: emailError, messageError: messageError, submitted: submitted})
+        const formData = new FormData(event.currentTarget as HTMLFormElement);
+        const tempCaptchaValue = captchaRef.current?.getValue();
+
+        const { nameError, emailError, messageError, captchaError, submitted } = await handleMessageSubmit(formData, tempCaptchaValue);
+        setStatus({nameError: nameError, emailError: emailError, messageError: messageError, captchaError: captchaError, submitted: submitted})
+        
+        if (captchaError) {
+            captchaRef.current?.reset();
+            return;
+        }
+
         if (submitted) {
             setVisibility(false);
             setTimeout(() => {dialogRef.current?.close();}, 500);
@@ -97,6 +112,7 @@ export default function TriggerContactForm({ iconStyling }: {iconStyling: string
                 <textarea ref={messageRef} className={styling.form.textarea} name="message" placeholder="How can I help you?" required />
                 
                 <ReCAPTCHA ref={captchaRef} sitekey={process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY!} />
+                {captchaError && <p>{captchaError}</p>}
 
                 <div className={styling.form.buttons.wrapper}>
                     <button className={styling.form.buttons.cancel} onClick={handleCancel}>CANCEL</button>
