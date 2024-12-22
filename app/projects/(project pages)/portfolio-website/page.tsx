@@ -1,8 +1,7 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
 import HeroSection from '@/app/projects/(project pages)/_sections/hero/heroSection';
 import { allProjects } from '@/app/projects/projects.data';
-import OverviewClientWrapper from '@/app/projects/(project pages)/_sections/overview/clientWrapper';
-import OverviewSection from '@/app/projects/(project pages)/_sections/overview/overviewSection';
+import OverviewSection from '@/app/projects/(project pages)/_sections/overview/overview';
 import FeaturesSection, { FeatureProps } from '@/app/projects/(project pages)/_sections/features/featuresSection';
 import styling from '@/app/projects/(project pages)/styling.wrappers';
 import type { Metadata } from 'next'
@@ -21,7 +20,7 @@ export default function PortfolioWebsiteProjectPage() {
         header: "Portfolio Website",
         text: `My personal website featuring an interactive CV, detailed information about 
         completed as well as ongoing projects, and a blog section displaying my posts.`,
-        imgWrapperStyling: "h-3/4 rounded-3xl opacity-[78%]",
+        imgWrapperStyling: "tablet:h-3/4 tablet:rounded-3xl tablet:opacity-[78%]",
         imgStylingExtra: "shadow-[0_0_0.1rem_rgb(120,120,120)]",
         imgSrc: allProjects.portfolioWebsite.imgSrc,
         imgAlt: allProjects.portfolioWebsite.imgAlt,
@@ -123,9 +122,7 @@ export default function PortfolioWebsiteProjectPage() {
             
             <HeroSection {...heroProps} />
             
-            <OverviewClientWrapper wrapperStyling={styling.overviewSection}>
-                <OverviewSection images={imageList} stages={stages} />
-            </OverviewClientWrapper>
+            <OverviewSection wrapperStyling={styling.overviewSection} images={imageList} stages={stages} />
             
             <FeaturesSection featureList={featureList} />
             

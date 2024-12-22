@@ -1,8 +1,7 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
 import HeroSection from '@/app/projects/(project pages)/_sections/hero/heroSection';
 import { allProjects } from '@/app/projects/projects.data';
-import OverviewClientWrapper from '@/app/projects/(project pages)/_sections/overview/clientWrapper';
-import OverviewSection from '@/app/projects/(project pages)/_sections/overview/overviewSection';
+import OverviewSection from '@/app/projects/(project pages)/_sections/overview/overview';
 import FeaturesSection, { FeatureProps } from '@/app/projects/(project pages)/_sections/features/featuresSection';
 import styling from '@/app/projects/(project pages)/styling.wrappers';
 import type { Metadata } from 'next'
@@ -21,7 +20,7 @@ export default function DiscordBotProjectPage() {
         text: `A bot that goes beyond basic user interactions, entertainment and event reactions, 
         offering more advanced features like interactive role assignment, ad posting, 
         file sharing, a YouTube music player and much more.`,
-        imgWrapperStyling: "h-5/6",
+        imgWrapperStyling: "tablet:h-5/6",
         imgSrc: "/Images/Project Previews/discordBotTransparentBg.svg",
         imgAlt: allProjects.discordBot.imgAlt,
         githubUrl: allProjects.discordBot.githubUrl,
@@ -132,10 +131,7 @@ export default function DiscordBotProjectPage() {
             
             <HeroSection {...heroProps} />
             
-            <OverviewClientWrapper wrapperStyling={styling.overviewSection}>
-                <OverviewSection images={imageList} stages={stages} />
-            </OverviewClientWrapper>
-            
+            <OverviewSection wrapperStyling={styling.overviewSection} images={imageList} stages={stages} />
             
             <FeaturesSection featureList={featureList} />
 

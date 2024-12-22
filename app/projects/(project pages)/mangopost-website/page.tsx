@@ -1,8 +1,7 @@
 import PageLayout from '@/app/_layoutComponents/pageLayout';
 import HeroSection from '@/app/projects/(project pages)/_sections/hero/heroSection';
 import { allProjects } from '@/app/projects/projects.data';
-import OverviewClientWrapper from '@/app/projects/(project pages)/_sections/overview/clientWrapper';
-import OverviewSection from '@/app/projects/(project pages)/_sections/overview/overviewSection';
+import OverviewSection from '@/app/projects/(project pages)/_sections/overview/overview';
 import FeaturesSection, { FeatureProps } from '@/app/projects/(project pages)/_sections/features/featuresSection';
 import styling from '@/app/projects/(project pages)/styling.wrappers';
 import type { Metadata } from 'next'
@@ -122,10 +121,8 @@ export default function MangopostWebsiteProjectPage() {
             
             <HeroSection {...heroProps} />
 
-            <OverviewClientWrapper wrapperStyling={styling.overviewSection}>
-                <OverviewSection images={imageList} stages={stages} />
-            </OverviewClientWrapper>
-
+            <OverviewSection wrapperStyling={styling.overviewSection} images={imageList} stages={stages} />
+            
             <FeaturesSection featureList={featureList} />
 
         </PageLayout>
