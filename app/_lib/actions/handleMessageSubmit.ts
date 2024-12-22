@@ -3,9 +3,9 @@ import type { PoolClient } from "pg";
 import { pool } from "@/postgres";
 import handleRawInput from "@/app/_lib/utils/handleRawInput";
 import { revalidateTag } from "next/cache";
+import verifyCaptcha from "@/app/_lib/utils/verifyCaptcha";
 
-
-export default async function handleMessageSubmit(formData: unknown) {
+export default async function handleMessageSubmit(formData: unknown, tempCaptchaValue: unknown) {
     
     // check if argument is malicous (if it isnt FormData)
     if (!(formData instanceof FormData)) {
@@ -13,7 +13,13 @@ export default async function handleMessageSubmit(formData: unknown) {
         throw new Error("Invalid input: Expected FormData object as argument");
     }
 
-    const res = {nameError: "", emailError: "", messageError: "", submitted: false};
+    // check if 2nd argument is malicous (if it isnt a string)
+    if (typeof tempCaptchaValue !== "string") {
+        console.error("Invalid captcha value");
+        throw new Error("Invalid input: Expected a string for captcha value");
+    }
+
+    const res = {nameError: "", emailError: "", messageError: "", captchaError: "", submitted: false};
 
     const rawName = formData.get('name') as string;
     const rawEmail = formData.get('contactEmail') as string;
@@ -38,6 +44,13 @@ export default async function handleMessageSubmit(formData: unknown) {
 
     // Continue to sanitize and escape raw input
     const sanitizedInput = handleRawInput([rawName, rawEmail, rawMessage], "recursiveEscape");
+    
+    const captcha_verified = await verifyCaptcha(tempCaptchaValue);
+    if (!captcha_verified) {
+        res.captchaError = "Failed to verify Captcha";
+        return res;
+    }
+    
     let client: PoolClient | null = null;
     
     try {
