@@ -27,7 +27,7 @@ export default function OverviewSection({ wrapperStyling, images, stages }: Over
     }, [scrollToParam]);
 
     const styling = {
-        imageCarouselWrapper: "flex justify-between items-center",
+        imageCarouselWrapper: "flex flex-col items-center tablet:flex-row tablet:justify-between",
         stagesWrapper: "flex justify-between gap-x-6"
     };
 
