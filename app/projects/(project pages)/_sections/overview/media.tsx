@@ -11,16 +11,19 @@ export default function Media({ images, wrapperStyling }: {images: ImageArray, w
     const styling = {
         wrapper: wrapperStyling,
         imgPreview: {
-            list: "flex flex-col gap-y-3",
+            list: "flex flex-row gap-x-3 mb-4 tablet:flex-col tablet:gap-y-3 tablet:mb-0",
             listItem: "w-[40px] aspect-[5/4] hover:scale-110",
             listItemSelected: "w-[40px] aspect-[5/4] hover:scale-110 border-2 border-[hsl(0,100%,75%)]",
             img: "w-full h-full"
         },
-        currentImg: {
-            wrapper: "flex flex-col gap-y-1.5",
-            imgWrapper: "w-[350px] aspect-[5/4]",
-            img: "w-full h-full",
-            text: "text-xs tablet:text-center"
+        imgCarousel: {
+            wrapper: "flex justify-between items-center mb-6 tablet:mb-0",
+            currentImg: {
+                wrapper: "flex flex-col gap-y-1.5",
+                imgWrapper: "w-[350px] aspect-[5/4] relative",
+                img: "w-full h-full",
+                text: "text-xs tablet:text-center"
+            }
         }
     }
 
@@ -63,21 +66,28 @@ export default function Media({ images, wrapperStyling }: {images: ImageArray, w
                 ))}
             </ul>
 
-            <button onClick={() => handleArrowClick("previous")}><ChevronLeft /></button>
-            
-            <div className={styling.currentImg.wrapper}>
-                <div className={styling.currentImg.imgWrapper}>
-                    <Image 
-                    className={styling.currentImg.img}
-                    width={1000} 
-                    height={1000} 
-                    src={images[imgIndex].src} 
-                    alt={images[imgIndex].alt} />
+            <div className={styling.imgCarousel.wrapper}>
+                <button onClick={() => handleArrowClick("previous")}>
+                    <ChevronLeft />
+                </button>
+                
+                <div className={styling.imgCarousel.currentImg.wrapper}>
+                    <div className={styling.imgCarousel.currentImg.imgWrapper}>
+                        <Image 
+                        className={styling.imgCarousel.currentImg.img}
+                        width={1000} 
+                        height={1000} 
+                        src={images[imgIndex].src} 
+                        alt={images[imgIndex].alt} />
+                    </div>
+                    <p className={styling.imgCarousel.currentImg.text}>{images[imgIndex].description}</p>
                 </div>
-                <p className={styling.currentImg.text}>{images[imgIndex].description}</p>
+
+                <button onClick={() => handleArrowClick("next")}>
+                    <ChevronRight />
+                </button>
             </div>
 
-            <button onClick={() => handleArrowClick("next")}><ChevronRight /></button>
         </div>
     )
 }
