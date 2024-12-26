@@ -1,5 +1,4 @@
 DEVELOPMENT STAGE GOALS:
-- Individual Project Pages: add mobile styling for hero and project overview
 - Individual Project Pages: add gap between image and text for project features
 - Portfolio Website Page: add text content for its UI/UX features
 - Portfolio Website Page: add photos at the end when almost done
