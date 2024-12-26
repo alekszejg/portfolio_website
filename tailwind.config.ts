@@ -39,6 +39,10 @@ const config: Config = {
       
         'cvSectionYGap': '3rem',
 
+        // Individual Project Pages
+        'projectYGap-mobile': '2.5rem',
+        'projectYGap-pc': '4rem',
+
         // ADMIN PAGE
         'adminPageLSide': '1.25rem',
       },
