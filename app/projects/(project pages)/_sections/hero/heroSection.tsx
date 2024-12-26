@@ -16,14 +16,14 @@ type HeroSectionProps = {
 
 export default function HeroSection({ imgWrapperStyling, imgStylingExtra, header, text, imgSrc, imgAlt, githubUrl, localPath }: HeroSectionProps) {
     const styling = {
-        section: globalStyling.heroSection,
+        section: `${globalStyling.heroSection}`,
         info: {
-            wrapper: "flex flex-col w-[55%]",
-            header: "text-3xl font-bold tracking-wider",
+            wrapper: "flex flex-col w-full tablet:w-[min(55%,480px)]",
+            header: "text-2xl font-bold text-nowrap tracking-wider tablet:text-3xl",
             text: "",
-            buttonsWrapper: "flex gap-x-12 mt-5"
+            buttonsWrapper: "flex flex-col gap-y-8 mt-6 tablet:flex-row tablet:gap-x-12 tablet:gap-y-0 tablet:mt-5"
         },
-        imgWrapper: imgWrapperStyling ? imgWrapperStyling : "h-1/2",
+        imgWrapper: imgWrapperStyling ? `hidden tablet:block ${imgWrapperStyling}` : "hidden tablet:block tablet:h-1/2",
         img: imgStylingExtra ? `${imgStylingExtra} w-full h-full rounded-xl` : "w-full h-full rounded-xl"
     }
 
