@@ -4,8 +4,6 @@ DEVELOPMENT STAGE GOALS:
 - Portfolio Website Page: add photos at the end when almost done
 
 (Final touch before production)
-- Homepage: more formal profile image needed
-- Interactive CV: more formal profile image needed
 - Blog: for now disable /blog/[postID] route, add logic after production
 
 
