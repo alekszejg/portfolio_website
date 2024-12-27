@@ -44,7 +44,7 @@ export default function GeneralInfoSection({ wrapperStyling }: {wrapperStyling: 
                 className={styling.image.img} 
                 width={350} 
                 height={350} 
-                src="/Images/myPhoto.png" 
+                src="/Images/myPhoto.jpg" 
                 alt="My Photo" 
                 priority />
             </div>

@@ -18,7 +18,7 @@ export default function Blogpost(props: BlogpostProps) {
             profile: {
                 wrapper: "flex items-center gap-x-2",
                 imgWrapper: "w-[25px] h-[25px]",
-                img: "w-full h-full object-cover",
+                img: "w-full h-full rounded-full object-cover",
                 name: "text-sm"
             }
         },
@@ -38,7 +38,7 @@ export default function Blogpost(props: BlogpostProps) {
                         className={styling.header.profile.img}
                         width={100}
                         height={100}
-                        src="/Images/myPhoto.png" 
+                        src="/Images/myPhoto.jpg" 
                         alt="My Photo" />
                     </div>
                     <h3 className={styling.header.profile.name}>Alekszej Guljajev</h3>

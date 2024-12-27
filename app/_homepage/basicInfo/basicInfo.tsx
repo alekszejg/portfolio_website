@@ -14,7 +14,7 @@ export default function BasicInfo() {
         },
         photo: {
             wrapper: "w-[min(25%,300px)] aspect-square absolute translate-x-[30%] translate-y-[-65%]",
-            img: "w-full h-full"
+            img: "w-full h-full rounded-full object-cover"
         },
         name: "flex items-center gap-x-1.5 font-medium text-xl",
         whatsappIcon: "w-6 text-[hsl(142,70%,49%)] opacity-70 hover:scale-105 hover:cursor-pointer",
@@ -50,7 +50,7 @@ export default function BasicInfo() {
             className={styling.photo.img}
             height={1000}
             width={1000}
-            src="/Images/myPhoto.png" 
+            src="/Images/myPhoto.jpg" 
             alt="Author of this website" />
         </div>
         
