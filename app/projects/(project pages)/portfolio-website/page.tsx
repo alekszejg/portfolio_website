@@ -19,7 +19,7 @@ export default function PortfolioWebsiteProjectPage() {
     const heroProps = {
         header: "Portfolio Website",
         text: `My personal website featuring an interactive CV, detailed information about 
-        completed as well as ongoing projects, and a blog section displaying my posts.`,
+        completed as well as ongoing projects, and a blog section displaying posts I write.`,
         imgWrapperStyling: "tablet:h-3/4 tablet:rounded-3xl tablet:opacity-[78%]",
         imgStylingExtra: "shadow-[0_0_0.1rem_rgb(120,120,120)]",
         imgSrc: allProjects.portfolioWebsite.imgSrc,
@@ -61,59 +61,36 @@ export default function PortfolioWebsiteProjectPage() {
     
     const featureList: FeatureProps[] = [
         {
-            imgIsSVG: true,
-            imgSrc: "/Images/Logos/sass.svg",
-            imgAlt: "a SASS logo",
-            header: "Styled with SCSS. No CSS libraries were used",
-            text: `While CSS libraries and website constructors offer easier
-            and more efficient front-end processes, using plain CSS along with its 
-            SCSS preprocessor is beneficial for a 1st website and in long-term perspective.
-            Understanding most common CSS properties, SCSS features and their lesser 
-            known issues will help me master any website constructor or UI library and 
-            perform changes to their output when needed. Knowledge of SCSS preprocessor, 
-            at least its common features allows to write shorter, readable, more 
-            customizable and optimized CSS.`,
-            imgExtraStyling: "rounded-[50%]"
+            imgSrc: "data:,",
+            imgAlt: "This website's homepage",
+            header: "Intuitive homepage design similar to social networks",
+            text: `Homepage serves as a summary of a website's content and is styled like a social network 
+            profile for better readability and intuitiveness. This familiar design leverages the popularity 
+            of social apps, making visitors subconsciously understand its structure and functionality."`,
         },
         {
-            imgIsSVG: true,
-            imgSrc: "/Images/Logos/react.svg",
-            imgAlt: "a React logo",
-            header: "Front-end built with React library",
-            text: `React is the most popular tool that promotes code reuse 
-            and simplifies JavaScript programming, which then allows me to work with 
-            wider range of developers and easily find external packages and tools that
-            work with it. React's code and JSX syntax are easy to read and proper 
-            organization enables quick navigation between components. Additionally 
-            its external packages offer great SASS/SCSS and TypeScript support to 
-            further assist with programming. I'm interested to make a Vue or Svelte 
-            project afterwards, as well as to continue using React.`
+            imgSrc: "data:,",
+            imgAlt: "My interactive CV page on this website",
+            header: "Accessible interactive CV",
+            text: `The interactive CV page provides a detailed summary about me directly on the website, 
+            eliminating the need to download a file. This web-based resume enhances user engagement by 
+            offering optional details through dropdowns and responding dynamically to scrolling and 
+            cursor movements.`
         },
         {
-            imgIsSVG: true,
-            imgSrc: "/Images/Logos/ts.svg",
-            imgAlt: "a TypeScript logo",
-            header: "TypeScript over plain JavaScript",
-            text: `Development of this website gave me some practical experience 
-            with TypeScript which I haven't had before. While some time is spent defining
-            and locating the necessary types, it pays off after several found type errors.
-            Other important benefits of TypeScript that I didn't expect involve quicker 
-            recognition of function's parameters and component's props, especially when 
-            coming back to the project after a break, as well as ability to create type-based
-            conditional statements and objects with optional properties.`,
-            imgExtraStyling: "rounded-[2rem] tablet:rounded-[2.9rem]"
+            imgSrc: "data:,",
+            imgAlt: "Example of a project page on my website",
+            header: "Reusable code for project pages",
+            text: `Each project on my website is presented as an individual webpage, requiring a consistent 
+            structure and design. To achieve this, my code is built to only need text and image data, ensuring 
+            a uniform and straightforward layout across all project pages.`,
         },
         {
-            imgIsSVG: true,
-            imgSrc: "/Images/iconGroup.svg",
-            imgAlt: "a collection of icons",
-            header: "Using Font Awesome icons and making custom ones with Figma",
-            text: `Icons are essential when it comes to visually highlighting 
-            important information or to indicate specific features and functionality of 
-            some UI elements. I used Font Awesome to access some universally recognizable 
-            icons, while learning and using Figma to make specific and more unique icons,
-            which gave me full control of icon's dimensions, colors and other design 
-            choices.`
+            imgSrc: "data:,",
+            imgAlt: "Admin page on this website",
+            header: "Admin page for managing blogposts and messages",
+            text: `The admin page provides authorized access to perform actions like adding or removing blogposts 
+            via the UI and reading incoming user messages.`
         }
     ];
 
