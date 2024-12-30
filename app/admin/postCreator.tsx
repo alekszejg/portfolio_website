@@ -1,7 +1,7 @@
 "use client"
 import { useState, FormEvent } from "react";
 import handlePostSubmit from "@/app/_lib/actions/handlePostSubmit";
-import type { CategoryData } from "@/app/blog/blogpost";
+import type { CategoryData } from "@/app/_blog/blogpost";
 
 
 type PostCreatorProps = {wrapperStyling: string, postCategories: CategoryData[] | []}

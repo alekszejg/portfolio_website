@@ -2,7 +2,7 @@ import PageLayout from '@/app/_layoutComponents/pageLayout';
 import BasicInfo from '@/app/_homepage/basicInfo/basicInfo';
 import ResponsiveUI from '@/app/_homepage/responsiveUI';
 import ProjectsSection from '@/app/projects/projectsSection';
-import RecentPosts from "@/app/blog/recentPosts";
+import RecentPosts from "@/app/_blog/recentPosts";
 import type { Metadata } from 'next'
 
 

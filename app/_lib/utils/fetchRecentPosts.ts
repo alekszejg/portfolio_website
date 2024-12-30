@@ -2,7 +2,7 @@ import 'server-only'
 import { unstable_cache } from 'next/cache';
 import { pool } from "@/postgres";
 import type { PoolClient } from "pg";
-import type { BlogpostType } from '@/app/blog/blogpost';
+import type { BlogpostType } from '@/app/_blog/blogpost';
 
 
 const fetchRecentPosts = unstable_cache(

@@ -1,7 +1,7 @@
 import { pool } from "@/postgres";
 import type { PoolClient } from "pg";
 import { NextRequest, NextResponse } from 'next/server';
-import type { BlogpostType } from "@/app/blog/blogpost";
+import type { BlogpostType } from "@/app/_blog/blogpost";
 
 export async function GET(req: NextRequest) {
     const searchParams = req.nextUrl.searchParams
