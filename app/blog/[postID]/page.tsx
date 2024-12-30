@@ -24,7 +24,7 @@ export async function generateStaticParams() {
 
 export default async function BlogpostPage(props: {params: Promise<{postID: string}>}) {
     const styling = {
-        blogpostWrapper: "`w-3/4 py-2 px-4 border-2 border-[hsl(0,0%,75%)] rounded-md box-border`"
+        blogpostWrapper: "w-3/4 py-2 px-4 border-2 border-[hsl(0,0%,75%)] rounded-md box-border list-none"
     };
 
     const { postID } = await props.params;
