@@ -20,14 +20,15 @@ export default function BasicInfo() {
         whatsappIcon: "w-6 text-[hsl(142,70%,49%)] opacity-70 hover:scale-105 hover:cursor-pointer",
         messageIcon: "w-6 opacity-70 hover:scale-105 hover:cursor-pointer",
         location: {
-            wrapper: "flex items-center relative right-1.5 text-xs",
+            wrapper: "flex items-center relative right-1.5 text-sm font-regular-italic",
             icon: "h-[0.8rem]"
         },
         description: "text-sm",
         myAccounts: {
             header: "mt-1 font-medium text-sm",
+            linksWrapper: "flex gap-x-3 mt-1 tablet:flex-col tablet:gap-x-0 tablet:gap-y-1",
             link: {
-                wrapper: "flex items-center mt-1 relative right-1.5",
+                wrapper: "flex items-center relative right-1.5",
                 icon: "h-[0.7rem] relative bottom-[1px]",
                 url: "font-medium text-xs text-[hsl(210,100%,60%)] tracking-wider hover:underline active:underline"
             }
@@ -75,26 +76,28 @@ export default function BasicInfo() {
             
             <h3 className={styling.myAccounts.header}>Check out my other accounts</h3>
 
-            <div className={styling.myAccounts.link.wrapper}>
-                <LinkIcon className={styling.myAccounts.link.icon} />
-                <a 
-                className={styling.myAccounts.link.url} 
-                href={urlPaths.misc.myAccounts.github}
-                target="_blank" 
-                rel="noopener noreferrer">
-                Github
-                </a>
-            </div>
+            <div className={styling.myAccounts.linksWrapper}>
+                <div className={styling.myAccounts.link.wrapper}>
+                    <LinkIcon className={styling.myAccounts.link.icon} />
+                    <a 
+                    className={styling.myAccounts.link.url} 
+                    href={urlPaths.misc.myAccounts.github}
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                    Github
+                    </a>
+                </div>
 
-            <div className={styling.myAccounts.link.wrapper}>
-                <LinkIcon className={styling.myAccounts.link.icon} />
-                <a 
-                className={styling.myAccounts.link.url} 
-                href={urlPaths.misc.myAccounts.tryhackme}
-                target="_blank" 
-                rel="noopener noreferrer">
-                TryHackMe
-                </a>   
+                <div className={styling.myAccounts.link.wrapper}>
+                    <LinkIcon className={styling.myAccounts.link.icon} />
+                    <a 
+                    className={styling.myAccounts.link.url} 
+                    href={urlPaths.misc.myAccounts.tryhackme}
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                    TryHackMe
+                    </a>   
+                </div>
             </div>
         
         </div>
