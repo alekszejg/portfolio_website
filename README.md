@@ -1,15 +1,9 @@
 DEVELOPMENT STAGE GOALS:
 - Individual Project Pages: add gap between image and text for project features
-- Portfolio Website Page: add text content for its UI/UX features
-- Portfolio Website Page: add photos at the end when almost done
-
-(Final touch before production)
-- Blog: for now disable /blog/[postID] route, add logic after production
+- Portfolio Website Page: add images
 
 
 BEFORE PRODUCTION CHECK: 
-- Ensure website compatibility with Chrome, Safari, Firefox (firefox styling differs for some reason)
-- Ensure SSL certificates compatibility with Chrome, Safari, Firefox (firefox doesnt recognize Lets Encrypt)
 - Ensure colors are as bright as intended on mobile systems and other computers, since changing my monitor contrast significantly changed how colors are shown 
 - Nginx: calculate total HTTP requests per page and get rate limiting to work
 
