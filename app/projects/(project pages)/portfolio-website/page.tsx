@@ -31,10 +31,25 @@ export default function PortfolioWebsiteProjectPage() {
 
     const imageList = [
         {
-            src: "data:,", 
-            alt: "",
-            description: ""
-        }
+            src: "/Images/Projects/PortfolioWebsite/homepage.png", 
+            alt: "This website's homepage",
+            description: "Homepage styled as social network profile for intuitive interpretation by website visitors"
+        },
+        {
+            src: "/Images/Projects/PortfolioWebsite/interactiveCV.png",
+            alt: "My interactive CV page on this website",
+            description: "Interactive CV available publicly, without the need to download any files"
+        },
+        {
+            src: "/Images/Projects/PortfolioWebsite/projectExample.png",
+            alt: "Example of a project page on my website",
+            description: "Reusable code allows consistant structure and styling of project webpages"
+        },
+        {
+            src: "/Images/Projects/PortfolioWebsite/adminPage.png",
+            alt: "Admin page on this website",
+            description: "Admin page for performing authorized actions: managing blogposts and messages"
+        },
     ];
 
 
@@ -61,7 +76,7 @@ export default function PortfolioWebsiteProjectPage() {
     
     const featureList: FeatureProps[] = [
         {
-            imgSrc: "data:,",
+            imgSrc: "/Images/Projects/PortfolioWebsite/homepage.png",
             imgAlt: "This website's homepage",
             header: "Intuitive homepage design similar to social networks",
             text: `Homepage serves as a summary of a website's content and is styled like a social network 
@@ -69,7 +84,7 @@ export default function PortfolioWebsiteProjectPage() {
             of social apps, making visitors subconsciously understand its structure and functionality."`,
         },
         {
-            imgSrc: "data:,",
+            imgSrc: "/Images/Projects/PortfolioWebsite/interactiveCV.png",
             imgAlt: "My interactive CV page on this website",
             header: "Accessible interactive CV",
             text: `The interactive CV page provides a detailed summary about me directly on the website, 
@@ -78,7 +93,7 @@ export default function PortfolioWebsiteProjectPage() {
             cursor movements.`
         },
         {
-            imgSrc: "data:,",
+            imgSrc: "/Images/Projects/PortfolioWebsite/projectExample.png",
             imgAlt: "Example of a project page on my website",
             header: "Reusable code for project pages",
             text: `Each project on my website is presented as an individual webpage, requiring a consistent 
@@ -86,7 +101,7 @@ export default function PortfolioWebsiteProjectPage() {
             a uniform and straightforward layout across all project pages.`,
         },
         {
-            imgSrc: "data:,",
+            imgSrc: "/Images/Projects/PortfolioWebsite/adminPage.png",
             imgAlt: "Admin page on this website",
             header: "Admin page for managing blogposts and messages",
             text: `The admin page provides authorized access to perform actions like adding or removing blogposts 
