@@ -1,11 +1,7 @@
-DEVELOPMENT STAGE GOALS:
-- Individual Project Pages: add gap between image and text for project features
-- Portfolio Website Page: add images
-
-
 BEFORE PRODUCTION CHECK: 
-- Ensure colors are as bright as intended on mobile systems and other computers, since changing my monitor contrast significantly changed how colors are shown 
+- Ensure server actions work as expected, rearrange some logic to speed up execution
 - Nginx: calculate total HTTP requests per page and get rate limiting to work
+- Ensure colors are as bright as intended on mobile systems and other computers
 
 
 AFTER PRODUCTION STAGE GOALS:
