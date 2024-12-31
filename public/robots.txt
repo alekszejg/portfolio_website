@@ -1,4 +1,4 @@
 User-Agent: *
 Disallow: /admin
-Disallow: /admin/signin
+Disallow: /admin/sign-in
 Sitemap: https://alexeyguljajev.com/sitemap.xml
