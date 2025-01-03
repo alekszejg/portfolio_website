@@ -45,8 +45,8 @@ export default async function handleMessageSubmit(formData: unknown, tempCaptcha
     // Continue to sanitize and escape raw input
     const sanitizedInput = handleRawInput([rawName, rawEmail, rawMessage], "recursiveEscape");
     
-    const captcha_verified = await verifyCaptcha(tempCaptchaValue);
-    if (!captcha_verified) {
+    const captchaRes = await verifyCaptcha(tempCaptchaValue);
+    if (!captchaRes.success) {
         res.captchaError = "Failed to verify Captcha";
         return res;
     }

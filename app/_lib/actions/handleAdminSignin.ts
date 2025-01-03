@@ -33,8 +33,10 @@ export default async function handleAdminSignin(formData: unknown, tempCaptchaVa
         return res;
     }
 
-    const captcha_verified = await verifyCaptcha(tempCaptchaValue);
-    !captcha_verified && (res.captchaError = "Failed to verify Captcha");
-    
+    const captchaRes = await verifyCaptcha(tempCaptchaValue);
+    if (!captchaRes.success) {
+        res.captchaError = "Failed to verify Captcha"
+    }
+
     return res;
 }
