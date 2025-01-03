@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image';
 import { useState, useRef, FormEvent } from 'react';
-import ReCAPTCHA, { ReCAPTCHAInstance } from 'react-google-recaptcha';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { MailPlus, UserRound, AtSign } from 'lucide-react';
 import handleMessageSubmit from '@/app/_lib/actions/handleMessageSubmit';
 
@@ -11,7 +11,6 @@ export default function TriggerContactForm({ iconStyling }: {iconStyling: string
     const nameRef = useRef<HTMLInputElement>(null);
     const emailRef = useRef<HTMLInputElement>(null);
     const messageRef = useRef<HTMLTextAreaElement>(null);
-    const captchaRef = useRef<ReCAPTCHAInstance | null>(null);
     
     const [isVisible, setVisibility] = useState(false);
    
@@ -33,7 +32,7 @@ export default function TriggerContactForm({ iconStyling }: {iconStyling: string
         submitted: false}
     ); 
     const { nameError, emailError, messageError, captchaError, submitted } = status;
-
+    const { executeRecaptcha } = useGoogleReCaptcha();
     
     const handleCancel = () => {
         nameRef.current && (nameRef.current.value = '');
@@ -46,16 +45,23 @@ export default function TriggerContactForm({ iconStyling }: {iconStyling: string
     const handleSubmit = async (event: FormEvent) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget as HTMLFormElement);
-        const tempCaptchaValue = captchaRef.current?.getValue();
-
-        const { nameError, emailError, messageError, captchaError, submitted } = await handleMessageSubmit(formData, tempCaptchaValue);
-        setStatus({nameError: nameError, emailError: emailError, messageError: messageError, captchaError: captchaError, submitted: submitted})
         
-        if (captchaError) {
-            captchaRef.current?.reset();
+        if (!executeRecaptcha) {
+            console.log("Captcha can't be executed");
             return;
         }
 
+        const recaptchaToken = await executeRecaptcha('userMessage');
+        const { 
+            nameError, 
+            emailError, 
+            messageError, 
+            captchaError, 
+            submitted 
+        } = await handleMessageSubmit(formData, recaptchaToken);
+        
+        setStatus({nameError: nameError, emailError: emailError, messageError: messageError, captchaError: captchaError, submitted: submitted})
+        
         if (submitted) {
             setVisibility(false);
             setTimeout(() => {dialogRef.current?.close();}, 500);
@@ -111,7 +117,6 @@ export default function TriggerContactForm({ iconStyling }: {iconStyling: string
                 {messageError && <p>{messageError}</p>}
                 <textarea ref={messageRef} className={styling.form.textarea} name="message" placeholder="How can I help you?" required />
                 
-                <ReCAPTCHA ref={captchaRef} sitekey={process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY!} />
                 {captchaError && <p>{captchaError}</p>}
 
                 <div className={styling.form.buttons.wrapper}>

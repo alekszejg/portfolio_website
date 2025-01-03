@@ -1,6 +1,6 @@
 "use client"
-import { useEffect, useRef, FormEvent, useState } from 'react';
-import ReCAPTCHA, { ReCAPTCHAInstance } from 'react-google-recaptcha';
+import { useEffect, FormEvent, useState } from 'react';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { useRouter } from 'next/navigation';
 import { useSession, signIn } from 'next-auth/react';
 import handleAdminSignin from '@/app/_lib/actions/handleAdminSignin';
@@ -25,14 +25,19 @@ export default function SignInForm() {
 
 
     const [errors, setErrors] = useState({inputs: "", auth: ""});
-    const captchaRef = useRef<ReCAPTCHAInstance | null>(null);
+    const { executeRecaptcha } = useGoogleReCaptcha();
 
     const handleSubmit = async (event: FormEvent) => {
         event.preventDefault();
-        
         const formData = new FormData(event.currentTarget as HTMLFormElement);
-        const tempCaptchaValue = captchaRef.current?.getValue();
-        const { inputsError, captchaError } = await handleAdminSignin(formData, tempCaptchaValue);
+        
+        if (!executeRecaptcha) {
+            console.log("Captcha can't be executed");
+            return;
+        }
+
+        const recaptchaToken = await executeRecaptcha('adminSignin');
+        const { inputsError, captchaError } = await handleAdminSignin(formData, recaptchaToken);
         
         if (inputsError) {
             setErrors({...errors, inputs: inputsError});
@@ -41,23 +46,20 @@ export default function SignInForm() {
 
         if (captchaError) {
             setErrors({...errors, inputs: captchaError});
-            captchaRef.current?.reset();
             return;
         }
 
-    
         const response = await signIn('credentials', {
             redirect: false,
             username: formData.get('username') as string,
             password: formData.get('password') as string,
         });
-    
+
         if (response && response.error) {
             setErrors({...errors, auth: "Invalid credentials. Try again"});
-            captchaRef.current?.reset();
             return;
         } 
-
+    
         router.push(urlPaths.admin);  
     };
 
@@ -66,7 +68,6 @@ export default function SignInForm() {
         <form className={styling.form} onSubmit={handleSubmit}>
             <input className={styling.inputField} type="text" placeholder="Username" name="username" /> 
             <input className={styling.inputField} type="password" placeholder="Password" name="password" /> 
-            <ReCAPTCHA ref={captchaRef} sitekey={process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY!} />
             <button className={styling.submitButton} type="submit">Submit</button>
             
             {errors.inputs && <p className={styling.error}>{errors.inputs}</p>}
