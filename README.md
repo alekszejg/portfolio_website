@@ -1,10 +1,12 @@
-BEFORE PRODUCTION CHECK: 
-- Ensure server actions work as expected, rearrange some logic to speed up execution
-- Nginx: calculate total HTTP requests per page and get rate limiting to work
-- Ensure colors are as bright as intended on mobile systems and other computers
+CURRENT GOALS
+- Captcha Badge: set visibility:hidden or opacity:0 on all pages
+- Captcha Badge: include legal warning on both message sending forms and admin page
+- Server Actions: verify frontend and backend logic once more (do useActionState instead?)
+- Test Rate Limit: create python script or curl it 
+- Database: after all testing, clean it, backup it, load it into volume again  
 
 
-AFTER PRODUCTION STAGE GOALS:
+LATER GOALS:
 - Homepage: fix insignificant automatic scrollbar movements in 'Stack' component when clcking buttons
 with significantly smaller or larger text content. Im 99.9% sure issue is in Link functionality of SkillLogo component which sends user to center of 'Stack' component, which is done on purpose but is interuptive when
 user is already on the page and tries to clcika dnr ead everything
