@@ -7,10 +7,14 @@ export default function GoogleCaptchaWrapper({ children }: {children: React.Reac
     const reCaptchaKey = process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY;
 
     useEffect(() => {
-        const badge = document.querySelector(".grecaptcha-badge");
-        if (badge instanceof HTMLElement) {
-            badge.style.setProperty('visibility', 'hidden', 'important');
-        }
+        const interval = setInterval(() => {
+            const badge = document.querySelector(".grecaptcha-badge");
+            if (badge instanceof HTMLElement) {
+                badge.style.setProperty('visibility', 'hidden', 'important');
+                clearInterval(interval);
+            } 
+        }, 100);
+        return () => clearInterval(interval);
     }, [])
 
     return (
