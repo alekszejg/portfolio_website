@@ -48,6 +48,9 @@ const config: Config = {
       },
       colors: {
         
+        // GENERAL 
+        'urls':'hsl(240,100%,50%)',
+        
         // INTERACTIVE CV SECTIONS
         'cvGeneralSection': 'hsl(0, 0%, 93.5%)',
         'cvGeneralHover': 'hsl(0,0%,92%,1)',
