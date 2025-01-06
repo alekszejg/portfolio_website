@@ -12,7 +12,8 @@ export default function SignInForm() {
         form: "flex flex-col items-center gap-y-6 w-1/2 py-16 px-8 mt-[20vh] mx-auto border-2 border-[lightblue] rounded-xl",
         error: "text-red",
         inputField: "w-[300px] h-8 py-[1.2rem] px-[0.7rem] box-border border-2 border-formInput rounded-md focus:outline-none focus:border-formInputFocused",
-        submitButton: "flex justify-center items-center w-[150px] py-3 mt-[0.1rem] border-2 border-formInput rounded-lg font-medium tracking-wide hover:scale-[1.01]"
+        submitButton: "flex justify-center items-center w-[150px] py-3 mt-[0.1rem] border-2 border-formInput rounded-lg font-medium tracking-wide hover:scale-[1.01]",
+        captchaUrl: "w-full text-urls hover:underline hover:underline-offset-2"
     }
 
     const { status } = useSession();
@@ -69,6 +70,11 @@ export default function SignInForm() {
             <input className={styling.inputField} type="text" placeholder="Username" name="username" /> 
             <input className={styling.inputField} type="password" placeholder="Password" name="password" /> 
             <button className={styling.submitButton} type="submit">Submit</button>
+
+            <small>This site is protected by reCAPTCHA and the Google  
+                <a href="https://policies.google.com/privacy" className={styling.captchaUrl}> Privacy Policy</a> and
+                <a href="https://policies.google.com/terms" className={styling.captchaUrl}> Terms of Service</a> apply.
+            </small>
             
             {errors.inputs && <p className={styling.error}>{errors.inputs}</p>}
             {errors.auth && <p className={styling.error}>{errors.auth}</p>}
