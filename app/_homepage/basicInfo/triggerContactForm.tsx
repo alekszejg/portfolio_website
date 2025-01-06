@@ -71,6 +71,8 @@ export default function TriggerContactForm({ iconStyling }: {iconStyling: string
     const styling = {
         icon: iconStyling,
         dialogue: "px-10 py-10 box-content rounded-2xl shadow-[0_0_0.15rem_1px_grey] tablet:shadow-[0_0_0.15rem_grey]",
+        closeButton: "w-[1.2rem] bg-transparent absolute top-2 right-2 hover:scale-105 hover:cursor-pointer",
+        closeImg: "w-full h-full select-none",
         form: {
             wrapper: "flex flex-col gap-y-6 text-base",
             inputWrappers: "flex items-center gap-x-1.5 pl-1.5 rounded group focus-within:outline focus-within:outline-2 focus-within:outline-formInputFocused",
@@ -81,10 +83,9 @@ export default function TriggerContactForm({ iconStyling }: {iconStyling: string
                 wrapper: "flex justify-end items-center gap-x-8",
                 cancel: "w-fit hover:scale-105 hover:cursor-pointer",
                 submit: "w-fit hover:scale-105 hover:cursor-pointer",
-            }
+            },
+            captchaUrl: "w-full text-urls hover:underline hover:underline-offset-2"
         },
-        closeButton: "w-[1.2rem] bg-transparent absolute top-2 right-2 hover:scale-105 hover:cursor-pointer",
-        closeImg: "w-full h-full select-none"
     }
   
     return (
@@ -123,6 +124,11 @@ export default function TriggerContactForm({ iconStyling }: {iconStyling: string
                     <button className={styling.form.buttons.cancel} onClick={handleCancel}>CANCEL</button>
                     <button className={styling.form.buttons.submit} type="submit">SUBMIT</button>
                 </div>
+
+                <small>This site is protected by reCAPTCHA and the Google  
+                    <a href="https://policies.google.com/privacy" className={styling.form.captchaUrl}> Privacy Policy</a> and
+                    <a href="https://policies.google.com/terms" className={styling.form.captchaUrl}> Terms of Service</a> apply.
+                </small>
             
                 {submitted && <p>Message has been submitted</p>}
             </form>
