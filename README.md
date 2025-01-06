@@ -1,6 +1,4 @@
 CURRENT GOALS
-- Captcha Badge: set visibility:hidden or opacity:0 on all pages
-- Captcha Badge: include legal warning on both message sending forms and admin page
 - Server Actions: verify frontend and backend logic once more (do useActionState instead?)
 - Test Rate Limit: create python script or curl it 
 - Database: after all testing, clean it, backup it, load it into volume again  
