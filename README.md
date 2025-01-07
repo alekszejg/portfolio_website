@@ -1,5 +1,4 @@
 CURRENT GOALS
-- Server Actions: verify frontend and backend logic once more (do useActionState instead?)
 - Test Rate Limit: create python script or curl it 
 - Database: after all testing, clean it, backup it, load it into volume again  
 
