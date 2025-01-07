@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, FormEvent, useState } from 'react';
+import { useEffect, FormEvent, useState, useActionState } from 'react';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { useRouter } from 'next/navigation';
 import { useSession, signIn } from 'next-auth/react';
@@ -23,7 +23,6 @@ export default function SignInForm() {
         if (status === "loading") return; 
         if(status === "authenticated") router.push('/admin');
     }, [status, router]);
-
 
     const [errors, setErrors] = useState({inputs: "", auth: ""});
     const { executeRecaptcha } = useGoogleReCaptcha();
@@ -63,7 +62,6 @@ export default function SignInForm() {
     
         router.push(urlPaths.admin);  
     };
-
 
     return (
         <form className={styling.form} onSubmit={handleSubmit}>
