@@ -11,6 +11,7 @@ export default function GoogleCaptchaWrapper({ children }: {children: React.Reac
             const badge = document.querySelector(".grecaptcha-badge");
             if (badge instanceof HTMLElement) {
                 badge.style.setProperty('visibility', 'hidden', 'important');
+                badge.style.setProperty('opacity', '0', 'important');
                 clearInterval(interval);
             } 
         }, 100);
