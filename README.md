@@ -1,6 +1,5 @@
 CURRENT GOALS
 - Test Rate Limit: create python script or curl it 
-- Database: after all testing, clean it, backup it, load it into volume again  
 
 
 LATER GOALS:
